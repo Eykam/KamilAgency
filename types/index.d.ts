@@ -97,3 +97,12 @@ export type Social = {
   url: string
   icon: JSX.Element
 }
+
+export type Review = {
+  stars: number
+  text: string
+  name: string
+  avatar: string
+  url: string
+  timestamp: string
+}

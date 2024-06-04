@@ -8,9 +8,9 @@ export default function ServiceSection() {
   return (
     <section
       id="services"
-      className="mt-10 flex min-h-[85svh] flex-col items-center justify-center bg-secondary px-8 py-16 dark:bg-transparent lg:min-h-screen"
+      className="relative z-10 flex min-h-[85svh] flex-col items-center justify-center bg-secondary lg:min-h-screen"
     >
-      <div className="mx-auto mb-4 flex max-w-[58rem] flex-col items-center space-y-4 text-center ">
+      <div className="mx-auto mb-4 mt-10 flex max-w-[58rem] flex-col items-center space-y-4 text-center md:mt-0">
         <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
           Services
         </h2>
@@ -21,7 +21,7 @@ export default function ServiceSection() {
         </p>
       </div>
 
-      <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
+      <div className="mx-auto grid justify-center gap-4 px-8 py-8 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
         {services.map((service, ind) =>
           ind < 5 ? (
             <ServiceCard service={service} key={service.name + ind} />
@@ -30,7 +30,7 @@ export default function ServiceSection() {
           )
         )}
 
-        <div className="relative overflow-hidden rounded-lg border bg-background p-2">
+        <div className="relative overflow-hidden rounded-lg border bg-background/80 p-2">
           <div className="flex h-[180px] flex-col items-center justify-center rounded-md p-6 text-center">
             <div className="flex flex-col space-y-2">
               <Link

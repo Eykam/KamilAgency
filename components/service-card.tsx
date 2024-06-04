@@ -5,7 +5,7 @@ import { buttonVariants } from "./ui/button"
 
 export default function ServiceCard({ service }: { service: Service }) {
   return (
-    <div className="relative overflow-hidden rounded-lg border bg-background p-2">
+    <div className="relative overflow-hidden rounded-lg border bg-background/80 p-2">
       <div className="flex h-[180px] flex-col items-center justify-between rounded-md p-6 text-center">
         {service.icon}
 
