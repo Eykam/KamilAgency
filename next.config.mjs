@@ -8,6 +8,15 @@ const nextConfig = {
   images: {
     domains: ["avatars.githubusercontent.com", "lh3.googleusercontent.com"],
   },
+  async redirects() {
+    return [
+      {
+        source: "/team/mohamed-kamil",
+        destination: "/",
+        permanent: true,
+      },
+    ]
+  },
 }
 
 export default withContentlayer(nextConfig)
