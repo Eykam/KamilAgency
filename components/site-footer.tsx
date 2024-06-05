@@ -24,20 +24,20 @@ export function SiteFooter({
             </h3>
             <div className="flex lg:h-4/5 lg:justify-center">
               <div className="flex flex-col items-center justify-center lg:items-start">
-                <a
+                <Link
                   href={`mailTo:${siteConfig.contactEmail}`}
                   className="flex items-center space-x-2 text-center text-sm text-primary/50 *:leading-loose md:text-left"
                 >
                   <Icons.email />
                   <p>{siteConfig.contactEmail}</p>
-                </a>
-                <a
+                </Link>
+                <Link
                   href={`tel:${siteConfig.contactNumber}`}
                   className="flex items-center space-x-2 text-center text-sm leading-loose text-primary/50 md:text-left"
                 >
                   <Icons.phone />
                   <p>{siteConfig.contactNumber}</p>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
