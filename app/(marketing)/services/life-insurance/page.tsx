@@ -1,3 +1,8 @@
+import ServicePage from "@/components/service-page"
+import { services } from "@/config/services"
+
 export default function LifeInsurance() {
-  return <section> Life Insurance </section>
+  return (
+    <ServicePage {...services.find((service) => service.name === "Life")} />
+  )
 }
