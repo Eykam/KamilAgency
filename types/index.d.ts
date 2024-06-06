@@ -50,6 +50,7 @@ export type SiteConfig = {
   ogImage: string
   contactEmail: string
   contactNumber: string
+  commercialQuoteURL: string
   address: {
     googleMapsURL: string
     street: string
@@ -89,8 +90,21 @@ export type UserSubscriptionPlan = SubscriptionPlan &
 export type Service = {
   name: string
   description: string
+  descriptionShort: string
+  descriptionLong: string
   icon: JSXElement
   quoteURL: string
+  docsURL: string
+  pageURL: string
+  imageURL: string
+  details: PolicyDetails[]
+  faq: FAQ[]
+}
+
+export type PolicyDetails = {
+  name: string
+  description: string
+  details: string[]
 }
 
 export type Social = {
@@ -106,3 +120,10 @@ export type Review = {
   url: string
   timestamp: string
 }
+
+export type FAQ = {
+  question: string
+  answer: string
+}
+
+export type CardProps = PropsWithChildren & Service

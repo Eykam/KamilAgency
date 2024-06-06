@@ -1,7 +1,7 @@
 import { services } from "@/config/services"
 import ServiceCard from "@/components/service-card"
 
-export default async function ContactPage() {
+export default async function ServicesPage() {
   return (
     <section
       id="services"
@@ -19,7 +19,7 @@ export default async function ContactPage() {
       </div>
       <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
         {services.map((service) => (
-          <ServiceCard service={service} />
+          <ServiceCard service={service} docsLink />
         ))}
       </div>
     </section>
