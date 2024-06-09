@@ -7,7 +7,6 @@ import { CardProps } from "@/types"
 export default function RecommendedServiceCard({
   name,
   descriptionShort,
-  quoteURL,
   pageURL,
 }: CardProps) {
   return (

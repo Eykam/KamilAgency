@@ -1,15 +1,15 @@
 import { cn } from "@/lib/utils"
 import TeamMemberCard from "./team-member-card"
-import { PropsWithChildren } from "react"
+import { team } from "@/config/team"
 
 type TeamMemberCarouselProps = React.HTMLAttributes<HTMLDivElement> & {}
 
 export default function TeamMemberCarousel({
   className,
 }: TeamMemberCarouselProps) {
-  const people = [{}, {}, {}, {}]
   return (
     <section
+      id="team"
       className={cn(
         "flex min-h-screen w-full items-center justify-center bg-background py-12 md:py-24",
         className
@@ -27,9 +27,9 @@ export default function TeamMemberCarousel({
             Get to know the dedicated team behind our insurance solutions.
           </p>
         </div>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:px-12">
-          {people.map(() => (
-            <TeamMemberCard />
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3  lg:px-12">
+          {team.map((member) => (
+            <TeamMemberCard {...member} />
           ))}
         </div>
       </div>

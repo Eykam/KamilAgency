@@ -2,50 +2,14 @@ import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Card, CardContent } from "@/components/ui/card"
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
+
 import Image from "next/image"
 import Link from "next/link"
 import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation"
-
-function ContactCard() {
-  return (
-    <Link href={"/about-us/team/mohamed-kamil"}>
-      <Card className="duration-150  hover:scale-105">
-        <CardContent className="flex items-center gap-4 p-4 sm:p-6">
-          <Avatar>
-            <Image
-              src="/images/placeholder.svg"
-              alt="Sarah Lee"
-              objectFit="cover"
-              fill
-            />
-
-            <AvatarFallback>SL</AvatarFallback>
-          </Avatar>
-          <div className="space-y-1">
-            <div className="font-semibold">Sarah Lee</div>
-            <div className="text-sm text-gray-500 dark:text-gray-400">
-              Insurance Specialist
-            </div>
-            <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-              <MailOpenIcon className="size-4" />
-              <span>sarah@example.com</span>
-            </div>
-            <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-              <PhoneIcon className="size-4" />
-              <span>+1 (555) 555-5559</span>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-    </Link>
-  )
-}
+import ContactCard from "@/components/contact-card"
+import { team } from "@/config/team"
 
 export default function ContactPage() {
-  const contacts = [{}, {}, {}]
-
   return (
     <div className="flex flex-col overflow-hidden lg:text-start">
       <BackgroundGradientAnimation className="flex items-center">
@@ -89,7 +53,7 @@ export default function ContactPage() {
               </div>
             </div>
             <Image
-              src="/images/placeholder.svg"
+              src="/images/contact/contact-hero.webp"
               width="550"
               height="310"
               alt="Hero"
@@ -115,8 +79,8 @@ export default function ContactPage() {
               </p>
             </div>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
-              {contacts.map(() => (
-                <ContactCard />
+              {team.map((member) => (
+                <ContactCard {...member} />
               ))}
             </div>
           </div>
@@ -234,7 +198,7 @@ export default function ContactPage() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Find Us on the Map
             </h2>
-            <div className="mt-6 h-[80vh] w-full overflow-hidden rounded-lg lg:h-[50vh]">
+            <div className="mt-6 h-[80vh] w-full overflow-hidden rounded-lg border-2 border-primary/50 lg:h-[50vh]">
               <iframe
                 src="https://storage.googleapis.com/maps-solutions-hkl2kro3e4/locator-plus/4rrc/locator-plus.html"
                 width="100%"
@@ -267,45 +231,6 @@ function ArrowRightIcon(props) {
     >
       <path d="M5 12h14" />
       <path d="m12 5 7 7-7 7" />
-    </svg>
-  )
-}
-
-function MailOpenIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M21.2 8.4c.5.38.8.97.8 1.6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 .8-1.6l8-6a2 2 0 0 1 2.4 0l8 6Z" />
-      <path d="m22 10-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 10" />
-    </svg>
-  )
-}
-
-function PhoneIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
     </svg>
   )
 }

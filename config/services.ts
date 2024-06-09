@@ -4,7 +4,6 @@ import { siteConfig } from "./site"
 import {
   AutoPolicyDetails,
   CommercialPolicyDetails,
-  GeneralLiabilityPolicyDetails,
   HomeownersPolicyDetails,
   LandlordPolicyDetails,
   LifePolicyDetails,
@@ -14,7 +13,6 @@ import {
 import {
   autoFAQ,
   commercialFAQ,
-  generalLiabilityFAQ,
   homeownersFAQ,
   landlordFAQ,
   lifeFAQ,
@@ -99,22 +97,6 @@ export const services: Service[] = [
     details: LandlordPolicyDetails,
     faq: landlordFAQ,
   },
-  // {
-  //   name: "General Liability",
-  //   descriptionShort:
-  //     "Protect your business from injury and property damage claims.",
-  //   description:
-  //     "General liability insurance provides essential coverage for businesses against claims of bodily injury, property damage, and personal injury. This policy ensures financial protection and peace of mind for business owners.",
-  //   descriptionLong:
-  //     "General liability insurance is designed to offer comprehensive coverage for businesses, protecting against financial loss due to claims of bodily injury, property damage, and personal injury. It covers various risks associated with running a business, including accidents that occur on the business premises, damages caused by business operations, and legal costs for defending against claims. With general liability insurance, business owners can safeguard their assets and ensure the continuity of their operations in the face of unexpected events.",
-  //   icon: Icons.liability({}),
-  //   quoteURL: siteConfig.quoteURL,
-  //   docsURL: "/docs",
-  //   pageURL: "/services/general-liability-insurance",
-  //   imageURL: "/images/services/home.webp",
-  //   details: GeneralLiabilityPolicyDetails,
-  //   faq: generalLiabilityFAQ,
-  // },
   {
     name: "Umbrella",
     descriptionShort:

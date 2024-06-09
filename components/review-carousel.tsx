@@ -16,6 +16,7 @@ import Link from "next/link"
 const TOTAL_STARS = 5
 const REVIEW_LINK =
   "https://www.google.com/search?q=mohamed+kamil&rlz=1C1VDKB_enUS1072US1072&oq=mohamed+&gs_lcrp=EgZjaHJvbWUqDggAEEUYJxg7GIAEGIoFMg4IABBFGCcYOxiABBiKBTIGCAEQRRg7MgYIAhBFGDsyDAgDEC4YFBiHAhiABDIMCAQQLhgUGIcCGIAEMgYIBRBFGDwyBggGEEUYPDIGCAcQRRg8qAIAsAIA&sourceid=chrome&ie=UTF-8#lrd=0x89b7e9afbf6c6319:0x314752c56f0392aa,3,,,,"
+
 type ReviewCardProps = PropsWithChildren & { review: Review }
 
 function ReviewCard(props: ReviewCardProps) {

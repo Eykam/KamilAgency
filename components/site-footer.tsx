@@ -94,7 +94,7 @@ export function SiteFooter({
         <h2 className="mb-6 self-center font-heading text-3xl leading-[1.1]">
           Contact Us
         </h2>
-        <div className="mx-auto grid w-full justify-center gap-4 md:max-w-[64rem] lg:grid-cols-3">
+        <div className="mx-auto grid w-full justify-center gap-4 md:max-w-5xl lg:grid-cols-3">
           <div className="flex-col items-center justify-center overflow-hidden lg:h-full">
             <h3 className="flex items-center justify-center font-heading text-lg leading-[1.1] sm:text-lg md:text-xl lg:h-1/5">
               Customer Service
@@ -103,16 +103,16 @@ export function SiteFooter({
               <div className="flex flex-col items-center justify-center lg:items-start">
                 <Link
                   href={`mailTo:${siteConfig.contactEmail}`}
-                  className="flex items-center space-x-2 text-center text-sm text-primary/50 *:leading-loose md:text-left"
+                  className="flex items-center space-x-2 text-center text-sm text-primary/70 *:leading-loose md:text-left"
                 >
-                  <Icons.email />
+                  <Icons.email className="text-primary hover:text-primary/50" />
                   <p>{siteConfig.contactEmail}</p>
                 </Link>
                 <Link
                   href={`tel:${siteConfig.contactNumber}`}
                   className="flex items-center space-x-2 text-center text-sm leading-loose text-primary/50 md:text-left"
                 >
-                  <Icons.phone />
+                  <Icons.phone className="text-primary hover:text-primary/50" />
                   <p>{siteConfig.contactNumber}</p>
                 </Link>
               </div>
@@ -121,21 +121,20 @@ export function SiteFooter({
 
           <div className="flex-col items-center justify-center overflow-hidden lg:h-full">
             <h3 className="flex items-center justify-center font-heading text-lg leading-[1.1] sm:text-lg md:text-xl lg:h-1/5">
-              Location
+              Locations
             </h3>
-            <div className="flex items-center justify-center text-sm text-primary/50 lg:h-4/5">
-              <Link
-                href={siteConfig.address.googleMapsURL}
-                className="flex flex-col items-center lg:items-start"
-                target="_blank"
-                rel="nofollow"
-              >
-                {Object.keys(siteConfig.address)
-                  .filter((field) => field !== "googleMapsURL")
-                  .map((field) => (
-                    <p>{siteConfig.address[field]}</p>
-                  ))}
-              </Link>
+            <div className="flex flex-col items-center justify-center space-y-6 text-sm text-primary/70 lg:h-4/5">
+              {siteConfig.locations.map((location) => (
+                <Link
+                  href={location.googleMapsURL}
+                  className="flex flex-col items-center hover:text-primary lg:items-start"
+                  target="_blank"
+                  rel="nofollow"
+                >
+                  <p>{location.getAddress().lineOne}</p>
+                  <p>{location.getAddress().lineTwo}</p>
+                </Link>
+              ))}
             </div>
           </div>
 
@@ -146,8 +145,12 @@ export function SiteFooter({
         <div className="mt-4 flex w-full items-center justify-between self-start text-sm leading-loose text-primary/60">
           <p>© 2019 Kamil Agency</p>
           <div className="space-x-4">
-            <Link href="/policy/privacy">Privacy Policy</Link>
-            <Link href="/policy/terms">ToS</Link>
+            <Link href="/policy/privacy" className="hover:text-primary">
+              Privacy Policy
+            </Link>
+            <Link href="/policy/terms" className="hover:text-primary">
+              ToS
+            </Link>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { siteConfig } from "@/config/site"
+import { siteConfig, defaultHours } from "@/config/site"
 import { Day } from "@/types"
 
 export default function LocationSection() {
@@ -16,26 +16,27 @@ export default function LocationSection() {
             <h3 className="mb-4 self-center text-2xl font-semibold md:text-3xl">
               Hours
             </h3>
-            {Object.keys(siteConfig.hours).map((day: Day) => (
+            {Object.keys(defaultHours).map((day: Day) => (
               <div className="flex justify-between py-1">
                 <span className="flex items-center font-semibold"> {day} </span>
                 <span className="flex items-center text-sm text-muted-foreground">
-                  {siteConfig.hours[day]
-                    ? `${siteConfig.hours[day]?.start} - ${siteConfig.hours[day]?.end}`
+                  {defaultHours[day]
+                    ? `${defaultHours[day]?.start} - ${defaultHours[day]?.end}`
                     : `Closed`}
                 </span>
               </div>
             ))}
           </div>
 
-          <iframe
-            src="https://storage.googleapis.com/maps-solutions-hkl2kro3e4/locator-plus/4rrc/locator-plus.html"
-            width="100%"
-            className="rounded-lg"
-            height={400}
-            style={{ border: 0 }}
-            loading="lazy"
-          ></iframe>
+          <div className="w-full overflow-hidden rounded-lg border-2 border-primary/50">
+            <iframe
+              src="https://storage.googleapis.com/maps-solutions-hkl2kro3e4/locator-plus/4rrc/locator-plus.html"
+              width="100%"
+              height={400}
+              style={{ border: 0 }}
+              loading="lazy"
+            ></iframe>
+          </div>
         </div>
       </div>
     </section>

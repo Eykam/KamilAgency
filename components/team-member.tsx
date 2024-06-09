@@ -1,11 +1,25 @@
 import Image from "next/image"
-import Link from "next/link"
-import TeamMemberCard from "./team-member-card"
 import TeamMemberCarousel from "./team-member-carousel"
+import { TeamMember } from "@/types"
 
-export default function TeamMember() {
-  const people = [{}, {}, {}, {}]
+type TeamMemberPageProps = React.HTMLAttributes<HTMLDivElement> & TeamMember
 
+function ExpertiseItem({ name }: { name: string }) {
+  return (
+    <li>
+      <CheckIcon className="mr-2 inline size-5 text-primary" />
+      {name}
+    </li>
+  )
+}
+
+export default function TeamMemberPage({
+  name,
+  title,
+  description,
+  expertise,
+  contact,
+}: TeamMemberPageProps) {
   return (
     <div className="flex w-full flex-col ">
       <section className="flex min-h-[85svh] items-center space-y-6 bg-secondary p-4 lg:min-h-screen">
@@ -21,27 +35,18 @@ export default function TeamMember() {
 
             <div className="space-y-1 text-center">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                John Doe
+                {name}
               </h1>
-              <p className="text-gray-500 dark:text-gray-400">
-                Insurance Agent
-              </p>
+              <p className="text-gray-500 dark:text-gray-400">{title}</p>
             </div>
           </div>
 
           <div className="space-y-6">
             <div className="space-y-2">
               <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">
-                About John
+                About {name.split(" ")[0]}
               </h2>
-              <p className="text-gray-500 dark:text-gray-400">
-                John Doe is an experienced insurance agent with a passion for
-                helping clients protect their assets and achieve financial
-                security. With over 10 years in the industry, he has developed a
-                deep understanding of the complex world of insurance and is
-                dedicated to providing personalized solutions to meet the unique
-                needs of each client.
-              </p>
+              <p className="text-gray-500 dark:text-gray-400">{description}</p>
             </div>
 
             <div className="space-y-2">
@@ -49,50 +54,30 @@ export default function TeamMember() {
                 Areas of Expertise
               </h2>
               <ul className="space-y-1 text-gray-500 dark:text-gray-400">
-                <li>
-                  <CheckIcon className="mr-2 inline size-5 text-primary" />
-                  Life Insurance
-                </li>
-                <li>
-                  <CheckIcon className="mr-2 inline size-5 text-primary" />
-                  Home Insurance
-                </li>
-                <li>
-                  <CheckIcon className="mr-2 inline size-5 text-primary" />
-                  Auto Insurance
-                </li>
-                <li>
-                  <CheckIcon className="mr-2 inline size-5 text-primary" />
-                  Business Insurance
-                </li>
+                {expertise.map((name) => (
+                  <ExpertiseItem name={name} />
+                ))}
               </ul>
             </div>
 
             <div className="space-y-2">
               <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">
-                Contact John
+                Contact {name.split(" ")[0]}
               </h2>
               <div className="space-y-1 text-primary/65">
-                <Link href="/">
+                <a href={`mailTo:${contact.email}`}>
                   <p className="flex items-center">
                     <MailIcon className="mr-2 inline size-5 text-primary" />
-                    john.doe@insuranceagency.com
+                    {contact.email}
                   </p>
-                </Link>
+                </a>
 
-                <Link href="/">
+                <a href={`tel:${contact.phone}`}>
                   <p className="flex items-center">
                     <PhoneIcon className="mr-2 inline size-5 text-primary" />
-                    (123) 456-7890
+                    {contact.phone}
                   </p>
-                </Link>
-
-                <Link href="/">
-                  <p className="flex items-center">
-                    <MapPinIcon className="mr-2 inline size-5 text-primary" />
-                    123 Main St, Anytown USA
-                  </p>
-                </Link>
+                </a>
               </div>
             </div>
           </div>
@@ -139,26 +124,6 @@ function MailIcon(props) {
     >
       <rect width="20" height="16" x="2" y="4" rx="2" />
       <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-    </svg>
-  )
-}
-
-function MapPinIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-      <circle cx="12" cy="10" r="3" />
     </svg>
   )
 }

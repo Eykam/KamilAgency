@@ -7,7 +7,11 @@ import { buttonVariants } from "./ui/button"
 function SocialIcon(props: Social) {
   return (
     <Link
-      className={cn(buttonVariants({ size: "icon" }), "bg-primary/50")}
+      className={cn(
+        buttonVariants({ size: "icon" }),
+        "bg-primary",
+        "hover:bg-primary/50"
+      )}
       href={props.url}
       target="_blank"
       rel="nofollow"

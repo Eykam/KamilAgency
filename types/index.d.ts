@@ -51,14 +51,23 @@ export type SiteConfig = {
   contactEmail: string
   contactNumber: string
   commercialQuoteURL: string
-  address: {
-    googleMapsURL: string
-    street: string
-    city: string
-    state: string
-    zip: string
-  }
+  locations: Location[]
+}
+
+export type Location = {
+  name: string
+  googleMapsURL: string
+  address: Address
   hours: Hours
+  hoursShortened: { weekdays: string; weekends: string }
+  getAddress: () => { lineOne: string; lineTwo: string }
+}
+
+export type Address = {
+  street: string
+  city: string
+  state: string
+  zip: string
 }
 
 export type DocsConfig = {
@@ -124,6 +133,42 @@ export type Review = {
 export type FAQ = {
   question: string
   answer: string
+}
+
+export type TeamMember = {
+  name: string
+  descriptionShort: string
+  description: string
+  title: string
+  avatar: string
+  pageUrl: string
+  contact: { phone: string; email: string }
+  expertise: string[]
+}
+
+export type About = {
+  landing: Section
+  history: Section
+  mission: Section
+  values: Section
+  team: Section
+}
+
+export type Section = {
+  title: string
+  description?: string
+  descriptionShort?: string
+  teamURL?: string
+  contactURL?: string
+  imageURL?: string
+  values?: Value[]
+  team?: TeamMember[]
+}
+
+export type Value = {
+  icon: JSX.Element
+  name: string
+  descriptionShort: string
 }
 
 export type CardProps = PropsWithChildren & Service
