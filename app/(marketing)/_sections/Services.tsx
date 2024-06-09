@@ -24,7 +24,7 @@ export default function ServiceSection() {
       <div className="mx-auto grid justify-center gap-4 px-8 py-8 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
         {services.map((service, ind) =>
           ind < 5 ? (
-            <ServiceCard service={service} key={service.name + ind} />
+            <ServiceCard service={service} key={service.name + ind} pageLink />
           ) : (
             <></>
           )
