@@ -23,8 +23,9 @@ export async function generateMetadata({
 
 export default function GeneralLiabilityInsurance() {
   return (
-    <ServicePage
-      {...services.find((service) => service.name === "General Liability")}
-    />
+    <div> Not Found </div>
+    // <ServicePage
+    //   {...services.find((service) => service.name === "General Liability")}
+    // />
   )
 }
