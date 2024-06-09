@@ -11,6 +11,7 @@ import DetailCard from "@/components/detail-card"
 import { CardProps } from "@/types"
 import { services } from "@/config/services"
 import { BackgroundGradientAnimation } from "./ui/background-gradient-animation"
+import FaqSection from "./faq"
 
 export default function ServicePage({
   name,
@@ -20,9 +21,10 @@ export default function ServicePage({
   docsURL,
   imageURL,
   details,
+  faq,
 }: CardProps) {
   return (
-    <div className="flex flex-col overflow-hidden font-semibold">
+    <div className="flex flex-col overflow-hidden text-center font-semibold lg:text-start">
       <BackgroundGradientAnimation className="flex items-center">
         <section className="z-20 flex h-[90svh] w-full items-center justify-center py-12 md:py-24 lg:h-screen lg:py-32">
           <div className="gap-6 space-y-8 px-4 md:px-6 lg:grid lg:grid-cols-2 lg:gap-10 lg:space-y-0">
@@ -93,6 +95,10 @@ export default function ServicePage({
       </section>
 
       <section className="flex h-fit w-full items-center justify-center bg-background py-12 md:py-24">
+        <FaqSection name={name} FAQs={faq} />
+      </section>
+
+      <section className="flex h-fit w-full items-center justify-center bg-secondary py-12 md:py-24">
         <div className="w-[95%] px-4 md:px-6">
           <div className="mx-auto max-w-5xl space-y-16">
             <div className="space-y-2">
@@ -113,8 +119,8 @@ export default function ServicePage({
                     <RecommendedServiceCard {...props} />
                   ))}
               </CarouselContent>
-              <CarouselPrevious className="absolute left-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-accent/50 p-2 shadow-lg transition-all hover:bg-accent lg:-left-12 " />
-              <CarouselNext className="absolute right-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-accent/50 p-2 shadow-lg transition-all hover:bg-accent lg:-right-12 " />
+              <CarouselPrevious className="absolute -left-5 top-1/2 z-10 -translate-y-1/2 rounded-full bg-accent/50 p-2 shadow-lg transition-all hover:bg-accent lg:-left-12 " />
+              <CarouselNext className="absolute -right-5 top-1/2 z-10 -translate-y-1/2 rounded-full bg-accent/50 p-2 shadow-lg transition-all hover:bg-accent lg:-right-12 " />
             </Carousel>
 
             <div className="flex w-full justify-center">

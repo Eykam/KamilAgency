@@ -5,13 +5,13 @@ import { buttonVariants } from "./ui/button"
 
 export default function ServiceCard({
   service,
-  docsLink = false,
+  pageLink = false,
 }: {
   service: Service
-  docsLink?: boolean
+  pageLink?: boolean
 }) {
   return (
-    <div className="relative overflow-hidden rounded-lg border bg-background/80 p-2">
+    <div className="relative overflow-hidden rounded-lg border bg-background/80 p-2 duration-150 hover:scale-105">
       <div className="flex h-[180px] flex-col items-center justify-between rounded-md p-6 text-center">
         {service.icon}
 
@@ -21,20 +21,12 @@ export default function ServiceCard({
             {service.descriptionShort}
           </p>
 
-          {docsLink ? (
+          {pageLink ? (
             <div className="w-full justify-between space-x-4">
-              <Link
-                href={service.quoteURL}
-                className={cn(buttonVariants({ size: "xs" }))}
-                target="_blank"
-                rel="nofollow"
-              >
-                Get A Quote
-              </Link>
               <Link
                 href={service.pageURL}
                 className={cn(
-                  buttonVariants({ size: "xs", variant: "outline" }),
+                  buttonVariants({ size: "xs", variant: "default" }),
                   "w-2/5"
                 )}
               >

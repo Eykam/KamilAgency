@@ -11,8 +11,8 @@ export default function RecommendedServiceCard({
   pageURL,
 }: CardProps) {
   return (
-    <CarouselItem className="px-4 md:basis-1/2 lg:basis-1/3">
-      <div className="flex h-full flex-col items-center justify-center space-y-4 rounded-lg border-2 border-gray-800 bg-white p-4 shadow-sm dark:border-gray-600 dark:bg-gray-950">
+    <CarouselItem className="p-2 px-4 duration-150 hover:scale-105 md:basis-1/2 lg:basis-1/3">
+      <div className="flex h-full flex-col items-center justify-center space-y-4 rounded-lg border-2 border-gray-800 bg-white p-4 shadow-sm dark:border-gray-600 dark:bg-gray-950 ">
         <h3 className="text-xl font-bold">{name}</h3>
         <p className="text-center text-gray-500 dark:text-gray-400">
           {descriptionShort}

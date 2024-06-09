@@ -17,9 +17,10 @@ export default async function ServicesPage() {
           coverage and exceptional service.
         </p>
       </div>
+
       <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
         {services.map((service) => (
-          <ServiceCard service={service} docsLink />
+          <ServiceCard service={service} pageLink />
         ))}
       </div>
     </section>

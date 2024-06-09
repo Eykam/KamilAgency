@@ -40,7 +40,7 @@ function ReviewCard(props: ReviewCardProps) {
   }
 
   return (
-    <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+    <CarouselItem className="duration-150 hover:scale-105 md:basis-1/2 lg:basis-1/3">
       <Card className="flex h-full select-none flex-col justify-center space-y-4 bg-background/60 p-6 ">
         <div className="flex items-center gap-4">
           <Avatar>
