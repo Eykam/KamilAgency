@@ -41,6 +41,7 @@ export type Day =
   | "Saturday"
 
 export type Hours = { [index: Day]: DailyHours }
+export type ShortHours = { weekdays: DailyHours; weekends: DailyHours }
 
 export type SiteConfig = {
   name: string
@@ -56,10 +57,12 @@ export type SiteConfig = {
 
 export type Location = {
   name: string
+  number: string
+  description: string
   googleMapsURL: string
   address: Address
   hours: Hours
-  hoursShortened: { weekdays: string; weekends: string }
+  hoursShortened: ShortHours
   getAddress: () => { lineOne: string; lineTwo: string }
 }
 
@@ -154,6 +157,11 @@ export type About = {
   team: Section
 }
 
+export type Contact = {
+  landing: Section
+  contactInfo: Section
+}
+
 export type Section = {
   title: string
   description?: string
@@ -172,3 +180,11 @@ export type Value = {
 }
 
 export type CardProps = PropsWithChildren & Service
+
+export type Carrier = {
+  name: string
+  descriptionShort: string
+  description: string
+  logo: string
+  url: string
+}

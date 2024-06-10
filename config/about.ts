@@ -1,6 +1,13 @@
 import { About } from "@/types"
 import { team } from "./team"
 import { Icons } from "@/components/icons"
+import { Metadata } from "next"
+
+export const aboutMetaData: Metadata = {
+  title: "",
+  description: "",
+  keywords: [],
+}
 
 export const about: About = {
   landing: {

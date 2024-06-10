@@ -95,7 +95,7 @@ export function SiteFooter({
           Contact Us
         </h2>
         <div className="mx-auto grid w-full justify-center gap-4 md:max-w-5xl lg:grid-cols-3">
-          <div className="flex-col items-center justify-center overflow-hidden lg:h-full">
+          <div className="flex-col items-center justify-center lg:h-full">
             <h3 className="flex items-center justify-center font-heading text-lg leading-[1.1] sm:text-lg md:text-xl lg:h-1/5">
               Customer Service
             </h3>
@@ -119,7 +119,7 @@ export function SiteFooter({
             </div>
           </div>
 
-          <div className="flex-col items-center justify-center overflow-hidden lg:h-full">
+          <div className="flex-col items-center justify-center lg:h-full">
             <h3 className="flex items-center justify-center font-heading text-lg leading-[1.1] sm:text-lg md:text-xl lg:h-1/5">
               Locations
             </h3>
@@ -127,12 +127,12 @@ export function SiteFooter({
               {siteConfig.locations.map((location) => (
                 <Link
                   href={location.googleMapsURL}
-                  className="flex flex-col items-center hover:text-primary lg:items-start"
+                  className="flex flex-col hover:text-primary "
                   target="_blank"
                   rel="nofollow"
                 >
-                  <p>{location.getAddress().lineOne}</p>
-                  <p>{location.getAddress().lineTwo}</p>
+                  <p className="mx-auto">{location.getAddress().lineOne}</p>
+                  <p className="mx-auto">{location.getAddress().lineTwo}</p>
                 </Link>
               ))}
             </div>

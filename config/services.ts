@@ -1,24 +1,15 @@
 import { Service } from "@/types"
 import { Icons } from "@/components/icons"
 import { siteConfig } from "./site"
-import {
-  AutoPolicyDetails,
-  CommercialPolicyDetails,
-  HomeownersPolicyDetails,
-  LandlordPolicyDetails,
-  LifePolicyDetails,
-  RentersPolicyDetails,
-  UmbrellaPolicyDetails,
-} from "./details"
-import {
-  autoFAQ,
-  commercialFAQ,
-  homeownersFAQ,
-  landlordFAQ,
-  lifeFAQ,
-  rentersFAQ,
-  umbrellaFAQ,
-} from "./faq"
+
+import { homeownersFAQ, HomeownersPolicyDetails } from "./services/homeowners"
+import { autoFAQ, AutoPolicyDetails } from "./services/auto"
+import { commercialFAQ, CommercialPolicyDetails } from "./services/commercial"
+import { lifeFAQ, LifePolicyDetails } from "./services/life"
+import { rentersFAQ, RentersPolicyDetails } from "./services/renters"
+import { landlordFAQ, LandlordPolicyDetails } from "./services/landlord"
+import { umbrellaFAQ, UmbrellaPolicyDetails } from "./services/umbrella"
+// import { homeownersFAQ, HomeownersPolicyDetails } from "./services/health"
 
 export const services: Service[] = [
   {

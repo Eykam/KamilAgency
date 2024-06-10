@@ -1,4 +1,5 @@
-import { siteConfig, defaultHours } from "@/config/site"
+import GoogleMapsEmbed from "@/config/GoogleMapsEmbed"
+import { defaultHours } from "@/config/locations"
 import { Day } from "@/types"
 
 export default function LocationSection() {
@@ -29,13 +30,7 @@ export default function LocationSection() {
           </div>
 
           <div className="w-full overflow-hidden rounded-lg border-2 border-primary/50">
-            <iframe
-              src="https://storage.googleapis.com/maps-solutions-hkl2kro3e4/locator-plus/4rrc/locator-plus.html"
-              width="100%"
-              height={400}
-              style={{ border: 0 }}
-              loading="lazy"
-            ></iframe>
+            <GoogleMapsEmbed />
           </div>
         </div>
       </div>

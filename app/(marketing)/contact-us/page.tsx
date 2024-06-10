@@ -7,9 +7,72 @@ import Image from "next/image"
 import Link from "next/link"
 import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation"
 import ContactCard from "@/components/contact-card"
+import { contact } from "@/config/contact"
 import { team } from "@/config/team"
+import { locations } from "@/config/locations"
+import { HTMLAttributes } from "react"
+import { Location, ShortHours } from "@/types"
+import GoogleMapsEmbed from "@/config/GoogleMapsEmbed"
+
+type HourCardProps = HTMLAttributes<HTMLDivElement> & Location
+
+function HourCard({ hoursShortened, name }: HourCardProps) {
+  return (
+    <div>
+      <h3 className="text-lg font-bold">{name}</h3>
+      <div className="w-full font-semibold text-primary/60">
+        <div className="grid grid-cols-2">
+          <span>Monday - Friday: </span>
+          <span>
+            {hoursShortened.weekdays?.start} - {hoursShortened.weekdays?.stop}
+          </span>
+        </div>
+        <div className="grid grid-cols-2">
+          <span>Saturday - Sunday: </span>
+          <span>
+            {hoursShortened.weekends
+              ? `${hoursShortened.weekends?.start} - ${hoursShortened.weekends?.stop}`
+              : "Closed"}
+          </span>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+type LocationCardProps = HTMLAttributes<HTMLDivElement> & { location: Location }
+
+function LocationCard({ location }: LocationCardProps) {
+  const { name, googleMapsURL } = location
+  const address = location.getAddress()
+
+  return (
+    <Link href={googleMapsURL} prefetch={false} target="_blank" rel="nofollow">
+      <div className="rounded-lg border bg-white p-4 shadow-sm duration-150 hover:scale-105 dark:border-gray-800 dark:bg-gray-950">
+        <h3 className="text-lg font-bold">{name}</h3>
+        <p className="text-gray-500 dark:text-gray-400">
+          {address.lineOne}
+          <br />
+          {address.lineTwo}
+        </p>
+        <Link
+          href={googleMapsURL}
+          className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
+          prefetch={false}
+          target="_blank"
+          rel="nofollow"
+        >
+          Get Directions
+          <ArrowRightIcon className="size-4" />
+        </Link>
+      </div>
+    </Link>
+  )
+}
 
 export default function ContactPage() {
+  const { landing, contactInfo } = contact
+
   return (
     <div className="flex flex-col overflow-hidden lg:text-start">
       <BackgroundGradientAnimation className="flex items-center">
@@ -21,17 +84,15 @@ export default function ContactPage() {
               </div>
               <div className="space-y-2 ">
                 <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl">
-                  Get in Touch with our Agents
+                  {landing.title}
                 </h1>
                 <p className="max-w-[600px] md:text-xl">
-                  Our team of experts is here to help you find the right
-                  insurance coverage for your needs. Schedule a consultation
-                  today.
+                  {landing.descriptionShort}
                 </p>
               </div>
 
               <div className="flex justify-center space-x-4 px-2 lg:justify-start">
-                <Link href="#info">
+                <Link href={landing.teamURL || ""}>
                   <Button
                     variant="default"
                     size="lg"
@@ -41,7 +102,7 @@ export default function ContactPage() {
                   </Button>
                 </Link>
 
-                <Link href="#hours-and-locations">
+                <Link href={landing.contactURL || ""}>
                   <Button
                     variant="outline"
                     size="lg"
@@ -53,7 +114,7 @@ export default function ContactPage() {
               </div>
             </div>
             <Image
-              src="/images/contact/contact-hero.webp"
+              src={landing.imageURL || ""}
               width="550"
               height="310"
               alt="Hero"
@@ -71,11 +132,10 @@ export default function ContactPage() {
           <div className="max-w-3xl space-y-6 max-md:border-b-2 max-md:border-primary/60 max-md:pb-10">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Our Staff
+                {contactInfo.title}
               </h2>
               <p className="text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Our team of insurance professionals has years of experience
-                helping clients find the right coverage.
+                {contactInfo.descriptionShort}
               </p>
             </div>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
@@ -134,24 +194,9 @@ export default function ContactPage() {
               Hours
             </h2>
             <div className="space-y-4">
-              <div>
-                <h3 className="text-lg font-bold">Main Office Hours</h3>
-                <p className="text-gray-500 dark:text-gray-400">
-                  Monday - Friday: 9am - 5pm
-                  <br />
-                  Saturday - Sunday: Closed
-                </p>
-              </div>
-              <div>
-                <h3 className="text-lg font-bold">Branch Office Hours</h3>
-                <p className="text-gray-500 dark:text-gray-400">
-                  Monday - Friday: 10am - 6pm
-                  <br />
-                  Saturday: 9am - 1pm
-                  <br />
-                  Sunday: Closed
-                </p>
-              </div>
+              {locations.map((location) => (
+                <HourCard {...location} />
+              ))}
             </div>
           </div>
 
@@ -161,34 +206,9 @@ export default function ContactPage() {
             </h2>
 
             <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-lg border bg-white p-4 shadow-sm duration-150 hover:scale-105 dark:border-gray-800 dark:bg-gray-950">
-                <h3 className="text-lg font-bold">Main Office</h3>
-                <p className="text-gray-500 dark:text-gray-400">
-                  123 Main St, Anytown USA 12345
-                </p>
-                <Link
-                  href="#"
-                  className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
-                  prefetch={false}
-                >
-                  Get Directions
-                  <ArrowRightIcon className="size-4" />
-                </Link>
-              </div>
-              <div className="rounded-lg border bg-white p-4 shadow-sm duration-150 hover:scale-105 dark:border-gray-800 dark:bg-gray-950">
-                <h3 className="text-lg font-bold">Branch Office</h3>
-                <p className="text-gray-500 dark:text-gray-400">
-                  456 Oak Rd, Somewhere CA 67890
-                </p>
-                <Link
-                  href="#"
-                  className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
-                  prefetch={false}
-                >
-                  Get Directions
-                  <ArrowRightIcon className="size-4" />
-                </Link>
-              </div>
+              {locations.map((location) => (
+                <LocationCard location={location} />
+              ))}
             </div>
           </div>
         </div>
@@ -199,14 +219,7 @@ export default function ContactPage() {
               Find Us on the Map
             </h2>
             <div className="mt-6 h-[80vh] w-full overflow-hidden rounded-lg border-2 border-primary/50 lg:h-[50vh]">
-              <iframe
-                src="https://storage.googleapis.com/maps-solutions-hkl2kro3e4/locator-plus/4rrc/locator-plus.html"
-                width="100%"
-                height="100%"
-                className="rounded-lg"
-                style={{ border: 0 }}
-                loading="lazy"
-              ></iframe>
+              <GoogleMapsEmbed />
             </div>
           </div>
         </div>

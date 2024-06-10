@@ -1,19 +1,16 @@
 import Image from "next/image"
 import Link from "next/link"
+import { carriers } from "@/config/carriers"
+import { Carrier } from "@/types"
 
-type CarrierCardProps = React.HTMLAttributes<HTMLDivElement> & {
-  name: string
-  description: string
-  logo: string
-  link?: string
-}
+type CarrierCardProps = React.HTMLAttributes<HTMLDivElement> & Carrier
 
-function CarrierCard({ name, description, logo, link }: CarrierCardProps) {
+function CarrierCard({ name, descriptionShort, logo, url }: CarrierCardProps) {
   return (
     <div className="flex flex-col items-center justify-center rounded-lg border-2 border-primary/30 bg-background p-6 shadow-lg transition-all hover:scale-105 hover:shadow-xl ">
-      <Link href={link || ""} className="flex flex-col items-center">
+      <Link href={url || ""} className="flex flex-col items-center">
         <Image
-          src="/images/placeholder.svg"
+          src={logo}
           width={80}
           height={80}
           alt={`Carrier Logo - ${name}`}
@@ -21,7 +18,7 @@ function CarrierCard({ name, description, logo, link }: CarrierCardProps) {
         />
         <h3 className="mb-2 text-xl font-bold">{name}</h3>
         <p className="text-center text-gray-500 dark:text-gray-400">
-          {description}
+          {descriptionShort}
         </p>
       </Link>
     </div>
@@ -29,55 +26,6 @@ function CarrierCard({ name, description, logo, link }: CarrierCardProps) {
 }
 
 export default function CarriersPage() {
-  const carriers = [
-    {
-      name: "Acme Insurance",
-      description:
-        "Providing comprehensive coverage for individuals and businesses.",
-      logo: "/placeholder-logo.svg",
-    },
-    {
-      name: "Apex Insurance",
-      description: "Specializing in auto, home, and life insurance solutions.",
-      logo: "/placeholder-logo.svg",
-    },
-    {
-      name: "Zenith Insurance",
-      description:
-        "Offering tailored insurance solutions for businesses and individuals.",
-      logo: "/placeholder-logo.svg",
-    },
-    {
-      name: "Emerald Insurance",
-      description:
-        "Providing innovative insurance products for modern lifestyles.",
-      logo: "/placeholder-logo.svg",
-    },
-    {
-      name: "Horizon Insurance",
-      description:
-        "Protecting your future with reliable and affordable coverage.",
-      logo: "/placeholder-logo.svg",
-    },
-    {
-      name: "Pinnacle Insurance",
-      description: "Customizing insurance plans to fit your unique needs.",
-      logo: "/placeholder-logo.svg",
-    },
-    {
-      name: "Evergreen Insurance",
-      description:
-        "Committed to delivering exceptional service and peace of mind.",
-      logo: "/placeholder-logo.svg",
-    },
-    {
-      name: "Sapphire Insurance",
-      description:
-        "Empowering you to make informed decisions about your coverage.",
-      logo: "/placeholder-logo.svg",
-    },
-  ]
-
   return (
     <section className="w-full py-12 md:py-16 lg:py-20">
       <div className="container px-4 md:px-6">
