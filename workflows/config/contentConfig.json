@@ -1,0 +1,12 @@
+{
+  "relativeRootDir": "../site/config/",
+  "contentPaths": [
+    "services",
+    "about.ts",
+    "carriers.ts",
+    "contact.ts",
+    "faq.ts",
+    "services.ts",
+    "site.ts"
+  ]
+}

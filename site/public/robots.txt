@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://kamilagency.com
+
+# Sitemaps
+Sitemap: https://kamilagency.com/sitemap.xml
