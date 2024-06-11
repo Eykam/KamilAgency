@@ -14,7 +14,7 @@ export default function AboutSection() {
           <div className="relative flex size-[300px] items-center">
             <Image
               className="rounded-[50%]"
-              src={"/images/people/mohamed_headshot.webp"}
+              src={"/images/people/mohamed.webp"}
               alt="team-images-mohamed"
               layout="responsive"
               height={360}
