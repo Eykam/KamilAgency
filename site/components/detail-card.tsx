@@ -10,7 +10,7 @@ export default function DetailCard({
   details,
 }: DetailCard) {
   return (
-    <div className="m-2 flex h-[400px] w-[300px] flex-col justify-between space-y-4 rounded-lg bg-white p-6 font-normal shadow-sm duration-150 hover:scale-105 dark:bg-background/80">
+    <div className="my-2 flex h-[400px] w-full flex-col justify-between space-y-4 rounded-lg bg-white p-6 font-normal shadow-md duration-150 hover:scale-105 hover:border-2 hover:border-muted-foreground dark:bg-background/80 lg:m-2 lg:w-[300px]">
       <h3 className="text-xl font-bold">{title}</h3>
       <ul className="mt-4 space-y-2 border-b-2 pb-4 text-sm">
         {details?.map((detail) => (

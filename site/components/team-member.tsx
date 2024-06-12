@@ -42,21 +42,21 @@ export default function TeamMemberPage({
             </div>
           </div>
 
-          <div className="space-y-6">
-            <div className="space-y-2 p-4">
+          <div className="space-y-6 text-center">
+            <div className="w-fit space-y-4 p-4">
               <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">
                 About {name.split(" ")[0]}
               </h2>
-              <p className="text-primary">{description}</p>
+              <p className="text-muted-foreground">{description}</p>
             </div>
 
             <hr className="h-[2px] border-0 bg-primary/40" />
 
-            <div className="space-y-2 p-4">
+            <div className="flex flex-col space-y-2 p-4">
               <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">
                 Areas of Expertise
               </h2>
-              <ul className="space-y-1 text-primary">
+              <ul className="space-y-1 text-muted-foreground">
                 {expertise.map((name) => (
                   <ExpertiseItem name={name} />
                 ))}
@@ -65,11 +65,11 @@ export default function TeamMemberPage({
 
             <hr className="h-[2px] border-0 bg-primary/40" />
 
-            <div className="space-y-2 p-4">
+            <div className="space-y-4 p-4">
               <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">
                 Contact {name.split(" ")[0]}
               </h2>
-              <div className="space-y-1 text-primary">
+              <div className="flex flex-col items-center space-y-1 text-muted-foreground">
                 <a href={`mailTo:${contact.email}`}>
                   <p className="flex items-center">
                     <MailIcon className="mr-2 inline size-5 text-primary" />

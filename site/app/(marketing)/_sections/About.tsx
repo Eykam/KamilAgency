@@ -10,7 +10,7 @@ export default function AboutSection() {
         <h2 className="mb-4 font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
           About Me
         </h2>
-        <div className="flex w-full flex-col items-center justify-center space-y-4 align-middle leading-normal text-muted-foreground sm:text-lg sm:leading-7 lg:flex-row lg:space-x-16">
+        <div className="flex w-full flex-col items-center justify-center space-y-4 align-middle leading-normal text-primary sm:text-lg sm:leading-7 lg:flex-row lg:space-x-16">
           <div className="relative flex size-[300px] items-center">
             <Image
               className="rounded-[50%]"
@@ -22,7 +22,7 @@ export default function AboutSection() {
               objectFit="cover"
             />
           </div>
-          <p className="my-auto max-w-[90%] text-start lg:max-w-[50%]">
+          <p className="my-auto max-w-[90%] text-center lg:max-w-[50%] lg:text-start">
             As a dedicated insurance agent and proud resident of the DC Metro
             area, I bring extensive experience in insuring homes, businesses,
             and lives in our community.
