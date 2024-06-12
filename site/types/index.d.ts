@@ -54,6 +54,7 @@ export type SiteConfig = {
   contactEmail: string
   contactNumber: string
   commercialQuoteURL: string
+  medicareQuoteURL: string
   locations: Location[]
 }
 
@@ -189,6 +190,13 @@ export type Carrier = {
   descriptionShort: string
   description: string
   logo: string
+  url: string
+}
+
+export type ServiceCategory = {
+  name: string
+  descriptionShort: string
+  logo: JSX.Element
   url: string
 }
 

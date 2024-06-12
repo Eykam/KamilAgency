@@ -34,13 +34,11 @@ export default async function MarketingLayout({
               <Icons.phone />
             </Link>
             <Link
-              href={siteConfig.quoteURL}
+              href={"/quote"}
               className={cn(
                 buttonVariants({ variant: "secondary", size: "sm" }),
                 "lg:px-4"
               )}
-              target="_blank"
-              rel="nofollow"
             >
               Get A Quote
             </Link>

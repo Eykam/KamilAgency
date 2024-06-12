@@ -31,13 +31,11 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
             <nav className="flex space-x-4">
               <ModeToggle />
               <Link
-                href={siteConfig.quoteURL}
+                href={"/quote"}
                 className={cn(
                   buttonVariants({ variant: "secondary", size: "sm" }),
                   "px-4"
                 )}
-                target="_blank"
-                rel="nofollow"
               >
                 Get A Quote
               </Link>

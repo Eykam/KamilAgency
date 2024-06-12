@@ -142,11 +142,14 @@ export const Icons = {
       <path d="M15 13a3 3 0 1 0-6 0" />
     </svg>
   ),
-  liability: ({ ...props }: LucideProps & { className: string }) => (
+  liability: ({ ...props }: LucideProps & { className?: string }) => (
     <svg
-      viewBox="0 0 24 24"
       stroke="currentColor"
-      className={cn("size-12 fill-current", props.className)}
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      className={cn("fill-current stroke-2", props.className)}
     >
       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
     </svg>

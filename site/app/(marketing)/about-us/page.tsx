@@ -31,7 +31,7 @@ export default function AboutPage() {
     <div className="flex min-h-dvh flex-col overflow-hidden text-start">
       <BackgroundGradientAnimation className="flex items-center">
         <section className="z-10 flex h-[90svh] w-full items-center justify-center py-12 md:py-24 lg:h-screen lg:py-32">
-          <div className=" pointer-events-none grid gap-8 px-4 max-sm:w-[90%] md:px-6 lg:grid-cols-[1fr_550px] lg:gap-12 xl:grid-cols-[1fr_650px]">
+          <div className=" pointer-events-none grid gap-8 px-4 max-sm:w-[90%] md:w-[85%] md:px-6 lg:grid-cols-[1fr_550px] lg:gap-12 xl:grid-cols-[1fr_650px]">
             <div className="flex flex-col justify-center space-y-6 lg:px-12">
               <div className="space-y-4">
                 <div className="inline-block rounded-lg border-2 border-primary/20 bg-background px-3 py-1 text-sm">
