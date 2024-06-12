@@ -89,6 +89,9 @@ export default function ServicePage({
 
             <br />
 
+            <h2 className="mb-4 text-center text-2xl font-bold tracking-tighter md:text-3xl">
+              Coverages Offered
+            </h2>
             <div className="flex size-full h-auto flex-wrap items-center justify-center">
               {details.map((props) => (
                 <DetailCard {...props} />

@@ -7,7 +7,7 @@ type TeamMemberPageProps = React.HTMLAttributes<HTMLDivElement> & TeamMember
 function ExpertiseItem({ name }: { name: string }) {
   return (
     <li>
-      <CheckIcon className="mr-2 inline size-5 text-primary" />
+      <CheckIcon className="mr-2 inline size-5 text-green-500" />
       {name}
     </li>
   )
@@ -56,11 +56,13 @@ export default function TeamMemberPage({
               <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">
                 Areas of Expertise
               </h2>
-              <ul className="space-y-1 text-muted-foreground">
-                {expertise.map((name) => (
-                  <ExpertiseItem name={name} />
-                ))}
-              </ul>
+              <div className="w-fit self-center">
+                <ul className="space-y-1 text-start text-muted-foreground">
+                  {expertise.map((name) => (
+                    <ExpertiseItem name={name} />
+                  ))}
+                </ul>
+              </div>
             </div>
 
             <hr className="h-[2px] border-0 bg-primary/40" />

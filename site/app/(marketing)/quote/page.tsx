@@ -57,19 +57,23 @@ function QuoteCard({ name, descriptionShort, logo, url }: QuoteCardProps) {
 export default function QuotePage() {
   return (
     <section className="w-full py-12 md:py-16 lg:py-20">
-      <div className="container px-4 md:px-6 lg:max-w-[75%]">
+      <div className="container px-8 lg:max-w-[75%]">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
+          <div className="space-y-4">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Get A Quote
             </h2>
-            <p className="max-w-[800px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <p className="max-w-[800px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Select the category that suits you best. Our comparative rater
-              will find you the best policy by comparing multiple insurers. Need
-              help? Check out our{" "}
-              <a href="/#faq" className="font-semibold underline">
-                FAQs
-              </a>
+              will find you the best policy by comparing multiple insurers.
+              <br />
+              <br />
+              <span className="text-lg font-semibold md:text-2xl/relaxed lg:text-lg/relaxed xl:text-2xl/relaxed">
+                Need help deciding? Check out our{" "}
+                <a href="/#faq" className="font-semibold underline">
+                  FAQs
+                </a>
+              </span>
             </p>
           </div>
         </div>

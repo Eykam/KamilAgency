@@ -37,13 +37,11 @@ export default function HeroSection() {
           </p>
           <div className="space-x-4">
             <Link
-              href={siteConfig.quoteURL}
+              href={"/quote"}
               className={cn(
                 buttonVariants({ size: "lg" }),
                 "pointer-events-auto"
               )}
-              target="_blank"
-              rel="nofollow"
             >
               Get A Quote
             </Link>

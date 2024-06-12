@@ -15,7 +15,7 @@ export default function DetailCard({
       <ul className="mt-4 space-y-2 border-b-2 pb-4 text-sm">
         {details?.map((detail) => (
           <li>
-            <Icons.check className="mr-2 inline-block size-4 stroke-primary/80" />
+            <Icons.check className="mr-2 inline-block size-4 text-green-500" />
             {detail}
           </li>
         ))}

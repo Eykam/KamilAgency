@@ -8,7 +8,7 @@ export default function ServiceSection() {
   return (
     <section
       id="services"
-      className="relative z-10 flex min-h-[85svh] flex-col items-center justify-center bg-secondary lg:min-h-screen"
+      className="relative z-10 flex min-h-[85svh] flex-col items-center justify-center bg-secondary py-8 lg:min-h-screen"
     >
       <div className="mx-auto mb-4 mt-10 flex max-w-[58rem] flex-col items-center space-y-4 text-center md:mt-0">
         <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
