@@ -2,12 +2,12 @@ import TeamMemberPage from "@/components/team-member"
 import { team } from "@/config/team"
 import { Metadata } from "next"
 
+const TeamMember = team.filter((member) => member.name === "Eyad Kamil")[0]
+
 export function generateMetadata(): Metadata {
-  return {}
+  return TeamMember.metadata
 }
 
 export default function EmployeePage() {
-  return team
-    .filter((member) => member.name === "Eyad Kamil")
-    .map((member) => <TeamMemberPage {...member} />)
+  return <TeamMemberPage {...TeamMember} />
 }
