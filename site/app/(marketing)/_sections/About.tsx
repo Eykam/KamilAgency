@@ -8,7 +8,7 @@ export default function AboutSection() {
       id="about-us"
       className="flex min-h-[85svh] items-center overflow-hidden py-16 lg:min-h-screen"
     >
-      <div className="max-w-4/5 mx-auto flex flex-col items-center justify-center gap-4 text-center">
+      <div className="container mx-auto flex flex-col items-center justify-center gap-4 text-center">
         <h2 className="mb-4 font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
           About Me
         </h2>

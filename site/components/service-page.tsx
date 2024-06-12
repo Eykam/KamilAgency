@@ -26,7 +26,7 @@ export default function ServicePage({
   return (
     <div className="flex flex-col overflow-hidden text-center font-semibold lg:text-start">
       <BackgroundGradientAnimation className="flex items-center">
-        <section className="z-20 flex h-[90svh] w-full items-center justify-center py-12 md:py-24 lg:h-screen lg:py-32">
+        <section className="container z-20 flex h-[90svh] items-center justify-center py-12 md:py-24 lg:h-screen lg:py-32">
           <div className="gap-6 space-y-8 px-4 md:px-6 lg:grid lg:grid-cols-2 lg:gap-10 lg:space-y-0">
             <div className="flex flex-col items-center justify-center space-y-8 lg:items-start ">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl  md:text-5xl">
@@ -64,8 +64,8 @@ export default function ServicePage({
       </BackgroundGradientAnimation>
 
       <section className="flex min-h-screen w-full items-center justify-center bg-secondary py-12 md:py-24">
-        <div className="w-[95%] px-6 md:px-6">
-          <div className="mx-auto flex-col text-start md:max-w-[80%] md:text-center lg:text-start">
+        <div className="container max-w-6xl px-10 2xl:max-w-[1400px]">
+          <div className="flex-col text-start md:text-center lg:text-start">
             <div className="space-y-12">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
                 {name} Insurance Coverage Tailored to Your Needs

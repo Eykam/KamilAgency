@@ -78,9 +78,9 @@ export default function ContactPage() {
 
   return (
     <div className="flex flex-col overflow-hidden lg:text-start">
-      <BackgroundGradientAnimation className="flex items-center">
+      <BackgroundGradientAnimation className="flex items-center justify-center">
         <section className="z-10 flex h-[90svh] items-center justify-center py-12 md:py-24 lg:h-screen lg:py-32">
-          <div className=" pointer-events-none gap-6 space-y-8 px-4 max-sm:w-[90%] md:w-[80%] md:px-6 lg:grid lg:grid-cols-2 lg:gap-10 lg:space-y-0">
+          <div className="container pointer-events-none gap-6 space-y-8 px-4 max-sm:w-[90%]  md:px-6 lg:grid lg:grid-cols-2 lg:gap-10 lg:space-y-0">
             <div className="flex flex-col justify-center space-y-6 lg:px-12">
               <div className="w-fit rounded-lg border-2 border-primary/20 bg-background px-3 py-1 text-sm">
                 Contact Us
@@ -131,7 +131,7 @@ export default function ContactPage() {
         id="info"
         className="flex min-h-screen w-full items-center justify-center bg-secondary py-12  md:py-24"
       >
-        <div className="grid gap-8 px-4 max-sm:w-[90%] md:w-[80%] md:px-16 lg:grid-cols-[1fr_550px] lg:gap-12 xl:grid-cols-[1fr_650px]">
+        <div className="grid gap-8 px-4 max-sm:w-[90%] md:px-16 lg:grid-cols-[1fr_550px] lg:gap-12 xl:grid-cols-[1fr_650px]">
           <div className="max-w-3xl space-y-6 max-md:border-b-2 max-md:border-primary/60 max-md:pb-10">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -156,7 +156,7 @@ export default function ContactPage() {
         className="w-full space-y-20 px-6 py-12 md:py-24 lg:py-32"
         id="hours-and-locations"
       >
-        <div className="container grid items-start gap-8 px-4 max-md:border-b-2 max-md:border-primary/60 max-md:pb-20 md:max-w-[80%] md:px-6 lg:grid-cols-2 lg:gap-16">
+        <div className="container grid items-start gap-8 px-4 max-md:border-b-2 max-md:border-primary/60 max-md:pb-20  md:px-6 lg:grid-cols-2 lg:gap-16">
           <div className="space-y-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Hours
@@ -181,14 +181,13 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className="container grid h-fit items-start gap-8 px-4 md:w-[80%] md:px-6 lg:h-fit lg:grid-cols-2 lg:gap-16">
-          <div className="col-span-2 ">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+        <div className="container grid items-start gap-8 px-4 md:px-6 lg:grid-cols-2 lg:gap-16">
+          <div className="col-span-2">
+            <h2 className="mb-4 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Find Us on the Map
             </h2>
-            <div className="mt-6 h-auto w-full overflow-hidden overflow-hidden rounded-lg border-2 border-primary/50 shadow-lg">
-              <GoogleMapsEmbed />
-            </div>
+
+            <GoogleMapsEmbed />
           </div>
         </div>
       </section>

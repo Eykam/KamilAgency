@@ -31,7 +31,7 @@ export default function AboutPage() {
     <div className="flex min-h-dvh flex-col overflow-hidden text-start">
       <BackgroundGradientAnimation className="flex items-center">
         <section className="z-10 flex h-[90svh] w-full items-center justify-center py-12 md:py-24 lg:h-screen lg:py-32">
-          <div className=" pointer-events-none grid gap-8 px-4 max-sm:w-[90%] md:w-[85%] md:px-6 lg:grid-cols-[1fr_550px] lg:gap-12 xl:grid-cols-[1fr_650px]">
+          <div className="container pointer-events-none grid gap-8 px-4 max-sm:w-[90%] md:px-6 lg:grid-cols-[1fr_550px] lg:gap-12 xl:grid-cols-[1fr_650px]">
             <div className="flex flex-col justify-center space-y-6 lg:px-12">
               <div className="space-y-4">
                 <div className="inline-block rounded-lg border-2 border-primary/20 bg-background px-3 py-1 text-sm">
@@ -73,7 +73,7 @@ export default function AboutPage() {
               width={600}
               height={400}
               alt="Hero"
-              className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
+              className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
             />
           </div>
         </section>
@@ -83,7 +83,7 @@ export default function AboutPage() {
         <div className="container grid gap-12 px-4 max-sm:w-[90%] md:px-6 lg:grid-cols-2 lg:gap-16">
           <Image
             src={history.imageURL || ""}
-            width="550"
+            width="600"
             height="400"
             alt="History"
             className="order-2 mx-auto aspect-video overflow-hidden rounded-xl object-cover lg:order-1"
@@ -119,7 +119,7 @@ export default function AboutPage() {
 
           <Image
             src={mission.imageURL || ""}
-            width="550"
+            width="600"
             height="400"
             alt="Mission"
             className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"

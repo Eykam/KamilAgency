@@ -57,7 +57,7 @@ function QuoteCard({ name, descriptionShort, logo, url }: QuoteCardProps) {
 export default function QuotePage() {
   return (
     <section className="w-full py-12 md:py-16 lg:py-20">
-      <div className="container px-8 lg:max-w-[75%]">
+      <div className="container px-8 lg:max-w-5xl">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-4">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">

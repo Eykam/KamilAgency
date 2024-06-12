@@ -29,9 +29,7 @@ export default function LocationSection() {
             ))}
           </div>
 
-          <div className="flex min-h-[300px] w-full overflow-hidden rounded-lg border-2 border-primary/50">
-            <GoogleMapsEmbed />
-          </div>
+          <GoogleMapsEmbed />
         </div>
       </div>
     </section>
