@@ -18,7 +18,7 @@ export default async function MarketingLayout({
 }: MarketingLayoutProps) {
   return (
     <div className="flex flex-col justify-center">
-      <header className="sticky top-0 z-10 w-full bg-background lg:self-center">
+      <header className="sticky top-0 z-10 w-full border-b bg-background lg:self-center">
         <div className="flex items-center justify-between px-4 py-6 lg:justify-around">
           <MainNav items={marketingConfig.mainNav} />
           <nav className="flex items-center space-x-2">

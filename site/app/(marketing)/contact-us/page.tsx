@@ -19,7 +19,7 @@ type HourCardProps = HTMLAttributes<HTMLDivElement> & Location
 function HourCard({ hoursShortened, name }: HourCardProps) {
   return (
     <div>
-      <h3 className="text-lg font-bold">{name}</h3>
+      <h3 className="text-md font-bold">{name}</h3>
       <div className="w-full max-w-3xl font-semibold text-primary/60 ">
         <div className="flex justify-between">
           <span>Mon - Fri: </span>
