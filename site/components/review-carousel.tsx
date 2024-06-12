@@ -92,7 +92,7 @@ export default function ReviewCarousel({ reviews }: { reviews: Review[] }) {
             <Button size="lg">Leave a Review</Button>
           </Link>
         </div>
-        <Carousel className="w-full max-w-md lg:max-w-none">
+        <Carousel className="w-full max-w-2xl lg:max-w-none">
           <CarouselContent>
             {reviews.map((review) => (
               <ReviewCard review={review} />
