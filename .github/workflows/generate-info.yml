@@ -1,0 +1,39 @@
+name: Generate Info and Open PR
+
+on:
+  schedule:
+    - cron: "0 0 * * 0" # Runs every Sunday at midnight
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  generate-info:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: Install dependencies
+        working-directory: ./workflow
+        run: npm install
+
+      - name: Run script to generate info
+        working-directory: ./workflow
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_API_URL: ${{ secrets.OPENAI_API_URL }}
+        run: npm run generate-info
+
+      - name: Install GitHub CLI
+        run: sudo apt-get install -y gh
+
+      - name: Run script to create PRs
+        working-directory: ./workflow
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: npm run create-prs
