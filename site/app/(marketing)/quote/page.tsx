@@ -40,12 +40,7 @@ export function generateMetadata(): Metadata {
 
 type QuoteCardProps = React.HTMLAttributes<HTMLDivElement> & ServiceCategory
 
-export function QuoteCard({
-  name,
-  descriptionShort,
-  logo,
-  url,
-}: QuoteCardProps) {
+function QuoteCard({ name, descriptionShort, logo, url }: QuoteCardProps) {
   return (
     <Link href={url || ""} className="size-full" target="_blank" rel="nofollow">
       <div className="flex h-full flex-col items-center justify-evenly rounded-lg border-2 border-primary/30 bg-background p-6 shadow-lg transition-all hover:scale-105 hover:shadow-xl ">
