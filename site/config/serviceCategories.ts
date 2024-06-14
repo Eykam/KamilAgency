@@ -20,7 +20,7 @@ export const ServiceCategories: ServiceCategory[] = [
     name: "Medicare & Medicaid",
     descriptionShort:
       "Get a quote for Medicare insurance to ensure you have the right health coverage. Select the plan that meets your healthcare needs.",
-    url: siteConfig.quoteURL,
+    url: siteConfig.medicareQuoteURL,
     logo: Icons.heart({ className: "size-12 fill-primary" }),
   },
 ]
