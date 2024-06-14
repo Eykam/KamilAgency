@@ -129,7 +129,7 @@ export const services: Service[] = [
       "Medicare insurance is designed to offer comprehensive health coverage for seniors, covering a range of medical services and expenses. It includes various parts such as Part A (Hospital Insurance), Part B (Medical Insurance), Part C (Medicare Advantage Plans), and Part D (Prescription Drug Coverage). Additionally, Medigap policies help cover out-of-pocket costs not covered by Original Medicare. With Medicare insurance, seniors can access necessary medical care without worrying about high costs, ensuring they receive the healthcare they need as they age.",
     details: MedicarePolicyDetails,
     icon: Icons.heart({ className: "fill-current" }),
-    quoteURL: siteConfig.quoteURL,
+    quoteURL: siteConfig.medicareQuoteURL,
     docsURL: "/docs",
     pageURL: "/services/medicare",
     imageURL: "/images/services/medicare.webp",
