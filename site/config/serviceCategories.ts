@@ -6,7 +6,7 @@ export const ServiceCategories: ServiceCategory[] = [
     name: "Personal Lines",
     descriptionShort:
       "Get a quote for Personal Lines insurance to protect your home, auto, and personal assets.",
-    url: siteConfig.quoteURL,
+    url: "/quote/personal",
     logo: Icons.life({}),
   },
   {

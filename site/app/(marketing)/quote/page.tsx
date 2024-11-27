@@ -1,7 +1,5 @@
-import Image from "next/image"
 import Link from "next/link"
-import { carriers } from "@/config/carriers"
-import { Carrier, ServiceCategory } from "@/types"
+import { ServiceCategory } from "@/types"
 import { Metadata } from "next"
 import { ServiceCategories } from "@/config/serviceCategories"
 
