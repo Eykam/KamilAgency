@@ -21,10 +21,16 @@ export function MainNav({ items, children }: MainNavProps) {
 
   return (
     <div className="flex gap-6 md:gap-10 lg:justify-between">
-      <Link href="/" className="hidden items-center space-x-2 md:flex">
-        <Icons.logo />
-        <span className="hidden font-bold sm:inline-block">
-          {siteConfig.name}
+      <Link href="/">
+        <span className="hidden items-center space-x-2 text-2xl md:flex">
+          <Icons.logo />
+          <span className="hidden font-bold sm:inline-block">
+            {siteConfig.name}
+          </span>
+        </span>
+        <span className="hidden text-sm md:flex">
+          {" "}
+          {siteConfig.expandedName}
         </span>
       </Link>
 

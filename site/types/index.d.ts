@@ -47,6 +47,7 @@ export type ShortHours = { weekdays: DailyHours; weekends: DailyHours }
 
 export type SiteConfig = {
   name: string
+  expandedName: string
   description: string
   url: string
   quoteURL: string
