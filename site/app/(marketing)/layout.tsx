@@ -42,6 +42,15 @@ export default async function MarketingLayout({
             >
               Get A Quote
             </Link>
+            <Link
+              href={"/customers"}
+              className={cn(
+                buttonVariants({ variant: "secondary", size: "sm" }),
+                "lg:px-4"
+              )}
+            >
+              Customer Portal
+            </Link>
           </nav>
         </div>
       </header>
