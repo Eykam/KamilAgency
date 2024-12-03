@@ -28,7 +28,7 @@ function CustomerPortal() {
       name="Customer Service Portal"
       height={`${iframeHeight}px`}
       width="100%"
-      className="overflow-hidden border-none bg-primary text-primary"
+      className="mt-10 overflow-hidden border-none bg-background text-gray-500 dark:text-gray-400"
     >
       Your browser is unable to display frames. Please{" "}
       <a href="https://customerservice.agentinsure.com/EzlynxCustomerService/mohame/Account/LogIn">
