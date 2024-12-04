@@ -3,7 +3,7 @@ import { env } from "@/env.mjs"
 import { locations } from "./locations"
 
 export const siteConfig: SiteConfig = {
-  name: "MKIA",
+  name: "KIA",
   expandedName: "Mohamed Kamil Insurance Agency",
   description:
     "Mohamed Kamil - Top-rated insurance agency offering comprehensive coverage in D.C., Maryland, and Virginia. Get affordable quotes for home, auto, commercial, renters, landlord, life, general liability, and umbrella insurance. Secure your future with the best policies tailored to your needs.",
