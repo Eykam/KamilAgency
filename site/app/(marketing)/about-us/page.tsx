@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation"
-import TeamMemberCarousel from "@/components/team-member-carousel"
+// import TeamMemberCarousel from "@/components/team-member-carousel"
 import { about, aboutMetaData } from "@/config/about"
 import { Value } from "@/types"
 import { HTMLAttributes } from "react"
@@ -149,7 +149,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <TeamMemberCarousel />
+       {/* <TeamMemberCarousel /> */}
     </div>
   )
 }
