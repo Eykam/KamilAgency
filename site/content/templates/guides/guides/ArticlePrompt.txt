@@ -1,0 +1,12 @@
+I would like to make an article for marketing on my insurance website. The theme of the article will be "Why you should never get State Minimum" in regards to limits when choosing the coverages in your insurance policy. 
+
+Using this template of an article, create the article described above. For any images generated, include the description of the image in the alt text, so I can generate the image using AI later. The images should be stored in the /image/blog/*.jpg format. 
+
+The template is provided below, between the "=====":
+
+================================
+
+
+================================
+
+Return only the mdx file
