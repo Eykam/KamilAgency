@@ -141,11 +141,13 @@ export default function ContactPage() {
                 {contactInfo.descriptionShort}
               </p>
             </div>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
-              {team.map((member) => (
-                <ContactCard {...member} />
-              ))}
-            </div>
+            {/*
+  <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
+    {team.map((member) => (
+      <ContactCard {...member} />
+    ))}
+  </div>
+  */}
           </div>
 
           <ContactForm />
