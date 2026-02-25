@@ -4,7 +4,7 @@ import { locations } from "./locations"
 
 export const siteConfig: SiteConfig = {
   name: "KIA",
-  expandedName: "Mohamed Kamil Insurance Agency",
+  expandedName: "",
   description:
     "Mohamed Kamil - Top-rated insurance agency offering comprehensive coverage in D.C., Maryland, and Virginia. Get affordable quotes for home, auto, commercial, renters, landlord, life, general liability, and umbrella insurance. Secure your future with the best policies tailored to your needs.",
   url: env.NEXT_PUBLIC_APP_URL as string,
