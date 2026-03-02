@@ -11,7 +11,7 @@ export const socials: { [index: string]: Social } = {
     icon: Icons.facebook(),
   },
   Twitter: {
-    url: "https://x.com/KamilAgency",
+    url: "https://x.com/TheMKIAgency",
     icon: Icons.twitter(),
   },
   Instagram: {
