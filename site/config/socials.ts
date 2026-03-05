@@ -7,11 +7,11 @@ export const socials: { [index: string]: Social } = {
     icon: Icons.linkedin(),
   },
   Facebook: {
-    url: "https://www.facebook.com/MKIAInc",
+    url: "https://www.facebook.com/MKIAgency/",
     icon: Icons.facebook(),
   },
   Twitter: {
-    url: "https://x.com/MoFarmersAgent",
+    url: "https://x.com/TheMKIAgency",
     icon: Icons.twitter(),
   },
   Instagram: {
