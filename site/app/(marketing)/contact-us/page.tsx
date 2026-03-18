@@ -81,7 +81,6 @@ export default function ContactPage() {
                 {contactInfo.descriptionShort}
               </p>
             </div>
-
             <div className="grid gap-4 sm:grid-cols-2">
               <a
                 href={`tel:${siteConfig.contactNumber}`}

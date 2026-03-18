@@ -1,4 +1,4 @@
-import AboutSection from "./_sections/About"
+// import AboutSection from "./_sections/About"
 import ReviewsSection from "./_sections/Reviews"
 import LocationSection from "./_sections/Location"
 import ServiceSection from "./_sections/Services"
@@ -11,7 +11,7 @@ export default async function IndexPage() {
     <>
       <HeroSection />
       <ServiceSection />
-      <AboutSection />
+      {/* <AboutSection /> */}
       <ReviewsSection />
       <LocationSection />
       <div id="faq" className="flex justify-center bg-secondary">
