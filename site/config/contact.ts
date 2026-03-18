@@ -4,7 +4,7 @@ import { Metadata } from "next"
 export const contactMetaData: Metadata = {
   title: "Contact Us | Kamil Agency - Your Trusted Insurance Partner",
   description:
-    "Get in touch with Kamil Agency for personalized insurance solutions in Washington D.C, Maryland, Virginia, Pennsylvania, Delaware, Ohio, Indiana, West Virginia, and North Carolina. Visit our offices in College Park, Bethesda, and Fredericksburg.",
+    "Get in touch with Kamil Agency for personalized insurance solutions in Washington D.C, Maryland, Virginia, Pennsylvania, Delaware, Ohio, Indiana, West Virginia, and North Carolina. Visit our office at 2201 Wisconsin Avenue Northwest, Suite 200, Washington, DC 20007.",
   keywords: [
     "Kamil Agency",
     "Contact Kamil Insurance",
@@ -12,9 +12,9 @@ export const contactMetaData: Metadata = {
     "Kamil Insurance",
     "Insurance Solutions DC Metro",
     "Personalized Insurance Service",
-    "College Park Insurance",
-    "Bethesda Insurance",
-    "Fredericksburg Insurance",
+    "Washington DC Insurance",
+    "Wisconsin Avenue Insurance",
+    "Georgetown Insurance",
     "Insurance in Washington D.C",
     "Insurance in Maryland",
     "Insurance in Virginia",

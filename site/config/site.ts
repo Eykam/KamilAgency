@@ -14,7 +14,7 @@ export const siteConfig: SiteConfig = {
   medicareQuoteURL:
     "https://eosadvisor.com/user/signup?advId=ADS1718137118673475&n=true",
   ogImage: "/og.jpg",
-  contactNumber: "(301) 447-0444",
+  contactNumber: "(240) 400-7393",
   contactEmail: "mkamil@kamilagency.com",
   locations: locations,
 }

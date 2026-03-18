@@ -10,7 +10,7 @@ export const team: TeamMember[] = [
     title: "Agency Owner",
     avatar: "/images/people/mohamed.webp",
     pageUrl: "/about-us/team/mohamed-kamil",
-    contact: { phone: "(301) 447-0444", email: "mkamil@kamilagency.com" },
+    contact: { phone: "(240) 400-7393", email: "mkamil@kamilagency.com" },
     expertise: [
       "Home Insurance",
       "Commercial Insurance",
@@ -48,7 +48,7 @@ export const team: TeamMember[] = [
     title: "IT Manager",
     avatar: "/images/people/eyad.jpg",
     pageUrl: "/about-us/team/eyad-kamil",
-    contact: { phone: "(301) 447-0444", email: "ekamil@kamilagency.com" },
+    contact: { phone: "(240) 400-7393", email: "ekamil@kamilagency.com" },
     expertise: ["Web Development", "SEO", "Marketing", "System Administration"],
     metadata: {
       title: "Eyad Kamil | IT Manager | Kamil Agency",
@@ -80,7 +80,7 @@ export const team: TeamMember[] = [
     title: "Office Manager",
     avatar: "/images/people/amgad.jpg",
     pageUrl: "/about-us/team/amgad-kamil",
-    contact: { phone: "(301) 447-0444", email: "akamil@kamilagency.com" },
+    contact: { phone: "(240) 400-7393", email: "akamil@kamilagency.com" },
     expertise: [
       "Home Insurance",
       "Auto Insurance",
