@@ -8,9 +8,8 @@ export const team: TeamMember[] = [
     description:
       "Mohamed Kamil is an experienced insurance agent and agency owner passionate about helping clients protect their assets and achieve financial security. He specializes in home insurance, commercial insurance, Medicare, and life insurance, ensuring comprehensive coverage for all aspects of his clients' needs. Mohamed is dedicated to providing personalized solutions tailored to meet the unique requirements of each client.",
     title: "Agency Owner",
-    avatar: "/images/people/mohamed.webp",
     pageUrl: "/about-us/team/mohamed-kamil",
-    contact: { phone: "(301) 447-0444", email: "mkamil@kamilagency.com" },
+    contact: { phone: "(240) 400-7393", email: "info@kamilagency.com" },
     expertise: [
       "Home Insurance",
       "Commercial Insurance",
@@ -46,9 +45,8 @@ export const team: TeamMember[] = [
     description:
       "Eyad Kamil is a skilled IT Manager with a strong background in supporting insurance operations through technology. He specializes in web development, SEO, marketing, and system administration. Eyad ensures that the agency's technology infrastructure runs smoothly, enabling the team to provide top-notch service to clients. His technical expertise is crucial in maintaining the agency's competitive edge in the digital landscape.",
     title: "IT Manager",
-    avatar: "/images/people/eyad.jpg",
     pageUrl: "/about-us/team/eyad-kamil",
-    contact: { phone: "(301) 447-0444", email: "ekamil@kamilagency.com" },
+    contact: { phone: "(240) 400-7393", email: "ekamil@kamilagency.com" },
     expertise: ["Web Development", "SEO", "Marketing", "System Administration"],
     metadata: {
       title: "Eyad Kamil | IT Manager | Kamil Agency",
@@ -78,9 +76,8 @@ export const team: TeamMember[] = [
     description:
       "Amgad Kamil is a dedicated Office Manager committed to providing expert guidance and support to clients and staff alike. He specializes in home insurance, auto insurance, commercial insurance, landlord insurance, and renters insurance. Amgad ensures that clients receive comprehensive and personalized solutions, tailored to meet their unique needs.",
     title: "Office Manager",
-    avatar: "/images/people/amgad.jpg",
     pageUrl: "/about-us/team/amgad-kamil",
-    contact: { phone: "(301) 447-0444", email: "akamil@kamilagency.com" },
+    contact: { phone: "(240) 400-7393", email: "akamil@kamilagency.com" },
     expertise: [
       "Home Insurance",
       "Auto Insurance",

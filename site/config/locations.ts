@@ -15,35 +15,28 @@ export const defaultHoursShortened = {
   weekends: null,
 }
 
-const collegeParkAddress: Address = {
-  street: "5010 Branchville Rd # C",
-  city: "College Park",
-  state: "MD",
-  zip: "20740",
+const washingtonAddress: Address = {
+  street: "2201 Wisconsin Avenue Northwest, Suite 200",
+  city: "Washington",
+  state: "DC",
+  zip: "20007",
 }
 
-const bethesdaAddress: Address = {
-  street: "6900 Wisconsin Ave ste 450",
-  city: "Bethesda",
-  state: "MD",
-  zip: "20815",
-}
+const washingtonAddressQuery = encodeURIComponent(
+  `${washingtonAddress.street}, ${washingtonAddress.city}, ${washingtonAddress.state} ${washingtonAddress.zip}`
+)
 
-const fredericksburgAddress: Address = {
-  street: "1976 William St ste 7",
-  city: "Fredericksburg",
-  state: "VA",
-  zip: "22401",
-}
+export const washingtonGoogleMapsURL = `https://www.google.com/maps/search/?api=1&query=${washingtonAddressQuery}`
+export const washingtonGoogleMapsEmbedURL = `https://maps.google.com/maps?hl=en&q=${washingtonAddressQuery}&t=&z=15&ie=UTF8&iwloc=B&output=embed`
 
-const collegeParkLocation: Location = {
+const washingtonLocation: Location = {
   name: "Main Office",
   description: "",
-  number: "(804) 270-7850",
-  googleMapsURL: "https://maps.app.goo.gl/LpgcXg2o7WFD39JR6",
+  number: "(240) 400-7393",
+  googleMapsURL: washingtonGoogleMapsURL,
   hours: defaultHours,
   hoursShortened: defaultHoursShortened,
-  address: collegeParkAddress,
+  address: washingtonAddress,
   getAddress: function () {
     const address = this.address as Address
     const lineOne = address.street
@@ -52,40 +45,4 @@ const collegeParkLocation: Location = {
   },
 }
 
-const bethesdaLocation: Location = {
-  name: "Bethesda, MD -  Office",
-  description: "",
-  number: "",
-  googleMapsURL: "https://maps.app.goo.gl/LpgcXg2o7WFD39JR6",
-  hours: defaultHours,
-  hoursShortened: defaultHoursShortened,
-  address: bethesdaAddress,
-  getAddress: function () {
-    const address = this.address as Address
-    const lineOne = address.street
-    const lineTwo = `${address.city}, ${address.state} ${address.zip}`
-    return { lineOne, lineTwo }
-  },
-}
-
-const fredericksburgLocation: Location = {
-  name: "Fredericksburg, VA - Office",
-  description: "",
-  number: "(804) 270-7850",
-  googleMapsURL: "https://www.google.com/maps?cid=16873776127636074055",
-  hours: defaultHours,
-  hoursShortened: defaultHoursShortened,
-  address: fredericksburgAddress,
-  getAddress: function () {
-    const address = this.address as Address
-    const lineOne = address.street
-    const lineTwo = `${address.city}, ${address.state} ${address.zip}`
-    return { lineOne, lineTwo }
-  },
-}
-
-export const locations: Location[] = [
-  collegeParkLocation,
-  bethesdaLocation,
-  fredericksburgLocation,
-]
+export const locations: Location[] = [washingtonLocation]

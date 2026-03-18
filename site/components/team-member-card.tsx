@@ -24,8 +24,10 @@ export default function TeamMemberCard({
         )}
       >
         <Avatar className="size-[180px]">
-          <Image src={avatar} alt="John Doe" objectFit="cover" fill />
-          <AvatarFallback></AvatarFallback>
+          {avatar ? (
+            <Image src={avatar} alt={`${name} avatar`} objectFit="cover" fill />
+          ) : null}
+          <AvatarFallback>{getInitials(name)}</AvatarFallback>
         </Avatar>
 
         <div className="space-y-2 text-center">
@@ -42,4 +44,13 @@ export default function TeamMemberCard({
       </div>
     </Link>
   )
+}
+
+function getInitials(name: string) {
+  return name
+    .split(" ")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0]?.toUpperCase())
+    .join("")
 }

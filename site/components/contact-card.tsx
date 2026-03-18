@@ -18,9 +18,10 @@ export default function ContactCard({
       <CardContent className="flex items-center gap-4 p-4 sm:p-6">
         <Link href={pageUrl}>
           <Avatar className="size-20">
-            <Image src={avatar} alt={name + "-avatar"} objectFit="cover" fill />
-
-            <AvatarFallback></AvatarFallback>
+            {avatar ? (
+              <Image src={avatar} alt={name + "-avatar"} objectFit="cover" fill />
+            ) : null}
+            <AvatarFallback>{getInitials(name)}</AvatarFallback>
           </Avatar>
         </Link>
         <div className="space-y-1">
@@ -46,6 +47,15 @@ export default function ContactCard({
       </CardContent>
     </Card>
   )
+}
+
+function getInitials(name: string) {
+  return name
+    .split(" ")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0]?.toUpperCase())
+    .join("")
 }
 
 function MailOpenIcon(props) {

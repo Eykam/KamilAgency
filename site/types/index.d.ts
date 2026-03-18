@@ -147,7 +147,7 @@ export type TeamMember = {
   descriptionShort: string
   description: string
   title: string
-  avatar: string
+  avatar?: string
   pageUrl: string
   contact: { phone: string; email: string }
   expertise: string[]
