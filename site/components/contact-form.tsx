@@ -5,11 +5,19 @@ import { Button } from "@/components/ui/button"
 
 export default function ContactForm() {
   return (
-    <div className="flex max-w-3xl flex-col items-center justify-center space-y-6 rounded-xl bg-background py-12 text-start font-semibold">
-      <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-        Get in Touch
-      </h2>
-      <form className="w-4/5 space-y-4">
+    <div className="flex h-full flex-col justify-center space-y-6 rounded-2xl border border-primary/15 bg-background px-6 py-8 text-start shadow-sm md:px-8 md:py-10">
+      <div className="space-y-2">
+        <p className="text-sm font-semibold uppercase tracking-wide text-primary/60">
+          Send a Message
+        </p>
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+          Get in Touch
+        </h2>
+        <p className="text-base leading-7 text-gray-600 dark:text-gray-300">
+          Tell us what you need and our office will follow up as soon as possible.
+        </p>
+      </div>
+      <form className="space-y-4">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div className="space-y-2">
             <Label htmlFor="name">Name</Label>

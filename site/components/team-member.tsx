@@ -26,13 +26,19 @@ export default function TeamMemberPage({
       <section className="flex min-h-[85svh] items-center space-y-6 p-4 py-16 lg:min-h-screen">
         <div className="container grid gap-8 px-4 md:grid-cols-2 md:gap-12 lg:gap-16">
           <div className="flex flex-col items-center justify-center space-y-4">
-            <Image
-              src={avatar}
-              width="400"
-              height="400"
-              alt="Team Member"
-              className="aspect-square w-full max-w-[300px] overflow-hidden rounded-[50%] object-cover"
-            />
+            {avatar ? (
+              <Image
+                src={avatar}
+                width="400"
+                height="400"
+                alt={`${name} avatar`}
+                className="aspect-square w-full max-w-[300px] overflow-hidden rounded-[50%] object-cover"
+              />
+            ) : (
+              <div className="flex aspect-square w-full max-w-[300px] items-center justify-center rounded-[50%] bg-secondary text-6xl font-semibold text-primary">
+                {getInitials(name)}
+              </div>
+            )}
 
             <div className="space-y-1 text-center">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -94,6 +100,15 @@ export default function TeamMemberPage({
       <TeamMemberCarousel className="bg-secondary" bgSecondary />
     </div>
   )
+}
+
+function getInitials(name: string) {
+  return name
+    .split(" ")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0]?.toUpperCase())
+    .join("")
 }
 
 function CheckIcon(props) {
