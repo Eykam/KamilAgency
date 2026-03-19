@@ -8,7 +8,7 @@ export const team: TeamMember[] = [
     description:
       "Mohamed Kamil is an experienced insurance agent and agency owner passionate about helping clients protect their assets and achieve financial security. He specializes in home insurance, commercial insurance, Medicare, and life insurance, ensuring comprehensive coverage for all aspects of his clients' needs. Mohamed is dedicated to providing personalized solutions tailored to meet the unique requirements of each client.",
     title: "Agency Owner",
-    pageUrl: "/about-us/team/mohamed-kamil",
+    pageUrl: "/about-us",
     contact: { phone: "(240) 400-7393", email: "info@kamilagency.com" },
     expertise: [
       "Home Insurance",
@@ -45,7 +45,7 @@ export const team: TeamMember[] = [
     description:
       "Eyad Kamil is a skilled IT Manager with a strong background in supporting insurance operations through technology. He specializes in web development, SEO, marketing, and system administration. Eyad ensures that the agency's technology infrastructure runs smoothly, enabling the team to provide top-notch service to clients. His technical expertise is crucial in maintaining the agency's competitive edge in the digital landscape.",
     title: "IT Manager",
-    pageUrl: "/about-us/team/eyad-kamil",
+    pageUrl: "/about-us",
     contact: { phone: "(240) 400-7393", email: "ekamil@kamilagency.com" },
     expertise: ["Web Development", "SEO", "Marketing", "System Administration"],
     metadata: {
@@ -76,7 +76,7 @@ export const team: TeamMember[] = [
     description:
       "Amgad Kamil is a dedicated Office Manager committed to providing expert guidance and support to clients and staff alike. He specializes in home insurance, auto insurance, commercial insurance, landlord insurance, and renters insurance. Amgad ensures that clients receive comprehensive and personalized solutions, tailored to meet their unique needs.",
     title: "Office Manager",
-    pageUrl: "/about-us/team/amgad-kamil",
+    pageUrl: "/about-us",
     contact: { phone: "(240) 400-7393", email: "akamil@kamilagency.com" },
     expertise: [
       "Home Insurance",

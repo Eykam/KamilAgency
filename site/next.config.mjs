@@ -18,6 +18,21 @@ const nextConfig = {
         destination: "/",
         permanent: true,
       },
+      {
+        source: "/about-us/team/mohamed-kamil",
+        destination: "/about-us",
+        permanent: true,
+      },
+      {
+        source: "/about-us/team/eyad-kamil",
+        destination: "/about-us",
+        permanent: true,
+      },
+      {
+        source: "/about-us/team/amgad-kamil",
+        destination: "/about-us",
+        permanent: true,
+      },
     ]
   },
 }

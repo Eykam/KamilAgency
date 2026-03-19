@@ -47,7 +47,7 @@ export default function AboutSection() {
               <br />
               <br />
             </p>
-            <Link href="/about-us/team/mohamed-kamil" className="w-fit">
+            <Link href="/about-us" className="w-fit">
               <Button>Read More</Button>
             </Link>
           </div>
