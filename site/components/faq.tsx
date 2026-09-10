@@ -1,12 +1,13 @@
+import { PropsWithChildren } from "react"
+import { FAQ } from "@/types"
+
+import { cn } from "@/lib/utils"
 import {
   Accordion,
+  AccordionContent,
   AccordionItem,
   AccordionTrigger,
-  AccordionContent,
 } from "@/components/ui/accordion"
-import { cn } from "@/lib/utils"
-import { FAQ } from "@/types"
-import { PropsWithChildren } from "react"
 
 type FaqProps = PropsWithChildren & {
   name: string
@@ -56,6 +57,7 @@ export default function FaqSection({ name, FAQs, accent }: FaqProps) {
           <Accordion type="single" collapsible className="space-y-4 text-start">
             {FAQs.map((item, ind) => (
               <FaqItem
+                key={item.question}
                 item={item}
                 ind={ind}
                 className={

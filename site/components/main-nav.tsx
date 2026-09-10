@@ -21,7 +21,7 @@ export function MainNav({ items, children }: MainNavProps) {
 
   return (
     <div className="flex gap-6 md:gap-10 lg:justify-between">
-      <Link href="/">
+      <Link href="/" aria-label="Kamil Agency home">
         <span className="hidden items-center text-2xl md:flex">
           <Icons.logo />
           <span className="hidden font-bold sm:inline-block">

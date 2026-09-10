@@ -1,13 +1,13 @@
 import Link from "next/link"
 
 import { marketingConfig } from "@/config/marketing"
+import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
-import { MainNav } from "@/components/main-nav"
-import { SiteFooter } from "@/components/site-footer"
-import { ModeToggle } from "@/components/mode-toggle"
-import { siteConfig } from "@/config/site"
 import { Icons } from "@/components/icons"
+import { MainNav } from "@/components/main-nav"
+import { ModeToggle } from "@/components/mode-toggle"
+import { SiteFooter } from "@/components/site-footer"
 
 interface MarketingLayoutProps {
   children: React.ReactNode
@@ -30,6 +30,7 @@ export default async function MarketingLayout({
                 "lg:hidden"
               )}
               href={`tel:${siteConfig.contactNumber}`}
+              aria-label={`Call Kamil Agency at ${siteConfig.contactNumber}`}
             >
               <Icons.phone />
             </Link>
@@ -46,7 +47,7 @@ export default async function MarketingLayout({
               href={"/customers"}
               className={cn(
                 buttonVariants({ variant: "secondary", size: "sm" }),
-                "lg:px-4"
+                "hidden sm:inline-flex lg:px-4"
               )}
             >
               Customer Portal

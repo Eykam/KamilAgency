@@ -1,12 +1,15 @@
-import { About } from "@/types"
-import { team } from "./team"
-import { Icons } from "@/components/icons"
 import { Metadata } from "next"
+import { About } from "@/types"
+
+import { Icons } from "@/components/icons"
+
+import { team } from "./team"
 
 export const aboutMetaData: Metadata = {
-  title: "About Us | Your Reliable DC Metro Insurance Partner",
+  title: "About Our Insurance Agency",
   description:
     "Discover how our dedicated team provides tailored coverage and personalized service to protect what matters most in the DC Metro area.",
+  alternates: { canonical: "/about-us" },
   keywords: [
     "Trusted Insurance Solutions",
     "Insurance Agency DC Metro",
@@ -31,7 +34,7 @@ export const about: About = {
     title: "Trusted Insurance Solutions",
     descriptionShort:
       "At Kamil Agency, we're dedicated to providing tailored coverage and personalized service to protect what matters most.",
-    teamURL: "#team",
+    teamURL: "/services",
     contactURL: "/contact-us",
     imageURL: "/images/about/about-hero.webp",
   },

@@ -1,8 +1,10 @@
-import { cn } from "@/lib/utils"
-import SocialsIconList from "./socials-list"
-import { Icons } from "./icons"
-import { siteConfig } from "@/config/site"
 import Link from "next/link"
+
+import { siteConfig } from "@/config/site"
+import { cn } from "@/lib/utils"
+
+import { Icons } from "./icons"
+import SocialsIconList from "./socials-list"
 
 /* <footer className="w-full bg-gray-100 p-6 dark:bg-gray-800 md:py-12">
         <div className="container grid max-w-7xl grid-cols-2 gap-8 text-sm sm:grid-cols-3 md:grid-cols-5">
@@ -132,6 +134,7 @@ export function SiteFooter({
             <div className="flex flex-col items-center justify-center space-y-6 text-sm text-primary/70 lg:h-4/5">
               {siteConfig.locations.map((location) => (
                 <Link
+                  key={location.googleMapsURL}
                   href={location.googleMapsURL}
                   className="flex flex-col hover:text-primary "
                   target="_blank"
@@ -149,7 +152,7 @@ export function SiteFooter({
         </div>
 
         <div className="mt-4 flex w-full items-center justify-between self-start text-sm leading-loose text-primary/60">
-          <p>© 2019 Kamil Agency</p>
+          <p>© {new Date().getFullYear()} Kamil Agency</p>
           <div className="space-x-4">
             <Link href="/policy/privacy" className="hover:text-primary">
               Privacy Policy

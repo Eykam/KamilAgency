@@ -1,14 +1,15 @@
+import { Metadata } from "next"
 import Link from "next/link"
 import { ServiceCategory } from "@/types"
-import { Metadata } from "next"
+
 import { ServiceCategories } from "@/config/serviceCategories"
 
 export function generateMetadata(): Metadata {
   return {
-    title:
-      "Get an Insurance Quote | Kamil Agency - Find the Best Policy for Your Needs",
+    title: "Get an Insurance Quote",
     description:
-      "Select the insurance category that suits you best and get quick, accurate quotes. Our comparative rater will find the best policy by comparing multiple insurers. Need help? Check out our FAQs.",
+      "Choose personal, commercial, or Medicare coverage and start a secure insurance quote with Kamil Agency.",
+    alternates: { canonical: "/quote" },
     keywords: [
       "Kamil Agency",
       "Insurance Quote",
@@ -58,9 +59,9 @@ export default function QuotePage() {
       <div className="container px-8 lg:max-w-5xl">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-4">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Get A Quote
-            </h2>
+            </h1>
             <p className="max-w-[800px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Select the category that suits you best. Our comparative rater
               will find you the best policy by comparing multiple insurers.
@@ -78,7 +79,7 @@ export default function QuotePage() {
 
         <div className="grid grid-cols-1 gap-6 py-12 md:grid-cols-3">
           {ServiceCategories.map((category) => (
-            <QuoteCard {...category} />
+            <QuoteCard key={category.name} {...category} />
           ))}
         </div>
       </div>

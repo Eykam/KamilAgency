@@ -44,7 +44,7 @@ export const reviews: Review[] = [
     avatar:
       "https://lh3.googleusercontent.com/a/ACg8ocIdpD_t9yfXjsGKEGn9GJvd6sCssvBaLQ07gxLZW-GdLEUpAA=w60-h60-p-rp-mo-br100",
     timestamp: "June 02, 2020",
-    url: "https://g.co/kgs/CHBfx9f",
+    url: "",
   },
   {
     stars: 5,
