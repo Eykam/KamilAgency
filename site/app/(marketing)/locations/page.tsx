@@ -1,9 +1,12 @@
 import { Metadata } from "next"
 
-export function generateMetadata(): Metadata {
-  return {}
+export const metadata: Metadata = {
+  title: "Insurance Agency Locations",
+  description:
+    "Kamil Agency location information is available on our contact page.",
+  robots: { index: false, follow: true },
 }
 
 export default function LocationsPage() {
-  return <div> Locations </div>
+  return <h1>Insurance Agency Locations</h1>
 }

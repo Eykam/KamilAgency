@@ -8,6 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { JsonLd } from "@/components/json-ld"
 
 type FaqProps = PropsWithChildren & {
   name: string
@@ -42,8 +43,22 @@ function FaqItem({
 }
 
 export default function FaqSection({ name, FAQs, accent }: FaqProps) {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: FAQs.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  }
+
   return (
     <section className="w-[90vw] py-12 md:py-24 lg:py-32">
+      <JsonLd data={faqJsonLd} />
       <div className="container px-4 md:px-6">
         <div className="mx-auto max-w-3xl space-y-6">
           <div className="text-center">

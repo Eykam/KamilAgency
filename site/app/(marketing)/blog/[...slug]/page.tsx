@@ -49,6 +49,8 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.description,
+    alternates: { canonical: post.slug },
+    robots: { index: false, follow: true },
     authors: post.authors.map((author) => ({
       name: author,
     })),

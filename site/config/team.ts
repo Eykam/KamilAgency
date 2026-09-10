@@ -17,7 +17,7 @@ export const team: TeamMember[] = [
       "Life Insurance",
     ],
     metadata: {
-      title: "Mohamed Kamil | Agency Owner | Kamil Agency",
+      title: "Mohamed Kamil | Agency Owner",
       description:
         "Meet Mohamed Kamil, the dedicated agency owner of Kamil Agency with expertise in home, commercial, Medicare, and life insurance. Serving clients in Washington D.C, Maryland, Virginia, and beyond, Mohamed is passionate about helping clients protect their assets and achieve financial security through personalized insurance solutions.",
       keywords: [
@@ -36,6 +36,7 @@ export const team: TeamMember[] = [
         "Virginia",
         "Insurance Solutions",
       ],
+      alternates: { canonical: "/about-us/team/mohamed-kamil" },
     },
   },
   {
@@ -49,7 +50,7 @@ export const team: TeamMember[] = [
     contact: { phone: "(240) 400-7393", email: "ekamil@kamilagency.com" },
     expertise: ["Web Development", "SEO", "Marketing", "System Administration"],
     metadata: {
-      title: "Eyad Kamil | IT Manager | Kamil Agency",
+      title: "Eyad Kamil | IT Manager",
       description:
         "Meet Eyad Kamil, the IT Manager at Kamil Agency with expertise in web development, SEO, marketing, and system administration. Serving clients in Washington D.C, Maryland, Virginia, and beyond, Eyad supports insurance operations through technology, ensuring the agency's infrastructure runs smoothly and effectively.",
       keywords: [
@@ -67,6 +68,7 @@ export const team: TeamMember[] = [
         "Maryland",
         "Virginia",
       ],
+      alternates: { canonical: "/about-us/team/eyad-kamil" },
     },
   },
   {
@@ -86,7 +88,7 @@ export const team: TeamMember[] = [
       "Renters Insurance",
     ],
     metadata: {
-      title: "Amgad Kamil | Office Manager | Kamil Agency",
+      title: "Amgad Kamil | Office Manager",
       description:
         "Meet Amgad Kamil, the Office Manager at Kamil Agency with expertise in home, auto, commercial, landlord, and renters insurance. Serving clients in Washington D.C, Maryland, Virginia, and beyond, Amgad is committed to providing expert guidance and personalized solutions to clients, ensuring comprehensive coverage for their needs.",
       keywords: [
@@ -104,6 +106,7 @@ export const team: TeamMember[] = [
         "Maryland",
         "Virginia",
       ],
+      alternates: { canonical: "/about-us/team/amgad-kamil" },
     },
   },
 ]

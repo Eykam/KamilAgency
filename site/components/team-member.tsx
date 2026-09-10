@@ -1,6 +1,9 @@
 import Image from "next/image"
-import TeamMemberCarousel from "./team-member-carousel"
 import { TeamMember } from "@/types"
+
+import { JsonLd } from "@/components/json-ld"
+
+import TeamMemberCarousel from "./team-member-carousel"
 
 type TeamMemberPageProps = React.HTMLAttributes<HTMLDivElement> & TeamMember
 
@@ -20,9 +23,27 @@ export default function TeamMemberPage({
   expertise,
   contact,
   avatar,
+  pageUrl,
 }: TeamMemberPageProps) {
+  const personJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name,
+    jobTitle: title,
+    description,
+    url: `https://www.kamilagency.com${pageUrl}`,
+    image: avatar ? `https://www.kamilagency.com${avatar}` : undefined,
+    email: contact.email,
+    telephone: contact.phone,
+    worksFor: {
+      "@id": "https://www.kamilagency.com/#agency",
+    },
+    knowsAbout: expertise,
+  }
+
   return (
     <div className="flex w-full flex-col ">
+      <JsonLd data={personJsonLd} />
       <section className="flex min-h-[85svh] items-center space-y-6 p-4 py-16 lg:min-h-screen">
         <div className="container grid gap-8 px-4 md:grid-cols-2 md:gap-12 lg:gap-16">
           <div className="flex flex-col items-center justify-center space-y-4">

@@ -49,8 +49,23 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/privacy",
+        destination: "/policy/privacy",
+        permanent: true,
+      },
+      {
+        source: "/terms",
+        destination: "/policy/terms",
+        permanent: true,
+      },
+      {
+        source: "/locations",
+        destination: "/contact-us#hours-and-locations",
+        permanent: true,
+      },
+      {
         source: "/team/mohamed-kamil",
-        destination: "/",
+        destination: "/about-us/team/mohamed-kamil",
         permanent: true,
       },
     ]
