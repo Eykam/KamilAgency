@@ -1,52 +1,50 @@
-"use client"
+import type { Metadata } from "next"
+import Link from "next/link"
 
-// async function QuoteEmbed() {
-//   const res = await fetch(
-//     "https://www.agentinsure.com/compare/auto-insurance-home-insurance/mohame/quote.aspx"
-//   )
-//   const data = await res.text()
-//   console.log(data)
+import { cn } from "@/lib/utils"
+import { buttonVariants } from "@/components/ui/button"
 
-//   return <div dangerouslySetInnerHTML={{ __html: data }}></div>
-// }
+const quoteUrl =
+  "https://www.agentinsure.com/compare/auto-insurance-home-insurance/mohame/quote.aspx"
 
-import { useEffect, useState } from "react"
-
-function QuoteEmbed() {
-  const [isClient, setIsClient] = useState(false)
-  const [iframeHeight, setIframeHeight] = useState(0)
-
-  useEffect(() => {
-    const calculateHeight = () => {
-      const viewportHeight = window.innerHeight
-      // Subtract estimated footer height
-      setIframeHeight(Math.floor(viewportHeight))
-    }
-
-    setIsClient(true)
-    calculateHeight()
-    window.addEventListener("resize", calculateHeight)
-
-    return () => window.removeEventListener("resize", calculateHeight)
-  }, [])
-
-  if (!isClient) return null
-
-  return (
-    <iframe
-      src="https://www.agentinsure.com/compare/auto-insurance-home-insurance/mohame/quote.aspx"
-      name="Secure Live Insurance Quoting"
-      height={`${iframeHeight}px`}
-      width="100%"
-      className="overflow-hidden border-none bg-primary text-primary"
-    >
-      Your browser is unable to display frames. Please{" "}
-      <a href="https://www.agentinsure.com/compare/auto-insurance-home-insurance/mohame/quote.aspx">
-        click here
-      </a>{" "}
-      to visit the secure live insurance quoting page.
-    </iframe>
-  )
+export const metadata: Metadata = {
+  title: "Personal Insurance Quote",
+  description:
+    "Start a secure personal insurance quote for home, auto, renters, and other personal coverage with Kamil Agency.",
+  alternates: { canonical: "/quote/personal" },
 }
 
-export default QuoteEmbed
+export default function PersonalQuotePage() {
+  return (
+    <main className="container flex min-h-[65vh] items-center justify-center px-4 py-16">
+      <section className="w-full max-w-2xl space-y-6 rounded-2xl border border-primary/15 p-8 text-center shadow-sm md:p-12">
+        <p className="text-sm font-semibold uppercase tracking-wide text-primary/60">
+          Personal Lines
+        </p>
+        <h1 className="text-4xl font-bold tracking-tight">
+          Start Your Personal Insurance Quote
+        </h1>
+        <p className="text-lg leading-8 text-muted-foreground">
+          The secure quote form opens in a separate window. Confirm that you are
+          working with Kamil Agency before entering personal information.
+        </p>
+        <div className="flex flex-col justify-center gap-3 sm:flex-row">
+          <a
+            href={quoteUrl}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className={cn(buttonVariants({ size: "lg" }))}
+          >
+            Open Secure Quote Form
+          </a>
+          <Link
+            href="/contact-us"
+            className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
+          >
+            Ask for Help
+          </Link>
+        </div>
+      </section>
+    </main>
+  )
+}

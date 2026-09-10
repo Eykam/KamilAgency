@@ -1,27 +1,18 @@
-import ServicePage from "@/components/service-page"
-import { services } from "@/config/services"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 
-interface PageProps {
-  params: {
-    slug: string[]
-  }
-}
+import { services } from "@/config/services"
+import ServicePage from "@/components/service-page"
 
-export async function generateMetadata({
-  params,
-}: PageProps): Promise<Metadata> {
-  return {
-    title:
-      "Life Insurance in D.C., Maryland, and Virginia | Secure Your Loved Ones",
-    description:
-      "Find the best life insurance policies in D.C., Maryland, and Virginia. Get affordable coverage to protect your loved ones and ensure their financial security.",
-    keywords:
-      "life insurance, D.C. life insurance, Maryland life insurance, Virginia life insurance, family protection, financial security, affordable life insurance",
-  }
+export const metadata: Metadata = {
+  title: "Medicare Insurance",
+  description:
+    "Understand Medicare Parts A, B, C, and D and get guidance choosing coverage in Washington, DC, Maryland, and Virginia.",
+  keywords:
+    "Medicare insurance, Medicare guidance, Medicare Parts A B C D, Washington DC Medicare, Maryland Medicare, Virginia Medicare",
+  alternates: { canonical: "/services/medicare" },
 }
-export default function LifeInsurance() {
+export default function MedicareInsurance() {
   const service = services.find((service) => service.name === "Medicare")
   return service ? <ServicePage {...service} /> : notFound()
 }

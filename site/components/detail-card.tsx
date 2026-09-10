@@ -1,6 +1,7 @@
-import { CardProps, PolicyDetails } from "@/types"
-import { Icons } from "./icons"
 import { HTMLAttributes } from "react"
+import { CardProps, PolicyDetails } from "@/types"
+
+import { Icons } from "./icons"
 
 type DetailCard = HTMLAttributes<HTMLDivElement> & PolicyDetails
 
@@ -14,7 +15,7 @@ export default function DetailCard({
       <h3 className="text-xl font-bold">{title}</h3>
       <ul className="mt-4 space-y-2 border-b-2 pb-4 text-sm">
         {details?.map((detail) => (
-          <li>
+          <li key={detail}>
             <Icons.check className="mr-2 inline-block size-4 text-green-500" />
             {detail}
           </li>

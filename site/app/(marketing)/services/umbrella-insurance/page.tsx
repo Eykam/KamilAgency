@@ -1,25 +1,16 @@
-import ServicePage from "@/components/service-page"
-import { services } from "@/config/services"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 
-interface PageProps {
-  params: {
-    slug: string[]
-  }
-}
+import { services } from "@/config/services"
+import ServicePage from "@/components/service-page"
 
-export async function generateMetadata({
-  params,
-}: PageProps): Promise<Metadata> {
-  return {
-    title:
-      "Umbrella Insurance in D.C., Maryland, and Virginia | Extra Liability Protection",
-    description:
-      "Get additional liability protection with umbrella insurance in D.C., Maryland, and Virginia. Secure your assets with comprehensive coverage.",
-    keywords:
-      "umbrella insurance, extra liability insurance, D.C. umbrella insurance, Maryland umbrella insurance, Virginia umbrella insurance, additional coverage, asset protection",
-  }
+export const metadata: Metadata = {
+  title: "Umbrella Insurance",
+  description:
+    "Get additional liability protection with umbrella insurance in D.C., Maryland, and Virginia. Secure your assets with comprehensive coverage.",
+  keywords:
+    "umbrella insurance, extra liability insurance, D.C. umbrella insurance, Maryland umbrella insurance, Virginia umbrella insurance, additional coverage, asset protection",
+  alternates: { canonical: "/services/umbrella-insurance" },
 }
 export default function UmbrellaInsurance() {
   const service = services.find((service) => service.name === "Umbrella")

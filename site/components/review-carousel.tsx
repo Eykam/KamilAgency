@@ -1,21 +1,22 @@
-import { Button } from "@/components/ui/button"
+import { PropsWithChildren } from "react"
+import Image from "next/image"
+import Link from "next/link"
+import { Review } from "@/types"
+
+import { Avatar } from "@/components/ui/avatar"
+import { buttonVariants } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselPrevious,
   CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel"
-import { Card } from "@/components/ui/card"
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
-import { Review } from "@/types"
-import Image from "next/image"
-import { PropsWithChildren } from "react"
-import Link from "next/link"
 
 const TOTAL_STARS = 5
 const REVIEW_LINK =
-  "https://www.google.com/search?q=mohamed+kamil&rlz=1C1VDKB_enUS1072US1072&oq=mohamed+&gs_lcrp=EgZjaHJvbWUqDggAEEUYJxg7GIAEGIoFMg4IABBFGCcYOxiABBiKBTIGCAEQRRg7MgYIAhBFGDsyDAgDEC4YFBiHAhiABDIMCAQQLhgUGIcCGIAEMgYIBRBFGDwyBggGEEUYPDIGCAcQRRg8qAIAsAIA&sourceid=chrome&ie=UTF-8#lrd=0x89b7e9afbf6c6319:0x314752c56f0392aa,3,,,,"
+  "https://www.google.com/maps/search/?api=1&query=Kamil%20Agency%202201%20Wisconsin%20Avenue%20NW%20Washington%20DC%2020007"
 
 type ReviewCardProps = PropsWithChildren & { review: Review }
 
@@ -28,6 +29,7 @@ function ReviewCard(props: ReviewCardProps) {
     for (let x = 0; x < TOTAL_STARS; x++) {
       starArr.push(
         <StarIcon
+          key={x}
           className={
             x <= review.stars - 1
               ? "size-5 fill-primary"
@@ -55,9 +57,17 @@ function ReviewCard(props: ReviewCardProps) {
             />
           </Avatar>
           <div>
-            <Link href={review.url}>
+            {review.url ? (
+              <Link
+                href={review.url}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+              >
+                <div className="font-medium">{review.name}</div>
+              </Link>
+            ) : (
               <div className="font-medium">{review.name}</div>
-            </Link>
+            )}
           </div>
         </div>
         <div className="space-y-2">
@@ -88,14 +98,22 @@ export default function ReviewCarousel({ reviews }: { reviews: Review[] }) {
             </p>
           </div>
 
-          <Link href={REVIEW_LINK} target="_blank" rel="nofollow">
-            <Button size="lg">Leave a Review</Button>
+          <Link
+            href={REVIEW_LINK}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className={buttonVariants({ size: "lg" })}
+          >
+            Leave a Review
           </Link>
         </div>
-        <Carousel className="w-full max-w-2xl lg:max-w-none">
+        <Carousel
+          opts={{ align: "start", loop: true }}
+          className="w-full max-w-2xl lg:max-w-none"
+        >
           <CarouselContent>
             {reviews.map((review) => (
-              <ReviewCard review={review} />
+              <ReviewCard key={review.name} review={review} />
             ))}
           </CarouselContent>
 

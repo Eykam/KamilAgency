@@ -1,22 +1,25 @@
+import { Metadata } from "next"
 import { Service } from "@/types"
+
 import { Icons } from "@/components/icons"
+
+import { AutoPolicyDetails, autoFAQ } from "./services/auto"
+import { CommercialPolicyDetails, commercialFAQ } from "./services/commercial"
+import { HomeownersPolicyDetails, homeownersFAQ } from "./services/homeowners"
+import { LandlordPolicyDetails, landlordFAQ } from "./services/landlord"
+import { LifePolicyDetails, lifeFAQ } from "./services/life"
+import { MedicarePolicyDetails, medicareFAQ } from "./services/medicare"
+import { RentersPolicyDetails, rentersFAQ } from "./services/renters"
+import { UmbrellaPolicyDetails, umbrellaFAQ } from "./services/umbrella"
 import { siteConfig } from "./site"
 
-import { homeownersFAQ, HomeownersPolicyDetails } from "./services/homeowners"
-import { autoFAQ, AutoPolicyDetails } from "./services/auto"
-import { commercialFAQ, CommercialPolicyDetails } from "./services/commercial"
-import { lifeFAQ, LifePolicyDetails } from "./services/life"
-import { rentersFAQ, RentersPolicyDetails } from "./services/renters"
-import { landlordFAQ, LandlordPolicyDetails } from "./services/landlord"
-import { umbrellaFAQ, UmbrellaPolicyDetails } from "./services/umbrella"
-import { medicareFAQ, MedicarePolicyDetails } from "./services/medicare"
-import { Metadata } from "next"
 // import { homeownersFAQ, HomeownersPolicyDetails } from "./services/health"
 
 export const servicesMetaData: Metadata = {
-  title: "Our Services | Kamil Agency - Comprehensive Insurance Solutions",
+  title: "Insurance Services",
   description:
-    "Explore the wide range of insurance services offered by Kamil Agency. We provide tailored solutions for homeowners, auto, commercial, renters, landlord, medicare, umbrella, and life insurance across Washington D.C, Maryland, Virginia, Pennsylvania, Delaware, Ohio, Indiana, West Virginia, and North Carolina.",
+    "Explore personalized home, auto, commercial, renters, landlord, Medicare, umbrella, and life insurance solutions from Kamil Agency.",
+  alternates: { canonical: "/services" },
   keywords: [
     "Kamil Agency",
     "Kamil Insurance",

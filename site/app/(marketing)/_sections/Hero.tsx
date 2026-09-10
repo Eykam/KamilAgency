@@ -1,10 +1,11 @@
+import { Suspense } from "react"
+import Link from "next/link"
+
+import { siteConfig } from "@/config/site"
+import { cn } from "@/lib/utils"
 import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation"
 import { buttonVariants } from "@/components/ui/button"
 import { FlipWords } from "@/components/ui/flip-words"
-import { siteConfig } from "@/config/site"
-import { cn } from "@/lib/utils"
-import Link from "next/link"
-import { Suspense } from "react"
 
 export default function HeroSection() {
   const locations = [
@@ -23,13 +24,13 @@ export default function HeroSection() {
     <section className="flex h-[90svh] items-center space-y-6 lg:h-screen">
       <BackgroundGradientAnimation className="flex h-full items-center">
         <div className="container pointer-events-none relative z-50 flex max-w-[64rem] flex-col items-center gap-4 text-center">
-          <div className=" relative text-nowrap font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="relative text-nowrap font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
             Your Insurance Experts In
             <br />
             <Suspense>
               <FlipWords words={locations} />
             </Suspense>
-          </div>
+          </h1>
 
           <p className="max-w-[42rem] leading-normal sm:text-xl sm:leading-8">
             Our expert team is dedicated to providing personalized service,

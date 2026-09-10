@@ -1,13 +1,13 @@
-import { SiteConfig, Hours } from "@/types"
-import { env } from "@/env.mjs"
+import { Hours, SiteConfig } from "@/types"
+
 import { locations } from "./locations"
 
 export const siteConfig: SiteConfig = {
-  name: "KIA",
+  name: "Kamil Agency",
   expandedName: "",
   description:
-    "Mohamed Kamil - Top-rated insurance agency offering comprehensive coverage in D.C., Maryland, and Virginia. Get affordable quotes for home, auto, commercial, renters, landlord, life, general liability, and umbrella insurance. Secure your future with the best policies tailored to your needs.",
-  url: env.NEXT_PUBLIC_APP_URL as string,
+    "Independent insurance guidance for individuals, families, and businesses in Washington, DC and the surrounding region.",
+  url: "https://www.kamilagency.com",
   quoteURL:
     "https://adb4.superioraccess.com/Platform.aspx?j=JyWP37Ak5A5VzpUOJ6EqMw%3d%3d&t=Ts2us1y3JpYfWhn3OZt9HYSD4gEC%2fk1r5rhXtiIO1A8cMiXa8oAp%2bPv2GzROr%2fa6zLwouEgCgwC8EXRpmCFaJQ%3d%3d",
   commercialQuoteURL: "https://app.boldpenguin.com/start/mohamedkamil",

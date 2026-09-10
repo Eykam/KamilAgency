@@ -1,25 +1,16 @@
-import ServicePage from "@/components/service-page"
-import { services } from "@/config/services"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 
-interface PageProps {
-  params: {
-    slug: string[]
-  }
-}
+import { services } from "@/config/services"
+import ServicePage from "@/components/service-page"
 
-export async function generateMetadata({
-  params,
-}: PageProps): Promise<Metadata> {
-  return {
-    title:
-      "Commercial Insurance in D.C., Maryland, and Virginia | Business Protection",
-    description:
-      "Protect your business with top-rated commercial insurance in D.C., Maryland, and Virginia. Get customized coverage for property, liability, and more.",
-    keywords:
-      "commercial insurance, business insurance, D.C. commercial insurance, Maryland commercial insurance, Virginia commercial insurance, business protection, property insurance, liability insurance",
-  }
+export const metadata: Metadata = {
+  title: "Commercial Insurance",
+  description:
+    "Protect your business with top-rated commercial insurance in D.C., Maryland, and Virginia. Get customized coverage for property, liability, and more.",
+  keywords:
+    "commercial insurance, business insurance, D.C. commercial insurance, Maryland commercial insurance, Virginia commercial insurance, business protection, property insurance, liability insurance",
+  alternates: { canonical: "/services/commercial-insurance" },
 }
 export default function CommercialInsurance() {
   const service = services.find((service) => service.name === "Commercial")

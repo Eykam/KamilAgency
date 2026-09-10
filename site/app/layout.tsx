@@ -2,13 +2,15 @@ import { Inter as FontSans } from "next/font/google"
 import localFont from "next/font/local"
 
 import "@/styles/globals.css"
+import type { Metadata } from "next"
+import { GoogleTagManager } from "@next/third-parties/google"
+
 import { siteConfig } from "@/config/site"
-import { absoluteUrl, cn } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 import { Toaster } from "@/components/ui/toaster"
 import { Analytics, SpeedInsight } from "@/components/analytics"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
-import { GoogleTagManager } from "@next/third-parties/google"
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -25,17 +27,18 @@ interface RootLayoutProps {
   children: React.ReactNode
 }
 
-export const metadata = {
+export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.name,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  geo: {
-    region: "US-DC, US-MD, US-VA, US-PA, US-DE, US-ID, US-WV",
-    placename:
+  other: {
+    "geo.region": "US-DC, US-MD, US-VA, US-PA, US-DE, US-ID, US-WV",
+    "geo.placename":
       "Washington, D.C., Maryland, Virginia, Pennsylvania, Delaware, Idaho, West Virginia",
-    position: "38.9072;-77.0369",
+    "geo.position": "38.9072;-77.0369",
     ICBM: "38.9072, -77.0369",
   },
   keywords: [
@@ -80,13 +83,13 @@ export const metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
-    images: "/og.jpg",
+    images: [siteConfig.ogImage],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: [`${siteConfig.url}/og.jpg`],
+    images: [siteConfig.ogImage],
     creator: "@KamilAgency",
   },
   icons: {

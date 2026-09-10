@@ -1,12 +1,13 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import Image from "next/image"
-import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation"
-// import TeamMemberCarousel from "@/components/team-member-carousel"
-import { about, aboutMetaData } from "@/config/about"
-import { Value } from "@/types"
 import { HTMLAttributes } from "react"
 import { Metadata } from "next"
+import Image from "next/image"
+import Link from "next/link"
+import { Value } from "@/types"
+
+// import TeamMemberCarousel from "@/components/team-member-carousel"
+import { about, aboutMetaData } from "@/config/about"
+import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation"
+import { Button } from "@/components/ui/button"
 
 type ValueCardProps = HTMLAttributes<HTMLDivElement> & Value
 
@@ -52,7 +53,7 @@ export default function AboutPage() {
                     size="lg"
                     className="pointer-events-auto "
                   >
-                    Our Team
+                    Our Services
                   </Button>
                 </Link>
 
@@ -131,7 +132,7 @@ export default function AboutPage() {
         <div className="container grid gap-12 px-4 max-sm:w-[90%] md:px-6 lg:grid-cols-2 lg:gap-16">
           <div className="order-2 grid grid-cols-2 gap-6 lg:order-1 lg:pl-12">
             {values.values?.map((item) => (
-              <ValueCard {...item} />
+              <ValueCard key={item.title} {...item} />
             ))}
           </div>
 
@@ -149,7 +150,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-       {/* <TeamMemberCarousel /> */}
+      {/* <TeamMemberCarousel /> */}
     </div>
   )
 }

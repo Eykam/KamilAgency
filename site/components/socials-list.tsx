@@ -1,10 +1,12 @@
-import { socials } from "@/config/socials"
-import { Social } from "@/types"
 import Link from "next/link"
+import { Social } from "@/types"
+
+import { socials } from "@/config/socials"
 import { cn } from "@/lib/utils"
+
 import { buttonVariants } from "./ui/button"
 
-function SocialIcon(props: Social) {
+function SocialIcon(props: Social & { label: string }) {
   return (
     <Link
       className={cn(
@@ -14,7 +16,9 @@ function SocialIcon(props: Social) {
       )}
       href={props.url}
       target="_blank"
-      rel="nofollow"
+      rel="noopener noreferrer nofollow"
+      aria-label={`${props.label} profile`}
+      title={`${props.label} profile`}
     >
       {props.icon}
     </Link>
@@ -29,8 +33,8 @@ export default function SocialsIconList() {
           Socials
         </h3>
         <div className="flex space-x-2">
-          {Object.keys(socials).map((social, ind) => (
-            <SocialIcon {...socials[social]} key={socials[social].url} />
+          {Object.entries(socials).map(([label, details]) => (
+            <SocialIcon {...details} label={label} key={details.url} />
           ))}
         </div>
       </div>

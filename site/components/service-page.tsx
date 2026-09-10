@@ -1,17 +1,19 @@
+import Image from "next/image"
 import Link from "next/link"
+import { CardProps } from "@/types"
+
+import { services } from "@/config/services"
 import {
   Carousel,
   CarouselContent,
-  CarouselPrevious,
   CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel"
-import Image from "next/image"
-import RecommendedServiceCard from "@/components/recommended-service-card"
 import DetailCard from "@/components/detail-card"
-import { CardProps } from "@/types"
-import { services } from "@/config/services"
-import { BackgroundGradientAnimation } from "./ui/background-gradient-animation"
+import RecommendedServiceCard from "@/components/recommended-service-card"
+
 import FaqSection from "./faq"
+import { BackgroundGradientAnimation } from "./ui/background-gradient-animation"
 
 export default function ServicePage({
   name,
@@ -71,19 +73,7 @@ export default function ServicePage({
                 {name} Insurance Coverage Tailored to Your Needs
               </h2>
               <p className="font-normal text-primary/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed ">
-                {descriptionLong.split(".").map((sentence, ind) => (
-                  <>
-                    {sentence}
-                    {ind > 0 && ind % 2 && ind < descriptionLong.length - 1 ? (
-                      <>
-                        <br />
-                        <br />
-                      </>
-                    ) : (
-                      <></>
-                    )}
-                  </>
-                ))}
+                {descriptionLong}
               </p>
             </div>
 
@@ -94,7 +84,7 @@ export default function ServicePage({
             </h2>
             <div className="flex size-full h-auto flex-wrap items-center justify-center">
               {details.map((props) => (
-                <DetailCard {...props} />
+                <DetailCard key={props.title} {...props} />
               ))}
             </div>
           </div>
@@ -123,7 +113,7 @@ export default function ServicePage({
                 {services
                   .filter((service) => service.name !== name)
                   .map((props) => (
-                    <RecommendedServiceCard {...props} />
+                    <RecommendedServiceCard key={props.name} {...props} />
                   ))}
               </CarouselContent>
               <CarouselPrevious className="absolute -left-5 top-1/2 z-10 -translate-y-1/2 rounded-full bg-accent/50 p-2 shadow-lg transition-all hover:bg-accent lg:-left-12 " />

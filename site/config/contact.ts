@@ -1,10 +1,11 @@
-import { Contact } from "@/types"
 import { Metadata } from "next"
+import { Contact } from "@/types"
 
 export const contactMetaData: Metadata = {
-  title: "Contact Us | Kamil Agency - Your Trusted Insurance Partner",
+  title: "Contact Our Insurance Agency",
   description:
-    "Get in touch with Kamil Agency for personalized insurance solutions in Washington D.C, Maryland, Virginia, Pennsylvania, Delaware, Ohio, Indiana, West Virginia, and North Carolina. Visit our office at 2201 Wisconsin Avenue Northwest, Suite 200, Washington, DC 20007.",
+    "Contact Kamil Agency for quotes, policy questions, billing support, and insurance guidance in Washington, DC and the surrounding region.",
+  alternates: { canonical: "/contact-us" },
   keywords: [
     "Kamil Agency",
     "Contact Kamil Insurance",

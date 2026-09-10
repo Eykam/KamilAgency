@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/server"
-import { ogImageSchema } from "@/lib/validations/og"
+
 import { siteConfig } from "@/config/site"
+import { ogImageSchema } from "@/lib/validations/og"
 
 export const runtime = "edge"
 
@@ -90,7 +91,7 @@ export async function GET(req: Request) {
                 tw="flex text-xl"
                 style={{ fontFamily: "Inter", fontWeight: "normal" }}
               >
-                © 2019 Kamil Agency
+                © {new Date().getFullYear()} Kamil Agency
               </div>
             </div>
 
