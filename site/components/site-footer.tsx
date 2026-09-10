@@ -138,7 +138,7 @@ export function SiteFooter({
                   href={location.googleMapsURL}
                   className="flex flex-col hover:text-primary "
                   target="_blank"
-                  rel="nofollow"
+                  rel="noopener noreferrer nofollow"
                 >
                   <p className="mx-auto">{location.getAddress().lineOne}</p>
                   <p className="mx-auto">{location.getAddress().lineTwo}</p>
