@@ -3,6 +3,7 @@ import Link from "next/link"
 
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
+import { TrackedLink } from "@/components/tracked-link"
 
 const quoteUrl =
   "https://www.agentinsure.com/compare/auto-insurance-home-insurance/mohame/quote.aspx"
@@ -29,14 +30,19 @@ export default function PersonalQuotePage() {
           working with Kamil Agency before entering personal information.
         </p>
         <div className="flex flex-col justify-center gap-3 sm:flex-row">
-          <a
+          <TrackedLink
             href={quoteUrl}
             target="_blank"
             rel="noopener noreferrer nofollow"
             className={cn(buttonVariants({ size: "lg" }))}
+            eventName="quote_handoff"
+            eventParams={{
+              quote_type: "personal",
+              link_location: "quote_page",
+            }}
           >
             Open Secure Quote Form
-          </a>
+          </TrackedLink>
           <Link
             href="/contact-us"
             className={cn(buttonVariants({ variant: "outline", size: "lg" }))}

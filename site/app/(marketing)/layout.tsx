@@ -8,6 +8,7 @@ import { Icons } from "@/components/icons"
 import { MainNav } from "@/components/main-nav"
 import { ModeToggle } from "@/components/mode-toggle"
 import { SiteFooter } from "@/components/site-footer"
+import { TrackedLink } from "@/components/tracked-link"
 
 interface MarketingLayoutProps {
   children: React.ReactNode
@@ -23,7 +24,7 @@ export default async function MarketingLayout({
           <MainNav items={marketingConfig.mainNav} />
           <nav className="flex items-center space-x-2">
             <ModeToggle />
-            <Link
+            <TrackedLink
               className={cn(
                 buttonVariants({ variant: "ghost", size: "sm" }),
 
@@ -31,18 +32,22 @@ export default async function MarketingLayout({
               )}
               href={`tel:${siteConfig.contactNumber}`}
               aria-label={`Call Kamil Agency at ${siteConfig.contactNumber}`}
+              eventName="click_to_call"
+              eventParams={{ link_location: "header" }}
             >
               <Icons.phone />
-            </Link>
-            <Link
+            </TrackedLink>
+            <TrackedLink
               href={"/quote"}
               className={cn(
                 buttonVariants({ variant: "secondary", size: "sm" }),
                 "lg:px-4"
               )}
+              eventName="quote_start"
+              eventParams={{ link_location: "header" }}
             >
               Get A Quote
-            </Link>
+            </TrackedLink>
             <Link
               href={"/customers"}
               className={cn(
@@ -63,21 +68,25 @@ export default async function MarketingLayout({
         aria-label="Quick contact options"
         className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-2 border-t bg-background/95 p-3 shadow-2xl backdrop-blur sm:hidden"
       >
-        <a
+        <TrackedLink
           href={`tel:${siteConfig.contactNumber}`}
           className={cn(
             buttonVariants({ variant: "outline", size: "sm" }),
             "w-full"
           )}
+          eventName="click_to_call"
+          eventParams={{ link_location: "mobile_sticky" }}
         >
           Call the Office
-        </a>
-        <Link
+        </TrackedLink>
+        <TrackedLink
           href="/quote"
           className={cn(buttonVariants({ size: "sm" }), "w-full")}
+          eventName="quote_start"
+          eventParams={{ link_location: "mobile_sticky" }}
         >
           Request a Quote
-        </Link>
+        </TrackedLink>
       </aside>
     </div>
   )

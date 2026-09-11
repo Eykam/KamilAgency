@@ -1,6 +1,7 @@
 import Link from "next/link"
 
 import { washingtonGoogleMapsURL } from "@/config/locations"
+import { TrackedLink } from "@/components/tracked-link"
 
 const featuredServices = [
   { name: "Homeowners insurance", href: "/services/homeowners-insurance" },
@@ -57,19 +58,23 @@ export default function LocalExpertiseSection() {
             <br />
             Washington, DC 20007
           </address>
-          <a
+          <TrackedLink
             href="tel:+12404007393"
             className="mt-4 block font-semibold text-accent hover:underline"
+            eventName="click_to_call"
+            eventParams={{ link_location: "local_office" }}
           >
             (240) 400-7393
-          </a>
+          </TrackedLink>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link
+            <TrackedLink
               href="/quote"
               className="rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground"
+              eventName="quote_start"
+              eventParams={{ link_location: "local_office" }}
             >
               Request a quote
-            </Link>
+            </TrackedLink>
             <a
               href={washingtonGoogleMapsURL}
               target="_blank"

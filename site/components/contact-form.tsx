@@ -1,6 +1,7 @@
 "use client"
 
 import { FormEvent, useState } from "react"
+import { sendGAEvent } from "@next/third-parties/google"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -28,6 +29,10 @@ export default function ContactForm() {
       return
     }
 
+    sendGAEvent("event", "generate_lead", {
+      lead_source: "contact_form",
+      form_name: "contact_us",
+    })
     form.reset()
     setStatus("sent")
   }

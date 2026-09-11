@@ -1,13 +1,15 @@
-import { Button } from "@/components/ui/button"
-
+import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
-import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation"
-import LocationSection from "../_sections/Location"
+
 import { contact, contactMetaData } from "@/config/contact"
 import { siteConfig } from "@/config/site"
+import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation"
+import { Button } from "@/components/ui/button"
 import ContactForm from "@/components/contact-form"
-import { Metadata } from "next"
+import { TrackedLink } from "@/components/tracked-link"
+
+import LocationSection from "../_sections/Location"
 
 export function generateMetadata(): Metadata {
   return contactMetaData
@@ -82,18 +84,24 @@ export default function ContactPage() {
               </p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
-              <a
+              <TrackedLink
                 href={`tel:${siteConfig.contactNumber}`}
                 className="rounded-xl border border-primary/20 bg-secondary px-5 py-4 transition-colors hover:border-primary/40"
+                eventName="click_to_call"
+                eventParams={{ link_location: "contact_page" }}
               >
                 <p className="text-sm font-semibold uppercase tracking-wide text-primary/60">
                   Call
                 </p>
-                <p className="mt-2 text-lg font-semibold">{siteConfig.contactNumber}</p>
-              </a>
-              <a
+                <p className="mt-2 text-lg font-semibold">
+                  {siteConfig.contactNumber}
+                </p>
+              </TrackedLink>
+              <TrackedLink
                 href={`mailto:${siteConfig.contactEmail}`}
                 className="rounded-xl border border-primary/20 bg-secondary px-5 py-4 transition-colors hover:border-primary/40"
+                eventName="email_click"
+                eventParams={{ link_location: "contact_page" }}
               >
                 <p className="text-sm font-semibold uppercase tracking-wide text-primary/60">
                   Email
@@ -101,7 +109,7 @@ export default function ContactPage() {
                 <p className="mt-2 break-all text-lg font-semibold">
                   {siteConfig.contactEmail}
                 </p>
-              </a>
+              </TrackedLink>
             </div>
 
             <div className="rounded-xl border border-primary/20 bg-secondary px-5 py-5">
@@ -114,9 +122,13 @@ export default function ContactPage() {
                 Hours and office location are listed just below.
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
-                <a href={`tel:${siteConfig.contactNumber}`}>
+                <TrackedLink
+                  href={`tel:${siteConfig.contactNumber}`}
+                  eventName="click_to_call"
+                  eventParams={{ link_location: "contact_quick_help" }}
+                >
                   <Button>Call Now</Button>
-                </a>
+                </TrackedLink>
                 <Link href={landing.contactURL || ""}>
                   <Button variant="outline" className="bg-background">
                     View Hours & Location

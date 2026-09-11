@@ -1,7 +1,6 @@
-import Link from "next/link"
-
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
+import { TrackedLink } from "@/components/tracked-link"
 
 export default function HeroSection() {
   return (
@@ -28,21 +27,25 @@ export default function HeroSection() {
           region.
         </p>
         <div className="flex flex-col gap-3 sm:flex-row">
-          <Link
+          <TrackedLink
             href={"/quote"}
             className={cn(buttonVariants({ size: "lg" }), "min-w-40 shadow-md")}
+            eventName="quote_start"
+            eventParams={{ link_location: "hero" }}
           >
             Request a Quote
-          </Link>
-          <a
+          </TrackedLink>
+          <TrackedLink
             href="tel:+12404007393"
             className={cn(
               buttonVariants({ variant: "outline", size: "lg" }),
               "min-w-40 border-primary bg-background/80"
             )}
+            eventName="click_to_call"
+            eventParams={{ link_location: "hero" }}
           >
             Call (240) 400-7393
-          </a>
+          </TrackedLink>
         </div>
         <ul className="mt-2 grid gap-3 text-sm sm:grid-cols-3">
           <li className="rounded-lg border bg-background/70 px-4 py-3">

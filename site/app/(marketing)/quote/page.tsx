@@ -1,8 +1,8 @@
 import { Metadata } from "next"
-import Link from "next/link"
 import { ServiceCategory } from "@/types"
 
 import { ServiceCategories } from "@/config/serviceCategories"
+import { TrackedLink } from "@/components/tracked-link"
 
 export function generateMetadata(): Metadata {
   return {
@@ -44,11 +44,13 @@ function QuoteCard({ name, descriptionShort, logo, url }: QuoteCardProps) {
   const isExternal = href.startsWith("http://") || href.startsWith("https://")
 
   return (
-    <Link
+    <TrackedLink
       href={href}
       className="size-full"
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noopener noreferrer nofollow" : undefined}
+      eventName={isExternal ? "quote_handoff" : "quote_category_select"}
+      eventParams={{ quote_type: name, link_location: "quote_page" }}
     >
       <div className="flex h-full flex-col items-center justify-evenly rounded-lg border-2 border-primary/30 bg-background p-6 shadow-lg transition-all hover:scale-105 hover:shadow-xl ">
         {logo}
@@ -57,7 +59,7 @@ function QuoteCard({ name, descriptionShort, logo, url }: QuoteCardProps) {
           {descriptionShort}
         </p>
       </div>
-    </Link>
+    </TrackedLink>
   )
 }
 
