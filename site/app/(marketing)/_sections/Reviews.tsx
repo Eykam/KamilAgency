@@ -1,37 +1,62 @@
-// async function getLocationsForBusiness() {
-//   const auth = new google.auth.GoogleAuth({
-//     keyFile: "./key.json",
-//     scopes: ["https://www.googleapis.com/auth/business.manage"],
-//   })
+import Link from "next/link"
 
-//   const info = google.mybusinessbusinessinformation({
-//     version: "v1",
-//     auth,
-//   })
-
-//   const readMask =
-//     "name,storeCode,title,phoneNumbers,storefrontAddress,specialHours,serviceArea,metadata,profile,moreHours"
-//   // const locations = info.locations.get({ name:"", readMask })
-//   const locations = info.accounts.locations.list({
-//     parent: "accounts/{438095296120896097}",
-//   })
-
-//   console.log("locations:", JSON.stringify(locations))
-//   return (await locations).data
-// }
-
-import ReviewCarousel from "@/components/review-carousel"
 import { reviews } from "@/config/reviews"
+import { buttonVariants } from "@/components/ui/button"
+
+const REVIEW_LINK =
+  "https://www.google.com/maps/search/?api=1&query=Kamil%20Agency%202201%20Wisconsin%20Avenue%20NW%20Washington%20DC%2020007"
 
 export default function ReviewsSection() {
   return (
-    <section
-      id="reviews"
-      className="mb-10 flex min-h-[85svh] items-center overflow-hidden bg-accent dark:bg-secondary lg:min-h-screen"
-    >
-      <div className="mx-auto flex flex-col items-center justify-center gap-4 px-4 py-8 text-center lg:w-2/3">
-        <div className=" w-full rounded-xl leading-normal text-white sm:text-lg sm:leading-7">
-          <ReviewCarousel reviews={reviews} />
+    <section id="reviews" className="bg-accent py-16 text-white md:py-24">
+      <div className="container">
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="text-sm font-semibold uppercase tracking-wider text-white/80">
+            Client experiences
+          </p>
+          <h2 className="mt-3 font-heading text-3xl md:text-5xl">
+            Service people remember
+          </h2>
+          <p className="mt-4 text-lg text-white/80">
+            Real feedback from people who turned to Kamil Agency for clear,
+            responsive insurance guidance.
+          </p>
+        </div>
+
+        <div className="mx-auto mt-10 grid max-w-6xl gap-6 md:grid-cols-3">
+          {reviews.slice(0, 3).map((review) => (
+            <figure
+              key={review.name}
+              className="flex h-full flex-col rounded-2xl bg-background p-6 text-foreground shadow-lg"
+            >
+              <div
+                aria-label={`${review.stars} out of 5 stars`}
+                className="text-lg tracking-widest text-amber-500"
+              >
+                {"★".repeat(review.stars)}
+              </div>
+              <blockquote className="mt-4 flex-1 text-sm leading-7">
+                “{review.text}”
+              </blockquote>
+              <figcaption className="mt-5 border-t pt-4 text-sm">
+                <cite className="not-italic font-semibold">{review.name}</cite>
+                <span className="block text-muted-foreground">
+                  Google review · {review.timestamp}
+                </span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <Link
+            href={REVIEW_LINK}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className={buttonVariants({ variant: "secondary", size: "lg" })}
+          >
+            Read or Leave a Google Review
+          </Link>
         </div>
       </div>
     </section>

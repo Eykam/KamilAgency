@@ -1,8 +1,9 @@
-import ServiceCard from "@/components/service-card"
-import { buttonVariants } from "@/components/ui/button"
+import Link from "next/link"
+
 import { services } from "@/config/services"
 import { cn } from "@/lib/utils"
-import Link from "next/link"
+import { buttonVariants } from "@/components/ui/button"
+import ServiceCard from "@/components/service-card"
 
 export default function ServiceSection() {
   return (
@@ -15,9 +16,8 @@ export default function ServiceSection() {
           Services
         </h2>
         <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-          Explore our comprehensive insurance solutions. From Home and Auto, to
-          commercial and renters, We&apos;ve got you covered. Discover tailored
-          coverage and exceptional service.
+          Compare coverage for your home, vehicle, business, rental property,
+          family, and future with help from a local Washington, DC team.
         </p>
       </div>
 
@@ -34,13 +34,9 @@ export default function ServiceSection() {
       </div>
 
       <div className="mx-auto grid justify-center gap-4 px-8 py-8 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
-        {services.map((service, ind) =>
-          ind < 6 ? (
-            <ServiceCard service={service} key={service.name + ind} pageLink />
-          ) : (
-            <></>
-          )
-        )}
+        {services.slice(0, 6).map((service) => (
+          <ServiceCard service={service} key={service.name} pageLink />
+        ))}
       </div>
     </section>
   )

@@ -5,10 +5,13 @@ import type { Metadata } from "next"
 import { defaultFAQs } from "@/config/faq"
 import FaqSection from "@/components/faq"
 
+import ConversionSection from "./_sections/Conversion"
 import HeroSection from "./_sections/Hero"
 import LocalExpertiseSection from "./_sections/LocalExpertise"
+import LocalTeamSection from "./_sections/LocalTeam"
 import LocationSection from "./_sections/Location"
 import ReviewsSection from "./_sections/Reviews"
+import ServiceAreasSection from "./_sections/ServiceAreas"
 import ServiceSection from "./_sections/Services"
 
 export const metadata: Metadata = {
@@ -24,8 +27,10 @@ export default async function IndexPage() {
       <HeroSection />
       <LocalExpertiseSection />
       <ServiceSection />
-      {/* <AboutSection /> */}
+      <LocalTeamSection />
       <ReviewsSection />
+      <ServiceAreasSection />
+      <ConversionSection />
       <LocationSection />
       <div id="faq" className="flex justify-center bg-secondary">
         <FaqSection FAQs={defaultFAQs} name="General" accent />

@@ -1,7 +1,9 @@
-import { cn } from "@/lib/utils"
-import { Service } from "@/types"
 import Link from "next/link"
-import { Button, buttonVariants } from "./ui/button"
+import { Service } from "@/types"
+
+import { cn } from "@/lib/utils"
+
+import { buttonVariants } from "./ui/button"
 
 export default function ServiceCard({
   service,
@@ -22,15 +24,15 @@ export default function ServiceCard({
               {service.descriptionShort}
             </p>
 
-            <div className="w-full justify-between space-x-4">
-              <Button
+            <div className="w-full">
+              <span
                 className={cn(
                   buttonVariants({ size: "xs", variant: "default" }),
                   "w-2/5"
                 )}
               >
                 View
-              </Button>
+              </span>
             </div>
           </div>
         </div>
