@@ -1,7 +1,6 @@
-import Link from "next/link"
-
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
+import { TrackedLink } from "@/components/tracked-link"
 
 const steps = [
   ["1", "Tell us what you need", "Share a few details online or by phone."],
@@ -37,24 +36,28 @@ export default function ConversionSection() {
                 Start online or speak directly with the Washington, DC office.
               </p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                <Link
+                <TrackedLink
                   href="/quote"
                   className={cn(
                     buttonVariants({ variant: "secondary", size: "lg" }),
                     "min-w-40"
                   )}
+                  eventName="quote_start"
+                  eventParams={{ link_location: "home_conversion" }}
                 >
                   Request a Quote
-                </Link>
-                <a
+                </TrackedLink>
+                <TrackedLink
                   href="tel:+12404007393"
                   className={cn(
                     buttonVariants({ variant: "outline", size: "lg" }),
                     "min-w-40 border-primary-foreground/40 bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-primary"
                   )}
+                  eventName="click_to_call"
+                  eventParams={{ link_location: "home_conversion" }}
                 >
                   Call the Office
-                </a>
+                </TrackedLink>
               </div>
             </div>
 

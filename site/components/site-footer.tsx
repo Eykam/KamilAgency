@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils"
 
 import { Icons } from "./icons"
 import SocialsIconList from "./socials-list"
+import { TrackedLink } from "./tracked-link"
 
 /* <footer className="w-full bg-gray-100 p-6 dark:bg-gray-800 md:py-12">
         <div className="container grid max-w-7xl grid-cols-2 gap-8 text-sm sm:grid-cols-3 md:grid-cols-5">
@@ -107,20 +108,24 @@ export function SiteFooter({
             </h3>
             <div className="flex lg:h-4/5 lg:justify-center">
               <div className="flex flex-col justify-center">
-                <Link
+                <TrackedLink
                   href={`mailTo:${siteConfig.contactEmail}`}
                   className="flex items-center justify-center space-x-2  text-sm text-primary/70 *:leading-loose"
+                  eventName="email_click"
+                  eventParams={{ link_location: "footer" }}
                 >
                   <Icons.email className="text-primary hover:text-primary/50" />
                   <p>{siteConfig.contactEmail}</p>
-                </Link>
-                <Link
+                </TrackedLink>
+                <TrackedLink
                   href={`tel:${siteConfig.contactNumber}`}
                   className="flex items-center justify-center space-x-2 text-sm leading-loose text-primary/70 lg:justify-start "
+                  eventName="click_to_call"
+                  eventParams={{ link_location: "footer" }}
                 >
                   <Icons.phone className="text-primary hover:text-primary/50" />
                   <p>{siteConfig.contactNumber}</p>
-                </Link>
+                </TrackedLink>
               </div>
             </div>
           </div>
