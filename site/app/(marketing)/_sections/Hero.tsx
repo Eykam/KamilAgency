@@ -1,25 +1,10 @@
-import { Suspense } from "react"
 import Link from "next/link"
 
-import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation"
 import { buttonVariants } from "@/components/ui/button"
-import { FlipWords } from "@/components/ui/flip-words"
 
 export default function HeroSection() {
-  const locations = [
-    "Washington D.C",
-    // "Maryland",
-    // "Virginia",
-    "Pennsylvania",
-    "Delaware",
-    "Ohio",
-    "Indiana",
-    "West Virginia",
-    "North Carolina",
-  ]
-
   return (
     <section className="flex h-[90svh] items-center space-y-6 lg:h-screen">
       <BackgroundGradientAnimation className="flex h-full items-center">
@@ -34,13 +19,8 @@ export default function HeroSection() {
             ensuring peace of mind and protection for you and your loved ones.
           </p>
           <p className="text-lg font-medium sm:text-xl">
-            Insurance guidance across{" "}
-            <span aria-hidden="true">
-              <Suspense>
-                <FlipWords words={locations} />
-              </Suspense>
-            </span>
-            <span className="sr-only">{locations.join(", ")}</span>
+            Insurance guidance throughout Washington, DC and the surrounding
+            region.
           </p>
           <div className="space-x-4">
             <Link

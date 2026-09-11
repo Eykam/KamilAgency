@@ -5,7 +5,7 @@ import { services } from "@/config/services"
 import ServicePage from "@/components/service-page"
 
 export const metadata: Metadata = {
-  title: "Umbrella Insurance",
+  title: "Umbrella Insurance in Washington, DC",
   description:
     "Get additional liability protection with umbrella insurance in D.C., Maryland, and Virginia. Secure your assets with comprehensive coverage.",
   keywords:
