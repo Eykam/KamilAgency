@@ -8,16 +8,19 @@ const REVIEW_LINK =
 
 export default function ReviewsSection() {
   return (
-    <section id="reviews" className="bg-accent py-16 text-white md:py-24">
+    <section
+      id="reviews"
+      className="bg-primary py-16 text-primary-foreground md:py-24"
+    >
       <div className="container">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-white/80">
+          <p className="text-sm font-semibold uppercase tracking-wider text-primary-foreground/75">
             Client experiences
           </p>
           <h2 className="mt-3 font-heading text-3xl md:text-5xl">
             Service people remember
           </h2>
-          <p className="mt-4 text-lg text-white/80">
+          <p className="mt-4 text-lg text-primary-foreground/80">
             Real feedback from people who turned to Kamil Agency for clear,
             responsive insurance guidance.
           </p>
