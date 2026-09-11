@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function PersonalQuotePage() {
   return (
-    <main className="container flex min-h-[65vh] items-center justify-center px-4 py-16">
+    <div className="container flex min-h-[65vh] items-center justify-center px-4 py-16">
       <section className="w-full max-w-2xl space-y-6 rounded-2xl border border-primary/15 p-8 text-center shadow-sm md:p-12">
         <p className="text-sm font-semibold uppercase tracking-wide text-primary/60">
           Personal Lines
@@ -45,6 +45,6 @@ export default function PersonalQuotePage() {
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

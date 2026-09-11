@@ -9,6 +9,7 @@ export const metadata = {
   title: "Guides",
   description:
     "Here are some useful guides, dealing with Insurance, that we've compiled over the years from our experience as Agents!",
+  alternates: { canonical: "/guides" },
 }
 
 export default function GuidesPage() {

@@ -26,6 +26,8 @@ export function DocsSearch({ className, ...props }: DocsSearchProps) {
     >
       <Input
         type="search"
+        name="query"
+        aria-label="Search documentation"
         placeholder="Search documentation..."
         className="h-8 w-full sm:w-64 sm:pr-12"
       />

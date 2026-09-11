@@ -6,9 +6,11 @@ import type { Metadata } from "next"
 import { GoogleTagManager } from "@next/third-parties/google"
 
 import { siteConfig } from "@/config/site"
+import { socials } from "@/config/socials"
 import { cn } from "@/lib/utils"
 import { Toaster } from "@/components/ui/toaster"
 import { Analytics, SpeedInsight } from "@/components/analytics"
+import { JsonLd } from "@/components/json-ld"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
 
@@ -35,9 +37,10 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   other: {
-    "geo.region": "US-DC, US-MD, US-VA, US-PA, US-DE, US-ID, US-WV",
+    "geo.region":
+      "US-DC, US-MD, US-VA, US-PA, US-DE, US-OH, US-IN, US-WV, US-NC",
     "geo.placename":
-      "Washington, D.C., Maryland, Virginia, Pennsylvania, Delaware, Idaho, West Virginia",
+      "Washington, D.C., Maryland, Virginia, Pennsylvania, Delaware, Ohio, Indiana, West Virginia, North Carolina",
     "geo.position": "38.9072;-77.0369",
     ICBM: "38.9072, -77.0369",
   },
@@ -100,6 +103,40 @@ export const metadata: Metadata = {
   manifest: `${siteConfig.url}/site.webmanifest`,
 }
 
+const location = siteConfig.locations[0]
+const insuranceAgencyJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "InsuranceAgency",
+  "@id": `${siteConfig.url}/#agency`,
+  name: siteConfig.name,
+  url: siteConfig.url,
+  image: `${siteConfig.url}${siteConfig.ogImage}`,
+  telephone: siteConfig.contactNumber,
+  email: siteConfig.contactEmail,
+  address: location
+    ? {
+        "@type": "PostalAddress",
+        streetAddress: location.address.street,
+        addressLocality: location.address.city,
+        addressRegion: location.address.state,
+        postalCode: location.address.zip,
+        addressCountry: "US",
+      }
+    : undefined,
+  areaServed: [
+    "Washington, DC",
+    "Maryland",
+    "Virginia",
+    "Pennsylvania",
+    "Delaware",
+    "Ohio",
+    "Indiana",
+    "West Virginia",
+    "North Carolina",
+  ],
+  sameAs: Object.values(socials).map((social) => social.url),
+}
+
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -110,6 +147,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           fontHeading.variable
         )}
       >
+        <JsonLd data={insuranceAgencyJsonLd} />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
           <Analytics />

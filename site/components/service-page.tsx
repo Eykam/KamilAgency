@@ -10,6 +10,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import DetailCard from "@/components/detail-card"
+import { JsonLd } from "@/components/json-ld"
 import RecommendedServiceCard from "@/components/recommended-service-card"
 
 import FaqSection from "./faq"
@@ -22,11 +23,35 @@ export default function ServicePage({
   quoteURL,
   docsURL,
   imageURL,
+  pageURL,
   details,
   faq,
 }: CardProps) {
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: `${name} Insurance`,
+    description,
+    url: `https://www.kamilagency.com${pageURL}`,
+    provider: {
+      "@id": "https://www.kamilagency.com/#agency",
+    },
+    areaServed: [
+      "Washington, DC",
+      "Maryland",
+      "Virginia",
+      "Pennsylvania",
+      "Delaware",
+      "Ohio",
+      "Indiana",
+      "West Virginia",
+      "North Carolina",
+    ],
+  }
+
   return (
     <div className="flex flex-col overflow-hidden text-center font-semibold lg:text-start">
+      <JsonLd data={serviceJsonLd} />
       <BackgroundGradientAnimation className="flex items-center">
         <section className="container z-20 flex h-[90svh] items-center justify-center py-12 md:py-24 lg:h-screen lg:py-32">
           <div className="gap-6 space-y-8 px-4 md:px-6 lg:grid lg:grid-cols-2 lg:gap-10 lg:space-y-0">

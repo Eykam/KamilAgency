@@ -40,8 +40,16 @@ export function generateMetadata(): Metadata {
 type QuoteCardProps = React.HTMLAttributes<HTMLDivElement> & ServiceCategory
 
 function QuoteCard({ name, descriptionShort, logo, url }: QuoteCardProps) {
+  const href = url || "/contact-us"
+  const isExternal = href.startsWith("http://") || href.startsWith("https://")
+
   return (
-    <Link href={url || ""} className="size-full" target="_blank" rel="nofollow">
+    <Link
+      href={href}
+      className="size-full"
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer nofollow" : undefined}
+    >
       <div className="flex h-full flex-col items-center justify-evenly rounded-lg border-2 border-primary/30 bg-background p-6 shadow-lg transition-all hover:scale-105 hover:shadow-xl ">
         {logo}
         <h3 className="mb-2 text-xl font-bold">{name}</h3>

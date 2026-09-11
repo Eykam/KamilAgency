@@ -1,8 +1,9 @@
+import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
-import { carriers } from "@/config/carriers"
 import { Carrier } from "@/types"
-import { Metadata } from "next"
+
+import { carriers } from "@/config/carriers"
 
 type CarrierCardProps = React.HTMLAttributes<HTMLDivElement> & Carrier
 
@@ -26,14 +27,16 @@ function CarrierCard({ name, descriptionShort, logo, url }: CarrierCardProps) {
   )
 }
 
-export function generateMetadata(): Metadata {
-  return {}
+export const metadata: Metadata = {
+  title: "Insurance Carriers",
+  description: "Carrier information from Kamil Agency is coming soon.",
+  robots: { index: false, follow: true },
 }
 
 export default function CarriersPage() {
   return (
     <div className="min-w-screen flex min-h-screen items-center justify-center">
-      <h3 className="text-xl font-bold">Coming Soon!</h3>
+      <h1 className="text-xl font-bold">Insurance carriers coming soon</h1>
     </div>
   )
 

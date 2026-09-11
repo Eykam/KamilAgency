@@ -8,6 +8,11 @@ const routes = [
   "/contact-us",
   "/customers",
   "/docs",
+  "/guides",
+  "/guides/state-minimum",
+  "/about-us/team/mohamed-kamil",
+  "/about-us/team/eyad-kamil",
+  "/about-us/team/amgad-kamil",
   "/policy/privacy",
   "/policy/terms",
   "/quote",
@@ -24,11 +29,8 @@ const routes = [
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date()
-
   return routes.map((route) => ({
     url: `${siteConfig.url}${route}`,
-    lastModified,
     changeFrequency: route === "" ? "weekly" : "monthly",
     priority: route === "" ? 1 : 0.7,
   }))

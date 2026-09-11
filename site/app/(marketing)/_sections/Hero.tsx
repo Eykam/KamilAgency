@@ -24,17 +24,23 @@ export default function HeroSection() {
     <section className="flex h-[90svh] items-center space-y-6 lg:h-screen">
       <BackgroundGradientAnimation className="flex h-full items-center">
         <div className="container pointer-events-none relative z-50 flex max-w-[64rem] flex-col items-center gap-4 text-center">
-          <h1 className="relative text-nowrap font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
-            Your Insurance Experts In
-            <br />
-            <Suspense>
-              <FlipWords words={locations} />
-            </Suspense>
+          <h1 className="relative font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
+            Independent Insurance Agency
+            <br className="hidden sm:block" /> Serving Washington, DC
           </h1>
 
           <p className="max-w-[42rem] leading-normal sm:text-xl sm:leading-8">
             Our expert team is dedicated to providing personalized service,
             ensuring peace of mind and protection for you and your loved ones.
+          </p>
+          <p className="text-lg font-medium sm:text-xl">
+            Insurance guidance across{" "}
+            <span aria-hidden="true">
+              <Suspense>
+                <FlipWords words={locations} />
+              </Suspense>
+            </span>
+            <span className="sr-only">{locations.join(", ")}</span>
           </p>
           <div className="space-x-4">
             <Link

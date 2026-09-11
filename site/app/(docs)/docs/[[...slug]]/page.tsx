@@ -45,11 +45,13 @@ export async function generateMetadata({
   ogUrl.searchParams.set("heading", doc.description ?? doc.title)
   ogUrl.searchParams.set("type", "Documentation")
   ogUrl.searchParams.set("mode", "dark")
+  const isInsuranceLibrary = doc.slug === "/docs"
 
   return {
     title: doc.title,
     description: doc.description,
     alternates: { canonical: doc.slug },
+    robots: { index: isInsuranceLibrary, follow: true },
     openGraph: {
       title: doc.title,
       description: doc.description,
