@@ -3,7 +3,7 @@ import localFont from "next/font/local"
 
 import "@/styles/globals.css"
 import type { Metadata } from "next"
-import { GoogleTagManager } from "@next/third-parties/google"
+import { GoogleAnalytics } from "@next/third-parties/google"
 
 import { siteConfig } from "@/config/site"
 import { socials } from "@/config/socials"
@@ -183,9 +183,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <SpeedInsight />
           <Toaster />
           <TailwindIndicator />
+          <GoogleAnalytics gaId="G-FF4L3T2C99" />
         </ThemeProvider>
       </body>
-      <GoogleTagManager gtmId="G-FF4L3T2C99" />
     </html>
   )
 }
