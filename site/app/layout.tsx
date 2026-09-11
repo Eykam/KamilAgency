@@ -123,6 +123,35 @@ const insuranceAgencyJsonLd = {
         addressCountry: "US",
       }
     : undefined,
+  hasMap: location?.googleMapsURL,
+  openingHoursSpecification: location
+    ? (
+        Object.entries(location.hours) as [
+          string,
+          { start: string; stop: string } | null
+        ][]
+      )
+        .filter(([, hours]) => hours !== null)
+        .map(([day, hours]) => ({
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: `https://schema.org/${day}`,
+          opens: hours?.start === "08:30 AM" ? "08:30" : hours?.start,
+          closes: hours?.stop === "05:30 PM" ? "17:30" : hours?.stop,
+        }))
+    : undefined,
+  makesOffer: [
+    "Homeowners Insurance",
+    "Auto Insurance",
+    "Commercial Insurance",
+    "Renters Insurance",
+    "Landlord Insurance",
+    "Umbrella Insurance",
+    "Life Insurance",
+    "Medicare Guidance",
+  ].map((name) => ({
+    "@type": "Offer",
+    itemOffered: { "@type": "Service", name },
+  })),
   areaServed: [
     "Washington, DC",
     "Maryland",

@@ -48,16 +48,41 @@ export default function ServicePage({
       "North Carolina",
     ],
   }
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.kamilagency.com/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Insurance Services",
+        item: "https://www.kamilagency.com/services",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: `${name} Insurance`,
+        item: `https://www.kamilagency.com${pageURL}`,
+      },
+    ],
+  }
 
   return (
     <div className="flex flex-col overflow-hidden text-center font-semibold lg:text-start">
       <JsonLd data={serviceJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
       <BackgroundGradientAnimation className="flex items-center">
         <section className="container z-20 flex h-[90svh] items-center justify-center py-12 md:py-24 lg:h-screen lg:py-32">
           <div className="gap-6 space-y-8 px-4 md:px-6 lg:grid lg:grid-cols-2 lg:gap-10 lg:space-y-0">
             <div className="flex flex-col items-center justify-center space-y-8 lg:items-start ">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl  md:text-5xl">
-                {name} Insurance
+                {name} Insurance in Washington, DC
               </h1>
               <p className="max-w-[600px] text-primary/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 {description}
@@ -83,7 +108,7 @@ export default function ServicePage({
               src={imageURL}
               width={600}
               height={400}
-              alt="Insurance Product"
+              alt={`${name} insurance guidance from Kamil Agency in Washington, DC`}
               className="object-fit  mx-auto aspect-video overflow-hidden rounded-xl object-center sm:w-full "
             />
           </div>
