@@ -1,6 +1,7 @@
+import { Day } from "@/types"
+
 import GoogleMapsEmbed from "@/config/GoogleMapsEmbed"
 import { defaultHours } from "@/config/locations"
-import { Day } from "@/types"
 
 export default function LocationSection() {
   return (
@@ -18,7 +19,7 @@ export default function LocationSection() {
               Hours
             </h3>
             {Object.keys(defaultHours).map((day: Day) => (
-              <div className="flex justify-between py-1">
+              <div key={day} className="flex justify-between py-1">
                 <span className="flex items-center font-semibold"> {day} </span>
                 <span className="flex items-center text-sm text-muted-foreground">
                   {defaultHours[day]

@@ -55,10 +55,30 @@ export default async function MarketingLayout({
           </nav>
         </div>
       </header>
-      <main className="z-0 flex-1">{children}</main>
-      <section id="contact-us">
+      <main className="z-0 flex-1 pb-16 sm:pb-0">{children}</main>
+      <section id="contact-us" className="pb-16 sm:pb-0">
         <SiteFooter className="border-t" />
       </section>
+      <aside
+        aria-label="Quick contact options"
+        className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-2 border-t bg-background/95 p-3 shadow-2xl backdrop-blur sm:hidden"
+      >
+        <a
+          href={`tel:${siteConfig.contactNumber}`}
+          className={cn(
+            buttonVariants({ variant: "outline", size: "sm" }),
+            "w-full"
+          )}
+        >
+          Call the Office
+        </a>
+        <Link
+          href="/quote"
+          className={cn(buttonVariants({ size: "sm" }), "w-full")}
+        >
+          Request a Quote
+        </Link>
+      </aside>
     </div>
   )
 }
