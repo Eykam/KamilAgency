@@ -15,6 +15,6 @@ export const siteConfig: SiteConfig = {
     "https://eosadvisor.com/user/signup?advId=ADS1718137118673475&n=true",
   ogImage: "/og.jpg",
   contactNumber: "(240) 400-7393",
-  contactEmail: "info@kamilagency.com",
+  contactEmail: "mkamil@kamilagency.com",
   locations: locations,
 }
