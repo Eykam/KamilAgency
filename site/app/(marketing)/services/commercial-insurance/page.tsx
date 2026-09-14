@@ -7,7 +7,7 @@ import ServicePage from "@/components/service-page"
 export const metadata: Metadata = {
   title: "Commercial Insurance in Washington, DC",
   description:
-    "Protect your business with top-rated commercial insurance in D.C., Maryland, and Virginia. Get customized coverage for property, liability, and more.",
+    "Compare business insurance options with a local Washington, DC agency for liability, property, workers' compensation, and commercial auto coverage.",
   keywords:
     "commercial insurance, business insurance, D.C. commercial insurance, Maryland commercial insurance, Virginia commercial insurance, business protection, property insurance, liability insurance",
   alternates: { canonical: "/services/commercial-insurance" },

@@ -50,9 +50,9 @@ export const services: Service[] = [
   {
     name: "Homeowners",
     description:
-      "Homeowners insurance provides essential protection for your home and personal belongings against potential risks such as fire, theft, and natural disasters. This policy ensures financial security and peace of mind for homeowners.",
+      "Kamil Agency helps Washington, DC homeowners compare coverage for their home, belongings, liability, and temporary living expenses, with local guidance for Georgetown, Glover Park, and nearby communities.",
     descriptionLong:
-      "Homeowners insurance is designed to offer comprehensive coverage for your home, its contents, and other structures on your property. It protects you from financial loss due to damage or destruction caused by various perils, including fire, theft, vandalism, and certain natural disasters. Additionally, homeowners insurance can cover personal liability for injuries to others that occur on your property and provide temporary living expenses if your home becomes uninhabitable due to a covered event. By having homeowners insurance, you ensure that your most significant investment is safeguarded against unforeseen circumstances, allowing you to rebuild and recover with minimal financial strain.",
+      "Homeowners insurance can help protect your dwelling, personal property, and finances after a covered loss. Coverage may also include personal liability and additional living expenses when a covered event makes your home temporarily uninhabitable. Our Washington, DC team helps you compare limits, deductibles, and available options based on your property and priorities.",
     details: HomeownersPolicyDetails,
     descriptionShort: "Comprehensive coverage for your home and belongings.",
     icon: Icons.home({}),
@@ -66,9 +66,9 @@ export const services: Service[] = [
     name: "Auto",
     descriptionShort: "Reliable protection for you and your vehicle.",
     description:
-      "Auto insurance provides essential coverage for your vehicle against potential risks such as accidents, theft, and natural disasters. This policy ensures financial protection and peace of mind for drivers.",
+      "Kamil Agency helps Washington, DC drivers compare auto insurance for liability, collision, comprehensive, medical payments, and uninsured motorist protection based on their needs.",
     descriptionLong:
-      "Auto insurance is designed to offer comprehensive coverage for your vehicle, protecting you from financial loss due to damage or destruction caused by various perils, including accidents, theft, vandalism, and certain natural disasters. Additionally, auto insurance can cover personal liability for injuries or property damage to others caused by your vehicle and provide medical payments for injuries sustained by you and your passengers. With auto insurance, you can drive with confidence, knowing that you are protected against unforeseen circumstances on the road.",
+      "Auto insurance can help cover injuries, property damage, vehicle repairs, theft, and other losses, depending on the policy you choose. Our Washington, DC team explains liability, collision, comprehensive, medical payments, and uninsured motorist options in plain language. We help drivers compare limits and deductibles for the way they use their vehicles.",
     icon: Icons.car({}),
     quoteURL: siteConfig.quoteURL,
     docsURL: "/docs",
@@ -82,9 +82,9 @@ export const services: Service[] = [
     name: "Commercial",
     descriptionShort: "Customized solutions to safeguard your business.",
     description:
-      "Commercial insurance provides essential coverage for businesses against potential risks such as property damage, liability, and employee-related issues. This policy ensures financial protection and peace of mind for business owners.",
+      "Kamil Agency helps Washington, DC business owners compare commercial coverage for property, liability, employees, vehicles, and interruptions based on their operations and risks.",
     descriptionLong:
-      "Commercial insurance is designed to offer comprehensive coverage for businesses, protecting against financial loss due to various perils, including property damage, liability claims, and employee-related issues. It includes different types of coverage tailored to meet the specific needs of businesses, such as property insurance, general liability insurance, and workers' compensation. With commercial insurance, business owners can safeguard their assets, employees, and operations, ensuring continuity and stability in the face of unforeseen events.",
+      "Business insurance can combine several coverages to address the risks a company faces, including property damage, liability claims, employee injuries, and interruptions. Our Washington, DC team helps owners review general liability, commercial property, workers' compensation, commercial auto, and related options. Recommendations are shaped around the business rather than a one-size-fits-all package.",
     icon: Icons.commercial({}),
     quoteURL: siteConfig.commercialQuoteURL,
     docsURL: "/docs",
@@ -97,9 +97,9 @@ export const services: Service[] = [
     name: "Renters",
     descriptionShort: "Affordable coverage for your belongings.",
     description:
-      "Renters insurance provides essential coverage for tenants, protecting personal belongings against potential risks such as theft, fire, and water damage. This policy ensures financial security and peace of mind for renters.",
+      "Kamil Agency helps Washington, DC renters compare coverage for belongings, personal liability, and additional living expenses in Georgetown, Glover Park, and nearby communities.",
     descriptionLong:
-      "Renters insurance is designed to offer comprehensive coverage for tenants, safeguarding their personal belongings and providing liability protection. It covers various perils, including theft, fire, vandalism, and certain types of water damage. Additionally, renters insurance offers personal liability coverage for injuries or property damage to others that occur in the rented property and can cover additional living expenses if the rental unit becomes uninhabitable due to a covered event. With renters insurance, tenants can protect their valuables and ensure they are financially secure in the face of unexpected events.",
+      "Renters insurance can help replace belongings after a covered loss and provide personal liability protection. It may also help with additional living expenses if a covered event makes your rental temporarily uninhabitable. Our Washington, DC team helps tenants compare coverage limits, deductibles, and options for their apartment, condo, or rental home.",
     icon: Icons.renter({}),
     quoteURL: siteConfig.quoteURL,
     docsURL: "/docs",

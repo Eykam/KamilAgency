@@ -7,7 +7,7 @@ import ServicePage from "@/components/service-page"
 export const metadata: Metadata = {
   title: "Renters Insurance in Washington, DC",
   description:
-    "Secure your belongings with comprehensive renters insurance in D.C., Maryland, and Virginia. Get affordable and reliable coverage for your rental property.",
+    "Compare renters insurance options with a local Washington, DC agency serving Georgetown, Glover Park, and nearby communities.",
   keywords:
     "renters insurance, rental insurance, D.C. renters insurance, Maryland renters insurance, Virginia renters insurance, tenant insurance, belongings protection",
   alternates: { canonical: "/services/renters-insurance" },
