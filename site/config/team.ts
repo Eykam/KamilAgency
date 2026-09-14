@@ -112,4 +112,41 @@ export const team: TeamMember[] = [
       alternates: { canonical: "/about-us/team/amgad-kamil" },
     },
   },
+  {
+    name: "Jesa Esquillo",
+    descriptionShort:
+      "Customer service representative focused on responsive support, clear communication, and a welcoming client experience.",
+    description:
+      "Jesa Esquillo is a customer service representative at Kamil Agency who helps clients with policy questions, service requests, and next steps. She is committed to clear communication, timely follow-up, and making every interaction helpful and welcoming.",
+    title: "Customer Service Representative (CSR)",
+    avatar: "/images/people/jesa.png",
+    pageUrl: "/about-us/team/jesa-esquillo",
+    contact: { phone: "(240) 400-7393", email: "info@kamilagency.com" },
+    expertise: [
+      "Customer Support",
+      "Policy Service",
+      "Client Communication",
+      "Service Requests",
+    ],
+    metadata: {
+      title: "Jesa Esquillo | Customer Service Representative",
+      description:
+        "Meet Jesa Esquillo, a customer service representative at Kamil Agency who provides responsive support, clear communication, and attentive service to insurance clients.",
+      keywords: [
+        "Jesa Esquillo",
+        "Customer Service Representative",
+        "Kamil Agency",
+        "Insurance Customer Service",
+        "Customer Support",
+        "Policy Service",
+        "Client Communication",
+        "Insurance Service Requests",
+        "Insurance Agency Staff",
+        "Washington DC Insurance Agency",
+        "Maryland Insurance Agency",
+        "Virginia Insurance Agency",
+      ],
+      alternates: { canonical: "/about-us/team/jesa-esquillo" },
+    },
+  },
 ]
