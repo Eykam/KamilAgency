@@ -11,7 +11,7 @@ const routes = [
   "/guides",
   "/guides/state-minimum",
   "/about-us/team/mohamed-kamil",
-  "/about-us/team/eyad-kamil",
+
   "/about-us/team/amgad-kamil",
   "/policy/privacy",
   "/policy/terms",
