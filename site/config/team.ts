@@ -41,39 +41,6 @@ export const team: TeamMember[] = [
     },
   },
   {
-    name: "Eyad Kamil",
-    descriptionShort:
-      "IT Manager with expertise in web development, SEO, marketing, and system administration.",
-    description:
-      "Eyad Kamil is a skilled IT Manager with a strong background in supporting insurance operations through technology. He specializes in web development, SEO, marketing, and system administration. Eyad ensures that the agency's technology infrastructure runs smoothly, enabling the team to provide top-notch service to clients. His technical expertise is crucial in maintaining the agency's competitive edge in the digital landscape.",
-    title: "IT Manager",
-    avatar: "/images/people/eyad.jpg",
-    pageUrl: "/about-us/team/eyad-kamil",
-    contact: { phone: "(240) 400-7393", email: "ekamil@kamilagency.com" },
-    expertise: ["Web Development", "SEO", "Marketing", "System Administration"],
-    metadata: {
-      title: "Eyad Kamil | IT Manager",
-      description:
-        "Meet Eyad Kamil, the IT Manager at Kamil Agency with expertise in web development, SEO, marketing, and system administration. Serving clients in Washington D.C, Maryland, Virginia, and beyond, Eyad supports insurance operations through technology, ensuring the agency's infrastructure runs smoothly and effectively.",
-      keywords: [
-        "Eyad Kamil",
-        "IT Manager",
-        "Kamil Agency",
-        "Web Development",
-        "SEO",
-        "Marketing",
-        "System Administration",
-        "Technology Support",
-        "Insurance Technology",
-        "Digital Landscape",
-        "Washington D.C",
-        "Maryland",
-        "Virginia",
-      ],
-      alternates: { canonical: "/about-us/team/eyad-kamil" },
-    },
-  },
-  {
     name: "Amgad Kamil",
     descriptionShort:
       "Office Manager dedicated to providing expert guidance in home, auto, commercial, landlord, and renters insurance.",
