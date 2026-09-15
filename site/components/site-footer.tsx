@@ -157,7 +157,10 @@ export function SiteFooter({
         </div>
 
         <div className="mt-4 flex w-full items-center justify-between self-start text-sm leading-loose text-primary/60">
-          <p>© {new Date().getFullYear()} Kamil Agency</p>
+          <div>
+            <p>© {new Date().getFullYear()} Kamil Agency</p>
+            <p>Service in English, Spanish, and Arabic.</p>
+          </div>
           <div className="space-x-4">
             <Link href="/policy/privacy" className="hover:text-primary">
               Privacy Policy

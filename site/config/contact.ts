@@ -34,7 +34,7 @@ export const contact: Contact = {
   landing: {
     title: "Talk to Kamil Agency",
     descriptionShort:
-      "Reach our office for quotes, policy questions, billing support, and coverage guidance. We make it easy to connect with a licensed team member and get clear next steps.",
+      "Reach our office for quotes, policy questions, billing support, and coverage guidance in English, Spanish, or Arabic. We make it easy to connect with a team member and get clear next steps.",
     teamURL: "#info",
     contactURL: "#hours-and-locations",
     imageURL: "/images/contact/contact-hero.webp",
@@ -42,6 +42,6 @@ export const contact: Contact = {
   contactInfo: {
     title: "Contact Kamil Agency",
     descriptionShort:
-      "Kamil Agency helps individuals, families, and business owners find dependable coverage without making the process complicated. Whether you need a new quote, help reviewing an existing policy, or answers about billing and service, our office is here to give you straightforward guidance and responsive support.",
+      "Kamil Agency helps individuals, families, and business owners find dependable coverage without making the process complicated. Our multilingual team serves clients in English, Spanish, and Arabic with straightforward guidance and responsive support.",
   },
 }

@@ -162,6 +162,7 @@ const insuranceAgencyJsonLd = {
     "West Virginia",
     "North Carolina",
   ],
+  knowsLanguage: ["English", "Spanish", "Arabic"],
   sameAs: Object.values(socials).map((social) => social.url),
 }
 

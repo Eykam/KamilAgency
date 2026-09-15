@@ -47,8 +47,8 @@ export default function ContactForm() {
           Get in Touch
         </h2>
         <p className="text-base leading-7 text-gray-600 dark:text-gray-300">
-          Tell us what you need and our office will follow up as soon as
-          possible.
+          Tell us what you need and your preferred language. Our English,
+          Spanish, and Arabic-speaking team will follow up as soon as possible.
         </p>
       </div>
       <form className="space-y-4" onSubmit={handleSubmit}>

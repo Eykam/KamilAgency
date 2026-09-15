@@ -3,10 +3,7 @@ import Link from "next/link"
 
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
-import { TrackedLink } from "@/components/tracked-link"
-
-const quoteUrl =
-  "https://www.agentinsure.com/compare/auto-insurance-home-insurance/mohame/quote.aspx"
+import { QuoteLeadForm } from "@/components/quote-lead-form"
 
 export const metadata: Metadata = {
   title: "Personal Insurance Quote",
@@ -18,36 +15,25 @@ export const metadata: Metadata = {
 export default function PersonalQuotePage() {
   return (
     <div className="container flex min-h-[65vh] items-center justify-center px-4 py-16">
-      <section className="w-full max-w-2xl space-y-6 rounded-2xl border border-primary/15 p-8 text-center shadow-sm md:p-12">
+      <section className="w-full max-w-3xl space-y-7 rounded-2xl border border-primary/15 p-6 text-center shadow-sm md:p-10">
         <p className="text-sm font-semibold uppercase tracking-wide text-primary/60">
           Personal Lines
         </p>
         <h1 className="text-4xl font-bold tracking-tight">
-          Start Your Personal Insurance Quote
+          Tell Us What You Need
         </h1>
         <p className="text-lg leading-8 text-muted-foreground">
-          The secure quote form opens in a separate window. Confirm that you are
-          working with Kamil Agency before entering personal information.
+          Share a few contact details first so our local team can help if the
+          secure quote form is interrupted. Service is available in English,
+          Spanish, and Arabic.
         </p>
-        <div className="flex flex-col justify-center gap-3 sm:flex-row">
-          <TrackedLink
-            href={quoteUrl}
-            target="_blank"
-            rel="noopener noreferrer nofollow"
-            className={cn(buttonVariants({ size: "lg" }))}
-            eventName="quote_handoff"
-            eventParams={{
-              quote_type: "personal",
-              link_location: "quote_page",
-            }}
-          >
-            Open Secure Quote Form
-          </TrackedLink>
+        <QuoteLeadForm />
+        <div className="flex justify-center">
           <Link
             href="/contact-us"
             className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
           >
-            Ask for Help
+            Prefer to Talk First?
           </Link>
         </div>
       </section>
