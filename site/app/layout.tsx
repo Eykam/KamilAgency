@@ -3,7 +3,6 @@ import localFont from "next/font/local"
 
 import "@/styles/globals.css"
 import type { Metadata } from "next"
-import { GoogleAnalytics } from "@next/third-parties/google"
 
 import { siteConfig } from "@/config/site"
 import { socials } from "@/config/socials"
@@ -169,6 +168,22 @@ const insuranceAgencyJsonLd = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-NG2YZSHFJT"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-NG2YZSHFJT');
+            `,
+          }}
+        />
+      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
@@ -183,7 +198,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <SpeedInsight />
           <Toaster />
           <TailwindIndicator />
-          <GoogleAnalytics gaId="G-NG2YZSHFJT" />
         </ThemeProvider>
       </body>
     </html>
