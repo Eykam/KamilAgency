@@ -20,12 +20,14 @@ const routes = [
   "/services",
   "/services/auto-insurance",
   "/services/commercial-insurance",
+  "/services/condo-insurance",
   "/services/homeowners-insurance",
   "/services/landlord-insurance",
   "/services/life-insurance",
   "/services/medicare",
   "/services/renters-insurance",
   "/services/umbrella-insurance",
+  "/services/vacant-home-insurance",
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
