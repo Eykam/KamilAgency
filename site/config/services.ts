@@ -5,12 +5,14 @@ import { Icons } from "@/components/icons"
 
 import { AutoPolicyDetails, autoFAQ } from "./services/auto"
 import { CommercialPolicyDetails, commercialFAQ } from "./services/commercial"
+import { CondoPolicyDetails, condoFAQ } from "./services/condo"
 import { HomeownersPolicyDetails, homeownersFAQ } from "./services/homeowners"
 import { LandlordPolicyDetails, landlordFAQ } from "./services/landlord"
 import { LifePolicyDetails, lifeFAQ } from "./services/life"
 import { MedicarePolicyDetails, medicareFAQ } from "./services/medicare"
 import { RentersPolicyDetails, rentersFAQ } from "./services/renters"
 import { UmbrellaPolicyDetails, umbrellaFAQ } from "./services/umbrella"
+import { VacantHomePolicyDetails, vacantHomeFAQ } from "./services/vacant-home"
 import { siteConfig } from "./site"
 
 // import { homeownersFAQ, HomeownersPolicyDetails } from "./services/health"
@@ -61,6 +63,22 @@ export const services: Service[] = [
     pageURL: "/services/homeowners-insurance",
     imageURL: "/images/services/home.webp",
     faq: homeownersFAQ,
+  },
+  {
+    name: "Condo",
+    descriptionShort:
+      "Protection for your condo unit, belongings, liability, and assessments.",
+    description:
+      "Kamil Agency helps Washington, DC condo owners compare HO-6 coverage for their unit, belongings, personal liability, additional living expenses, and eligible loss assessments.",
+    descriptionLong:
+      "A condominium association's master policy and an individual condo policy protect different parts of the property. Kamil Agency helps Washington, DC condo owners understand the master policy, identify their responsibilities, and compare HO-6 coverage for personal property, interior improvements, liability, additional living expenses, and eligible loss assessments.",
+    icon: Icons.home({}),
+    quoteURL: siteConfig.quoteURL,
+    docsURL: "/docs",
+    pageURL: "/services/condo-insurance",
+    imageURL: "/images/services/home.webp",
+    details: CondoPolicyDetails,
+    faq: condoFAQ,
   },
   {
     name: "Auto",
@@ -122,6 +140,22 @@ export const services: Service[] = [
     imageURL: "/images/services/landlord.webp",
     details: LandlordPolicyDetails,
     faq: landlordFAQ,
+  },
+  {
+    name: "Vacant Home",
+    descriptionShort:
+      "Coverage options for unoccupied, inherited, renovated, or for-sale homes.",
+    description:
+      "Kamil Agency helps property owners compare insurance for vacant and unoccupied homes in Washington, DC, Maryland, and Virginia, including homes under renovation or listed for sale.",
+    descriptionLong:
+      "Vacant and unoccupied homes often need specialized coverage because standard homeowners policies may restrict protection after a property has been empty for a defined period. Kamil Agency helps owners compare options for dwellings, vandalism, premises liability, and flexible policy terms based on the property's condition, vacancy reason, and expected timeline.",
+    icon: Icons.home({}),
+    quoteURL: siteConfig.quoteURL,
+    docsURL: "/docs",
+    pageURL: "/services/vacant-home-insurance",
+    imageURL: "/images/services/home.webp",
+    details: VacantHomePolicyDetails,
+    faq: vacantHomeFAQ,
   },
   {
     name: "Medicare",
