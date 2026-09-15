@@ -19,6 +19,10 @@ export const marketingConfig: MarketingConfig = {
       title: "Contact Us",
       href: "/contact-us",
     },
+    {
+      title: "Español",
+      href: "/es",
+    },
     { title: "FAQs", href: "/#faq" },
     // {
     //   title: "Blog",
