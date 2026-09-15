@@ -14,17 +14,16 @@ export default function HeroSection() {
           Local, independent insurance guidance from Washington, DC
         </p>
         <h1 className="relative font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
-          Independent Insurance Agency
-          <br className="hidden sm:block" /> Serving Washington, DC
+          Compare Home, Auto &amp; Business Insurance
+          <br className="hidden sm:block" /> with a Local DC Agency
         </h1>
 
         <p className="max-w-[42rem] leading-normal sm:text-xl sm:leading-8">
-          Our expert team is dedicated to providing personalized service,
-          ensuring peace of mind and protection for you and your loved ones.
+          Get clear recommendations from a responsive local team that takes time
+          to understand your home, vehicle, business, and budget.
         </p>
-        <p className="text-lg font-medium sm:text-xl">
-          Insurance guidance throughout Washington, DC and the surrounding
-          region.
+        <p className="text-lg font-semibold sm:text-xl">
+          We speak English, Spanish, and Arabic.
         </p>
         <div className="flex flex-col gap-3 sm:flex-row">
           <TrackedLink
@@ -49,13 +48,13 @@ export default function HeroSection() {
         </div>
         <ul className="mt-2 grid gap-3 text-sm sm:grid-cols-3">
           <li className="rounded-lg border bg-background/70 px-4 py-3">
-            Personal recommendations
+            Local DC office
           </li>
           <li className="rounded-lg border bg-background/70 px-4 py-3">
-            A local DC office
+            Real client reviews
           </li>
           <li className="rounded-lg border bg-background/70 px-4 py-3">
-            Responsive human service
+            English · Español · العربية
           </li>
         </ul>
       </div>
