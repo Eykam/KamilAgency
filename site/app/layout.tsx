@@ -183,7 +183,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <SpeedInsight />
           <Toaster />
           <TailwindIndicator />
-          <GoogleAnalytics gaId="G-FF4L3T2C99" />
+          <GoogleAnalytics gaId="G-NG2YZSHFJT" />
         </ThemeProvider>
       </body>
     </html>
