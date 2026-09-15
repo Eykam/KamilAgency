@@ -69,7 +69,7 @@ export function QuoteLeadForm() {
     }
 
     sendGAEvent("event", "generate_lead", {
-      lead_source: "personal_quote_form",
+      lead_source: "website_quote_form",
       insurance_type: coverage,
       preferred_language: language,
     })
@@ -95,7 +95,7 @@ export function QuoteLeadForm() {
           className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           onClick={() =>
             sendGAEvent("event", "quote_handoff", {
-              quote_type: "personal",
+              quote_type: coverage,
               link_location: "captured_quote_lead",
             })
           }
