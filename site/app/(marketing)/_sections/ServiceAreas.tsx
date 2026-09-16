@@ -1,15 +1,15 @@
 import Link from "next/link"
 
 const neighborhoods = [
-  "Georgetown",
-  "Glover Park",
-  "Cathedral Heights",
-  "Cleveland Park",
-  "Tenleytown",
-  "Chevy Chase",
-  "Woodley Park",
-  "Palisades",
-]
+  { name: "Georgetown", href: "/services/home-insurance-georgetown" },
+  { name: "Glover Park" },
+  { name: "Cathedral Heights" },
+  { name: "Cleveland Park" },
+  { name: "Tenleytown" },
+  { name: "Chevy Chase" },
+  { name: "Woodley Park" },
+  { name: "Palisades" },
+] as const
 
 export default function ServiceAreasSection() {
   return (
@@ -58,10 +58,19 @@ export default function ServiceAreasSection() {
           <ul className="mt-5 grid grid-cols-2 gap-3">
             {neighborhoods.map((neighborhood) => (
               <li
-                key={neighborhood}
+                key={neighborhood.name}
                 className="rounded-lg border bg-card px-4 py-3 text-sm font-medium"
               >
-                {neighborhood}, DC
+                {"href" in neighborhood ? (
+                  <Link
+                    href={neighborhood.href}
+                    className="text-accent underline-offset-4 hover:underline"
+                  >
+                    {neighborhood.name}, DC
+                  </Link>
+                ) : (
+                  <>{neighborhood.name}, DC</>
+                )}
               </li>
             ))}
           </ul>
