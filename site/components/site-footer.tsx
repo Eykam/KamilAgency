@@ -161,7 +161,16 @@ export function SiteFooter({
             <p>© {new Date().getFullYear()} Kamil Agency</p>
             <p>Service in English, Spanish, and Arabic.</p>
           </div>
-          <div className="space-x-4">
+          <div className="flex flex-wrap justify-end gap-x-4 gap-y-1">
+            <Link href="/reviews" className="hover:text-primary">
+              Reviews
+            </Link>
+            <Link href="/refer-a-friend" className="hover:text-primary">
+              Refer a Friend
+            </Link>
+            <Link href="/docs" className="hover:text-primary">
+              Library
+            </Link>
             <Link href="/policy/privacy" className="hover:text-primary">
               Privacy Policy
             </Link>
