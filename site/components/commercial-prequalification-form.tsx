@@ -1,6 +1,6 @@
 "use client"
 
-import { FormEvent, useState } from "react"
+import { FormEvent, useRef, useState } from "react"
 import { sendGAEvent } from "@next/third-parties/google"
 
 import { siteConfig } from "@/config/site"
@@ -16,6 +16,33 @@ const selectClassName =
 
 export function CommercialPrequalificationForm() {
   const [status, setStatus] = useState<FormStatus>("idle")
+  const [step, setStep] = useState<1 | 2>(1)
+  const formRef = useRef<HTMLFormElement>(null)
+
+  function continueToDetails() {
+    const firstStep = formRef.current?.querySelector<HTMLFieldSetElement>(
+      "[data-commercial-step='1']"
+    )
+
+    if (!firstStep) return
+
+    const fields = Array.from(
+      firstStep.querySelectorAll<HTMLInputElement | HTMLSelectElement>(
+        "input, select"
+      )
+    )
+    const firstInvalidField = fields.find((field) => !field.checkValidity())
+
+    if (firstInvalidField) {
+      firstInvalidField.reportValidity()
+      return
+    }
+
+    setStep(2)
+    requestAnimationFrame(() => {
+      document.getElementById("commercial-step-2-heading")?.focus()
+    })
+  }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -89,7 +116,7 @@ export function CommercialPrequalificationForm() {
   }
 
   return (
-    <form className="space-y-5 text-left" onSubmit={handleSubmit}>
+    <form ref={formRef} className="space-y-5 text-left" onSubmit={handleSubmit}>
       <div className="hidden" aria-hidden="true">
         <Label htmlFor="commercial-website">Website</Label>
         <Input
@@ -100,158 +127,202 @@ export function CommercialPrequalificationForm() {
         />
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
-        <Field id="commercial-name" label="Your name">
-          <Input
-            id="commercial-name"
-            name="name"
-            autoComplete="name"
-            maxLength={100}
-            required
+      <div className="rounded-xl bg-secondary p-4" aria-live="polite">
+        <p className="text-sm font-semibold">Step {step} of 2</p>
+        <div className="mt-2 h-2 overflow-hidden rounded-full bg-background">
+          <div
+            className="h-full bg-primary transition-all"
+            style={{ width: step === 1 ? "50%" : "100%" }}
           />
-        </Field>
-        <Field id="commercial-business" label="Business name">
-          <Input
-            id="commercial-business"
-            name="businessName"
-            autoComplete="organization"
-            maxLength={120}
-            required
-          />
-        </Field>
-        <Field id="commercial-email" label="Email">
-          <Input
-            id="commercial-email"
-            name="email"
-            type="email"
-            autoComplete="email"
-            maxLength={254}
-            required
-          />
-        </Field>
-        <Field id="commercial-phone" label="Phone">
-          <Input
-            id="commercial-phone"
-            name="phone"
-            type="tel"
-            autoComplete="tel"
-            maxLength={40}
-            required
-          />
-        </Field>
-        <Field id="commercial-zip" label="Primary business ZIP code">
-          <Input
-            id="commercial-zip"
-            name="zip"
-            inputMode="numeric"
-            autoComplete="postal-code"
-            maxLength={10}
-            pattern="[0-9]{5}(-[0-9]{4})?"
-            required
-          />
-        </Field>
-        <Field id="commercial-industry" label="Industry or business activity">
-          <Input
-            id="commercial-industry"
-            name="industry"
-            maxLength={120}
-            required
-            placeholder="Example: electrical contractor"
-          />
-        </Field>
-        <SelectField
-          id="commercial-years"
-          name="yearsInBusiness"
-          label="Years in business"
-          options={[
-            "New venture",
-            "Less than 1 year",
-            "1–3 years",
-            "4–10 years",
-            "More than 10 years",
-          ]}
-        />
-        <SelectField
-          id="commercial-revenue"
-          name="revenue"
-          label="Estimated annual revenue"
-          options={[
-            "Under $100,000",
-            "$100,000–$499,999",
-            "$500,000–$999,999",
-            "$1 million–$5 million",
-            "More than $5 million",
-          ]}
-        />
-        <SelectField
-          id="commercial-employees"
-          name="employees"
-          label="Number of employees"
-          options={["0", "1–4", "5–10", "11–25", "26+"]}
-        />
-        <SelectField
-          id="commercial-payroll"
-          name="payroll"
-          label="Estimated annual payroll"
-          options={[
-            "No payroll",
-            "Under $100,000",
-            "$100,000–$499,999",
-            "$500,000–$999,999",
-            "$1 million+",
-          ]}
-        />
-        <SelectField
-          id="commercial-vehicles"
-          name="vehicles"
-          label="Business vehicles"
-          options={["0", "1", "2–5", "6–10", "11+"]}
-        />
-        <SelectField
-          id="commercial-insured"
-          name="currentlyInsured"
-          label="Currently insured?"
-          options={["Yes", "No", "Not sure"]}
-        />
-        <Field id="commercial-coverage" label="Coverage needed">
-          <Input
-            id="commercial-coverage"
-            name="coverage"
-            maxLength={200}
-            required
-            placeholder="Example: liability, property, commercial auto"
-          />
-        </Field>
-        <SelectField
-          id="commercial-language"
-          name="language"
-          label="Preferred language"
-          options={["English", "Español", "العربية"]}
-        />
+        </div>
       </div>
 
-      <Field
-        id="commercial-details"
-        label="Anything else we should know? (optional)"
-      >
-        <Textarea
-          id="commercial-details"
-          name="details"
-          rows={4}
-          maxLength={600}
-          placeholder="Briefly describe your operations or timing. Do not enter sensitive personal or financial information."
-        />
-      </Field>
+      <fieldset data-commercial-step="1" hidden={step !== 1}>
+        <legend
+          id="commercial-step-1-heading"
+          className="mb-5 text-xl font-semibold"
+          tabIndex={-1}
+        >
+          Tell us how to reach your business
+        </legend>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Field id="commercial-name" label="Your name">
+            <Input
+              id="commercial-name"
+              name="name"
+              autoComplete="name"
+              maxLength={100}
+              required
+            />
+          </Field>
+          <Field id="commercial-business" label="Business name">
+            <Input
+              id="commercial-business"
+              name="businessName"
+              autoComplete="organization"
+              maxLength={120}
+              required
+            />
+          </Field>
+          <Field id="commercial-email" label="Email">
+            <Input
+              id="commercial-email"
+              name="email"
+              type="email"
+              autoComplete="email"
+              maxLength={254}
+              required
+            />
+          </Field>
+          <Field id="commercial-phone" label="Phone">
+            <Input
+              id="commercial-phone"
+              name="phone"
+              type="tel"
+              autoComplete="tel"
+              maxLength={40}
+            />
+          </Field>
+          <Field id="commercial-zip" label="Primary business ZIP code">
+            <Input
+              id="commercial-zip"
+              name="zip"
+              inputMode="numeric"
+              autoComplete="postal-code"
+              maxLength={10}
+              pattern="[0-9]{5}(-[0-9]{4})?"
+              required
+            />
+          </Field>
+          <Field id="commercial-industry" label="Industry or business activity">
+            <Input
+              id="commercial-industry"
+              name="industry"
+              maxLength={120}
+              required
+              placeholder="Example: electrical contractor"
+            />
+          </Field>
+          <Field id="commercial-coverage" label="Coverage needed">
+            <Input
+              id="commercial-coverage"
+              name="coverage"
+              maxLength={200}
+              required
+              placeholder="Example: liability, property, commercial auto"
+            />
+          </Field>
+        </div>
+        <Button
+          type="button"
+          className="mt-6 w-full"
+          onClick={continueToDetails}
+        >
+          Continue to Business Details
+        </Button>
+      </fieldset>
 
-      <div className="rounded-xl bg-secondary p-4 text-sm leading-6 text-muted-foreground">
-        Do not enter an EIN, Social Security number, driver’s-license number,
-        date of birth, payment information, or other sensitive data here. The
-        secure quote provider will request any detailed underwriting information
-        it needs.
-      </div>
-      <Button type="submit" className="w-full" disabled={status === "sending"}>
-        {status === "sending" ? "Sending…" : "Send Details & Continue"}
-      </Button>
+      <fieldset data-commercial-step="2" hidden={step !== 2}>
+        <legend
+          id="commercial-step-2-heading"
+          className="mb-5 text-xl font-semibold"
+          tabIndex={-1}
+        >
+          Add details that help us find the right market
+        </legend>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <SelectField
+            id="commercial-years"
+            name="yearsInBusiness"
+            label="Years in business"
+            options={[
+              "New venture",
+              "Less than 1 year",
+              "1–3 years",
+              "4–10 years",
+              "More than 10 years",
+            ]}
+          />
+          <SelectField
+            id="commercial-revenue"
+            name="revenue"
+            label="Estimated annual revenue"
+            options={[
+              "Under $100,000",
+              "$100,000–$499,999",
+              "$500,000–$999,999",
+              "$1 million–$5 million",
+              "More than $5 million",
+            ]}
+          />
+          <SelectField
+            id="commercial-employees"
+            name="employees"
+            label="Number of employees"
+            options={["0", "1–4", "5–10", "11–25", "26+"]}
+          />
+          <SelectField
+            id="commercial-payroll"
+            name="payroll"
+            label="Estimated annual payroll"
+            options={[
+              "No payroll",
+              "Under $100,000",
+              "$100,000–$499,999",
+              "$500,000–$999,999",
+              "$1 million+",
+            ]}
+          />
+          <SelectField
+            id="commercial-vehicles"
+            name="vehicles"
+            label="Business vehicles"
+            options={["0", "1", "2–5", "6–10", "11+"]}
+          />
+          <SelectField
+            id="commercial-insured"
+            name="currentlyInsured"
+            label="Currently insured?"
+            options={["Yes", "No", "Not sure"]}
+          />
+          <SelectField
+            id="commercial-language"
+            name="language"
+            label="Preferred language"
+            options={["English", "Español", "العربية"]}
+          />
+        </div>
+
+        <div className="mt-5">
+          <Field
+            id="commercial-details"
+            label="Anything else we should know? (optional)"
+          >
+            <Textarea
+              id="commercial-details"
+              name="details"
+              rows={4}
+              maxLength={600}
+              placeholder="Briefly describe your operations or timing. Do not enter sensitive personal or financial information."
+            />
+          </Field>
+        </div>
+
+        <div className="mt-5 rounded-xl bg-secondary p-4 text-sm leading-6 text-muted-foreground">
+          Do not enter an EIN, Social Security number, driver’s-license number,
+          date of birth, payment information, or other sensitive data here. The
+          secure quote provider will request any detailed underwriting
+          information it needs.
+        </div>
+        <div className="mt-5 grid gap-3 sm:grid-cols-2">
+          <Button type="button" variant="outline" onClick={() => setStep(1)}>
+            Back
+          </Button>
+          <Button type="submit" disabled={status === "sending"}>
+            {status === "sending" ? "Sending…" : "Send Details & Continue"}
+          </Button>
+        </div>
+      </fieldset>
       <p
         className="min-h-5 text-center text-sm"
         role="status"
