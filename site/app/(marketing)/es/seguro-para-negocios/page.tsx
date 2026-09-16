@@ -6,7 +6,14 @@ export const metadata: Metadata = {
   title: "Seguro para negocios en Washington, DC",
   description:
     "Ayuda en español para comparar seguros comerciales, responsabilidad civil y protección de propiedad para negocios en Washington, DC.",
-  alternates: { canonical: "/es/seguro-para-negocios" },
+  alternates: {
+    canonical: "/es/seguro-para-negocios",
+    languages: {
+      "en-US": "/services/commercial-insurance",
+      "es-US": "/es/seguro-para-negocios",
+      "ar-US": "/ar/business-insurance",
+    },
+  },
 }
 
 export default function SpanishBusinessInsurancePage() {
