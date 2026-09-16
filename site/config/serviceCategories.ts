@@ -1,6 +1,9 @@
 import { ServiceCategory } from "@/types"
+
 import { Icons } from "@/components/icons"
+
 import { siteConfig } from "./site"
+
 export const ServiceCategories: ServiceCategory[] = [
   {
     name: "Personal Lines",
@@ -13,7 +16,7 @@ export const ServiceCategories: ServiceCategory[] = [
     name: "Commercial",
     descriptionShort:
       "Get a quote for Commercial insurance to safeguard your business assets and operations. Find the right coverage tailored to your business needs.",
-    url: siteConfig.commercialQuoteURL,
+    url: "/quote/commercial",
     logo: Icons.commercial({}),
   },
   {
