@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 // import AboutSection from "./_sections/About"
 
 import type { Metadata } from "next"
@@ -15,6 +16,23 @@ import ReviewsSection from "./_sections/Reviews"
 import ServiceAreasSection from "./_sections/ServiceAreas"
 import ServiceSection from "./_sections/Services"
 
+const personalLineCarriers = [
+  { name: "Travelers", domain: "travelers.com" },
+  { name: "GEICO", domain: "geico.com" },
+  { name: "Progressive", domain: "progressive.com" },
+  { name: "Nationwide", domain: "nationwide.com" },
+  { name: "Liberty Mutual", domain: "libertymutual.com" },
+  { name: "National General", domain: "nationalgeneral.com" },
+  { name: "Clearcover", domain: "clearcover.com" },
+  { name: "Maryland Auto", domain: "mymarylandauto.com" },
+  { name: "Trexis", domain: "trexis.com" },
+  { name: "AAA", domain: "aaa.com" },
+  { name: "Stillwater", domain: "stillwaterinsurance.com" },
+  { name: "AIC", domain: "aiconline.com" },
+  { name: "Narragansett Bay", domain: "nbic.com" },
+  { name: "Universal Property", domain: "universalproperty.com" },
+] as const
+
 export const metadata: Metadata = {
   title: "Compare Home, Auto & Business Insurance in Washington, DC",
   description:
@@ -25,6 +43,63 @@ export const metadata: Metadata = {
   },
 }
 
+function PersonalLineCarriersSection() {
+  return (
+    <section
+      aria-labelledby="personal-carriers-heading"
+      className="bg-secondary/50 py-16 sm:py-20"
+    >
+      <div className="container">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+            Personal insurance carriers
+          </p>
+          <h2
+            id="personal-carriers-heading"
+            className="mt-3 font-heading text-3xl font-bold sm:text-4xl"
+          >
+            More options for protecting what matters
+          </h2>
+          <p className="mt-4 text-base leading-7 text-muted-foreground sm:text-lg">
+            Kamil Agency works with a range of personal insurance carriers to
+            help clients compare coverage for their homes, vehicles, and other
+            personal insurance needs.
+          </p>
+        </div>
+
+        <ul className="mx-auto mt-10 grid max-w-6xl grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+          {personalLineCarriers.map((carrier) => (
+            <li
+              key={carrier.name}
+              className="flex min-h-28 flex-col items-center justify-center gap-3 rounded-xl border bg-background px-4 py-5 text-center shadow-sm transition-transform hover:-translate-y-0.5"
+            >
+              <img
+                src={`https://www.google.com/s2/favicons?domain=${carrier.domain}&sz=128`}
+                alt=""
+                aria-hidden="true"
+                width="40"
+                height="40"
+                loading="lazy"
+                decoding="async"
+                className="h-10 w-10 object-contain"
+              />
+              <span className="text-sm font-semibold leading-tight">
+                {carrier.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+        <p className="mx-auto mt-6 max-w-3xl text-center text-xs leading-5 text-muted-foreground">
+          Carrier availability, eligibility, and product offerings vary by
+          state and individual risk. Contact our team to review available
+          options for your needs.
+        </p>
+      </div>
+    </section>
+  )
+}
+
 export default async function IndexPage() {
   return (
     <>
@@ -32,6 +107,7 @@ export default async function IndexPage() {
       <LeadCaptureSection />
       <LocalExpertiseSection />
       <ServiceSection />
+      <PersonalLineCarriersSection />
       <LocalTeamSection />
       <ReviewsSection />
       <ServiceAreasSection />
