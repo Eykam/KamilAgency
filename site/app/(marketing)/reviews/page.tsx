@@ -84,7 +84,7 @@ export default function ReviewsPage() {
             rel="noopener noreferrer nofollow"
             className={buttonVariants({ size: "lg" })}
           >
-            View Kamil Agency on Google
+            See Current Google Rating & Reviews
           </Link>
           <p className="mx-auto mt-4 max-w-2xl text-xs leading-5 text-muted-foreground">
             Review dates and wording are shown as originally published. Visit

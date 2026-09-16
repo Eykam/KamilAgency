@@ -9,6 +9,14 @@ function classifyLink(anchor: HTMLAnchorElement) {
   if (href.startsWith("tel:")) return "click_to_call"
   if (href.toLowerCase().startsWith("mailto:")) return "email_click"
   if (href === "/quote" || href.startsWith("/quote/")) return "quote_start"
+  if (
+    (href.includes("google.com/maps") || href.includes("maps.app.goo.gl")) &&
+    (href.toLowerCase().includes("kamil") ||
+      anchor.textContent?.toLowerCase().includes("review") ||
+      anchor.textContent?.toLowerCase().includes("rating"))
+  ) {
+    return "review_profile_click"
+  }
   if (href.includes("google.com/maps") || href.includes("maps.app.goo.gl")) {
     return "map_click"
   }

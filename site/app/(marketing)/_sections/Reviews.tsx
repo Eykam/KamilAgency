@@ -78,7 +78,7 @@ export default function ReviewsSection() {
             rel="noopener noreferrer nofollow"
             className={buttonVariants({ variant: "secondary", size: "lg" })}
           >
-            View Kamil Agency on Google
+            See Current Google Rating & Reviews
           </Link>
         </div>
       </div>
