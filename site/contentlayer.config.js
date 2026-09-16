@@ -119,7 +119,7 @@ export const Author = defineDocumentType(() => ({
     },
     twitter: {
       type: "string",
-      required: true,
+      required: false,
     },
   },
   computedFields,

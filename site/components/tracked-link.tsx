@@ -20,8 +20,12 @@ export function TrackedLink({
   return (
     <Link
       {...props}
+      data-analytics-tracked="true"
       onClick={(event) => {
-        sendGAEvent("event", eventName, eventParams)
+        sendGAEvent("event", eventName, {
+          ...eventParams,
+          link_url: String(props.href),
+        })
         onClick?.(event)
       }}
     />

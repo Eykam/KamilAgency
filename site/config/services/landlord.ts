@@ -1,5 +1,5 @@
-import { FAQ, PolicyDetails } from "@/types"
 import { Metadata } from "next"
+import { FAQ, PolicyDetails } from "@/types"
 
 export const autoMetaData: Metadata = {
   title: "",
@@ -59,7 +59,7 @@ export const landlordFAQ: FAQ[] = [
   {
     question: "How much does landlord insurance cost?",
     answer:
-      "The cost of landlord insurance varies based on factors such as the value of the property, location, coverage limits, and deductible. On average, landlords can expect to pay between $800 and $1,500 annually.",
+      "Pricing depends on the property's location, construction, replacement cost, occupancy, number of units, prior claims, coverage limits, and deductible. A tailored review is more reliable than a broad average.",
   },
   {
     question: "Do I need landlord insurance if I rent out my property?",
@@ -81,5 +81,17 @@ export const landlordFAQ: FAQ[] = [
     question: "What is loss of rental income coverage?",
     answer:
       "Loss of rental income coverage helps compensate for lost rental income if your property becomes uninhabitable due to a covered event. It ensures that you continue to receive rental income while repairs are being made.",
+  },
+  {
+    question:
+      "Can I use homeowners insurance after moving out and renting the home?",
+    answer:
+      "Owner-occupied homeowners coverage may not fit a property that is rented to others. Tell the insurer before occupancy changes so the property can be reviewed for an appropriate landlord or dwelling policy.",
+  },
+  {
+    question:
+      "What happens to coverage when a rental is vacant between tenants?",
+    answer:
+      "Policies can limit coverage after a property has been vacant for a specified period. Vacancy length, renovations, utilities, security, and the next occupancy date should be discussed promptly with an agent.",
   },
 ]

@@ -171,6 +171,18 @@ export function SiteFooter({
             <Link href="/docs" className="hover:text-primary">
               Library
             </Link>
+            <Link href="/blog" className="hover:text-primary">
+              Insurance Guides
+            </Link>
+            <Link href="/carriers" className="hover:text-primary">
+              Insurance Markets
+            </Link>
+            <Link
+              href="/about-us/business-information"
+              className="hover:text-primary"
+            >
+              Business Information
+            </Link>
             <Link href="/policy/privacy" className="hover:text-primary">
               Privacy Policy
             </Link>

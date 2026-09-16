@@ -9,6 +9,7 @@ import { socials } from "@/config/socials"
 import { cn } from "@/lib/utils"
 import { Toaster } from "@/components/ui/toaster"
 import { Analytics, SpeedInsight } from "@/components/analytics"
+import { ConversionEvents } from "@/components/conversion-events"
 import { JsonLd } from "@/components/json-ld"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -195,6 +196,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <JsonLd data={insuranceAgencyJsonLd} />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
+          <ConversionEvents />
           <Analytics />
           <SpeedInsight />
           <Toaster />

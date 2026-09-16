@@ -1,5 +1,5 @@
-import { FAQ, PolicyDetails } from "@/types"
 import { Metadata } from "next"
+import { FAQ, PolicyDetails } from "@/types"
 
 export const autoMetaData: Metadata = {
   title: "",
@@ -49,7 +49,7 @@ export const rentersFAQ: FAQ[] = [
   {
     question: "How much does renters insurance cost?",
     answer:
-      "The cost of renters insurance typically ranges from $10 to $30 per month, depending on the coverage limits, deductible, and location of the rental property.",
+      "Pricing depends on the address, building, coverage limits, deductible, prior claims, and optional coverage. An agent can compare available options after reviewing your needs; no single monthly price applies to every renter.",
   },
   {
     question: "Is renters insurance mandatory?",
@@ -70,5 +70,15 @@ export const rentersFAQ: FAQ[] = [
     question: "How do I file a renters insurance claim?",
     answer:
       "To file a renters insurance claim, contact your insurance provider as soon as possible, document the damage or loss, provide necessary receipts or evidence, and follow your insurer's claims process.",
+  },
+  {
+    question: "Does my landlord's insurance cover my belongings?",
+    answer:
+      "A landlord's policy generally protects the building and the landlord's liability exposure. It usually does not insure a tenant's furniture, clothing, electronics, or personal liability, which is why renters coverage is important.",
+  },
+  {
+    question: "Does renters insurance cover belongings away from home?",
+    answer:
+      "Many policies provide some personal-property coverage away from the residence, subject to policy limits, deductibles, and exclusions. Ask about special limits for jewelry, bicycles, electronics, and business property.",
   },
 ]

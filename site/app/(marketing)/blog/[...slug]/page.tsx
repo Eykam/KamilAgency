@@ -9,9 +9,11 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { env } from "@/env.mjs"
+import { siteConfig } from "@/config/site"
 import { absoluteUrl, cn, formatDate } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import { Icons } from "@/components/icons"
+import { JsonLd } from "@/components/json-ld"
 
 interface PostPageProps {
   params: {
@@ -21,7 +23,9 @@ interface PostPageProps {
 
 async function getPostFromParams(params) {
   const slug = params?.slug?.join("/")
-  const post = allPosts.find((post) => post.slugAsParams === slug)
+  const post = allPosts.find(
+    (post) => post.slugAsParams === slug && post.published
+  )
 
   if (!post) {
     null
@@ -50,7 +54,6 @@ export async function generateMetadata({
     title: post.title,
     description: post.description,
     alternates: { canonical: post.slug },
-    robots: { index: false, follow: true },
     authors: post.authors.map((author) => ({
       name: author,
     })),
@@ -80,9 +83,11 @@ export async function generateMetadata({
 export async function generateStaticParams(): Promise<
   PostPageProps["params"][]
 > {
-  return allPosts.map((post) => ({
-    slug: post.slugAsParams.split("/"),
-  }))
+  return allPosts
+    .filter((post) => post.published)
+    .map((post) => ({
+      slug: post.slugAsParams.split("/"),
+    }))
 }
 
 export default async function PostPage({ params }: PostPageProps) {
@@ -95,9 +100,26 @@ export default async function PostPage({ params }: PostPageProps) {
   const authors = post.authors.map((author) =>
     allAuthors.find(({ slug }) => slug === `/authors/${author}`)
   )
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.description,
+    image: `${siteConfig.url}${post.image}`,
+    datePublished: post.date,
+    dateModified: post.date,
+    mainEntityOfPage: `${siteConfig.url}${post.slug}`,
+    author: authors.filter(Boolean).map((author) => ({
+      "@type": "Organization",
+      name: author?.title,
+      url: siteConfig.url,
+    })),
+    publisher: { "@id": `${siteConfig.url}/#agency` },
+  }
 
   return (
     <article className="container relative max-w-3xl py-6 lg:py-10">
+      <JsonLd data={articleJsonLd} />
       <Link
         href="/blog"
         className={cn(
@@ -124,9 +146,8 @@ export default async function PostPage({ params }: PostPageProps) {
           <div className="mt-4 flex space-x-4">
             {authors.map((author) =>
               author ? (
-                <Link
+                <div
                   key={author._id}
-                  href={`https://twitter.com/${author.twitter}`}
                   className="flex items-center space-x-2 text-sm"
                 >
                   <Image
@@ -139,10 +160,10 @@ export default async function PostPage({ params }: PostPageProps) {
                   <div className="flex-1 text-left leading-tight">
                     <p className="font-medium">{author.title}</p>
                     <p className="text-[12px] text-muted-foreground">
-                      @{author.twitter}
+                      Independent insurance guidance
                     </p>
                   </div>
-                </Link>
+                </div>
               ) : null
             )}
           </div>

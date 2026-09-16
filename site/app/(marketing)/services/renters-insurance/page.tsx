@@ -5,12 +5,18 @@ import { services } from "@/config/services"
 import ServicePage from "@/components/service-page"
 
 export const metadata: Metadata = {
-  title: "Renters Insurance in Washington, DC",
+  title: "Renters Insurance in Washington, DC | Kamil Agency",
   description:
-    "Compare renters insurance options with a local Washington, DC agency serving Georgetown, Glover Park, and nearby communities.",
+    "Compare renters insurance for belongings, personal liability, and temporary living costs with a multilingual independent agency in Washington, DC.",
   keywords:
     "renters insurance, rental insurance, D.C. renters insurance, Maryland renters insurance, Virginia renters insurance, tenant insurance, belongings protection",
   alternates: { canonical: "/services/renters-insurance" },
+  openGraph: {
+    title: "Renters Insurance in Washington, DC | Kamil Agency",
+    description:
+      "Understand renters coverage for belongings, liability, and additional living expenses with local guidance.",
+    url: "/services/renters-insurance",
+  },
 }
 export default function RentersInsurance() {
   const service = services.find((service) => service.name === "Renters")

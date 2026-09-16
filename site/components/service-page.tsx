@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { CardProps } from "@/types"
 
+import { serviceSeoContent } from "@/config/service-seo-content"
 import { services } from "@/config/services"
 import {
   Carousel,
@@ -28,6 +29,7 @@ export default function ServicePage({
   details,
   faq,
 }: CardProps) {
+  const seoContent = serviceSeoContent[name]
   const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -151,6 +153,61 @@ export default function ServicePage({
         </div>
       </section>
 
+      {seoContent ? (
+        <section className="bg-background py-16 md:py-24">
+          <div className="container max-w-6xl text-left">
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+                {seoContent.eyebrow}
+              </p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+                {seoContent.heading}
+              </h2>
+              <p className="mt-5 text-lg font-normal leading-8 text-muted-foreground">
+                {seoContent.introduction}
+              </p>
+            </div>
+
+            <div className="mt-10 grid gap-6 lg:grid-cols-3">
+              <InfoList
+                title="Who this coverage may help"
+                items={seoContent.bestFor}
+              />
+              <InfoList
+                title="Coverage situations to discuss"
+                items={seoContent.examples}
+              />
+              <InfoList
+                title="Local considerations"
+                items={seoContent.localNotes}
+              />
+            </div>
+
+            <div className="mt-12 rounded-2xl border bg-secondary/40 p-6 md:p-8">
+              <h3 className="text-2xl font-bold">
+                Related insurance resources
+              </h3>
+              <div className="mt-5 grid gap-4 md:grid-cols-3">
+                {seoContent.relatedLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="rounded-xl border bg-background p-5 transition hover:border-primary"
+                  >
+                    <span className="font-semibold text-primary">
+                      {link.label}
+                    </span>
+                    <span className="mt-2 block text-sm font-normal leading-6 text-muted-foreground">
+                      {link.description}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       <section className="flex h-fit w-full items-center justify-center bg-background py-12 md:py-24">
         <FaqSection name={name} FAQs={faq} />
       </section>
@@ -192,6 +249,22 @@ export default function ServicePage({
           </div>
         </div>
       </section>
+    </div>
+  )
+}
+
+function InfoList({ title, items }: { title: string; items: string[] }) {
+  return (
+    <div className="rounded-2xl border bg-secondary/30 p-6">
+      <h3 className="text-xl font-bold">{title}</h3>
+      <ul className="mt-4 space-y-3 text-sm font-normal leading-6 text-muted-foreground">
+        {items.map((item) => (
+          <li key={item} className="flex gap-3">
+            <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
