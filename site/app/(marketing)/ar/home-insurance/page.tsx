@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     languages: {
       "ar-US": "/ar/home-insurance",
       "en-US": "/services/homeowners-insurance",
+      "es-US": "/es/seguro-de-casa",
     },
   },
 }
