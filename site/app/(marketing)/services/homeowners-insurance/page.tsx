@@ -10,7 +10,14 @@ export const metadata: Metadata = {
     "Compare homeowners insurance options with a local Washington, DC agency serving Georgetown, Glover Park, and nearby communities.",
   keywords:
     "homeowners insurance, home insurance, D.C. homeowners insurance, Maryland homeowners insurance, Virginia homeowners insurance, home protection, property insurance, affordable home insurance",
-  alternates: { canonical: "/services/homeowners-insurance" },
+  alternates: {
+    canonical: "/services/homeowners-insurance",
+    languages: {
+      "en-US": "/services/homeowners-insurance",
+      "es-US": "/es/seguro-de-casa",
+      "ar-US": "/ar/home-insurance",
+    },
+  },
 }
 export default function HomeownersInsurance() {
   const service = services.find((service) => service.name === "Homeowners")

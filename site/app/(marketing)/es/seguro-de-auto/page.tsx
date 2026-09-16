@@ -6,7 +6,14 @@ export const metadata: Metadata = {
   title: "Seguro de auto en Washington, DC",
   description:
     "Obtenga ayuda en español para comparar seguro de auto en Washington, DC, incluyendo responsabilidad civil, colisión y cobertura amplia.",
-  alternates: { canonical: "/es/seguro-de-auto" },
+  alternates: {
+    canonical: "/es/seguro-de-auto",
+    languages: {
+      "en-US": "/services/auto-insurance",
+      "es-US": "/es/seguro-de-auto",
+      "ar-US": "/ar/auto-insurance",
+    },
+  },
 }
 
 export default function SpanishAutoInsurancePage() {

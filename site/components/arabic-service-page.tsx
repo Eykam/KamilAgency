@@ -25,7 +25,7 @@ export function ArabicServicePage({ children }: ArabicServicePageProps) {
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row-reverse">
             <TrackedLink
-              href="/quote"
+              href="/ar/quote"
               className={cn(buttonVariants({ size: "lg" }), "min-w-44")}
               eventName="quote_start"
               eventParams={{ link_location: "arabic_landing" }}
@@ -73,13 +73,13 @@ export function ArabicServicePage({ children }: ArabicServicePageProps) {
               ))}
             </ul>
             <Link
-              href="/contact-us"
+              href="/ar/quote"
               className={cn(
                 buttonVariants({ variant: "outline" }),
                 "mt-7 w-full bg-background"
               )}
             >
-              تواصل مع وكالة كامل
+              اطلب المساعدة بالعربية
             </Link>
           </aside>
         </div>

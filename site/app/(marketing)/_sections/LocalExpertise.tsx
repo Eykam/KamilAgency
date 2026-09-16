@@ -6,8 +6,24 @@ import { TrackedLink } from "@/components/tracked-link"
 const featuredServices = [
   { name: "Homeowners insurance", href: "/services/homeowners-insurance" },
   { name: "Auto insurance", href: "/services/auto-insurance" },
-  { name: "Business insurance", href: "/services/commercial-insurance" },
-  { name: "Renters insurance", href: "/services/renters-insurance" },
+  {
+    name: "Vacant-home insurance",
+    href: "/services/vacant-home-insurance",
+  },
+  { name: "Landlord insurance", href: "/services/landlord-insurance" },
+  { name: "Condo insurance", href: "/services/condo-insurance" },
+  {
+    name: "Georgetown home insurance",
+    href: "/services/home-insurance-georgetown",
+  },
+  {
+    name: "Commercial auto insurance",
+    href: "/services/commercial-auto-insurance",
+  },
+  {
+    name: "General liability insurance",
+    href: "/services/general-liability-insurance",
+  },
 ]
 
 export default function LocalExpertiseSection() {
@@ -49,6 +65,16 @@ export default function LocalExpertiseSection() {
               </Link>
             ))}
           </div>
+          <p className="text-sm leading-6 text-muted-foreground">
+            Looking for another type of protection? Browse all of our{" "}
+            <Link
+              href="/services"
+              className="font-medium text-accent underline-offset-4 hover:underline"
+            >
+              personal and business insurance services
+            </Link>
+            .
+          </p>
         </div>
 
         <aside className="rounded-2xl border bg-secondary p-7 shadow-sm">

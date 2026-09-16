@@ -68,6 +68,16 @@ const nextConfig = {
         destination: "/about-us/team/mohamed-kamil",
         permanent: true,
       },
+      {
+        source: "/docs/documentation/:path*",
+        destination: "/docs",
+        permanent: true,
+      },
+      {
+        source: "/docs/in-progress",
+        destination: "/docs",
+        permanent: true,
+      },
     ]
   },
 }

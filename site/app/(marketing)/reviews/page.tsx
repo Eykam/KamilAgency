@@ -65,16 +65,14 @@ export default function ReviewsPage() {
                 <span className="block text-muted-foreground">
                   Google review · {review.timestamp}
                 </span>
-                {review.url ? (
-                  <Link
-                    href={review.url}
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
-                    className="mt-2 inline-block font-semibold text-primary hover:underline"
-                  >
-                    View source
-                  </Link>
-                ) : null}
+                <Link
+                  href={review.url || REVIEW_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="mt-2 inline-block font-semibold text-primary hover:underline"
+                >
+                  {review.url ? "View source" : "View Google profile"}
+                </Link>
               </figcaption>
             </figure>
           ))}
@@ -89,7 +87,9 @@ export default function ReviewsPage() {
             View Kamil Agency on Google
           </Link>
           <p className="mx-auto mt-4 max-w-2xl text-xs leading-5 text-muted-foreground">
-            The summary above reflects only the testimonials displayed on this
+            Review dates and wording are shown as originally published. Visit
+            the live Google profile for the newest available feedback. The
+            summary above reflects only the testimonials displayed on this
             website and is not presented as Kamil Agency&apos;s current live
             Google rating or total review count.
           </p>

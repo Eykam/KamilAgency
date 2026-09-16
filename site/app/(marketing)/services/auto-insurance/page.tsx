@@ -10,7 +10,14 @@ export const metadata: Metadata = {
     "Compare auto insurance options with a local Washington, DC agency serving Georgetown, Glover Park, and nearby communities.",
   keywords:
     "auto insurance, car insurance, D.C. auto insurance, Maryland auto insurance, Virginia auto insurance, vehicle insurance, affordable car insurance, comprehensive auto coverage",
-  alternates: { canonical: "/services/auto-insurance" },
+  alternates: {
+    canonical: "/services/auto-insurance",
+    languages: {
+      "en-US": "/services/auto-insurance",
+      "es-US": "/es/seguro-de-auto",
+      "ar-US": "/ar/auto-insurance",
+    },
+  },
 }
 
 export default function AutoInsurance() {
