@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     languages: {
       "ar-US": "/ar/auto-insurance",
       "en-US": "/services/auto-insurance",
+      "es-US": "/es/seguro-de-auto",
     },
   },
 }
