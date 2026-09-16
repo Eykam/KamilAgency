@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "Compare seguros de auto, casa y negocio con una agencia local de Washington, DC. Atención en español, inglés y árabe.",
   alternates: {
     canonical: "/es",
-    languages: { "en-US": "/", "es-US": "/es" },
+    languages: { "en-US": "/", "es-US": "/es", "ar-US": "/ar" },
   },
 }
 
