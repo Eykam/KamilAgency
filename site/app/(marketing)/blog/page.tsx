@@ -6,9 +6,10 @@ import { compareDesc } from "date-fns"
 import { formatDate } from "@/lib/utils"
 
 export const metadata = {
-  title: "Blog",
+  title: "Insurance Guides for DC, Maryland & Virginia",
+  description:
+    "Practical insurance guides from Kamil Agency for renters, homeowners, landlords, drivers, and business owners in the DC region.",
   alternates: { canonical: "/blog" },
-  robots: { index: false, follow: true },
 }
 
 export default async function BlogPage() {
@@ -23,10 +24,11 @@ export default async function BlogPage() {
       <div className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8">
         <div className="flex-1 space-y-4">
           <h1 className="inline-block font-heading text-4xl tracking-tight lg:text-5xl">
-            Blog
+            Insurance Guides
           </h1>
           <p className="text-xl text-muted-foreground">
-            A blog built using Contentlayer. Posts are written in MDX.
+            Clear, local guidance for protecting your home, rental property,
+            vehicle, family, or business.
           </p>
         </div>
       </div>

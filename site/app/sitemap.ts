@@ -1,16 +1,20 @@
 import { MetadataRoute } from "next"
+import { allPosts } from "contentlayer/generated"
 
 import { businessIndustries } from "@/config/business-industries"
+import { carrierProfiles } from "@/config/carrier-profiles"
 import { siteConfig } from "@/config/site"
 
 const routes = [
   "",
   "/about-us",
+  "/about-us/business-information",
   "/ar",
   "/ar/auto-insurance",
   "/ar/business-insurance",
   "/ar/home-insurance",
   "/ar/quote",
+  "/blog",
   "/carriers",
   "/contact-us",
   "/customers",
@@ -49,6 +53,8 @@ const routes = [
   ...businessIndustries.map(
     ({ slug }) => `/services/business-insurance-by-industry/${slug}`
   ),
+  ...carrierProfiles.map(({ slug }) => `/carriers/${slug}`),
+  ...allPosts.filter((post) => post.published).map((post) => post.slug),
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {

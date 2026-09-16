@@ -8,6 +8,7 @@ import {
   personalLineCarriers,
   type InsuranceMarket,
 } from "@/config/carrier-markets"
+import { carrierSlug } from "@/config/carrier-profiles"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 
@@ -37,9 +38,7 @@ function MarketGroup({
         {markets.map((market) => (
           <li key={market.name}>
             <Link
-              href={market.url}
-              target="_blank"
-              rel="noopener noreferrer nofollow"
+              href={`/carriers/${carrierSlug(market.name)}`}
               className="flex min-h-32 flex-col items-center justify-center gap-3 rounded-2xl border bg-background p-5 text-center shadow-sm transition hover:-translate-y-0.5 hover:border-primary"
             >
               <img
@@ -53,6 +52,9 @@ function MarketGroup({
                 className="size-11 object-contain"
               />
               <span className="font-semibold">{market.name}</span>
+              <span className="text-xs text-muted-foreground">
+                View market profile
+              </span>
             </Link>
           </li>
         ))}
