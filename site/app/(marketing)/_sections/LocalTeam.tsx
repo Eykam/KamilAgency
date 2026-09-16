@@ -18,8 +18,9 @@ export default function LocalTeamSection() {
             Meet your local insurance team
           </h2>
           <p className="mt-4 text-lg leading-8 text-muted-foreground">
-            Work with a Washington, DC team that takes time to understand your
-            priorities and explain your options in plain language.
+            These are the people who answer questions, review options, and help
+            clients from our Washington, DC office—not stock photos or a remote
+            call center.
           </p>
         </div>
 

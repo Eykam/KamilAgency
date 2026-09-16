@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import Link from "next/link"
 
 import { services, servicesMetaData } from "@/config/services"
 import ServiceCard from "@/components/service-card"
@@ -28,6 +29,32 @@ export default async function ServicesPage() {
         {services.map((service) => (
           <ServiceCard key={service.name} service={service} pageLink />
         ))}
+      </div>
+
+      <div className="mx-auto max-w-[64rem] rounded-2xl border bg-background p-6 text-center shadow-sm">
+        <h2 className="text-2xl font-semibold">Popular local insurance searches</h2>
+        <p className="mt-2 text-sm leading-6 text-muted-foreground">
+          Start with focused guidance for common Washington, DC personal and
+          business insurance needs.
+        </p>
+        <div className="mt-5 flex flex-wrap justify-center gap-3">
+          {[
+            ["Vacant homes", "/services/vacant-home-insurance"],
+            ["Landlords", "/services/landlord-insurance"],
+            ["Condo owners", "/services/condo-insurance"],
+            ["Georgetown homes", "/services/home-insurance-georgetown"],
+            ["Commercial auto", "/services/commercial-auto-insurance"],
+            ["General liability", "/services/general-liability-insurance"],
+          ].map(([label, href]) => (
+            <Link
+              key={href}
+              href={href}
+              className="rounded-full border px-4 py-2 text-sm font-medium hover:border-accent hover:text-accent"
+            >
+              {label}
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   )

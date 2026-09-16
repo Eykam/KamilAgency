@@ -7,6 +7,7 @@ import { defaultFAQs } from "@/config/faq"
 import FaqSection from "@/components/faq"
 
 import ConversionSection from "./_sections/Conversion"
+import ExperienceProofSection from "./_sections/ExperienceProof"
 import HeroSection from "./_sections/Hero"
 import LeadCaptureSection from "./_sections/LeadCapture"
 import LocalExpertiseSection from "./_sections/LocalExpertise"
@@ -15,6 +16,7 @@ import LocationSection from "./_sections/Location"
 import ReviewsSection from "./_sections/Reviews"
 import ServiceAreasSection from "./_sections/ServiceAreas"
 import ServiceSection from "./_sections/Services"
+import WhyIndependentSection from "./_sections/WhyIndependent"
 
 const personalLineCarriers = [
   { name: "Travelers", domain: "travelers.com" },
@@ -108,6 +110,8 @@ export default async function IndexPage() {
       <LocalExpertiseSection />
       <ServiceSection />
       <PersonalLineCarriersSection />
+      <WhyIndependentSection />
+      <ExperienceProofSection />
       <LocalTeamSection />
       <ReviewsSection />
       <ServiceAreasSection />

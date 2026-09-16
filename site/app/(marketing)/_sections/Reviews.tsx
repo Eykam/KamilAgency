@@ -7,6 +7,12 @@ const REVIEW_LINK =
   "https://www.google.com/maps/search/?api=1&query=Kamil%20Agency%202201%20Wisconsin%20Avenue%20NW%20Washington%20DC%2020007"
 
 export default function ReviewsSection() {
+  const featuredReviewCount = reviews.length
+  const featuredAverage = (
+    reviews.reduce((total, review) => total + review.stars, 0) /
+    featuredReviewCount
+  ).toFixed(1)
+
   return (
     <section
       id="reviews"
@@ -24,6 +30,14 @@ export default function ReviewsSection() {
             Real feedback from people who turned to Kamil Agency for clear,
             responsive insurance guidance.
           </p>
+          <div className="mx-auto mt-6 flex max-w-md flex-col justify-center gap-3 sm:flex-row">
+            <span className="rounded-full bg-background/10 px-4 py-2 text-sm font-semibold">
+              {featuredAverage} average across featured testimonials
+            </span>
+            <span className="rounded-full bg-background/10 px-4 py-2 text-sm font-semibold">
+              {featuredReviewCount} client reviews featured
+            </span>
+          </div>
         </div>
 
         <div className="mx-auto mt-10 grid max-w-6xl gap-6 md:grid-cols-3">
@@ -58,7 +72,7 @@ export default function ReviewsSection() {
             rel="noopener noreferrer nofollow"
             className={buttonVariants({ variant: "secondary", size: "lg" })}
           >
-            Read or Leave a Google Review
+            View Kamil Agency on Google
           </Link>
         </div>
       </div>

@@ -130,9 +130,9 @@ export const services: Service[] = [
     name: "Landlord",
     descriptionShort: "Protect your rental properties with ease.",
     description:
-      "Landlord insurance provides essential coverage for property owners renting out their properties, protecting against potential risks such as property damage, liability, and loss of rental income. This policy ensures financial security and peace of mind for landlords.",
+      "Kamil Agency helps Washington, DC rental-property owners compare landlord insurance for the dwelling, premises liability, eligible loss of rental income, and other property-specific risks.",
     descriptionLong:
-      "Landlord insurance is designed to offer comprehensive coverage for property owners who rent out their residential or commercial properties. It covers various perils, including property damage caused by fire, theft, vandalism, and certain natural disasters. Additionally, landlord insurance offers liability protection for injuries or property damage to others that occur on the rental property and can cover loss of rental income if the property becomes uninhabitable due to a covered event. With landlord insurance, property owners can protect their investment and ensure continuous rental income even in the face of unexpected events.",
+      "Rental properties have different exposures than owner-occupied homes. Kamil Agency helps DC landlords review dwelling protection, premises liability, deductibles, eligible loss-of-rents coverage, and options for vandalism or water-related losses. Recommendations account for the property, occupancy, lease structure, and carrier eligibility rather than relying on a one-size-fits-all policy.",
     icon: Icons.landlord({}),
     quoteURL: siteConfig.quoteURL,
     docsURL: "/docs",
