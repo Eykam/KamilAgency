@@ -1,6 +1,7 @@
 import { Metadata } from "next"
 import Link from "next/link"
 
+import { businessIndustries } from "@/config/business-industries"
 import { services, servicesMetaData } from "@/config/services"
 import ServiceCard from "@/components/service-card"
 
@@ -32,7 +33,9 @@ export default async function ServicesPage() {
       </div>
 
       <div className="mx-auto max-w-[64rem] rounded-2xl border bg-background p-6 text-center shadow-sm">
-        <h2 className="text-2xl font-semibold">Popular local insurance searches</h2>
+        <h2 className="text-2xl font-semibold">
+          Popular local insurance searches
+        </h2>
         <p className="mt-2 text-sm leading-6 text-muted-foreground">
           Start with focused guidance for common Washington, DC personal and
           business insurance needs.
@@ -54,6 +57,40 @@ export default async function ServicesPage() {
               {label}
             </Link>
           ))}
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-[64rem] rounded-2xl border bg-primary p-6 text-primary-foreground shadow-sm md:p-8">
+        <div className="text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary-foreground/70">
+            Commercial expertise
+          </p>
+          <h2 className="mt-2 font-heading text-3xl font-bold">
+            Business insurance by industry
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl leading-7 text-primary-foreground/80">
+            Explore focused guidance for your type of business, then share a few
+            non-sensitive details with our local commercial team.
+          </p>
+        </div>
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
+          {businessIndustries.map((industry) => (
+            <Link
+              key={industry.slug}
+              href={`/services/business-insurance-by-industry/${industry.slug}`}
+              className="rounded-full border border-primary-foreground/25 bg-background/10 px-4 py-2 text-sm font-medium hover:bg-background/20"
+            >
+              {industry.shortName}
+            </Link>
+          ))}
+        </div>
+        <div className="mt-7 text-center">
+          <Link
+            href="/quote/commercial"
+            className="inline-flex h-11 items-center justify-center rounded-md bg-background px-8 text-sm font-medium text-primary hover:bg-background/90"
+          >
+            Start a Commercial Quote
+          </Link>
         </div>
       </div>
     </section>
