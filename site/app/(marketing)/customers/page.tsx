@@ -125,7 +125,9 @@ export default function CustomerPortal() {
               </p>
               <a
                 href={action.href}
-                target={"external" in action && action.external ? "_blank" : undefined}
+                target={
+                  "external" in action && action.external ? "_blank" : undefined
+                }
                 rel={
                   "external" in action && action.external
                     ? "noopener noreferrer nofollow"
@@ -148,6 +150,24 @@ export default function CustomerPortal() {
         Please wait for confirmation from Kamil Agency or your insurance
         carrier.
       </p>
+      <div className="mx-auto mt-8 max-w-3xl rounded-2xl border bg-secondary/50 p-6 text-center">
+        <h2 className="text-xl font-semibold">
+          Know someone we may be able to help?
+        </h2>
+        <p className="mt-2 text-sm leading-6 text-muted-foreground">
+          Share their contact information only after they give you permission,
+          or send them our referral page so they can contact us directly.
+        </p>
+        <Link
+          href="/refer-a-friend"
+          className={cn(
+            buttonVariants({ variant: "outline" }),
+            "mt-4 bg-background"
+          )}
+        >
+          Refer a Friend
+        </Link>
+      </div>
     </main>
   )
 }
