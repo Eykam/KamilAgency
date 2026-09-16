@@ -24,19 +24,19 @@ export default function ArabicHomePage() {
       <h2>استكشف خدمات التأمين</h2>
       <div className="not-prose mt-6 grid gap-4 sm:grid-cols-3">
         <Link
-          href="/services/auto-insurance"
+          href="/ar/auto-insurance"
           className="rounded-xl border bg-background p-5 font-semibold shadow-sm hover:border-primary"
         >
           تأمين السيارات
         </Link>
         <Link
-          href="/services/homeowners-insurance"
+          href="/ar/home-insurance"
           className="rounded-xl border bg-background p-5 font-semibold shadow-sm hover:border-primary"
         >
           تأمين المنازل
         </Link>
         <Link
-          href="/services/business-insurance-by-industry"
+          href="/ar/business-insurance"
           className="rounded-xl border bg-background p-5 font-semibold shadow-sm hover:border-primary"
         >
           تأمين الأعمال
