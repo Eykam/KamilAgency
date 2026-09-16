@@ -10,7 +10,7 @@ export const marketingConfig: MarketingConfig = {
       title: "Services",
       href: "/services",
     },
-    // { title: "Carriers", href: "/carriers" },
+    { title: "Carriers", href: "/carriers" },
     {
       title: "About",
       href: "/about-us",
@@ -23,14 +23,9 @@ export const marketingConfig: MarketingConfig = {
       title: "Español",
       href: "/es",
     },
-    { title: "FAQs", href: "/#faq" },
-    // {
-    //   title: "Blog",
-    //   href: "/blog",
-    // },
     {
-      title: "Library",
-      href: "/docs",
+      title: "العربية",
+      href: "/ar",
     },
   ],
 }

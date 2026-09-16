@@ -65,7 +65,13 @@ export default function ReviewsSection() {
           ))}
         </div>
 
-        <div className="mt-10 text-center">
+        <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
+          <Link
+            href="/reviews"
+            className={buttonVariants({ variant: "secondary", size: "lg" })}
+          >
+            Read All Featured Reviews
+          </Link>
           <Link
             href={REVIEW_LINK}
             target="_blank"

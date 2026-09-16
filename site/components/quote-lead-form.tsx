@@ -26,7 +26,7 @@ const businessCoverage = new Set([
 ])
 
 function getQuoteDestination(coverage: string) {
-  if (businessCoverage.has(coverage)) return siteConfig.commercialQuoteURL
+  if (businessCoverage.has(coverage)) return "/quote/commercial"
   if (coverage === "Medicare") return siteConfig.medicareQuoteURL
   if (coverage === "Other") return "/contact-us"
   return quoteUrl

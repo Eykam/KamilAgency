@@ -3,6 +3,10 @@
 
 import type { Metadata } from "next"
 
+import {
+  commercialInsuranceMarkets,
+  personalLineCarriers,
+} from "@/config/carrier-markets"
 import { defaultFAQs } from "@/config/faq"
 import FaqSection from "@/components/faq"
 
@@ -18,45 +22,13 @@ import ServiceAreasSection from "./_sections/ServiceAreas"
 import ServiceSection from "./_sections/Services"
 import WhyIndependentSection from "./_sections/WhyIndependent"
 
-const personalLineCarriers = [
-  { name: "Travelers", domain: "travelers.com" },
-  { name: "GEICO", domain: "geico.com" },
-  { name: "Progressive", domain: "progressive.com" },
-  { name: "Nationwide", domain: "nationwide.com" },
-  { name: "Liberty Mutual", domain: "libertymutual.com" },
-  { name: "National General", domain: "nationalgeneral.com" },
-  { name: "Clearcover", domain: "clearcover.com" },
-  { name: "Maryland Auto", domain: "mymarylandauto.com" },
-  { name: "Trexis", domain: "trexis.com" },
-  { name: "AAA", domain: "aaa.com" },
-  { name: "Stillwater", domain: "stillwaterinsurance.com" },
-  { name: "AIC", domain: "aiconline.com" },
-  { name: "Narragansett Bay", domain: "nbic.com" },
-  { name: "Universal Property", domain: "universalproperty.com" },
-] as const
-
-const commercialInsuranceMarkets = [
-  { name: "Chubb", domain: "chubb.com" },
-  { name: "AmTrust", domain: "amtrustfinancial.com" },
-  { name: "Attune", domain: "attuneinsurance.com" },
-  { name: "biBERK", domain: "biberk.com" },
-  { name: "Hiscox", domain: "hiscox.com" },
-  { name: "Markel", domain: "markel.com" },
-  { name: "Nationwide", domain: "nationwide.com" },
-  { name: "Pathpoint", domain: "pathpoint.com" },
-  { name: "Neptune", domain: "neptuneflood.com" },
-  { name: "Travelers", domain: "travelers.com" },
-  { name: "RT Connector", domain: "rtspecialty.com" },
-  { name: "CNA", domain: "cna.com" },
-] as const
-
 export const metadata: Metadata = {
   title: "Compare Home, Auto & Business Insurance in Washington, DC",
   description:
     "Compare home, auto, business, renters, landlord, and condo insurance with a local Washington, DC agency. Service in English, Spanish, and Arabic.",
   alternates: {
     canonical: "/",
-    languages: { "en-US": "/", "es-US": "/es" },
+    languages: { "en-US": "/", "es-US": "/es", "ar-US": "/ar" },
   },
 }
 

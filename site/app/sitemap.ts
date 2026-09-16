@@ -1,10 +1,13 @@
 import { MetadataRoute } from "next"
 
+import { businessIndustries } from "@/config/business-industries"
 import { siteConfig } from "@/config/site"
 
 const routes = [
   "",
   "/about-us",
+  "/ar",
+  "/carriers",
   "/contact-us",
   "/customers",
   "/docs",
@@ -16,7 +19,10 @@ const routes = [
   "/policy/privacy",
   "/policy/terms",
   "/quote",
+  "/quote/commercial",
   "/quote/personal",
+  "/refer-a-friend",
+  "/reviews",
   "/es",
   "/es/seguro-de-auto",
   "/es/seguro-de-casa",
@@ -35,6 +41,10 @@ const routes = [
   "/services/renters-insurance",
   "/services/umbrella-insurance",
   "/services/vacant-home-insurance",
+  "/services/business-insurance-by-industry",
+  ...businessIndustries.map(
+    ({ slug }) => `/services/business-insurance-by-industry/${slug}`
+  ),
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
