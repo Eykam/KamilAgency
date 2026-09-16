@@ -6,7 +6,14 @@ export const metadata: Metadata = {
   title: "Seguro de casa en Washington, DC",
   description:
     "Compare seguro para propietarios de vivienda en Washington, DC con ayuda en español para su casa, pertenencias y responsabilidad civil.",
-  alternates: { canonical: "/es/seguro-de-casa" },
+  alternates: {
+    canonical: "/es/seguro-de-casa",
+    languages: {
+      "en-US": "/services/homeowners-insurance",
+      "es-US": "/es/seguro-de-casa",
+      "ar-US": "/ar/home-insurance",
+    },
+  },
 }
 
 export default function SpanishHomeInsurancePage() {
