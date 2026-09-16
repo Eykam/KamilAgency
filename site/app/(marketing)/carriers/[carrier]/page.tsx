@@ -74,10 +74,10 @@ export default function CarrierPage({ params }: CarrierPageProps) {
             href="/carriers"
             className="text-sm font-semibold text-primary hover:underline"
           >
-            â All insurance markets
+            ← All insurance markets
           </Link>
           <p className="mt-8 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-            {carrier.categories.join(" Â· ")}
+            {carrier.categories.join(" · ")}
           </p>
           <h1 className="mt-3 font-heading text-4xl font-bold sm:text-5xl">
             {carrier.name} Insurance Information
