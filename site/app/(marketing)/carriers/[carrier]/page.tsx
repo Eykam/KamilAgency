@@ -20,7 +20,7 @@ export function generateMetadata({ params }: CarrierPageProps): Metadata {
   const carrier = getCarrierProfile(params.carrier)
   if (!carrier) return {}
 
-  const title = `${carrier.name} Insurance Information | Kamil Agency`
+  const title = `${carrier.name} Insurance Information`
   const description = `Learn how Kamil Agency reviews possible ${carrier.name} insurance options, availability, and eligibility for clients in the states we serve.`
 
   return {
@@ -74,10 +74,10 @@ export default function CarrierPage({ params }: CarrierPageProps) {
             href="/carriers"
             className="text-sm font-semibold text-primary hover:underline"
           >
-            ← All insurance markets
+            â All insurance markets
           </Link>
           <p className="mt-8 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-            {carrier.categories.join(" · ")}
+            {carrier.categories.join(" Â· ")}
           </p>
           <h1 className="mt-3 font-heading text-4xl font-bold sm:text-5xl">
             {carrier.name} Insurance Information
