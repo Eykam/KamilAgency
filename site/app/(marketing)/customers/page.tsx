@@ -8,6 +8,53 @@ import { buttonVariants } from "@/components/ui/button"
 const portalUrl =
   "https://customerservice.agentinsure.com/EzlynxCustomerService/mohame/Account/LogIn"
 
+const serviceActions = [
+  {
+    title: "Report or discuss a claim",
+    description:
+      "Call the agency for guidance, then report the loss through the appropriate carrier.",
+    href: `tel:${siteConfig.contactNumber}`,
+    label: "Call for claim help",
+  },
+  {
+    title: "Billing and payments",
+    description:
+      "Open the secure portal to review available billing information or find your carrier details.",
+    href: portalUrl,
+    label: "Open secure portal",
+    external: true,
+  },
+  {
+    title: "Insurance ID cards",
+    description:
+      "Use the secure portal to access available policy documents and auto ID cards.",
+    href: portalUrl,
+    label: "Get policy documents",
+    external: true,
+  },
+  {
+    title: "Certificates of insurance",
+    description:
+      "Send the certificate holder and coverage details to our service team.",
+    href: "mailto:info@kamilagency.com?subject=Certificate%20of%20Insurance%20Request",
+    label: "Request a certificate",
+  },
+  {
+    title: "Policy changes",
+    description:
+      "Request an address, vehicle, driver, property, or other policy update.",
+    href: "mailto:info@kamilagency.com?subject=Policy%20Change%20Request",
+    label: "Request a policy change",
+  },
+  {
+    title: "Annual coverage review",
+    description:
+      "Ask us to review your limits, deductibles, discounts, and changing needs before renewal.",
+    href: "mailto:info@kamilagency.com?subject=Annual%20Coverage%20Review",
+    label: "Schedule a review",
+  },
+] as const
+
 export const metadata: Metadata = {
   title: "Customer Portal",
   description:
@@ -17,16 +64,18 @@ export const metadata: Metadata = {
 
 export default function CustomerPortal() {
   return (
-    <div className="container flex min-h-[65vh] items-center justify-center px-4 py-16">
-      <section className="w-full max-w-2xl space-y-6 rounded-2xl border border-primary/15 p-8 text-center shadow-sm md:p-12">
+    <main className="container px-4 py-16 md:py-24">
+      <section className="mx-auto max-w-3xl space-y-6 text-center">
         <p className="text-sm font-semibold uppercase tracking-wide text-primary/60">
           Existing Customers
         </p>
-        <h1 className="text-4xl font-bold tracking-tight">Customer Portal</h1>
+        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+          Customer Service Center
+        </h1>
         <p className="text-lg leading-8 text-muted-foreground">
           The secure EZLynx portal opens in a separate window. If it is
-          unavailable, our office can help with billing, policy documents, and
-          service requests.
+          unavailable, our office can help with claims, billing, documents,
+          certificates, policy changes, and coverage reviews.
         </p>
         <div className="flex flex-col justify-center gap-3 sm:flex-row">
           <a
@@ -56,6 +105,49 @@ export default function CustomerPortal() {
           .
         </p>
       </section>
-    </div>
+
+      <section
+        aria-labelledby="service-actions-heading"
+        className="mx-auto mt-14 max-w-6xl"
+      >
+        <h2 id="service-actions-heading" className="sr-only">
+          Customer service actions
+        </h2>
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {serviceActions.map((action) => (
+            <article
+              key={action.title}
+              className="flex flex-col rounded-2xl border bg-card p-6 shadow-sm"
+            >
+              <h3 className="text-xl font-semibold">{action.title}</h3>
+              <p className="mt-3 flex-1 text-sm leading-6 text-muted-foreground">
+                {action.description}
+              </p>
+              <a
+                href={action.href}
+                target={"external" in action && action.external ? "_blank" : undefined}
+                rel={
+                  "external" in action && action.external
+                    ? "noopener noreferrer nofollow"
+                    : undefined
+                }
+                className={cn(
+                  buttonVariants({ variant: "outline" }),
+                  "mt-6 w-full"
+                )}
+              >
+                {action.label}
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <p className="mx-auto mt-8 max-w-3xl text-center text-xs leading-5 text-muted-foreground">
+        Coverage cannot be bound, changed, or cancelled through email alone.
+        Please wait for confirmation from Kamil Agency or your insurance
+        carrier.
+      </p>
+    </main>
   )
 }
