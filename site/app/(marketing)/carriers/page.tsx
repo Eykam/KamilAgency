@@ -73,8 +73,8 @@ export default function CarriersPage() {
             Carriers and Insurance Markets
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-muted-foreground">
-            Kamil Agency works with multiple insurance carriers and
-            market-access partners to help clients explore coverage options for
+            Kamil Agency helps clients compare options that may be available
+            directly through the agency or through market-access partners for
             personal and commercial risks.
           </p>
           <Link
@@ -103,11 +103,13 @@ export default function CarriersPage() {
           markets={marketAccessPartners}
         />
         <div className="rounded-2xl border bg-secondary/50 p-6 text-sm leading-6 text-muted-foreground">
-          Carrier and market availability, eligibility, appointment status, and
-          product offerings vary by state, class of business, underwriting, and
-          individual risk. Listing an organization does not guarantee a quote or
-          placement. Contact Kamil Agency to confirm options available for your
-          needs.
+          Some markets may be accessed through an intermediary rather than a
+          direct appointment. Carrier and market availability, eligibility,
+          appointment status, and product offerings vary by state, class of
+          business, underwriting, and individual risk. A logo or listing does
+          not imply endorsement and does not guarantee a quote or placement.
+          Contact Kamil Agency to confirm the relationship and options available
+          for your needs.
         </div>
       </div>
     </main>
