@@ -35,6 +35,21 @@ const personalLineCarriers = [
   { name: "Universal Property", domain: "universalproperty.com" },
 ] as const
 
+const commercialInsuranceMarkets = [
+  { name: "Chubb", domain: "chubb.com" },
+  { name: "AmTrust", domain: "amtrustfinancial.com" },
+  { name: "Attune", domain: "attuneinsurance.com" },
+  { name: "biBERK", domain: "biberk.com" },
+  { name: "Hiscox", domain: "hiscox.com" },
+  { name: "Markel", domain: "markel.com" },
+  { name: "Nationwide", domain: "nationwide.com" },
+  { name: "Pathpoint", domain: "pathpoint.com" },
+  { name: "Neptune", domain: "neptuneflood.com" },
+  { name: "Travelers", domain: "travelers.com" },
+  { name: "RT Connector", domain: "rtspecialty.com" },
+  { name: "CNA", domain: "cna.com" },
+] as const
+
 export const metadata: Metadata = {
   title: "Compare Home, Auto & Business Insurance in Washington, DC",
   description:
@@ -93,9 +108,68 @@ function PersonalLineCarriersSection() {
         </ul>
 
         <p className="mx-auto mt-6 max-w-3xl text-center text-xs leading-5 text-muted-foreground">
-          Carrier availability, eligibility, and product offerings vary by
-          state and individual risk. Contact our team to review available
-          options for your needs.
+          Carrier availability, eligibility, and product offerings vary by state
+          and individual risk. Contact our team to review available options for
+          your needs.
+        </p>
+      </div>
+    </section>
+  )
+}
+
+function CommercialInsuranceMarketsSection() {
+  return (
+    <section
+      aria-labelledby="commercial-markets-heading"
+      className="bg-background py-16 sm:py-20"
+    >
+      <div className="container">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+            Commercial insurance markets
+          </p>
+          <h2
+            id="commercial-markets-heading"
+            className="mt-3 font-heading text-3xl font-bold sm:text-4xl"
+          >
+            More ways to protect your business
+          </h2>
+          <p className="mt-4 text-base leading-7 text-muted-foreground sm:text-lg">
+            Kamil Agency works with commercial carriers and market-access
+            partners to help businesses explore coverage for property,
+            liability, vehicles, workers&apos; compensation, flood, and other
+            risks.
+          </p>
+        </div>
+
+        <ul className="mx-auto mt-10 grid max-w-6xl grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+          {commercialInsuranceMarkets.map((market) => (
+            <li
+              key={market.name}
+              className="flex min-h-28 flex-col items-center justify-center gap-3 rounded-xl border bg-secondary/30 px-4 py-5 text-center shadow-sm transition-transform hover:-translate-y-0.5"
+            >
+              <img
+                src={`https://www.google.com/s2/favicons?domain=${market.domain}&sz=128`}
+                alt=""
+                aria-hidden="true"
+                width="40"
+                height="40"
+                loading="lazy"
+                decoding="async"
+                className="h-10 w-10 object-contain"
+              />
+              <span className="text-sm font-semibold leading-tight">
+                {market.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+        <p className="mx-auto mt-6 max-w-3xl text-center text-xs leading-5 text-muted-foreground">
+          Market access does not guarantee eligibility or placement. Products,
+          appetite, and availability vary by location, industry, risk, and
+          underwriting. Some listed organizations provide wholesale or digital
+          market access rather than issuing coverage directly.
         </p>
       </div>
     </section>
@@ -110,6 +184,7 @@ export default async function IndexPage() {
       <LocalExpertiseSection />
       <ServiceSection />
       <PersonalLineCarriersSection />
+      <CommercialInsuranceMarketsSection />
       <WhyIndependentSection />
       <ExperienceProofSection />
       <LocalTeamSection />
