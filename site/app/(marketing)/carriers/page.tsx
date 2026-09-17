@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next"
 import Link from "next/link"
 
@@ -11,6 +10,7 @@ import {
 import { carrierSlug } from "@/config/carrier-profiles"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
+import { CarrierMark } from "@/components/carrier-mark"
 
 export const metadata: Metadata = {
   title: "Insurance Carriers and Market Access",
@@ -41,16 +41,7 @@ function MarketGroup({
               href={`/carriers/${carrierSlug(market.name)}`}
               className="flex min-h-32 flex-col items-center justify-center gap-3 rounded-2xl border bg-background p-5 text-center shadow-sm transition hover:-translate-y-0.5 hover:border-primary"
             >
-              <img
-                src={`https://www.google.com/s2/favicons?domain=${market.domain}&sz=128`}
-                alt=""
-                aria-hidden="true"
-                width="44"
-                height="44"
-                loading="lazy"
-                decoding="async"
-                className="size-11 object-contain"
-              />
+              <CarrierMark name={market.name} className="size-11" />
               <span className="font-semibold">{market.name}</span>
               <span className="text-xs text-muted-foreground">
                 View market profile
