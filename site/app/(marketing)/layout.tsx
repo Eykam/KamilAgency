@@ -55,7 +55,7 @@ export default async function MarketingLayout({
                 "hidden sm:inline-flex lg:px-4"
               )}
             >
-              Customer Portal
+              Client Login
             </Link>
           </nav>
         </div>
