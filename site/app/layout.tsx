@@ -1,5 +1,6 @@
 import { Inter as FontSans } from "next/font/google"
 import localFont from "next/font/local"
+import Script from "next/script"
 
 import "@/styles/globals.css"
 import type { Metadata } from "next"
@@ -8,7 +9,7 @@ import { siteConfig } from "@/config/site"
 import { socials } from "@/config/socials"
 import { cn } from "@/lib/utils"
 import { Toaster } from "@/components/ui/toaster"
-import { Analytics, SpeedInsight } from "@/components/analytics"
+import { DeferredWebVitals } from "@/components/analytics"
 import { ConversionEvents } from "@/components/conversion-events"
 import { JsonLd } from "@/components/json-ld"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
@@ -170,22 +171,6 @@ const insuranceAgencyJsonLd = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-NG2YZSHFJT"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-NG2YZSHFJT');
-            `,
-          }}
-        />
-      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
@@ -197,11 +182,36 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
           <ConversionEvents />
-          <Analytics />
-          <SpeedInsight />
+          <DeferredWebVitals />
           <Toaster />
           <TailwindIndicator />
         </ThemeProvider>
+        <Script id="ga4-deferred-loader" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = window.gtag || function(){window.dataLayer.push(arguments);};
+
+            (function () {
+              var loaded = false;
+              var measurementId = "G-NG2YZSHFJT";
+
+              function loadGoogleAnalytics() {
+                if (loaded) return;
+                loaded = true;
+
+                var script = document.createElement("script");
+                script.async = true;
+                script.src = "https://www.googletagmanager.com/gtag/js?id=" + measurementId;
+                document.head.appendChild(script);
+
+                window.gtag("js", new Date());
+                window.gtag("config", measurementId);
+              }
+
+              window.setTimeout(loadGoogleAnalytics, 5000);
+            })();
+          `}
+        </Script>
       </body>
     </html>
   )
