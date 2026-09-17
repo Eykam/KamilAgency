@@ -118,7 +118,7 @@ export function SiteFooter({
                   <p>{siteConfig.contactEmail}</p>
                 </TrackedLink>
                 <TrackedLink
-                  href={`tel:${siteConfig.contactNumber}`}
+                  href="tel:+12404007393"
                   className="flex items-center justify-center space-x-2 text-sm leading-loose text-primary/70 lg:justify-start "
                   eventName="click_to_call"
                   eventParams={{ link_location: "footer" }}

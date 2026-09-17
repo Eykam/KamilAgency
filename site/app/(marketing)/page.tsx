@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 // import AboutSection from "./_sections/About"
 
 import type { Metadata } from "next"
@@ -8,6 +7,7 @@ import {
   personalLineCarriers,
 } from "@/config/carrier-markets"
 import { defaultFAQs } from "@/config/faq"
+import { CarrierMark } from "@/components/carrier-mark"
 import FaqSection from "@/components/faq"
 
 import ConversionSection from "./_sections/Conversion"
@@ -62,16 +62,7 @@ function PersonalLineCarriersSection() {
               key={carrier.name}
               className="flex min-h-28 flex-col items-center justify-center gap-3 rounded-xl border bg-background px-4 py-5 text-center shadow-sm transition-transform hover:-translate-y-0.5"
             >
-              <img
-                src={`https://www.google.com/s2/favicons?domain=${carrier.domain}&sz=128`}
-                alt=""
-                aria-hidden="true"
-                width="40"
-                height="40"
-                loading="lazy"
-                decoding="async"
-                className="h-10 w-10 object-contain"
-              />
+              <CarrierMark name={carrier.name} />
               <span className="text-sm font-semibold leading-tight">
                 {carrier.name}
               </span>
@@ -120,16 +111,7 @@ function CommercialInsuranceMarketsSection() {
               key={market.name}
               className="flex min-h-28 flex-col items-center justify-center gap-3 rounded-xl border bg-secondary/30 px-4 py-5 text-center shadow-sm transition-transform hover:-translate-y-0.5"
             >
-              <img
-                src={`https://www.google.com/s2/favicons?domain=${market.domain}&sz=128`}
-                alt=""
-                aria-hidden="true"
-                width="40"
-                height="40"
-                loading="lazy"
-                decoding="async"
-                className="h-10 w-10 object-contain"
-              />
+              <CarrierMark name={market.name} />
               <span className="text-sm font-semibold leading-tight">
                 {market.name}
               </span>

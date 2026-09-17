@@ -1,44 +1,27 @@
-import { PropsWithChildren } from "react"
 import { FAQ } from "@/types"
 
-import { cn } from "@/lib/utils"
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
 import { JsonLd } from "@/components/json-ld"
 
-type FaqProps = PropsWithChildren & {
+type FaqProps = {
   name: string
   FAQs: FAQ[]
   accent?: boolean
 }
 
-function FaqItem({
-  item,
-  ind,
-  className,
-}: {
-  item: FAQ
-  ind: number
-  className?: string
-}) {
+function FaqItem({ item, className }: { item: FAQ; className?: string }) {
   return (
-    <AccordionItem value={`faq-${ind + 1}`} className="border-none">
-      <AccordionTrigger
-        className={cn(
-          "flex w-full items-center justify-between rounded-md bg-accent px-6 py-4 text-start text-lg font-medium transition-colors hover:bg-border dark:hover:bg-secondary",
-          className
-        )}
+    <details className="group border-none">
+      <summary
+        className={`cursor-pointer rounded-md bg-accent px-6 py-4 text-start text-lg font-medium transition-colors hover:bg-border dark:hover:bg-secondary ${
+          className ?? ""
+        }`}
       >
         {item.question}
-      </AccordionTrigger>
-      <AccordionContent className="mt-2 rounded-xl px-6 py-4 text-primary/80 ">
+      </summary>
+      <div className="mt-2 rounded-xl px-6 py-4 text-primary/80">
         {item.answer}
-      </AccordionContent>
-    </AccordionItem>
+      </div>
+    </details>
   )
 }
 
@@ -69,12 +52,11 @@ export default function FaqSection({ name, FAQs, accent }: FaqProps) {
               Get answers to the most common questions about {name} Insurance.
             </p>
           </div>
-          <Accordion type="single" collapsible className="space-y-4 text-start">
-            {FAQs.map((item, ind) => (
+          <div className="space-y-4 text-start">
+            {FAQs.map((item) => (
               <FaqItem
                 key={item.question}
                 item={item}
-                ind={ind}
                 className={
                   accent
                     ? "border-2 border-accent bg-background dark:hover:bg-background/80"
@@ -82,7 +64,7 @@ export default function FaqSection({ name, FAQs, accent }: FaqProps) {
                 }
               />
             ))}
-          </Accordion>
+          </div>
         </div>
       </div>
     </section>
