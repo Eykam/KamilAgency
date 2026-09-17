@@ -34,12 +34,19 @@ export function ConversionEvents() {
 
       const anchor = target.closest("a")
       if (!(anchor instanceof HTMLAnchorElement)) return
-      if (anchor.dataset.analyticsTracked === "true") return
 
-      const eventName = classifyLink(anchor)
+      const eventName = anchor.dataset.analyticsEvent ?? classifyLink(anchor)
       if (!eventName) return
 
+      let eventParams: Record<string, unknown> = {}
+      try {
+        eventParams = JSON.parse(anchor.dataset.analyticsParams ?? "{}")
+      } catch {
+        eventParams = {}
+      }
+
       sendGAEvent("event", eventName, {
+        ...eventParams,
         link_url: anchor.href,
         link_text: anchor.textContent?.trim().slice(0, 80) || "unlabeled",
         page_path: window.location.pathname,
