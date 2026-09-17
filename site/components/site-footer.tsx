@@ -126,6 +126,14 @@ export function SiteFooter({
                   <Icons.phone className="text-primary hover:text-primary/50" />
                   <p>{siteConfig.contactNumber}</p>
                 </TrackedLink>
+                <TrackedLink
+                  href="/customers"
+                  className="mt-2 flex items-center justify-center rounded-md border px-3 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/5"
+                  eventName="client_portal_open"
+                  eventParams={{ link_location: "footer" }}
+                >
+                  Client Login &amp; Self-Service
+                </TrackedLink>
               </div>
             </div>
           </div>
