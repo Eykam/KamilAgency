@@ -74,7 +74,7 @@ export default function CustomerPortal() {
           Client Login &amp; Self-Service
         </h1>
         <p className="text-lg leading-8 text-muted-foreground">
-          Use the secure EZLynx Client Center to request ID cards, policy
+          Use the secure Client Center to request ID cards, policy
           changes, certificates of insurance, view billing, and make payments.
         </p>
         <div className="flex flex-col justify-center gap-3 sm:flex-row">
