@@ -2,6 +2,7 @@ export type InsuranceMarket = {
   name: string
   domain: string
   url: string
+  portalUrl?: string
 }
 
 export const personalLineCarriers: readonly InsuranceMarket[] = [
@@ -40,15 +41,27 @@ export const personalLineCarriers: readonly InsuranceMarket[] = [
     name: "Maryland Auto",
     domain: "mymarylandauto.com",
     url: "https://www.mymarylandauto.com/",
+    portalUrl: "https://portal.mymarylandauto.com/cgi-bin/validate.sh",
   },
-  { name: "Trexis", domain: "trexis.com", url: "https://www.trexis.com/" },
+  {
+    name: "Trexis",
+    domain: "trexis.com",
+    url: "https://trexis.com/",
+    portalUrl: "https://trexis.com/",
+  },
   { name: "AAA", domain: "aaa.com", url: "https://www.aaa.com/" },
   {
     name: "Stillwater",
     domain: "stillwaterinsurance.com",
     url: "https://stillwaterinsurance.com/",
   },
-  { name: "AIC", domain: "aiconline.com", url: "https://www.aiconline.com/" },
+  {
+    name: "AIC",
+    domain: "aiconline.com",
+    url: "https://www.aiconline.com/",
+    portalUrl:
+      "https://www.aiconline.com/Synapse/Public/LoginPage.aspx?ReturnUrl=%2fSynapse%2fPolicyManagement%2fDocumentsPage.aspx",
+  },
   {
     name: "Narragansett Bay",
     domain: "nbic.com",

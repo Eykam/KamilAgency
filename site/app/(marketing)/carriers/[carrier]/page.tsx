@@ -89,6 +89,16 @@ export default function CarrierPage({ params }: CarrierPageProps) {
             <Link href="/quote" className={cn(buttonVariants({ size: "lg" }))}>
               Ask About Available Options
             </Link>
+            {carrier.portalUrl && (
+              <Link
+                href={carrier.portalUrl}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                className={cn(buttonVariants({ size: "lg" }))}
+              >
+                Open Carrier Portal
+              </Link>
+            )}
             <Link
               href={carrier.url}
               target="_blank"
