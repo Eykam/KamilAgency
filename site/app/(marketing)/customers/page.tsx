@@ -4,9 +4,10 @@ import Link from "next/link"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
+import { TrackedLink } from "@/components/tracked-link"
 
 const portalUrl =
-  "https://customerservice.agentinsure.com/EzlynxCustomerService/mohame/Account/LogIn"
+  "https://customerservice.agentinsure.com/EzLynxCustomerService/web/mohame/account/login"
 
 const serviceActions = [
   {
@@ -56,7 +57,7 @@ const serviceActions = [
 ] as const
 
 export const metadata: Metadata = {
-  title: "Customer Portal",
+  title: "Client Login & Self-Service",
   description:
     "Access Kamil Agency's secure customer portal or contact our office for help with an existing policy.",
   alternates: { canonical: "/customers" },
@@ -70,22 +71,23 @@ export default function CustomerPortal() {
           Existing Customers
         </p>
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-          Customer Service Center
+          Client Login &amp; Self-Service
         </h1>
         <p className="text-lg leading-8 text-muted-foreground">
-          The secure EZLynx portal opens in a separate window. If it is
-          unavailable, our office can help with claims, billing, documents,
-          certificates, policy changes, and coverage reviews.
+          Use the secure EZLynx Client Center to request ID cards, policy
+          changes, certificates of insurance, view billing, and make payments.
         </p>
         <div className="flex flex-col justify-center gap-3 sm:flex-row">
-          <a
+          <TrackedLink
             href={portalUrl}
             target="_blank"
             rel="noopener noreferrer nofollow"
             className={cn(buttonVariants({ size: "lg" }))}
+            eventName="client_portal_open"
+            eventParams={{ link_location: "client_portal_page" }}
           >
-            Open Secure Portal
-          </a>
+            Open Client Center
+          </TrackedLink>
           <Link
             href="/contact-us"
             className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
@@ -94,7 +96,7 @@ export default function CustomerPortal() {
           </Link>
         </div>
         <p className="text-sm text-muted-foreground">
-          Call{" "}
+          The Client Center opens in a separate secure window. Need help? Call{" "}
           <a className="underline" href={`tel:${siteConfig.contactNumber}`}>
             {siteConfig.contactNumber}
           </a>
