@@ -62,7 +62,19 @@ function PersonalLineCarriersSection() {
               key={carrier.name}
               className="flex min-h-28 flex-col items-center justify-center gap-3 rounded-xl border bg-background px-4 py-5 text-center shadow-sm transition-transform hover:-translate-y-0.5"
             >
-              <CarrierMark name={carrier.name} />
+              {carrier.portalUrl ? (
+                <a
+                  href={carrier.portalUrl}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  aria-label={`Open ${carrier.name} portal`}
+                  className="rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                >
+                  <CarrierMark name={carrier.name} />
+                </a>
+              ) : (
+                <CarrierMark name={carrier.name} />
+              )}
               <span className="text-sm font-semibold leading-tight">
                 {carrier.name}
               </span>
