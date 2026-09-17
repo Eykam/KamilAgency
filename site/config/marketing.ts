@@ -21,6 +21,10 @@ export const marketingConfig: MarketingConfig = {
       href: "/contact-us",
     },
     {
+      title: "Client Login",
+      href: "/customers",
+    },
+    {
       title: "Español",
       href: "/es",
     },
