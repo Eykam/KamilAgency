@@ -7,13 +7,6 @@ import { siteConfig } from "@/config/site"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
 
 const quoteUrl =
   "https://www.agentinsure.com/compare/auto-insurance-home-insurance/mohame/quote.aspx"
@@ -174,45 +167,45 @@ export function QuoteLeadForm() {
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
           <Label htmlFor="quote-coverage">Coverage needed</Label>
-          <Select value={coverage} onValueChange={setCoverage}>
-            <SelectTrigger id="quote-coverage">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="Home and auto">Home and auto</SelectItem>
-              <SelectItem value="Auto">Auto</SelectItem>
-              <SelectItem value="Homeowners">Homeowners</SelectItem>
-              <SelectItem value="Condo">Condo</SelectItem>
-              <SelectItem value="Renters">Renters</SelectItem>
-              <SelectItem value="Landlord">Landlord</SelectItem>
-              <SelectItem value="Vacant home">Vacant home</SelectItem>
-              <SelectItem value="Business">Business</SelectItem>
-              <SelectItem value="Commercial auto / trucking">
-                Commercial auto / trucking
-              </SelectItem>
-              <SelectItem value="General liability">
-                General liability
-              </SelectItem>
-              <SelectItem value="Workers compensation">
-                Workers compensation
-              </SelectItem>
-              <SelectItem value="Medicare">Medicare</SelectItem>
-              <SelectItem value="Other">Other</SelectItem>
-            </SelectContent>
-          </Select>
+          <select
+            id="quote-coverage"
+            name="coverage"
+            value={coverage}
+            onChange={(event) => setCoverage(event.currentTarget.value)}
+            disabled={status === "sending"}
+            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            <option value="Home and auto">Home and auto</option>
+            <option value="Auto">Auto</option>
+            <option value="Homeowners">Homeowners</option>
+            <option value="Condo">Condo</option>
+            <option value="Renters">Renters</option>
+            <option value="Landlord">Landlord</option>
+            <option value="Vacant home">Vacant home</option>
+            <option value="Business">Business</option>
+            <option value="Commercial auto / trucking">
+              Commercial auto / trucking
+            </option>
+            <option value="General liability">General liability</option>
+            <option value="Workers compensation">Workers compensation</option>
+            <option value="Medicare">Medicare</option>
+            <option value="Other">Other</option>
+          </select>
         </div>
         <div className="space-y-2">
           <Label htmlFor="quote-language">Preferred language</Label>
-          <Select value={language} onValueChange={setLanguage}>
-            <SelectTrigger id="quote-language">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="English">English</SelectItem>
-              <SelectItem value="Spanish">Español</SelectItem>
-              <SelectItem value="Arabic">العربية</SelectItem>
-            </SelectContent>
-          </Select>
+          <select
+            id="quote-language"
+            name="language"
+            value={language}
+            onChange={(event) => setLanguage(event.currentTarget.value)}
+            disabled={status === "sending"}
+            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            <option value="English">English</option>
+            <option value="Spanish">Español</option>
+            <option value="Arabic">العربية</option>
+          </select>
         </div>
       </div>
       <Button type="submit" className="w-full" disabled={status === "sending"}>
