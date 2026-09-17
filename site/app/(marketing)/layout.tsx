@@ -30,7 +30,7 @@ export default async function MarketingLayout({
 
                 "lg:hidden"
               )}
-              href={`tel:${siteConfig.contactNumber}`}
+              href="tel:+12404007393"
               aria-label={`Call Kamil Agency at ${siteConfig.contactNumber}`}
               eventName="click_to_call"
               eventParams={{ link_location: "header" }}
@@ -69,7 +69,7 @@ export default async function MarketingLayout({
         className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-2 border-t bg-background/95 p-3 shadow-2xl backdrop-blur sm:hidden"
       >
         <TrackedLink
-          href={`tel:${siteConfig.contactNumber}`}
+          href="tel:+12404007393"
           className={cn(
             buttonVariants({ variant: "outline", size: "sm" }),
             "w-full"
