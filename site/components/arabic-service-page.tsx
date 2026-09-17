@@ -10,7 +10,7 @@ type ArabicServicePageProps = {
 
 export function ArabicServicePage({ children }: ArabicServicePageProps) {
   return (
-    <main dir="rtl" lang="ar">
+    <div>
       <section className="bg-gradient-to-br from-background via-secondary to-accent/30 py-20 md:py-28">
         <div className="container max-w-5xl text-center">
           <p className="text-sm font-semibold tracking-wider text-primary/70">
@@ -84,6 +84,6 @@ export function ArabicServicePage({ children }: ArabicServicePageProps) {
           </aside>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

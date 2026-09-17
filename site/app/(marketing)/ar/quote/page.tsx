@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function ArabicQuotePage() {
   return (
-    <main dir="rtl" lang="ar" className="container max-w-3xl py-16 md:py-24">
+    <div className="container max-w-3xl py-16 md:py-24">
       <div className="mb-10 text-center">
         <p className="text-sm font-semibold text-primary">
           خدمة باللغة العربية
@@ -28,6 +28,6 @@ export default function ArabicQuotePage() {
         </p>
       </div>
       <ArabicQuoteForm />
-    </main>
+    </div>
   )
 }

@@ -17,7 +17,7 @@ export function ArabicCoveragePage({
   items,
 }: ArabicCoveragePageProps) {
   return (
-    <main dir="rtl" lang="ar">
+    <div>
       <section className="bg-gradient-to-br from-background via-secondary to-accent/20 py-20 text-center md:py-28">
         <div className="container max-w-4xl">
           <p className="text-sm font-semibold text-primary">{eyebrow}</p>
@@ -69,6 +69,6 @@ export function ArabicCoveragePage({
           معيناً.
         </p>
       </section>
-    </main>
+    </div>
   )
 }
