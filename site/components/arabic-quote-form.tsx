@@ -1,8 +1,8 @@
 "use client"
 
 import { FormEvent, useState } from "react"
-import { sendGAEvent } from "@next/third-parties/google"
 
+import { trackAnalyticsEvent } from "@/lib/analytics"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -41,7 +41,7 @@ export function ArabicQuoteForm() {
       return
     }
 
-    sendGAEvent("event", "generate_lead", {
+    trackAnalyticsEvent("generate_lead", {
       lead_source: "arabic_quote_form",
       preferred_language: "arabic",
       insurance_type: String(fields.coverageType),

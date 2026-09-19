@@ -17,6 +17,14 @@ const featuredServices = [
     href: "/services/home-insurance-georgetown",
   },
   {
+    name: "Glover Park home insurance",
+    href: "/services/home-insurance-glover-park",
+  },
+  {
+    name: "Cathedral Heights home insurance",
+    href: "/services/home-insurance-cathedral-heights",
+  },
+  {
     name: "Commercial auto insurance",
     href: "/services/commercial-auto-insurance",
   },

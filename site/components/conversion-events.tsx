@@ -1,7 +1,8 @@
 "use client"
 
 import { useEffect } from "react"
-import { sendGAEvent } from "@next/third-parties/google"
+
+import { AnalyticsParameters, trackAnalyticsEvent } from "@/lib/analytics"
 
 function classifyLink(anchor: HTMLAnchorElement) {
   const href = anchor.getAttribute("href") ?? ""
@@ -38,14 +39,23 @@ export function ConversionEvents() {
       const eventName = anchor.dataset.analyticsEvent ?? classifyLink(anchor)
       if (!eventName) return
 
-      let eventParams: Record<string, unknown> = {}
+      let eventParams: AnalyticsParameters = {}
       try {
-        eventParams = JSON.parse(anchor.dataset.analyticsParams ?? "{}")
+        const parsedParams: unknown = JSON.parse(
+          anchor.dataset.analyticsParams ?? "{}"
+        )
+        if (
+          parsedParams &&
+          typeof parsedParams === "object" &&
+          !Array.isArray(parsedParams)
+        ) {
+          eventParams = parsedParams as AnalyticsParameters
+        }
       } catch {
         eventParams = {}
       }
 
-      sendGAEvent("event", eventName, {
+      trackAnalyticsEvent(eventName, {
         ...eventParams,
         link_url: anchor.href,
         link_text: anchor.textContent?.trim().slice(0, 80) || "unlabeled",

@@ -2,8 +2,8 @@ import Link from "next/link"
 
 const neighborhoods = [
   { name: "Georgetown", href: "/services/home-insurance-georgetown" },
-  { name: "Glover Park" },
-  { name: "Cathedral Heights" },
+  { name: "Glover Park", href: "/services/home-insurance-glover-park" },
+  { name: "Cathedral Heights", href: "/services/home-insurance-cathedral-heights" },
   { name: "Cleveland Park" },
   { name: "Tenleytown" },
   { name: "Chevy Chase" },

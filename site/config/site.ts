@@ -13,6 +13,7 @@ export const siteConfig: SiteConfig = {
   commercialQuoteURL: "https://app.boldpenguin.com/start/mohamedkamil",
   medicareQuoteURL:
     "https://eosadvisor.com/user/signup?advId=ADS1718137118673475&n=true",
+  travelInsuranceURL: "https://www.tmetravelinsurance.com/?referrer=mki770",
   ogImage: "/og.jpg",
   contactNumber: "(240) 400-7393",
   contactEmail: "info@kamilagency.com",

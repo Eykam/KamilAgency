@@ -56,6 +56,7 @@ export type SiteConfig = {
   contactNumber: string
   commercialQuoteURL: string
   medicareQuoteURL: string
+  travelInsuranceURL: string
   locations: Location[]
 }
 
