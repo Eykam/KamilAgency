@@ -1,3 +1,4 @@
+import { createElement } from "react"
 import { Metadata } from "next"
 import { Service } from "@/types"
 
@@ -11,6 +12,7 @@ import { LandlordPolicyDetails, landlordFAQ } from "./services/landlord"
 import { LifePolicyDetails, lifeFAQ } from "./services/life"
 import { MedicarePolicyDetails, medicareFAQ } from "./services/medicare"
 import { RentersPolicyDetails, rentersFAQ } from "./services/renters"
+import { TravelPolicyDetails, travelFAQ } from "./services/travel"
 import { UmbrellaPolicyDetails, umbrellaFAQ } from "./services/umbrella"
 import { VacantHomePolicyDetails, vacantHomeFAQ } from "./services/vacant-home"
 import { siteConfig } from "./site"
@@ -20,7 +22,7 @@ import { siteConfig } from "./site"
 export const servicesMetaData: Metadata = {
   title: "Insurance Services in Washington, DC",
   description:
-    "Explore personalized home, auto, commercial, renters, landlord, Medicare, umbrella, and life insurance solutions from Kamil Agency.",
+    "Explore personalized home, auto, commercial, renters, landlord, Medicare, travel, umbrella, and life insurance solutions from Kamil Agency.",
   alternates: { canonical: "/services" },
   keywords: [
     "Kamil Agency",
@@ -32,6 +34,7 @@ export const servicesMetaData: Metadata = {
     "Renters Insurance",
     "Landlord Insurance",
     "Medicare Insurance",
+    "Travel Insurance",
     "Umbrella Insurance",
     "Life Insurance",
     "Insurance in Washington D.C",
@@ -171,6 +174,22 @@ export const services: Service[] = [
     pageURL: "/services/medicare",
     imageURL: "/images/services/medicare.webp",
     faq: medicareFAQ,
+  },
+  {
+    name: "Travel",
+    descriptionShort:
+      "Travel protection options for your next trip, including medical and evacuation needs.",
+    description:
+      "Kamil Agency connects travelers with trip protection, emergency medical, and medical evacuation coverage through our travel insurance partner.",
+    descriptionLong:
+      "Travel insurance may help protect prepaid trip costs and provide support for covered medical emergencies, evacuation needs, delays, or interruptions away from home. Use our partner's secure website to review available plans, benefits, exclusions, and eligibility before you enroll.",
+    icon: createElement(Icons.map, { className: "size-12" }),
+    quoteURL: siteConfig.travelInsuranceURL,
+    docsURL: "/contact-us",
+    pageURL: "/services/travel-insurance",
+    imageURL: "/images/services/travel-insurance.png",
+    details: TravelPolicyDetails,
+    faq: travelFAQ,
   },
   {
     name: "Umbrella",

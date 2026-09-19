@@ -1,8 +1,8 @@
 "use client"
 
 import { FormEvent, useState } from "react"
-import { sendGAEvent } from "@next/third-parties/google"
 
+import { trackAnalyticsEvent } from "@/lib/analytics"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -29,7 +29,7 @@ export default function ContactForm() {
       return
     }
 
-    sendGAEvent("event", "generate_lead", {
+    trackAnalyticsEvent("generate_lead", {
       lead_source: "contact_form",
       form_name: "contact_us",
     })

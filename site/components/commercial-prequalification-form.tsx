@@ -1,9 +1,9 @@
 "use client"
 
 import { FormEvent, useRef, useState } from "react"
-import { sendGAEvent } from "@next/third-parties/google"
 
 import { siteConfig } from "@/config/site"
+import { trackAnalyticsEvent } from "@/lib/analytics"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -80,7 +80,7 @@ export function CommercialPrequalificationForm() {
       return
     }
 
-    sendGAEvent("event", "generate_lead", {
+    trackAnalyticsEvent("generate_lead", {
       lead_source: "commercial_prequalification",
       insurance_type: "commercial",
     })
@@ -103,7 +103,7 @@ export function CommercialPrequalificationForm() {
           rel="noopener noreferrer nofollow"
           className="mt-6 inline-flex h-11 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground hover:bg-primary/90"
           onClick={() =>
-            sendGAEvent("event", "quote_handoff", {
+            trackAnalyticsEvent("quote_handoff", {
               quote_type: "commercial",
               link_location: "commercial_prequalification",
             })

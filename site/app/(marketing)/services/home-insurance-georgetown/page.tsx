@@ -51,11 +51,47 @@ export default function GeorgetownHomeInsurancePage() {
         "Homeowners reviewing coverage before renewal",
         "Residents in Georgetown, Glover Park, Cathedral Heights, and nearby neighborhoods",
       ]}
+      localConsiderations="Georgetown properties may combine older construction, attached walls, renovations, and premium finishes. An accurate review should separate market value from rebuilding cost and identify updates to the roof, wiring, plumbing, and heating systems. Condo owners should also compare their unit coverage with the association's master policy."
+      whatToPrepare={[
+        "The property address, year built, and approximate square footage",
+        "Dates and details for roof, electrical, plumbing, and HVAC updates",
+        "Information about renovations, fireplaces, alarms, and finished basements",
+        "The condo or homeowners association master policy, when applicable",
+      ]}
+      commonQuestions={[
+        {
+          question:
+            "Is rebuilding cost the same as a Georgetown home's market value?",
+          answer:
+            "No. Market value includes factors such as land and location, while dwelling coverage is based on the estimated cost to rebuild the structure with comparable materials and labor.",
+        },
+        {
+          question: "What details matter for an older rowhouse?",
+          answer:
+            "Carriers commonly ask about construction, roof age, heating, wiring, plumbing, renovations, occupancy, and shared walls. Complete details help the agency compare eligible options accurately.",
+        },
+        {
+          question:
+            "Does a condo association policy cover my unit and belongings?",
+          answer:
+            "Usually not completely. The master policy and bylaws help determine what the association covers and what should be addressed by your individual condo policy, including belongings, improvements, liability, and possible loss assessment coverage.",
+        },
+      ]}
       relatedLinks={[
-        { label: "Homeowners insurance", href: "/services/homeowners-insurance" },
+        {
+          label: "Homeowners insurance",
+          href: "/services/homeowners-insurance",
+        },
         { label: "Condo insurance", href: "/services/condo-insurance" },
         { label: "Landlord insurance", href: "/services/landlord-insurance" },
-        { label: "Vacant-home insurance", href: "/services/vacant-home-insurance" },
+        {
+          label: "Glover Park home insurance",
+          href: "/services/home-insurance-glover-park",
+        },
+        {
+          label: "Cathedral Heights home insurance",
+          href: "/services/home-insurance-cathedral-heights",
+        },
       ]}
     />
   )

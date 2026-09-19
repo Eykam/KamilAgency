@@ -1,8 +1,7 @@
 "use client"
 
 import { FormEvent, useState } from "react"
-import { sendGAEvent } from "@next/third-parties/google"
-
+import { trackAnalyticsEvent } from "@/lib/analytics"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Input } from "@/components/ui/input"
@@ -47,7 +46,7 @@ export function ReferralForm() {
       return
     }
 
-    sendGAEvent("event", "generate_lead", { lead_source: "client_referral" })
+    trackAnalyticsEvent("generate_lead", { lead_source: "client_referral" })
     setStatus("sent")
   }
 
