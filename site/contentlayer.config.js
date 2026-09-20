@@ -73,6 +73,10 @@ export const Post = defineDocumentType(() => ({
       type: "string",
       required: true,
     },
+    seoTitle: {
+      type: "string",
+      required: false,
+    },
     description: {
       type: "string",
     },

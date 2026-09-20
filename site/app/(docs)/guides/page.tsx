@@ -6,7 +6,7 @@ import { formatDate } from "@/lib/utils"
 import { DocsPageHeader } from "@/components/page-header"
 
 export const metadata = {
-  title: "Guides",
+  title: "Insurance Guides & Resources",
   description:
     "Here are some useful guides, dealing with Insurance, that we've compiled over the years from our experience as Agents!",
   alternates: { canonical: "/guides" },

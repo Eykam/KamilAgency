@@ -8,7 +8,7 @@ import { buttonVariants } from "@/components/ui/button"
 export const metadata: Metadata = {
   title: "Business Insurance by Industry in Washington, DC",
   description:
-    "Explore business insurance guidance for contractors, restaurants, nonprofits, property managers, retail, delivery, technology, and professional-service firms in Washington, DC.",
+    "Compare business insurance guidance by industry for contractors, restaurants, nonprofits, property managers, retailers, delivery services, and technology firms.",
   alternates: { canonical: "/services/business-insurance-by-industry" },
 }
 
