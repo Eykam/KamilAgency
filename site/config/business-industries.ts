@@ -2,6 +2,7 @@ export type BusinessIndustry = {
   slug: string
   shortName: string
   title: string
+  seoTitle?: string
   description: string
   introduction: string
   highlights: readonly { title: string; description: string }[]
@@ -87,6 +88,7 @@ export const businessIndustries: readonly BusinessIndustry[] = [
     slug: "professional-services",
     shortName: "Professional services",
     title: "Professional Services Insurance in Washington, DC",
+    seoTitle: "Professional Services Insurance in DC",
     description:
       "Insurance guidance for consultants, accountants, agencies, and other professional-service firms in Washington, DC.",
     introduction:
@@ -161,6 +163,7 @@ export const businessIndustries: readonly BusinessIndustry[] = [
     slug: "property-managers",
     shortName: "Property managers",
     title: "Property Management Insurance in Washington, DC",
+    seoTitle: "Property Management Insurance in DC",
     description:
       "Insurance options for property managers, leasing operations, and real-estate service firms in Washington, DC.",
     introduction:
@@ -272,6 +275,7 @@ export const businessIndustries: readonly BusinessIndustry[] = [
     slug: "technology-firms",
     shortName: "Technology firms",
     title: "Technology Company Insurance in Washington, DC",
+    seoTitle: "Technology Company Insurance in DC",
     description:
       "Insurance guidance for software companies, IT consultants, startups, and other technology firms in Washington, DC.",
     introduction:

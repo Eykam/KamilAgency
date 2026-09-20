@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 
 export const metadata: Metadata = {
-  title: "Business Insurance by Industry in Washington, DC",
+  title: "Business Insurance by Industry in DC",
   description:
     "Compare business insurance guidance by industry for contractors, restaurants, nonprofits, property managers, retailers, delivery services, and technology firms.",
   alternates: { canonical: "/services/business-insurance-by-industry" },
