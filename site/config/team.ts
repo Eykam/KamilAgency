@@ -20,7 +20,7 @@ export const team: TeamMember[] = [
     metadata: {
       title: "Mohamed Kamil | Agency Owner",
       description:
-        "Meet Mohamed Kamil, the dedicated agency owner of Kamil Agency with expertise in home, commercial, Medicare, and life insurance. Serving clients in Washington D.C, Maryland, Virginia, and beyond, Mohamed is passionate about helping clients protect their assets and achieve financial security through personalized insurance solutions.",
+        "Meet Mohamed Kamil, owner of Kamil Agency, providing personalized home, commercial, Medicare, and life insurance guidance in Washington, DC.",
       keywords: [
         "Mohamed Kamil",
         "Agency Owner",
@@ -60,7 +60,7 @@ export const team: TeamMember[] = [
     metadata: {
       title: "Amgad Kamil | Office Manager",
       description:
-        "Meet Amgad Kamil, the Office Manager at Kamil Agency with expertise in home, auto, commercial, landlord, and renters insurance. Serving clients in Washington D.C, Maryland, Virginia, and beyond, Amgad is committed to providing expert guidance and personalized solutions to clients, ensuring comprehensive coverage for their needs.",
+        "Meet Amgad Kamil, Office Manager at Kamil Agency, helping clients with home, auto, commercial, landlord, and renters insurance in Washington, DC.",
       keywords: [
         "Amgad Kamil",
         "Office Manager",
