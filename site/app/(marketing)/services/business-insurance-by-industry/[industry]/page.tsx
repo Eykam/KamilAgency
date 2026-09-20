@@ -20,7 +20,7 @@ export function generateMetadata({ params }: IndustryPageProps): Metadata {
   if (!industry) return {}
 
   return {
-    title: industry.title,
+    title: industry.seoTitle ?? industry.title,
     description: industry.description,
     alternates: {
       canonical: `/services/business-insurance-by-industry/${industry.slug}`,

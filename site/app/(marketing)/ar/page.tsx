@@ -4,7 +4,7 @@ import Link from "next/link"
 import { ArabicServicePage } from "@/components/arabic-service-page"
 
 export const metadata: Metadata = {
-  title: "خدمات التأمين باللغة العربية في واشنطن العاصمة",
+  title: "خدمات التأمين بالعربية في واشنطن العاصمة",
   description:
     "قارن خيارات تأمين السيارات والمنازل والأعمال مع وكالة تأمين محلية في واشنطن العاصمة تقدم خدمة باللغة العربية.",
   alternates: {

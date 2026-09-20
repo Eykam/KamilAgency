@@ -5,7 +5,7 @@ import LocalSeoPage from "@/components/local-seo-page"
 const canonicalPath = "/services/home-insurance-cathedral-heights"
 
 export const metadata: Metadata = {
-  title: "Home Insurance in Cathedral Heights, Washington, DC",
+  title: "Home Insurance in Cathedral Heights, DC",
   description:
     "Compare home and condo insurance in Cathedral Heights with guidance for master policies, older buildings, detached homes, and personal property.",
   keywords:
