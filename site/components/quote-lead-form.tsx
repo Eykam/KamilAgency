@@ -1,11 +1,13 @@
 "use client"
 
 import { FormEvent, useState } from "react"
+
 import { siteConfig } from "@/config/site"
 import { trackAnalyticsEvent } from "@/lib/analytics"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
 
 const quoteUrl =
   "https://www.agentinsure.com/compare/auto-insurance-home-insurance/mohame/quote.aspx"
@@ -50,8 +52,11 @@ export function QuoteLeadForm() {
           `Coverage: ${coverage}`,
           `ZIP code: ${fields.zip}`,
           `Preferred language: ${language}`,
+          fields.message ? `Customer message: ${fields.message}` : null,
           "The prospect asked to continue to the secure quote form.",
-        ].join("\n"),
+        ]
+          .filter(Boolean)
+          .join("\n"),
       }),
     }).catch(() => null)
 
@@ -206,6 +211,17 @@ export function QuoteLeadForm() {
             <option value="Arabic">العربية</option>
           </select>
         </div>
+      </div>
+      <div className="space-y-2">
+        <Label htmlFor="quote-message">Tell us what you need</Label>
+        <Textarea
+          id="quote-message"
+          name="message"
+          maxLength={2000}
+          placeholder="Share any details or questions that will help us prepare your quote."
+          className="min-h-[120px]"
+          disabled={status === "sending"}
+        />
       </div>
       <Button type="submit" className="w-full" disabled={status === "sending"}>
         {status === "sending" ? "Sending…" : "Save My Request & Continue"}

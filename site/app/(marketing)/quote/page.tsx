@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import { ServiceCategory } from "@/types"
 
 import { ServiceCategories } from "@/config/serviceCategories"
+import ContactForm from "@/components/contact-form"
 import { TrackedLink } from "@/components/tracked-link"
 
 export function generateMetadata(): Metadata {
@@ -91,6 +92,13 @@ export default function QuotePage() {
           {ServiceCategories.map((category) => (
             <QuoteCard key={category.name} {...category} />
           ))}
+        </div>
+
+        <div
+          id="tell-us-what-you-need"
+          className="mx-auto max-w-3xl scroll-mt-24"
+        >
+          <ContactForm />
         </div>
       </div>
     </section>
