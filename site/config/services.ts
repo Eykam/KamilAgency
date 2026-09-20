@@ -217,7 +217,7 @@ export const services: Service[] = [
     descriptionLong:
       "Life insurance is designed to offer comprehensive financial protection to your beneficiaries in the event of your death. It provides a death benefit that can be used to cover funeral expenses, outstanding debts, and ongoing living expenses. Additionally, some life insurance policies offer living benefits, such as cash value accumulation, that can be accessed during your lifetime. With life insurance, you can ensure that your loved ones are financially secure and able to maintain their standard of living even after you are gone.",
     icon: Icons.life({}),
-    quoteURL: siteConfig.quoteURL,
+    quoteURL: "/contact-us#info",
     docsURL: "/docs",
     pageURL: "/services/life-insurance",
     imageURL: "/images/services/life.webp",
