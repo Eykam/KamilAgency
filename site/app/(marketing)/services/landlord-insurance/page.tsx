@@ -5,7 +5,7 @@ import { services } from "@/config/services"
 import ServicePage from "@/components/service-page"
 
 export const metadata: Metadata = {
-  title: "Landlord & Rental Property Insurance | DC, MD & VA",
+  title: "Landlord Insurance in DC, MD & VA",
   description:
     "Compare landlord and rental property insurance for dwellings, liability, and eligible lost rent with a local agency serving DC, Maryland, and Virginia.",
   keywords:

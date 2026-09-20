@@ -5,7 +5,7 @@ import { services } from "@/config/services"
 import ServicePage from "@/components/service-page"
 
 export const metadata: Metadata = {
-  title: "Renters Insurance in Washington, DC | Kamil Agency",
+  title: "Renters Insurance in Washington, DC",
   description:
     "Compare renters insurance for belongings, personal liability, and temporary living costs with a multilingual independent agency in Washington, DC.",
   keywords:

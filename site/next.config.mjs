@@ -74,6 +74,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/about-us/speak-to-one-of-our-expert-brokers-6377026",
+        destination: "/contact-us",
+        permanent: true,
+      },
+      {
         source: "/docs/documentation/:path*",
         destination: "/docs",
         permanent: true,

@@ -23,7 +23,7 @@ import ServiceSection from "./_sections/Services"
 import WhyIndependentSection from "./_sections/WhyIndependent"
 
 export const metadata: Metadata = {
-  title: "Compare Home, Auto & Business Insurance in Washington, DC",
+  title: "Insurance Agency in Washington, DC",
   description:
     "Compare home, auto, business, renters, landlord, and condo insurance with a local Washington, DC agency. Service in English, Spanish, and Arabic.",
   alternates: {
