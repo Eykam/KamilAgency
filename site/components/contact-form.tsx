@@ -180,7 +180,7 @@ export default function ContactForm() {
             )}
           {status === "error" && (
             <p>
-              We couldn't send your message. Please call or email our office
+              We couldn’t send your message. Please call or email our office
               instead.
             </p>
           )}
