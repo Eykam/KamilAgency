@@ -10,6 +10,21 @@ import { Textarea } from "@/components/ui/textarea"
 
 type FormStatus = "idle" | "sending" | "sent" | "error"
 
+const insuranceTypes = [
+  "Auto Insurance",
+  "Homeowners Insurance",
+  "Condo Insurance",
+  "Renters Insurance",
+  "Landlord Insurance",
+  "Vacant Home Insurance",
+  "Umbrella Insurance",
+  "Life Insurance",
+  "Medicare",
+  "Travel Insurance",
+  "Commercial Insurance",
+  "Other / General Inquiry",
+]
+
 export default function ContactForm() {
   const [status, setStatus] = useState<FormStatus>("idle")
 
@@ -18,10 +33,11 @@ export default function ContactForm() {
     setStatus("sending")
 
     const form = event.currentTarget
+    const fields = Object.fromEntries(new FormData(form))
     const response = await fetch("/api/contact", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify(Object.fromEntries(new FormData(form))),
+      body: JSON.stringify(fields),
     }).catch(() => null)
 
     if (!response?.ok) {
@@ -32,6 +48,7 @@ export default function ContactForm() {
     trackAnalyticsEvent("generate_lead", {
       lead_source: "contact_form",
       form_name: "contact_us",
+      insurance_type: String(fields.insuranceType),
     })
     form.reset()
     setStatus("sent")
@@ -89,6 +106,25 @@ export default function ContactForm() {
             autoComplete="tel"
             placeholder="Enter your phone number"
           />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="insuranceType">Insurance type</Label>
+          <select
+            id="insuranceType"
+            name="insuranceType"
+            required
+            defaultValue=""
+            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+          >
+            <option value="" disabled>
+              Select an insurance type
+            </option>
+            {insuranceTypes.map((insuranceType) => (
+              <option key={insuranceType} value={insuranceType}>
+                {insuranceType}
+              </option>
+            ))}
+          </select>
         </div>
         <div className="space-y-2">
           <Label htmlFor="message">Message</Label>

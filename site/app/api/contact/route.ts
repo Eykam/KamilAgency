@@ -9,6 +9,13 @@ const contactSchema = z.object({
   name: z.string().trim().min(2).max(100),
   email: z.string().trim().email().max(254),
   phone: z.string().trim().max(40).optional().default(""),
+  insuranceType: z
+    .string()
+    .trim()
+    .min(2)
+    .max(80)
+    .optional()
+    .default("General Inquiry"),
   message: z.string().trim().min(10).max(2000),
   website: z.string().max(0).optional().default(""),
 })
@@ -85,19 +92,22 @@ export async function POST(request: Request) {
     )
   }
 
-  const { name, email, phone, message } = parsed.data
+  const { name, email, phone, insuranceType, message } = parsed.data
   const client = new ServerClient(token)
+  const safeName = name.replace(/[\r\n]/g, " ")
+  const safeInsuranceType = insuranceType.replace(/[\r\n]/g, " ")
 
   try {
     await client.sendEmail({
       From: from,
       To: siteConfig.contactEmail,
       ReplyTo: email,
-      Subject: `Website inquiry from ${name.replace(/[\r\n]/g, " ")}`,
+      Subject: `${safeInsuranceType} website inquiry from ${safeName}`,
       TextBody: [
         `Name: ${name}`,
         `Email: ${email}`,
         `Phone: ${phone || "Not provided"}`,
+        `Insurance type: ${insuranceType}`,
         "",
         message,
       ].join("\n"),

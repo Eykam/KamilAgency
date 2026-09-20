@@ -184,7 +184,7 @@ export const services: Service[] = [
     descriptionLong:
       "Travel insurance may help protect prepaid trip costs and provide support for covered medical emergencies, evacuation needs, delays, or interruptions away from home. Use our partner's secure website to review available plans, benefits, exclusions, and eligibility before you enroll.",
     icon: createElement(Icons.map, { className: "size-12" }),
-    quoteURL: "/contact-us#info",
+    quoteURL: siteConfig.travelInsuranceURL,
     docsURL: "/contact-us",
     pageURL: "/services/travel-insurance",
     imageURL: "/images/services/travel-insurance.png",
