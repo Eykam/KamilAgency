@@ -10,7 +10,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
-    "Terms governing use of the Kamil Agency website and online services.",
+    "Terms governing use of the Kamil Agency website, online services, content, forms, and related resources.",
   alternates: { canonical: "/policy/terms" },
 }
 

@@ -44,6 +44,7 @@ export async function generateMetadata({
   }
 
   const url = env.NEXT_PUBLIC_APP_URL
+  const metadataTitle = post.seoTitle ?? post.title
 
   const ogUrl = new URL(`${url}/api/og`)
   ogUrl.searchParams.set("heading", post.title)
@@ -51,7 +52,7 @@ export async function generateMetadata({
   ogUrl.searchParams.set("mode", "dark")
 
   return {
-    title: post.title,
+    title: metadataTitle,
     description: post.description,
     alternates: { canonical: post.slug },
     authors: post.authors.map((author) => ({
