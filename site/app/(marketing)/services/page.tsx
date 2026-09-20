@@ -3,6 +3,7 @@ import Link from "next/link"
 
 import { businessIndustries } from "@/config/business-industries"
 import { services, servicesMetaData } from "@/config/services"
+import ContactForm from "@/components/contact-form"
 import ServiceCard from "@/components/service-card"
 
 export function generateMetadata(): Metadata {
@@ -30,6 +31,13 @@ export default async function ServicesPage() {
         {services.map((service) => (
           <ServiceCard key={service.name} service={service} pageLink />
         ))}
+      </div>
+
+      <div
+        id="tell-us-what-you-need"
+        className="mx-auto w-full max-w-3xl scroll-mt-24"
+      >
+        <ContactForm />
       </div>
 
       <div className="mx-auto max-w-[64rem] rounded-2xl border bg-background p-6 text-center shadow-sm">

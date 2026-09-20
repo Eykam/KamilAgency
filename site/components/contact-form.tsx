@@ -27,10 +27,7 @@ const insuranceTypes = [
 
 const ezLynxQuoteUrl =
   "https://www.agentinsure.com/compare/auto-insurance-home-insurance/mohame/quote.aspx"
-const ezLynxInsuranceTypes = new Set([
-  "Auto Insurance",
-  "Homeowners Insurance",
-])
+const ezLynxInsuranceTypes = new Set(["Auto Insurance", "Homeowners Insurance"])
 
 export default function ContactForm() {
   const [status, setStatus] = useState<FormStatus>("idle")
@@ -71,7 +68,7 @@ export default function ContactForm() {
           Send a Message
         </p>
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
-          Get in Touch
+          Tell Us What You Need
         </h2>
         <p className="text-base leading-7 text-gray-600 dark:text-gray-300">
           Tell us what you need and your preferred language. Our English,
