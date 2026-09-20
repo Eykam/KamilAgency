@@ -61,7 +61,7 @@ export const services: Service[] = [
     details: HomeownersPolicyDetails,
     descriptionShort: "Comprehensive coverage for your home and belongings.",
     icon: Icons.home({}),
-    quoteURL: siteConfig.quoteURL,
+    quoteURL: "/contact-us#info",
     docsURL: "/docs",
     pageURL: "/services/homeowners-insurance",
     imageURL: "/images/services/home.webp",
@@ -76,7 +76,7 @@ export const services: Service[] = [
     descriptionLong:
       "A condominium association's master policy and an individual condo policy protect different parts of the property. Kamil Agency helps Washington, DC condo owners understand the master policy, identify their responsibilities, and compare HO-6 coverage for personal property, interior improvements, liability, additional living expenses, and eligible loss assessments.",
     icon: Icons.home({}),
-    quoteURL: siteConfig.quoteURL,
+    quoteURL: "/contact-us#info",
     docsURL: "/docs",
     pageURL: "/services/condo-insurance",
     imageURL: "/images/services/home.webp",
@@ -91,7 +91,7 @@ export const services: Service[] = [
     descriptionLong:
       "Auto insurance can help cover injuries, property damage, vehicle repairs, theft, and other losses, depending on the policy you choose. Our Washington, DC team explains liability, collision, comprehensive, medical payments, and uninsured motorist options in plain language. We help drivers compare limits and deductibles for the way they use their vehicles.",
     icon: Icons.car({}),
-    quoteURL: siteConfig.quoteURL,
+    quoteURL: "/contact-us#info",
     docsURL: "/docs",
     pageURL: "/services/auto-insurance",
     imageURL: "/images/services/auto.webp",
@@ -122,7 +122,7 @@ export const services: Service[] = [
     descriptionLong:
       "Renters insurance can help replace belongings after a covered loss and provide personal liability protection. It may also help with additional living expenses if a covered event makes your rental temporarily uninhabitable. Our Washington, DC team helps tenants compare coverage limits, deductibles, and options for their apartment, condo, or rental home.",
     icon: Icons.renter({}),
-    quoteURL: siteConfig.quoteURL,
+    quoteURL: "/contact-us#info",
     docsURL: "/docs",
     pageURL: "/services/renters-insurance",
     imageURL: "/images/services/renters.webp",
@@ -137,7 +137,7 @@ export const services: Service[] = [
     descriptionLong:
       "Rental properties have different exposures than owner-occupied homes. Kamil Agency helps DC landlords review dwelling protection, premises liability, deductibles, eligible loss-of-rents coverage, and options for vandalism or water-related losses. Recommendations account for the property, occupancy, lease structure, and carrier eligibility rather than relying on a one-size-fits-all policy.",
     icon: Icons.landlord({}),
-    quoteURL: siteConfig.quoteURL,
+    quoteURL: "/contact-us#info",
     docsURL: "/docs",
     pageURL: "/services/landlord-insurance",
     imageURL: "/images/services/landlord.webp",
@@ -153,7 +153,7 @@ export const services: Service[] = [
     descriptionLong:
       "Vacant and unoccupied homes often need specialized coverage because standard homeowners policies may restrict protection after a property has been empty for a defined period. Kamil Agency helps owners compare options for dwellings, vandalism, premises liability, and flexible policy terms based on the property's condition, vacancy reason, and expected timeline.",
     icon: Icons.home({}),
-    quoteURL: siteConfig.quoteURL,
+    quoteURL: "/contact-us#info",
     docsURL: "/docs",
     pageURL: "/services/vacant-home-insurance",
     imageURL: "/images/services/home.webp",
@@ -169,7 +169,7 @@ export const services: Service[] = [
       "Medicare insurance is designed to offer comprehensive health coverage for seniors, covering a range of medical services and expenses. It includes various parts such as Part A (Hospital Insurance), Part B (Medical Insurance), Part C (Medicare Advantage Plans), and Part D (Prescription Drug Coverage). Additionally, Medigap policies help cover out-of-pocket costs not covered by Original Medicare. With Medicare insurance, seniors can access necessary medical care without worrying about high costs, ensuring they receive the healthcare they need as they age.",
     details: MedicarePolicyDetails,
     icon: Icons.heart({ className: "fill-current" }),
-    quoteURL: siteConfig.medicareQuoteURL,
+    quoteURL: "/contact-us#info",
     docsURL: "/docs",
     pageURL: "/services/medicare",
     imageURL: "/images/services/medicare.webp",
@@ -201,7 +201,7 @@ export const services: Service[] = [
       "Umbrella insurance is designed to offer comprehensive additional liability coverage, providing an extra layer of protection that goes beyond the limits of your primary insurance policies. It covers a wide range of risks, including bodily injury, property damage, and personal liability claims. Umbrella insurance can be especially beneficial in situations where the costs of a claim exceed the coverage limits of your underlying policies. By having umbrella insurance, you ensure that your assets and financial future are safeguarded against substantial claims and lawsuits, allowing you to maintain your peace of mind.",
 
     icon: Icons.umbrella({}),
-    quoteURL: siteConfig.quoteURL,
+    quoteURL: "/contact-us#info",
     docsURL: "/docs",
     pageURL: "/services/umbrella-insurance",
     imageURL: "/images/services/home.webp",

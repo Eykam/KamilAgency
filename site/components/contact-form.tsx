@@ -10,18 +10,42 @@ import { Textarea } from "@/components/ui/textarea"
 
 type FormStatus = "idle" | "sending" | "sent" | "error"
 
+const insuranceTypes = [
+  "Auto Insurance",
+  "Homeowners Insurance",
+  "Condo Insurance",
+  "Renters Insurance",
+  "Landlord Insurance",
+  "Vacant Home Insurance",
+  "Umbrella Insurance",
+  "Life Insurance",
+  "Medicare",
+  "Travel Insurance",
+  "Commercial Insurance",
+  "Other / General Inquiry",
+]
+
+const ezLynxQuoteUrl =
+  "https://www.agentinsure.com/compare/auto-insurance-home-insurance/mohame/quote.aspx"
+const ezLynxInsuranceTypes = new Set([
+  "Auto Insurance",
+  "Homeowners Insurance",
+])
+
 export default function ContactForm() {
   const [status, setStatus] = useState<FormStatus>("idle")
+  const [submittedInsuranceType, setSubmittedInsuranceType] = useState("")
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     setStatus("sending")
 
     const form = event.currentTarget
+    const fields = Object.fromEntries(new FormData(form))
     const response = await fetch("/api/contact", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify(Object.fromEntries(new FormData(form))),
+      body: JSON.stringify(fields),
     }).catch(() => null)
 
     if (!response?.ok) {
@@ -29,10 +53,13 @@ export default function ContactForm() {
       return
     }
 
+    const insuranceType = String(fields.insuranceType)
     trackAnalyticsEvent("generate_lead", {
       lead_source: "contact_form",
       form_name: "contact_us",
+      insurance_type: insuranceType,
     })
+    setSubmittedInsuranceType(insuranceType)
     form.reset()
     setStatus("sent")
   }
@@ -91,6 +118,25 @@ export default function ContactForm() {
           />
         </div>
         <div className="space-y-2">
+          <Label htmlFor="insuranceType">Insurance type</Label>
+          <select
+            id="insuranceType"
+            name="insuranceType"
+            required
+            defaultValue=""
+            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+          >
+            <option value="" disabled>
+              Select an insurance type
+            </option>
+            {insuranceTypes.map((insuranceType) => (
+              <option key={insuranceType} value={insuranceType}>
+                {insuranceType}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="space-y-2">
           <Label htmlFor="message">Message</Label>
           <Textarea
             id="message"
@@ -109,11 +155,36 @@ export default function ContactForm() {
         >
           {status === "sending" ? "Sending…" : "Submit"}
         </Button>
-        <p className="min-h-5 text-sm" role="status" aria-live="polite">
-          {status === "sent" && "Thanks—your message was sent successfully."}
-          {status === "error" &&
-            "We couldn't send your message. Please call or email our office instead."}
-        </p>
+        <div
+          className="min-h-5 space-y-3 text-sm"
+          role="status"
+          aria-live="polite"
+        >
+          {status === "sent" && (
+            <p>Thanks—your message was sent successfully.</p>
+          )}
+          {status === "sent" &&
+            ezLynxInsuranceTypes.has(submittedInsuranceType) && (
+              <a
+                href={ezLynxQuoteUrl}
+                className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-6 font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                onClick={() =>
+                  trackAnalyticsEvent("quote_handoff", {
+                    quote_type: submittedInsuranceType,
+                    link_location: "contact_form_success",
+                  })
+                }
+              >
+                Continue to Secure Home &amp; Auto Quote
+              </a>
+            )}
+          {status === "error" && (
+            <p>
+              We couldn't send your message. Please call or email our office
+              instead.
+            </p>
+          )}
+        </div>
       </form>
     </div>
   )
