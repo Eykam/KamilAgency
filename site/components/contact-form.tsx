@@ -25,8 +25,16 @@ const insuranceTypes = [
   "Other / General Inquiry",
 ]
 
+const ezLynxQuoteUrl =
+  "https://www.agentinsure.com/compare/auto-insurance-home-insurance/mohame/quote.aspx"
+const ezLynxInsuranceTypes = new Set([
+  "Auto Insurance",
+  "Homeowners Insurance",
+])
+
 export default function ContactForm() {
   const [status, setStatus] = useState<FormStatus>("idle")
+  const [submittedInsuranceType, setSubmittedInsuranceType] = useState("")
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -45,11 +53,13 @@ export default function ContactForm() {
       return
     }
 
+    const insuranceType = String(fields.insuranceType)
     trackAnalyticsEvent("generate_lead", {
       lead_source: "contact_form",
       form_name: "contact_us",
-      insurance_type: String(fields.insuranceType),
+      insurance_type: insuranceType,
     })
+    setSubmittedInsuranceType(insuranceType)
     form.reset()
     setStatus("sent")
   }
@@ -145,11 +155,36 @@ export default function ContactForm() {
         >
           {status === "sending" ? "Sending…" : "Submit"}
         </Button>
-        <p className="min-h-5 text-sm" role="status" aria-live="polite">
-          {status === "sent" && "Thanks—your message was sent successfully."}
-          {status === "error" &&
-            "We couldn't send your message. Please call or email our office instead."}
-        </p>
+        <div
+          className="min-h-5 space-y-3 text-sm"
+          role="status"
+          aria-live="polite"
+        >
+          {status === "sent" && (
+            <p>Thanks—your message was sent successfully.</p>
+          )}
+          {status === "sent" &&
+            ezLynxInsuranceTypes.has(submittedInsuranceType) && (
+              <a
+                href={ezLynxQuoteUrl}
+                className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-6 font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                onClick={() =>
+                  trackAnalyticsEvent("quote_handoff", {
+                    quote_type: submittedInsuranceType,
+                    link_location: "contact_form_success",
+                  })
+                }
+              >
+                Continue to Secure Home &amp; Auto Quote
+              </a>
+            )}
+          {status === "error" && (
+            <p>
+              We couldn't send your message. Please call or email our office
+              instead.
+            </p>
+          )}
+        </div>
       </form>
     </div>
   )
