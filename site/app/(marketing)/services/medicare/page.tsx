@@ -5,7 +5,7 @@ import { services } from "@/config/services"
 import ServicePage from "@/components/service-page"
 
 export const metadata: Metadata = {
-  title: "Medicare Guidance in Washington, DC",
+  title: "Medicare Guidance in the DMV Area",
   description:
     "Understand Medicare Parts A, B, C, and D and get guidance choosing coverage in Washington, DC, Maryland, and Virginia.",
   keywords:

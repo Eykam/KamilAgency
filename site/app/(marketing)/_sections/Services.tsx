@@ -17,7 +17,7 @@ export default function ServiceSection() {
         </h2>
         <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
           Compare coverage for your home, vehicle, business, rental property,
-          family, and future with help from a local Washington, DC team.
+          family, and future with help from a local team serving the DMV Area.
         </p>
       </div>
 

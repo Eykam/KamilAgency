@@ -20,7 +20,7 @@ import { siteConfig } from "./site"
 // import { homeownersFAQ, HomeownersPolicyDetails } from "./services/health"
 
 export const servicesMetaData: Metadata = {
-  title: "Insurance Services in Washington, DC",
+  title: "Insurance Services in the DMV Area",
   description:
     "Explore personalized home, auto, commercial, renters, landlord, Medicare, travel, umbrella, and life insurance solutions from Kamil Agency.",
   alternates: { canonical: "/services" },

@@ -5,9 +5,9 @@ import { services } from "@/config/services"
 import ServicePage from "@/components/service-page"
 
 export const metadata: Metadata = {
-  title: "Commercial Insurance in Washington, DC",
+  title: "Commercial Insurance in the DMV Area",
   description:
-    "Compare business insurance options with a local Washington, DC agency for liability, property, workers' compensation, and commercial auto coverage.",
+    "Compare business insurance options with an independent agency serving Washington, DC, Maryland, and Virginia.",
   keywords:
     "commercial insurance, business insurance, D.C. commercial insurance, Maryland commercial insurance, Virginia commercial insurance, business protection, property insurance, liability insurance",
   alternates: {

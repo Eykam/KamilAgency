@@ -20,13 +20,13 @@ export default function ServiceAreasSection() {
       <div className="container grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div>
           <p className="text-sm font-semibold uppercase tracking-wider text-accent">
-            Washington, DC service area
+            DMV Area service coverage
           </p>
           <h2
             id="service-areas-heading"
             className="mt-3 font-heading text-3xl md:text-5xl"
           >
-            Coverage guidance grounded in the District
+            Coverage guidance across Washington, DC, Maryland & Virginia
           </h2>
           <p className="mt-5 text-lg leading-8 text-muted-foreground">
             DC homes, vehicles, rental properties, and small businesses each
