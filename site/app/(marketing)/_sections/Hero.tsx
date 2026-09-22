@@ -11,18 +11,18 @@ export default function HeroSection() {
       />
       <div className="container flex max-w-[68rem] flex-col items-center gap-6 text-center">
         <p className="rounded-full border bg-background/80 px-4 py-2 text-sm font-semibold shadow-sm">
-          Local, independent insurance guidance across the DMV Area
+          Local service across the DMV Area
         </p>
         <h1 className="relative font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
-          Independent Insurance Agency
-          <br className="hidden sm:block" /> Serving Washington, DC, Maryland
-          &amp; Virginia
+          Insurance for What Matters Most
+          <br className="hidden sm:block" /> in the DMV Area
+          
         </h1>
 
         <p className="max-w-[42rem] leading-normal sm:text-xl sm:leading-8">
-          Serving the DMV Area from our Washington, DC office. Get clear
-          recommendations from a responsive local team that takes time to
-          understand your home, vehicle, business, and budget.
+          Explore home, auto, and business coverage with a local team serving
+          Washington, DC, Maryland, and Virginia. We&apos;ll help you understand
+          your options and find coverage that fits.
         </p>
         <p className="text-lg font-semibold sm:text-xl">
           We speak English, Spanish, and Arabic.
@@ -34,7 +34,7 @@ export default function HeroSection() {
             eventName="quote_start"
             eventParams={{ link_location: "hero" }}
           >
-            Request a Quote
+            Get a Quote
           </TrackedLink>
           <TrackedLink
             href="tel:+12404007393"
