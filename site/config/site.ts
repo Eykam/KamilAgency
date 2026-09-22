@@ -6,7 +6,7 @@ export const siteConfig: SiteConfig = {
   name: "Kamil Agency",
   expandedName: "",
   description:
-    "Independent insurance guidance for individuals, families, and businesses in Washington, DC and the surrounding region.",
+    "Independent insurance guidance for individuals, families, and businesses across Washington, DC, Maryland, and Virginia.",
   url: "https://www.kamilagency.com",
   quoteURL:
     "https://adb4.superioraccess.com/Platform.aspx?j=JyWP37Ak5A5VzpUOJ6EqMw%3d%3d&t=Ts2us1y3JpYfWhn3OZt9HYSD4gEC%2fk1r5rhXtiIO1A8cMiXa8oAp%2bPv2GzROr%2fa6zLwouEgCgwC8EXRpmCFaJQ%3d%3d",
