@@ -55,7 +55,7 @@ function QuoteCard({ name, descriptionShort, logo, url }: QuoteCardProps) {
     >
       <div className="flex h-full flex-col items-center justify-evenly rounded-lg border-2 border-primary/30 bg-background p-6 shadow-lg transition-all hover:scale-105 hover:shadow-xl ">
         {logo}
-        <h3 className="mb-2 text-xl font-bold">{name}</h3>
+        <h2 className="mb-2 text-xl font-bold">{name}</h2>
         <p className="text-center text-gray-500 dark:text-gray-400">
           {descriptionShort}
         </p>
