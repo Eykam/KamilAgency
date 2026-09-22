@@ -5,9 +5,9 @@ import { services } from "@/config/services"
 import ServicePage from "@/components/service-page"
 
 export const metadata: Metadata = {
-  title: "Homeowners Insurance in Washington, DC",
+  title: "Homeowners Insurance in the DMV Area",
   description:
-    "Compare homeowners insurance options with a local Washington, DC agency serving Georgetown, Glover Park, and nearby communities.",
+    "Compare homeowners insurance options with an independent agency serving Washington, DC, Maryland, and Virginia.",
   keywords:
     "homeowners insurance, home insurance, D.C. homeowners insurance, Maryland homeowners insurance, Virginia homeowners insurance, home protection, property insurance, affordable home insurance",
   alternates: {
