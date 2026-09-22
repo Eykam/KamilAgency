@@ -11,16 +11,18 @@ export default function HeroSection() {
       />
       <div className="container flex max-w-[68rem] flex-col items-center gap-6 text-center">
         <p className="rounded-full border bg-background/80 px-4 py-2 text-sm font-semibold shadow-sm">
-          Local, independent insurance guidance from Washington, DC
+          Local, independent insurance guidance across the DMV Area
         </p>
         <h1 className="relative font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
-          Compare Home, Auto &amp; Business Insurance
-          <br className="hidden sm:block" /> with a Local DC Agency
+          Independent Insurance Agency
+          <br className="hidden sm:block" /> Serving Washington, DC, Maryland
+          &amp; Virginia
         </h1>
 
         <p className="max-w-[42rem] leading-normal sm:text-xl sm:leading-8">
-          Get clear recommendations from a responsive local team that takes time
-          to understand your home, vehicle, business, and budget.
+          Serving the DMV Area from our Washington, DC office. Get clear
+          recommendations from a responsive local team that takes time to
+          understand your home, vehicle, business, and budget.
         </p>
         <p className="text-lg font-semibold sm:text-xl">
           We speak English, Spanish, and Arabic.

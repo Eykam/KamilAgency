@@ -19,7 +19,7 @@ export default function LocalTeamSection() {
           </h2>
           <p className="mt-4 text-lg leading-8 text-muted-foreground">
             These are the people who answer questions, review options, and help
-            clients from our Washington, DC office—not stock photos or a remote
+            clients across the DMV Area from our Washington, DC office—not stock photos or a remote
             call center.
           </p>
         </div>

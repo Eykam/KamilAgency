@@ -43,22 +43,22 @@ export default function LocalExpertiseSection() {
       <div className="container grid gap-10 md:grid-cols-[1.35fr_1fr] md:items-center">
         <div className="space-y-5">
           <p className="text-sm font-semibold uppercase tracking-wider text-accent">
-            Your Washington, DC insurance agency
+            Your DMV Area insurance agency
           </p>
           <h2
             id="local-insurance-heading"
             className="font-heading text-3xl leading-tight md:text-5xl"
           >
-            Local guidance for protecting what matters in DC
+            Local guidance across Washington, DC, Maryland & Virginia
           </h2>
           <p className="text-lg leading-8 text-muted-foreground">
             From our Wisconsin Avenue office near Georgetown and Glover Park,
-            Kamil Agency helps Washington, DC residents and business owners make
+            Kamil Agency helps DMV Area residents and business owners make
             sense of their coverage options. You get straightforward answers,
             responsive service, and recommendations shaped around your needs.
           </p>
           <p className="leading-7 text-muted-foreground">
-            We serve clients throughout the District and the wider region,
+            We serve clients throughout Washington, DC, Maryland, and Virginia,
             including Georgetown, Glover Park, Cathedral Heights, Cleveland
             Park, Tenleytown, and nearby communities.
           </p>
