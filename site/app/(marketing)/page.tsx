@@ -23,9 +23,9 @@ import ServiceSection from "./_sections/Services"
 import WhyIndependentSection from "./_sections/WhyIndependent"
 
 export const metadata: Metadata = {
-  title: "Insurance Agency in Washington, DC",
+  title: "Insurance Agency Serving Washington, DC, Maryland & Virginia",
   description:
-    "Compare home, auto, business, renters, landlord, and condo insurance with a local Washington, DC agency. Service in English, Spanish, and Arabic.",
+    "Compare home, auto, business, renters, landlord, and condo insurance with an independent agency serving Washington, DC, Maryland, and Virginia. Service in English, Spanish, and Arabic.",
   alternates: {
     canonical: "/",
     languages: { "en-US": "/", "es-US": "/es", "ar-US": "/ar" },
