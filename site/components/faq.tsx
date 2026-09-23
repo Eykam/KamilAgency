@@ -1,5 +1,5 @@
 import { FAQ } from "@/types"
-
+import { cn } from "@/lib/utils"
 import { JsonLd } from "@/components/json-ld"
 
 type FaqProps = {
@@ -12,9 +12,10 @@ function FaqItem({ item, className }: { item: FAQ; className?: string }) {
   return (
     <details className="group border-none">
       <summary
-        className={`cursor-pointer rounded-md bg-accent px-6 py-4 text-start text-lg font-medium transition-colors hover:bg-border dark:hover:bg-secondary ${
-          className ?? ""
-        }`}
+        className={cn(
+          "cursor-pointer rounded-md bg-accent px-6 py-4 text-start text-lg font-medium text-accent-foreground transition-colors hover:bg-accent/90",
+          className
+        )}
       >
         {item.question}
       </summary>
@@ -59,7 +60,7 @@ export default function FaqSection({ name, FAQs, accent }: FaqProps) {
                 item={item}
                 className={
                   accent
-                    ? "border-2 border-accent bg-background dark:hover:bg-background/80"
+                    ? "border-2 border-accent bg-background text-foreground hover:bg-secondary dark:hover:bg-secondary"
                     : ""
                 }
               />
