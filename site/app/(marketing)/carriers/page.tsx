@@ -38,23 +38,24 @@ function MarketGroup({
         {markets.map((market) => (
           <li key={market.name}>
             <Link
-              href={
-                market.portalUrl ?? `/carriers/${carrierSlug(market.name)}`
-              }
-              target={market.portalUrl ? "_blank" : undefined}
-              rel={
-                market.portalUrl
-                  ? "noopener noreferrer nofollow"
-                  : undefined
-              }
+              href={`/carriers/${carrierSlug(market.name)}`}
               className="flex min-h-32 flex-col items-center justify-center gap-3 rounded-2xl border bg-background p-5 text-center shadow-sm transition hover:-translate-y-0.5 hover:border-primary"
             >
               <CarrierMark name={market.name} className="size-11" />
               <span className="font-semibold">{market.name}</span>
-              <span className="text-xs text-muted-foreground">
-                {market.portalUrl ? "Open carrier portal" : "View market profile"}
-              </span>
+              <span className="text-xs text-muted-foreground">View market profile</span>
             </Link>
+            {market.portalUrl ? (
+              <a
+                href={market.portalUrl}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                className="mt-2 inline-flex min-h-11 w-full items-center justify-center rounded-md text-center text-sm text-primary underline-offset-4 hover:underline"
+              >
+                Open carrier portal
+                <span className="sr-only"> for {market.name}</span>
+              </a>
+            ) : null}
           </li>
         ))}
       </ul>

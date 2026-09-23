@@ -6,8 +6,9 @@ import { Value } from "@/types"
 
 // import TeamMemberCarousel from "@/components/team-member-carousel"
 import { about, aboutMetaData } from "@/config/about"
+import { cn } from "@/lib/utils"
 import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation"
-import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 
 type ValueCardProps = HTMLAttributes<HTMLDivElement> & Value
 
@@ -47,24 +48,21 @@ export default function AboutPage() {
               </div>
 
               <div className="flex justify-center space-x-4 px-2 lg:justify-start">
-                <Link href={landing.teamURL || ""}>
-                  <Button
-                    variant="default"
-                    size="lg"
-                    className="pointer-events-auto "
-                  >
-                    Our Services
-                  </Button>
+                <Link
+                  href={landing.teamURL || ""}
+                  className={cn(buttonVariants({ size: "lg" }), "pointer-events-auto")}
+                >
+                  Our Services
                 </Link>
 
-                <Link href={landing.contactURL || ""}>
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="pointer-events-auto bg-background"
-                  >
-                    Contact Us
-                  </Button>
+                <Link
+                  href={landing.contactURL || ""}
+                  className={cn(
+                    buttonVariants({ variant: "outline", size: "lg" }),
+                    "pointer-events-auto bg-background"
+                  )}
+                >
+                  Contact Us
                 </Link>
               </div>
             </div>
@@ -97,7 +95,7 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               {history.title}
             </h2>
-            <p className="max-w-[600px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <p className="max-w-[600px] text-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               {history.description}
             </p>
           </div>
@@ -107,13 +105,13 @@ export default function AboutPage() {
       <section className="flex min-h-screen w-full items-center justify-center bg-background py-12 md:py-24">
         <div className="container grid gap-12 px-4 max-sm:w-[90%] md:px-6 lg:grid-cols-2 lg:gap-16 ">
           <div className="my-auto flex flex-col items-start space-y-4 md:items-center md:text-center lg:items-start lg:pl-12 lg:text-start">
-            <div className="inline-block rounded-lg border-2 border-primary/20 bg-accent px-3 py-1 text-sm">
+            <div className="inline-block rounded-lg border-2 border-primary/20 bg-accent px-3 py-1 text-sm text-accent-foreground">
               Our Mission
             </div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               {mission.title}
             </h2>
-            <p className="max-w-[600px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <p className="max-w-[600px] text-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               {mission.description}
             </p>
           </div>
@@ -143,7 +141,7 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               {values.title}
             </h2>
-            <p className="max-w-[600px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <p className="max-w-[600px] text-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               {values.description}
             </p>
           </div>

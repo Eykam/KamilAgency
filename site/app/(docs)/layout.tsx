@@ -1,4 +1,5 @@
 import Link from "next/link"
+import RootDocument, { metadata } from "@/components/root-document"
 
 import { docsConfig } from "@/config/docs"
 import { siteConfig } from "@/config/site"
@@ -16,8 +17,11 @@ interface DocsLayoutProps {
   children: React.ReactNode
 }
 
+export { metadata }
+
 export default function DocsLayout({ children }: DocsLayoutProps) {
   return (
+    <RootDocument lang="en" dir="ltr">
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-40 w-full border-b bg-background">
         <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
@@ -46,5 +50,6 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
       <div className="container flex-1">{children}</div>
       <SiteFooter className="border-t" />
     </div>
+    </RootDocument>
   )
 }
