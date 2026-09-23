@@ -8,7 +8,7 @@ import { QuoteLeadForm } from "@/components/quote-lead-form"
 export const metadata: Metadata = {
   title: "Personal Insurance Quote",
   description:
-    "Start a secure personal insurance quote for home, auto, renters, and other personal coverage with Kamil Agency.",
+    "Start a secure home or auto insurance quote, or get help with other personal coverage from Kamil Agency.",
   alternates: { canonical: "/quote/personal" },
 }
 
@@ -20,11 +20,12 @@ export default function PersonalQuotePage() {
           Personal Lines
         </p>
         <h1 className="text-4xl font-bold tracking-tight">
-          Tell Us What You Need
+          Start Your Insurance Quote
         </h1>
         <p className="text-lg leading-8 text-muted-foreground">
-          Share a few contact details first so our local team can help if the
-          secure quote form is interrupted. Service is available in English,
+          For home and auto coverage, go directly to our secure quoting provider
+          without filling out a separate Kamil Agency contact form first. For
+          other coverage or personal help, our team is available in English,
           Spanish, and Arabic.
         </p>
         <QuoteLeadForm />
