@@ -9,7 +9,7 @@ export default function LeadCaptureSection() {
       <div className="container grid max-w-6xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
         <div>
           <p className="text-sm font-semibold uppercase tracking-wider text-primary/70">
-            Free quote request
+            Find your quote path
           </p>
           <h2
             id="home-quote-heading"
@@ -18,12 +18,12 @@ export default function LeadCaptureSection() {
             Let’s find the right next step
           </h2>
           <p className="mt-5 text-lg leading-8 text-muted-foreground">
-            Tell us what you need and how you prefer to communicate. We’ll save
-            your request before directing you to the appropriate secure quote
-            experience.
+            Choose your coverage to reach the right quote experience. For home
+            and auto, you can go straight to our secure quoting provider. If
+            you’d rather speak with us, ask an agent to contact you.
           </p>
           <ul className="mt-7 space-y-3 text-sm font-medium">
-            <li>✓ Local, independent guidance</li>
+            <li>✓ Local insurance guidance</li>
             <li>✓ Personal and business coverage options</li>
             <li>✓ Service in English, Spanish, and Arabic</li>
           </ul>
