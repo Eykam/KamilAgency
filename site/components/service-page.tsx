@@ -112,7 +112,7 @@ export default function ServicePage({
                   className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200  bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800  dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
                   prefetch={false}
                 >
-                  Learn More
+                  Insurance Guides
                 </Link>
               </div>
             </div>
@@ -121,7 +121,7 @@ export default function ServicePage({
               width={600}
               height={400}
               alt={`${name} insurance guidance from Kamil Agency across the DMV Area`}
-              className="object-fit  mx-auto aspect-video overflow-hidden rounded-xl object-center sm:w-full "
+              className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
             />
           </div>
         </section>
@@ -219,7 +219,7 @@ export default function ServicePage({
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
                 Browse Our Products
               </h2>
-              <p className="text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Check out our Insurance Products and see if one of them fits
                 your needs!
               </p>
