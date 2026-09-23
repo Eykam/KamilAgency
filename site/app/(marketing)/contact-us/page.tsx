@@ -4,8 +4,9 @@ import Link from "next/link"
 
 import { contact, contactMetaData } from "@/config/contact"
 import { siteConfig } from "@/config/site"
+import { cn } from "@/lib/utils"
 import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation"
-import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 import ContactForm from "@/components/contact-form"
 import { TrackedLink } from "@/components/tracked-link"
 
@@ -37,32 +38,31 @@ export default function ContactPage() {
               </div>
 
               <div className="flex justify-center space-x-4 px-2 lg:justify-start">
-                <Link href={landing.teamURL || ""}>
-                  <Button
-                    variant="default"
-                    size="lg"
-                    className="pointer-events-auto "
-                  >
-                    Contact Details
-                  </Button>
+                <Link
+                  href={landing.teamURL || ""}
+                  className={cn(buttonVariants({ size: "lg" }), "pointer-events-auto")}
+                >
+                  Contact Details
                 </Link>
 
-                <Link href={landing.contactURL || ""}>
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="pointer-events-auto bg-background"
-                  >
-                    Hours & Locations
-                  </Button>
+                <Link
+                  href={landing.contactURL || ""}
+                  className={cn(
+                    buttonVariants({ variant: "outline", size: "lg" }),
+                    "pointer-events-auto bg-background"
+                  )}
+                >
+                  Hours & Locations
                 </Link>
               </div>
             </div>
             <Image
               src={landing.imageURL || ""}
-              width="550"
-              height="310"
-              alt="Hero"
+              width={550}
+              height={310}
+              alt="Phone, email, and message icons"
+              priority
+              sizes="(max-width: 1024px) 90vw, 550px"
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
             />
           </div>
@@ -124,15 +124,20 @@ export default function ContactPage() {
               <div className="mt-5 flex flex-wrap gap-3">
                 <TrackedLink
                   href={`tel:${siteConfig.contactNumber}`}
+                  className={buttonVariants({ size: "lg" })}
                   eventName="click_to_call"
                   eventParams={{ link_location: "contact_quick_help" }}
                 >
-                  <Button>Call Now</Button>
+                  Call Now
                 </TrackedLink>
-                <Link href={landing.contactURL || ""}>
-                  <Button variant="outline" className="bg-background">
-                    View Hours & Location
-                  </Button>
+                <Link
+                  href={landing.contactURL || ""}
+                  className={cn(
+                    buttonVariants({ variant: "outline", size: "lg" }),
+                    "bg-background"
+                  )}
+                >
+                  View Hours & Location
                 </Link>
               </div>
             </div>

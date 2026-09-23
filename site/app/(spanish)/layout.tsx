@@ -3,9 +3,9 @@ import MarketingShell from "@/components/marketing-shell"
 
 export { metadata }
 
-export default function MarketingLayout({ children }: { children: React.ReactNode }) {
+export default function SpanishLayout({ children }: { children: React.ReactNode }) {
   return (
-    <RootDocument lang="en" dir="ltr">
+    <RootDocument lang="es" dir="ltr">
       <MarketingShell>{children}</MarketingShell>
     </RootDocument>
   )

@@ -10,7 +10,10 @@ export function generateMetadata(): Metadata {
     title: "Get an Insurance Quote",
     description:
       "Choose personal, commercial, or Medicare coverage and start a secure insurance quote with Kamil Agency.",
-    alternates: { canonical: "/quote" },
+    alternates: {
+      canonical: "/quote",
+      languages: { "en-US": "/quote", "ar-US": "/ar/quote" },
+    },
     keywords: [
       "Kamil Agency",
       "Insurance Quote",

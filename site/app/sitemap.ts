@@ -24,6 +24,7 @@ const routes = [
   "/about-us/team/mohamed-kamil",
 
   "/about-us/team/amgad-kamil",
+  "/about-us/team/jesa-esquillo",
   "/policy/privacy",
   "/policy/terms",
   "/quote",
