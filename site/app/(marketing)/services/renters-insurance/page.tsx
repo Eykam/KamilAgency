@@ -5,14 +5,14 @@ import { services } from "@/config/services"
 import ServicePage from "@/components/service-page"
 
 export const metadata: Metadata = {
-  title: "Renters Insurance in the DMV Area",
+  title: "Renters Insurance in Washington, DC",
   description:
-    "Compare renters insurance for belongings, personal liability, and temporary living costs with a multilingual independent agency serving Washington, DC, Maryland, and Virginia.",
+    "Compare renters insurance in Washington, DC for belongings, personal liability, and temporary living costs with a multilingual independent insurance agency.",
   keywords:
     "renters insurance, rental insurance, D.C. renters insurance, Maryland renters insurance, Virginia renters insurance, tenant insurance, belongings protection",
   alternates: { canonical: "/services/renters-insurance" },
   openGraph: {
-    title: "Renters Insurance in the DMV Area | Kamil Agency",
+    title: "Renters Insurance in Washington, DC | Kamil Agency",
     description:
       "Understand renters coverage for belongings, liability, and additional living expenses with local guidance.",
     url: "/services/renters-insurance",

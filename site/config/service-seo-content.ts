@@ -6,6 +6,7 @@ type RelatedLink = {
 
 export type ServiceSeoContent = {
   eyebrow: string
+  heroHeading?: string
   heading: string
   introduction: string
   bestFor: string[]
@@ -60,6 +61,7 @@ export const serviceSeoContent: Record<string, ServiceSeoContent> = {
   },
   Renters: {
     eyebrow: "Coverage for tenants",
+    heroHeading: "Renters Insurance in Washington, DC",
     heading: "Renters Insurance for Washington, DC Residents",
     introduction:
       "A landlord's policy generally protects the building—not a tenant's belongings or personal liability. We help renters choose limits for their possessions, liability exposure, and temporary living costs after an eligible covered loss.",
@@ -82,6 +84,12 @@ export const serviceSeoContent: Record<string, ServiceSeoContent> = {
     ],
     relatedLinks: [
       {
+        href: "/blog/renters-insurance-washington-dc-guide",
+        label: "Washington, DC renters guide",
+        description:
+          "Learn what renters insurance may cover and what to review before choosing a policy.",
+      },
+      {
         href: "/services/auto-insurance",
         label: "Auto insurance",
         description:
@@ -92,12 +100,6 @@ export const serviceSeoContent: Record<string, ServiceSeoContent> = {
         label: "Umbrella insurance",
         description:
           "Review additional liability options for eligible households.",
-      },
-      {
-        href: "/services/condo-insurance",
-        label: "Condo insurance",
-        description:
-          "Buying instead of renting? Learn how HO-6 coverage differs.",
       },
     ],
   },
