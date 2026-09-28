@@ -85,7 +85,7 @@ export default function ServicePage({
           <div className="gap-6 space-y-8 px-4 md:px-6 lg:grid lg:grid-cols-2 lg:gap-10 lg:space-y-0">
             <div className="flex flex-col items-center justify-center space-y-8 lg:items-start ">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl  md:text-5xl">
-                {name} Insurance in the DMV Area
+                {seoContent?.heroHeading ?? `${name} Insurance in the DMV Area`}
               </h1>
               <p className="max-w-[600px] text-primary/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 {description}
