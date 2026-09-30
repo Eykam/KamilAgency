@@ -8,6 +8,11 @@ type ArabicCoveragePageProps = {
   title: string
   description: string
   items: readonly { title: string; description: string }[]
+  sections: readonly {
+    title: string
+    paragraphs: readonly string[]
+    bullets?: readonly string[]
+  }[]
 }
 
 export function ArabicCoveragePage({
@@ -15,6 +20,7 @@ export function ArabicCoveragePage({
   title,
   description,
   items,
+  sections,
 }: ArabicCoveragePageProps) {
   return (
     <div>
@@ -61,6 +67,32 @@ export function ArabicCoveragePage({
                 {item.description}
               </p>
             </article>
+          ))}
+        </div>
+        <div className="mx-auto mt-16 max-w-4xl space-y-12 text-right">
+          {sections.map((section) => (
+            <section key={section.title}>
+              <h2 className="font-heading text-3xl font-bold">
+                {section.title}
+              </h2>
+              <div className="mt-5 space-y-4 text-base leading-8 text-muted-foreground">
+                {section.paragraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+              {section.bullets ? (
+                <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+                  {section.bullets.map((bullet) => (
+                    <li
+                      key={bullet}
+                      className="rounded-xl border bg-secondary/40 p-4 leading-7"
+                    >
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+            </section>
           ))}
         </div>
         <p className="mx-auto mt-10 max-w-3xl text-center text-sm leading-7 text-muted-foreground">
