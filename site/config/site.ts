@@ -12,7 +12,7 @@ export const siteConfig: SiteConfig = {
     "https://adb4.superioraccess.com/Platform.aspx?j=JyWP37Ak5A5VzpUOJ6EqMw%3d%3d&t=Ts2us1y3JpYfWhn3OZt9HYSD4gEC%2fk1r5rhXtiIO1A8cMiXa8oAp%2bPv2GzROr%2fa6zLwouEgCgwC8EXRpmCFaJQ%3d%3d",
   commercialQuoteURL: "https://app.boldpenguin.com/start/mohamedkamil",
   medicareQuoteURL:
-    "https://eosadvisor.com/user/signup?advId=ADS1718137118673475&n=true",
+    "https://eosadvisor.com/advisor/ADS1718137118673475/public",
   travelInsuranceURL: "https://www.tmetravelinsurance.com/?referrer=mki770",
   ogImage: "/og.jpg",
   contactNumber: "(240) 400-7393",
