@@ -8,7 +8,6 @@ import type { Metadata } from "next"
 import { siteConfig } from "@/config/site"
 import { socials } from "@/config/socials"
 import { cn } from "@/lib/utils"
-import { Toaster } from "@/components/ui/toaster"
 import { DeferredWebVitals } from "@/components/analytics"
 import { ConversionEvents } from "@/components/conversion-events"
 import { JsonLd } from "@/components/json-ld"
@@ -168,7 +167,11 @@ const insuranceAgencyJsonLd = {
   sameAs: Object.values(socials).map((social) => social.url),
 }
 
-export default function RootDocument({ children, lang, dir }: RootDocumentProps & { lang: string; dir: "ltr" | "rtl" }) {
+export default function RootDocument({
+  children,
+  lang,
+  dir,
+}: RootDocumentProps & { lang: string; dir: "ltr" | "rtl" }) {
   return (
     <html lang={lang} dir={dir} suppressHydrationWarning>
       <body
@@ -183,7 +186,6 @@ export default function RootDocument({ children, lang, dir }: RootDocumentProps 
           {children}
           <ConversionEvents />
           <DeferredWebVitals />
-          <Toaster />
           <TailwindIndicator />
         </ThemeProvider>
         <Script id="ga4-deferred-loader" strategy="afterInteractive">
