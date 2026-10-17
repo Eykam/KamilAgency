@@ -18,6 +18,7 @@ const services = [
   "Umbrella and life insurance",
   "Commercial property and general liability",
   "Commercial auto and business insurance",
+  "Surety bonds for eligible licenses, permits, and contracts",
   "Medicare guidance",
 ]
 
@@ -83,6 +84,31 @@ export default function BusinessInformationPage() {
           ))}
         </ul>
       </section>
+
+      <div className="mt-6 grid gap-6 md:grid-cols-2">
+        <section className="rounded-2xl border p-6">
+          <h2 className="text-2xl font-bold">Primary service area</h2>
+          <p className="mt-4 text-sm leading-7 text-muted-foreground">
+            Kamil Agency maintains a local office in Washington, DC and serves
+            clients across the District of Columbia, Maryland, and Virginia.
+            Additional state and product availability varies by insurance
+            license, carrier appointment, underwriting, and the type of risk.
+            Contact the office to confirm whether assistance is available for a
+            particular location or coverage request.
+          </p>
+        </section>
+        <section className="rounded-2xl border p-6">
+          <h2 className="text-2xl font-bold">How to verify information</h2>
+          <p className="mt-4 text-sm leading-7 text-muted-foreground">
+            Direct customers to the official website or telephone number when
+            publishing time-sensitive details such as office hours, services,
+            carrier access, or licensing. Product eligibility and pricing are
+            determined through an application and underwriting review; a
+            directory listing should not promise coverage, savings, or carrier
+            availability.
+          </p>
+        </section>
+      </div>
 
       <div className="mt-8 flex flex-wrap gap-4 text-sm font-semibold">
         <Link href="/about-us" className="text-primary hover:underline">
