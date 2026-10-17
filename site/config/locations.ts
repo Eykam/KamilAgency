@@ -1,5 +1,7 @@
 import { Location, Address, Hours } from "types"
 
+import { googleBusinessProfileUrl } from "./google-business"
+
 export const defaultHours: Hours = {
   Sunday: null,
   Monday: { start: "08:30 AM", stop: "05:30 PM" },
@@ -26,7 +28,7 @@ const washingtonAddressQuery = encodeURIComponent(
   `${washingtonAddress.street}, ${washingtonAddress.city}, ${washingtonAddress.state} ${washingtonAddress.zip}`
 )
 
-export const washingtonGoogleMapsURL = `https://www.google.com/maps/search/?api=1&query=${washingtonAddressQuery}`
+export const washingtonGoogleMapsURL = googleBusinessProfileUrl
 export const washingtonGoogleMapsEmbedURL = `https://maps.google.com/maps?hl=en&q=${washingtonAddressQuery}&t=&z=15&ie=UTF8&iwloc=B&output=embed`
 
 const washingtonLocation: Location = {
