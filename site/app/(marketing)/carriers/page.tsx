@@ -43,7 +43,9 @@ function MarketGroup({
             >
               <CarrierMark name={market.name} className="size-11" />
               <span className="font-semibold">{market.name}</span>
-              <span className="text-xs text-muted-foreground">View market profile</span>
+              <span className="text-xs text-muted-foreground">
+                View market profile
+              </span>
             </Link>
             {market.portalUrl ? (
               <a
@@ -89,6 +91,31 @@ export default function CarriersPage() {
       </section>
 
       <div className="container max-w-6xl py-16">
+        <section className="mb-12 grid gap-6 rounded-2xl border bg-secondary/30 p-7 md:grid-cols-2 md:p-9">
+          <div>
+            <h2 className="font-heading text-2xl font-bold">
+              Why market choice matters
+            </h2>
+            <p className="mt-4 leading-7 text-muted-foreground">
+              Insurance companies can differ in the risks they accept, the
+              coverage forms they offer, their deductibles, discounts, and
+              underwriting requirements. An independent agency can review more
+              than one available path when appropriate, but no single carrier is
+              the best fit for every household or business.
+            </p>
+          </div>
+          <div>
+            <h2 className="font-heading text-2xl font-bold">
+              What we compare with you
+            </h2>
+            <p className="mt-4 leading-7 text-muted-foreground">
+              We look beyond the premium to review limits, deductibles,
+              exclusions, endorsements, payment options, and the details used
+              for underwriting. Availability depends on your location and risk,
+              so the first step is a complete and accurate application.
+            </p>
+          </div>
+        </section>
         <MarketGroup
           title="Personal Insurance Carriers"
           description="Markets that may offer home, auto, condo, renters, landlord, vacant-home, umbrella, and other personal insurance products."
@@ -113,6 +140,33 @@ export default function CarriersPage() {
           Contact Kamil Agency to confirm the relationship and options available
           for your needs.
         </div>
+        <section className="mt-10 rounded-2xl border p-7 md:p-9">
+          <h2 className="font-heading text-2xl font-bold">
+            Start with the coverage you need
+          </h2>
+          <p className="mt-4 max-w-4xl leading-7 text-muted-foreground">
+            If you are not sure which market to ask about, begin with the
+            property, vehicle, household, business operation, or contract that
+            needs protection. Our team can collect the relevant details and
+            explain which available options are worth comparing. Carrier names
+            are useful reference points, but a careful coverage review is more
+            important than choosing a company by name alone.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link
+              href="/services"
+              className="font-semibold text-primary hover:underline"
+            >
+              Browse insurance services
+            </Link>
+            <Link
+              href="/contact-us"
+              className="font-semibold text-primary hover:underline"
+            >
+              Ask the agency a question
+            </Link>
+          </div>
+        </section>
       </div>
     </main>
   )
