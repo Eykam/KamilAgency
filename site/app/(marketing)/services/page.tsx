@@ -56,6 +56,7 @@ export default async function ServicesPage() {
             ["Georgetown homes", "/services/home-insurance-georgetown"],
             ["Commercial auto", "/services/commercial-auto-insurance"],
             ["General liability", "/services/general-liability-insurance"],
+            ["Surety bonds", "/services/surety-bonds"],
           ].map(([label, href]) => (
             <Link
               key={href}
