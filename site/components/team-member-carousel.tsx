@@ -37,6 +37,7 @@ export default function TeamMemberCarousel({
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3  lg:px-12">
           {team.map((member) => (
             <TeamMemberCard
+              key={member.pageUrl}
               {...member}
               className={bgSecondary ? "bg-background" : "bg-secondary"}
             />

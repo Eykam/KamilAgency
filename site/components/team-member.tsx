@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import { TeamMember } from "@/types"
 
 import { JsonLd } from "@/components/json-ld"
@@ -86,7 +87,7 @@ export default function TeamMemberPage({
               <div className="w-fit self-center">
                 <ul className="space-y-1 text-start text-muted-foreground">
                   {expertise.map((name) => (
-                    <ExpertiseItem name={name} />
+                    <ExpertiseItem key={name} name={name} />
                   ))}
                 </ul>
               </div>
@@ -114,6 +115,67 @@ export default function TeamMemberPage({
                 </a>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y bg-secondary/40 py-16 md:py-20">
+        <div className="container max-w-5xl">
+          <div className="grid gap-8 md:grid-cols-2">
+            <div>
+              <h2 className="font-heading text-3xl font-bold">
+                How {name.split(" ")[0]} supports clients
+              </h2>
+              <p className="mt-5 leading-8 text-muted-foreground">
+                As {title.toLowerCase()} at Kamil Agency, {name} helps clients
+                understand the next step for questions involving{" "}
+                {expertise.map((item) => item.toLowerCase()).join(", ")}. The
+                goal is to gather accurate information, explain what the agency
+                or insurance company may need, and keep communication clear
+                throughout the service process.
+              </p>
+              <p className="mt-4 leading-8 text-muted-foreground">
+                Coverage, pricing, and eligibility depend on the application,
+                policy terms, state availability, and carrier underwriting.
+                Clients are encouraged to ask questions and review documents
+                carefully before making a coverage decision.
+              </p>
+            </div>
+            <div className="rounded-2xl border bg-background p-7">
+              <h2 className="font-heading text-2xl font-bold">
+                What to expect from our team
+              </h2>
+              <ul className="mt-5 space-y-4 text-sm leading-7 text-muted-foreground">
+                <li>
+                  Clear explanations of requested information and next steps.
+                </li>
+                <li>
+                  Help reviewing available limits, deductibles, and policy
+                  details.
+                </li>
+                <li>
+                  Follow-up on service requests and questions about existing
+                  policies.
+                </li>
+                <li>
+                  Agency assistance available in English, Spanish, and Arabic.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <Link
+              href="/services"
+              className="font-semibold text-primary hover:underline"
+            >
+              Explore insurance services
+            </Link>
+            <Link
+              href="/contact-us"
+              className="font-semibold text-primary hover:underline"
+            >
+              Contact Kamil Agency
+            </Link>
           </div>
         </div>
       </section>

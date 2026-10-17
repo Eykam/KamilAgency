@@ -8,7 +8,7 @@ import "@/styles/mdx.css"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
+  title: "Website Privacy and Data Use Policy",
   description:
     "How Kamil Agency collects, uses, and protects website visitor information.",
   alternates: { canonical: "/policy/privacy" },
