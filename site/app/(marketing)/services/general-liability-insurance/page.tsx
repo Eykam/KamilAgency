@@ -55,7 +55,7 @@ export default function GeneralLiabilityInsurancePage() {
       relatedLinks={[
         { label: "Commercial insurance", href: "/services/commercial-insurance" },
         { label: "Commercial auto", href: "/services/commercial-auto-insurance" },
-        { label: "Customer service center", href: "/customers" },
+        { label: "Surety bonds", href: "/services/surety-bonds" },
       ]}
       quoteUrl={siteConfig.commercialQuoteURL}
     />
