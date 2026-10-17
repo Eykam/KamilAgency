@@ -52,6 +52,23 @@ export const AutoPolicyDetails: PolicyDetails[] = [
 
 export const autoFAQ: FAQ[] = [
   {
+    question:
+      "Can I get auto insurance with a foreign license, passport, or alternative ID?",
+    answer:
+      "Coverage may be available for eligible applicants using a foreign or international driver's license, passport, Matrícula Consular, Mexican voter ID or birth certificate, state ID, permanent resident card, visa, or U.S. passport. Accepted documents and eligibility vary by state, carrier, and underwriting requirements.",
+  },
+  {
+    question:
+      "Can someone with a suspended, expired, or unverified license get auto insurance?",
+    answer:
+      "Some carriers may consider applicants with a suspended, expired, or currently unverified license, including applicants who do not yet have a license. Available policy options depend on the applicant's circumstances, driving status, state rules, and carrier underwriting.",
+  },
+  {
+    question: "Can a registered or titled vehicle owner be excluded?",
+    answer:
+      "A registered or titled owner may be eligible to be excluded as a driver when state law and the insurance carrier allow it. An excluded person generally does not have coverage while driving the vehicle, so the exclusion terms must be reviewed carefully before the policy is issued.",
+  },
+  {
     question: "What types of auto insurance coverage are available?",
     answer:
       "Auto insurance coverage includes liability coverage, collision coverage, comprehensive coverage, personal injury protection, and uninsured/underinsured motorist coverage.",
