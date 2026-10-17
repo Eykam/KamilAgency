@@ -16,6 +16,50 @@ export type ServiceSeoContent = {
 }
 
 export const serviceSeoContent: Record<string, ServiceSeoContent> = {
+  Auto: {
+    eyebrow: "Flexible driver-document options",
+    heroHeading: "Auto Insurance With Foreign or Alternative Identification",
+    heading: "Auto Insurance Options for More Driver Situations",
+    introduction:
+      "Kamil Agency can help eligible drivers ask about auto insurance when they use foreign or alternative identification, hold an international license, or have a suspended, expired, or unverified license status. Availability is not guaranteed and depends on the state, insurance carrier, documentation, driving history, and underwriting review.",
+    bestFor: [
+      "Applicants using Mexico-issued identification, including a Matrícula Consular, passport, voter ID, birth certificate, or driver's license",
+      "Drivers using a non-Mexican international or foreign driver's license and passport",
+      "Drivers whose license is suspended, expired, or not currently verified",
+      "Applicants without a current driver's license who can provide another form of identification",
+    ],
+    examples: [
+      "State ID, permanent resident card, visa, or U.S. passport presented as available identification",
+      "A newly arrived driver needs to discuss acceptable foreign-license and identity documents",
+      "A driver needs coverage options reviewed after a license suspension or expiration",
+      "A registered or titled vehicle owner asks whether exclusion as a driver is permitted",
+    ],
+    localNotes: [
+      "Accepted documents and license requirements vary by state and insurance carrier.",
+      "Submitting identification does not guarantee a quote, policy issuance, price, or particular coverage.",
+      "An excluded person generally has no coverage while driving the vehicle; exclusions must be permitted and documented by the carrier.",
+    ],
+    relatedLinks: [
+      {
+        href: "/contact-us#info",
+        label: "Discuss your documents",
+        description:
+          "Contact our team to review your driver, vehicle, and identification situation.",
+      },
+      {
+        href: "/quote/personal",
+        label: "Start a personal quote",
+        description:
+          "Begin a secure request for personal auto insurance assistance.",
+      },
+      {
+        href: "/services/commercial-auto-insurance",
+        label: "Commercial auto insurance",
+        description:
+          "Explore options for eligible business-owned cars, vans, and fleets.",
+      },
+    ],
+  },
   Landlord: {
     eyebrow: "Rental property guidance",
     heading: "Landlord Insurance for DC-Area Rental Properties",
