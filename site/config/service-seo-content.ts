@@ -17,27 +17,28 @@ export type ServiceSeoContent = {
 
 export const serviceSeoContent: Record<string, ServiceSeoContent> = {
   Auto: {
-    eyebrow: "Flexible driver-document options",
-    heroHeading: "Auto Insurance With Foreign or Alternative Identification",
-    heading: "Auto Insurance Options for More Driver Situations",
+    eyebrow: "Local auto insurance guidance",
+    heroHeading: "Car Insurance in Washington, DC",
+    heading: "Compare Car Insurance Options in Washington, DC",
     introduction:
-      "Kamil Agency can help eligible drivers ask about auto insurance when they use foreign or alternative identification, hold an international license, or have a suspended, expired, or unverified license status. Availability is not guaranteed and depends on the state, insurance carrier, documentation, driving history, and underwriting review.",
+      "Kamil Agency helps Washington, DC drivers compare auto insurance based on their vehicles, driving history, household, coverage limits, and deductibles. We explain liability, collision, comprehensive, medical payments, and uninsured motorist options in plain language. Eligible drivers can also ask about markets that may consider foreign or alternative identification, international licenses, or suspended, expired, or unverified license situations.",
     bestFor: [
-      "Applicants using Mexico-issued identification, including a Matrícula Consular, passport, voter ID, birth certificate, or driver's license",
-      "Drivers using a non-Mexican international or foreign driver's license and passport",
+      "Washington, DC drivers comparing limits, deductibles, and available discounts",
+      "Households adding a vehicle, driver, teen driver, or newly licensed driver",
+      "Applicants using a foreign license, international license, passport, or alternative identification",
       "Drivers whose license is suspended, expired, or not currently verified",
-      "Applicants without a current driver's license who can provide another form of identification",
     ],
     examples: [
-      "State ID, permanent resident card, visa, or U.S. passport presented as available identification",
-      "A newly arrived driver needs to discuss acceptable foreign-license and identity documents",
-      "A driver needs coverage options reviewed after a license suspension or expiration",
-      "A registered or titled vehicle owner asks whether exclusion as a driver is permitted",
+      "Comparing liability limits with collision and comprehensive protection for the vehicle",
+      "Reviewing uninsured motorist, medical payments, rental reimbursement, or roadside options",
+      "Providing a Matrícula Consular, passport, voter ID, birth certificate, state ID, permanent resident card, or visa",
+      "Asking whether a registered or titled vehicle owner can be excluded as a driver when permitted",
     ],
     localNotes: [
-      "Accepted documents and license requirements vary by state and insurance carrier.",
-      "Submitting identification does not guarantee a quote, policy issuance, price, or particular coverage.",
-      "An excluded person generally has no coverage while driving the vehicle; exclusions must be permitted and documented by the carrier.",
+      "Required coverage and insurance rules depend on where the vehicle is registered and principally garaged.",
+      "Rates vary by driver, vehicle, location, coverage, deductible, discounts, and carrier underwriting; no agency can promise one price for every driver.",
+      "Accepted documents and license requirements vary by state and carrier, and submitting identification does not guarantee policy issuance.",
+      "An excluded person generally has no coverage while driving the vehicle; any exclusion must be permitted and documented by the carrier.",
     ],
     relatedLinks: [
       {

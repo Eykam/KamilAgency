@@ -75,11 +75,21 @@ export default function ServicePage({
       },
     ],
   }
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.map(({ question, answer }) => ({
+      "@type": "Question",
+      name: question,
+      acceptedAnswer: { "@type": "Answer", text: answer },
+    })),
+  }
 
   return (
     <div className="flex flex-col overflow-hidden text-center font-semibold lg:text-start">
       <JsonLd data={serviceJsonLd} />
       <JsonLd data={breadcrumbJsonLd} />
+      {faq.length > 0 ? <JsonLd data={faqJsonLd} /> : null}
       <BackgroundGradientAnimation className="flex items-center">
         <section className="container z-20 flex h-[90svh] items-center justify-center py-12 md:py-24 lg:h-screen lg:py-32">
           <div className="gap-6 space-y-8 px-4 md:px-6 lg:grid lg:grid-cols-2 lg:gap-10 lg:space-y-0">
