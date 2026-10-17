@@ -11,7 +11,14 @@ export const metadata: Metadata = {
     "Request help with license and permit, contractor, bid, performance, payment, and other commercial surety bonds in Washington, DC, Maryland, and Virginia.",
   keywords:
     "surety bonds Washington DC, contractor bonds DC, license and permit bonds, bid bonds, performance bonds, payment bonds, commercial surety bonds Maryland Virginia",
-  alternates: { canonical: canonicalPath },
+  alternates: {
+    canonical: canonicalPath,
+    languages: {
+      "en-US": canonicalPath,
+      "es-US": "/es/fianzas",
+      "ar-US": "/ar/surety-bonds",
+    },
+  },
 }
 
 const highlights = [
