@@ -13,6 +13,10 @@ type ArabicCoveragePageProps = {
     paragraphs: readonly string[]
     bullets?: readonly string[]
   }[]
+  ctaLabel?: string
+  quoteHref?: string
+  reviewHeading?: string
+  disclaimer?: string
 }
 
 export function ArabicCoveragePage({
@@ -21,6 +25,10 @@ export function ArabicCoveragePage({
   description,
   items,
   sections,
+  ctaLabel = "اطلب عرض تأمين",
+  quoteHref = "/ar/quote",
+  reviewHeading = "ما الذي يمكننا مساعدتك في مراجعته؟",
+  disclaimer = "تعتمد الأسعار والأهلية والتغطية على شركة التأمين والاكتتاب وظروف كل طلب. نساعدك على فهم الخيارات المتاحة ولا نضمن إصدار وثيقة أو سعراً معيناً.",
 }: ArabicCoveragePageProps) {
   return (
     <div>
@@ -35,10 +43,10 @@ export function ArabicCoveragePage({
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row-reverse">
             <Link
-              href="/ar/quote"
+              href={quoteHref}
               className={cn(buttonVariants({ size: "lg" }), "min-w-40")}
             >
-              اطلب عرض تأمين
+              {ctaLabel}
             </Link>
             <a
               href="tel:+12404007393"
@@ -54,7 +62,7 @@ export function ArabicCoveragePage({
       </section>
       <section className="container max-w-6xl py-16 md:py-24">
         <h2 className="text-center font-heading text-3xl font-bold">
-          ما الذي يمكننا مساعدتك في مراجعته؟
+          {reviewHeading}
         </h2>
         <div className="mt-10 grid gap-5 md:grid-cols-3">
           {items.map((item) => (
@@ -96,9 +104,7 @@ export function ArabicCoveragePage({
           ))}
         </div>
         <p className="mx-auto mt-10 max-w-3xl text-center text-sm leading-7 text-muted-foreground">
-          تعتمد الأسعار والأهلية والتغطية على شركة التأمين والاكتتاب وظروف كل
-          طلب. نساعدك على فهم الخيارات المتاحة ولا نضمن إصدار وثيقة أو سعراً
-          معيناً.
+          {disclaimer}
         </p>
       </section>
     </div>
