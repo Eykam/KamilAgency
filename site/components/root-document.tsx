@@ -5,6 +5,11 @@ import Script from "next/script"
 import "@/styles/globals.css"
 import type { Metadata } from "next"
 
+import {
+  googleBusinessLatitude,
+  googleBusinessLongitude,
+  googleBusinessProfileUrl,
+} from "@/config/google-business"
 import { siteConfig } from "@/config/site"
 import { socials } from "@/config/socials"
 import { cn } from "@/lib/utils"
@@ -42,8 +47,10 @@ export const metadata: Metadata = {
       "US-DC, US-MD, US-VA, US-PA, US-DE, US-OH, US-IN, US-WV, US-NC",
     "geo.placename":
       "Washington, D.C., Maryland, Virginia, Pennsylvania, Delaware, Ohio, Indiana, West Virginia, North Carolina",
-    "geo.position": "38.9072;-77.0369",
-    ICBM: "38.9072, -77.0369",
+    "geo.position":
+      String(googleBusinessLatitude) + ";" + String(googleBusinessLongitude),
+    ICBM:
+      String(googleBusinessLatitude) + ", " + String(googleBusinessLongitude),
   },
   keywords: [
     "insurance",
@@ -125,6 +132,11 @@ const insuranceAgencyJsonLd = {
       }
     : undefined,
   hasMap: location?.googleMapsURL,
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: googleBusinessLatitude,
+    longitude: googleBusinessLongitude,
+  },
   openingHoursSpecification: location
     ? (
         Object.entries(location.hours) as [
@@ -165,10 +177,17 @@ const insuranceAgencyJsonLd = {
     "North Carolina",
   ],
   knowsLanguage: ["English", "Spanish", "Arabic"],
-  sameAs: Object.values(socials).map((social) => social.url),
+  sameAs: [
+    googleBusinessProfileUrl,
+    ...Object.values(socials).map((social) => social.url),
+  ],
 }
 
-export default function RootDocument({ children, lang, dir }: RootDocumentProps & { lang: string; dir: "ltr" | "rtl" }) {
+export default function RootDocument({
+  children,
+  lang,
+  dir,
+}: RootDocumentProps & { lang: string; dir: "ltr" | "rtl" }) {
   return (
     <html lang={lang} dir={dir} suppressHydrationWarning>
       <body
