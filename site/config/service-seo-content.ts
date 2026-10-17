@@ -16,6 +16,56 @@ export type ServiceSeoContent = {
 }
 
 export const serviceSeoContent: Record<string, ServiceSeoContent> = {
+  Homeowners: {
+    eyebrow: "Local home insurance guidance",
+    heroHeading: "Homeowners Insurance in Washington, DC",
+    heading: "Protect Your Washington, DC Home With the Right Coverage",
+    introduction:
+      "Kamil Agency helps Washington, DC homeowners compare dwelling, personal property, liability, loss-of-use, water-backup, and other available protections. We review the home itself, estimated rebuilding cost, deductible, occupancy, updates, and any special property so the comparison reflects the actual risk rather than a generic price.",
+    bestFor: [
+      "Owners of rowhouses, detached homes, townhouses, and other owner-occupied residences",
+      "Homebuyers arranging coverage before settlement or replacing an existing policy",
+      "Households reviewing rebuilding limits, deductibles, liability, or valuable property",
+      "Owners who need to discuss older systems, renovations, home-based work, or rental activity",
+    ],
+    examples: [
+      "Repairing eligible damage to the dwelling after a covered fire, wind, or other insured event",
+      "Replacing covered belongings after theft or a covered property loss",
+      "Paying eligible additional living costs when a covered loss makes the home uninhabitable",
+      "Responding to an eligible personal-liability claim involving bodily injury or property damage",
+    ],
+    localNotes: [
+      "Washington rowhouses and older homes can require careful review of rebuilding cost, roofing, wiring, plumbing, and attached structures.",
+      "Flood, sewer or drain backup, service-line damage, and water seepage are different exposures and may require separate policies or endorsements.",
+      "Condominiums, rental properties, vacant homes, and homes under major renovation generally need different policy forms or underwriting.",
+    ],
+    relatedLinks: [
+      {
+        href: "/services/home-insurance-georgetown",
+        label: "Georgetown home insurance",
+        description:
+          "Review local considerations for Georgetown homes and rowhouses.",
+      },
+      {
+        href: "/services/home-insurance-glover-park",
+        label: "Glover Park home insurance",
+        description:
+          "Explore coverage questions for homes in Glover Park and nearby communities.",
+      },
+      {
+        href: "/services/umbrella-insurance",
+        label: "Umbrella insurance",
+        description:
+          "Consider additional liability protection above eligible home and auto policies.",
+      },
+      {
+        href: "/contact-us#info",
+        label: "Request a home insurance review",
+        description:
+          "Share non-sensitive property details with our Washington, DC team.",
+      },
+    ],
+  },
   Auto: {
     eyebrow: "Local auto insurance guidance",
     heroHeading: "Car Insurance in Washington, DC",
@@ -42,6 +92,12 @@ export const serviceSeoContent: Record<string, ServiceSeoContent> = {
     ],
     relatedLinks: [
       {
+        href: "/blog/car-insurance-washington-dc-guide",
+        label: "Washington, DC car insurance guide",
+        description:
+          "Learn how to compare coverage, deductibles, driver details, and quotes before choosing a policy.",
+      },
+      {
         href: "/contact-us#info",
         label: "Discuss your documents",
         description:
@@ -58,6 +114,56 @@ export const serviceSeoContent: Record<string, ServiceSeoContent> = {
         label: "Commercial auto insurance",
         description:
           "Explore options for eligible business-owned cars, vans, and fleets.",
+      },
+    ],
+  },
+  Commercial: {
+    eyebrow: "Insurance for local businesses",
+    heroHeading: "Business Insurance in Washington, DC",
+    heading: "Build Coverage Around How Your Business Actually Operates",
+    introduction:
+      "Kamil Agency helps Washington, DC businesses compare general liability, commercial property, business owners policies, workers' compensation, commercial auto, professional liability, cyber, and other available coverage. We start with the operation, contracts, property, payroll, vehicles, and claims history so the insurance program fits the business.",
+    bestFor: [
+      "Contractors, consultants, retailers, restaurants, offices, nonprofits, and professional firms",
+      "New businesses arranging coverage for a lease, license, contract, or client requirement",
+      "Growing companies adding employees, property, vehicles, locations, or new services",
+      "Owners who want one review of liability, property, workers, vehicles, and interruption risks",
+    ],
+    examples: [
+      "A customer alleges bodily injury or property damage arising from business operations",
+      "Covered property, equipment, inventory, or tenant improvements are damaged",
+      "A covered property loss interrupts operations and creates eligible lost-income expenses",
+      "A contract requires a certificate of insurance, additional insured status, or specific limits",
+    ],
+    localNotes: [
+      "Coverage requirements can come from a lease, client contract, lender, licensing authority, or the nature of the operation.",
+      "Payroll, sales, subcontractor costs, vehicle use, property values, and business classifications must be reported accurately for useful quotes.",
+      "Professional services, cyber risks, employment practices, commercial vehicles, and surety obligations often require separate policies or endorsements.",
+    ],
+    relatedLinks: [
+      {
+        href: "/services/business-insurance-by-industry",
+        label: "Business insurance by industry",
+        description:
+          "Find focused guidance for contractors, consultants, retailers, restaurants, and other operations.",
+      },
+      {
+        href: "/services/general-liability-insurance",
+        label: "General liability insurance",
+        description:
+          "Review protection for eligible third-party injury and property-damage claims.",
+      },
+      {
+        href: "/services/commercial-auto-insurance",
+        label: "Commercial auto insurance",
+        description:
+          "Explore coverage for eligible business-owned vehicles, drivers, and fleet exposures.",
+      },
+      {
+        href: "/services/surety-bonds",
+        label: "Surety bonds",
+        description:
+          "Learn about license, permit, contract, and other bond needs.",
       },
     ],
   },
