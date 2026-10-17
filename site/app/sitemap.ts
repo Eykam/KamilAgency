@@ -50,6 +50,7 @@ const routes = [
   "/services/life-insurance",
   "/services/medicare",
   "/services/renters-insurance",
+  "/services/surety-bonds",
   "/services/travel-insurance",
   "/services/umbrella-insurance",
   "/services/vacant-home-insurance",
