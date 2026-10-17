@@ -52,6 +52,21 @@ export const AutoPolicyDetails: PolicyDetails[] = [
 
 export const autoFAQ: FAQ[] = [
   {
+    question: "How much does car insurance cost in Washington, DC?",
+    answer:
+      "The price varies by driver, vehicle, garaging address, driving history, coverage limits, deductibles, discounts, and insurance company. A complete quote is the reliable way to compare your available prices; published averages cannot predict an individual premium.",
+  },
+  {
+    question: "How can I compare affordable car insurance in Washington, DC?",
+    answer:
+      "Compare equivalent coverage limits and deductibles, ask about eligible discounts, provide accurate driver and vehicle information, and review more than the premium. A lower-priced policy may provide different limits, exclusions, or optional coverage than another quote.",
+  },
+  {
+    question: "What information is needed for a car insurance quote?",
+    answer:
+      "Be prepared to provide the names and license or identification details for drivers, vehicle identification numbers, garaging address, current coverage when available, driving history, desired effective date, and information about how each vehicle is used.",
+  },
+  {
     question:
       "Can I get auto insurance with a foreign license, passport, or alternative ID?",
     answer:
@@ -87,7 +102,7 @@ export const autoFAQ: FAQ[] = [
   {
     question: "Do I need uninsured motorist coverage?",
     answer:
-      "Uninsured motorist coverage is recommended as it protects you in the event of an accident with an uninsured or underinsured driver, covering your medical expenses and vehicle repairs.",
+      "Uninsured and underinsured motorist requirements and options vary by jurisdiction and policy. Review the available limits and covered losses carefully so you understand how the coverage may respond if an at-fault driver has no insurance or insufficient limits.",
   },
   {
     question: "What factors affect my auto insurance premiums?",
