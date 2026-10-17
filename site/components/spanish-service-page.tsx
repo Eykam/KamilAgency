@@ -9,6 +9,7 @@ type SpanishServicePageProps = {
   title: string
   description: string
   highlights: string[]
+  quoteHref?: string
   children: React.ReactNode
 }
 
@@ -17,6 +18,7 @@ export function SpanishServicePage({
   title,
   description,
   highlights,
+  quoteHref = "/quote",
   children,
 }: SpanishServicePageProps) {
   return (
@@ -34,7 +36,7 @@ export function SpanishServicePage({
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <TrackedLink
-              href="/quote"
+              href={quoteHref}
               className={cn(buttonVariants({ size: "lg" }), "min-w-44")}
               eventName="quote_start"
               eventParams={{ link_location: "spanish_landing" }}

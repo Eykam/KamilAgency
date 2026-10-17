@@ -170,6 +170,27 @@ export function SiteFooter({
             <p>Service in English, Spanish, and Arabic.</p>
           </div>
           <div className="flex flex-wrap justify-end gap-x-4 gap-y-1">
+            <Link
+              href="/services/auto-insurance"
+              className="hover:text-primary"
+            >
+              Car Insurance
+            </Link>
+            <Link
+              href="/services/homeowners-insurance"
+              className="hover:text-primary"
+            >
+              Home Insurance
+            </Link>
+            <Link
+              href="/services/commercial-insurance"
+              className="hover:text-primary"
+            >
+              Business Insurance
+            </Link>
+            <Link href="/services/surety-bonds" className="hover:text-primary">
+              Surety Bonds
+            </Link>
             <Link href="/reviews" className="hover:text-primary">
               Reviews
             </Link>
