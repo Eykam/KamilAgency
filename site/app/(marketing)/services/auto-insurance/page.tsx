@@ -5,11 +5,11 @@ import { services } from "@/config/services"
 import ServicePage from "@/components/service-page"
 
 export const metadata: Metadata = {
-  title: "Auto Insurance in the DMV Area",
+  title: "Auto Insurance With Foreign or Alternative ID",
   description:
-    "Compare auto insurance options with an independent agency serving Washington, DC, Maryland, and Virginia.",
+    "Ask Kamil Agency about auto insurance options for foreign licenses, passports, alternative IDs, suspended or expired licenses, and excluded owners.",
   keywords:
-    "auto insurance, car insurance, D.C. auto insurance, Maryland auto insurance, Virginia auto insurance, vehicle insurance, affordable car insurance, comprehensive auto coverage",
+    "auto insurance foreign drivers license, auto insurance international license, auto insurance with passport, auto insurance without license, suspended license insurance, expired license insurance, Matricula Consular auto insurance, excluded vehicle owner",
   alternates: {
     canonical: "/services/auto-insurance",
     languages: {
