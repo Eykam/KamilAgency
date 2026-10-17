@@ -3,6 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Review } from "@/types"
 
+import { TrackedLink } from "@/components/tracked-link"
 import { Avatar } from "@/components/ui/avatar"
 import { buttonVariants } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -13,10 +14,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import { googleReviewUrl } from "@/config/google-business"
 
 const TOTAL_STARS = 5
-const REVIEW_LINK =
-  "https://www.google.com/maps/search/?api=1&query=Kamil%20Agency%202201%20Wisconsin%20Avenue%20NW%20Washington%20DC%2020007"
 
 type ReviewCardProps = PropsWithChildren & { review: Review }
 
@@ -98,14 +98,16 @@ export default function ReviewCarousel({ reviews }: { reviews: Review[] }) {
             </p>
           </div>
 
-          <Link
-            href={REVIEW_LINK}
+          <TrackedLink
+            href={googleReviewUrl}
             target="_blank"
             rel="noopener noreferrer nofollow"
+            eventName="google_review_start"
+            eventParams={{ language: "en", link_location: "review_carousel" }}
             className={buttonVariants({ size: "lg" })}
           >
             Leave a Review
-          </Link>
+          </TrackedLink>
         </div>
         <Carousel
           opts={{ align: "start", loop: true }}

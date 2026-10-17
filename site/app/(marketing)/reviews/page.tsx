@@ -1,17 +1,26 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 
-import { reviews } from "@/config/reviews"
+import { TrackedLink } from "@/components/tracked-link"
 import { buttonVariants } from "@/components/ui/button"
-
-const REVIEW_LINK =
-  "https://www.google.com/maps/search/?api=1&query=Kamil%20Agency%202201%20Wisconsin%20Avenue%20NW%20Washington%20DC%2020007"
+import {
+  googleBusinessProfileUrl,
+  googleReviewUrl,
+} from "@/config/google-business"
+import { reviews } from "@/config/reviews"
 
 export const metadata: Metadata = {
   title: "Kamil Agency Client Reviews",
   description:
-    "Read client testimonials about Kamil Agency's insurance guidance and customer service in Washington, DC.",
-  alternates: { canonical: "/reviews" },
+    "Read client testimonials and share an honest Google review about Kamil Agency in Washington, DC.",
+  alternates: {
+    canonical: "/reviews",
+    languages: {
+      "en-US": "/reviews",
+      "es-US": "/es/opiniones",
+      "ar-US": "/ar/reviews",
+    },
+  },
 }
 
 export default function ReviewsPage() {
@@ -48,11 +57,11 @@ export default function ReviewsPage() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {reviews.map((review) => (
             <figure
-              key={`${review.name}-${review.timestamp}`}
+              key={review.name + "-" + review.timestamp}
               className="flex h-full flex-col rounded-2xl border bg-background p-6 shadow-sm"
             >
               <div
-                aria-label={`${review.stars} out of 5 stars`}
+                aria-label={review.stars + " out of 5 stars"}
                 className="text-lg tracking-widest text-amber-500"
               >
                 {"★".repeat(review.stars)}
@@ -65,33 +74,64 @@ export default function ReviewsPage() {
                 <span className="block text-muted-foreground">
                   Google review · {review.timestamp}
                 </span>
-                <Link
-                  href={review.url || REVIEW_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                  className="mt-2 inline-block font-semibold text-primary hover:underline"
-                >
-                  {review.url ? "View source" : "View Google profile"}
-                </Link>
               </figcaption>
             </figure>
           ))}
         </div>
-        <div className="mt-12 text-center">
-          <Link
-            href={REVIEW_LINK}
-            target="_blank"
-            rel="noopener noreferrer nofollow"
-            className={buttonVariants({ size: "lg" })}
-          >
-            See Current Google Rating & Reviews
-          </Link>
+
+        <div className="mt-12 rounded-2xl border bg-muted/30 p-6 text-center md:p-10">
+          <h2 className="font-heading text-3xl font-bold">
+            Share your honest experience
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl leading-7 text-muted-foreground">
+            If Kamil Agency helped you with personal or business insurance, your
+            honest Google review can help another local customer make an
+            informed decision.
+          </p>
+          <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
+            <TrackedLink
+              href={googleReviewUrl}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              eventName="google_review_start"
+              eventParams={{ language: "en", link_location: "reviews_page" }}
+              className={buttonVariants({ size: "lg" })}
+            >
+              Leave a Google Review
+            </TrackedLink>
+            <TrackedLink
+              href={googleBusinessProfileUrl}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              eventName="review_profile_click"
+              eventParams={{ language: "en", link_location: "reviews_page" }}
+              className={buttonVariants({ variant: "outline", size: "lg" })}
+            >
+              View Current Google Profile
+            </TrackedLink>
+          </div>
+          <p className="mt-5 text-sm text-muted-foreground">
+            Prefer another language?{" "}
+            <Link
+              className="font-semibold text-primary hover:underline"
+              href="/es/opiniones"
+            >
+              Español
+            </Link>{" "}
+            ·{" "}
+            <Link
+              className="font-semibold text-primary hover:underline"
+              href="/ar/reviews"
+            >
+              العربية
+            </Link>
+          </p>
           <p className="mx-auto mt-4 max-w-2xl text-xs leading-5 text-muted-foreground">
-            Review dates and wording are shown as originally published. Visit
-            the live Google profile for the newest available feedback. The
-            summary above reflects only the testimonials displayed on this
-            website and is not presented as Kamil Agency&apos;s current live
-            Google rating or total review count.
+            Review dates and wording are shown as originally published. The
+            summary above reflects only historical testimonials displayed on
+            this website and is not Kamil Agency&apos;s current live Google
+            rating or total review count. We welcome honest feedback from every
+            client; no purchase, incentive, or positive rating is required.
           </p>
         </div>
       </section>

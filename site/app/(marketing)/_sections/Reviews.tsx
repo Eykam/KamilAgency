@@ -1,16 +1,16 @@
 import Link from "next/link"
 
-import { reviews } from "@/config/reviews"
+import { TrackedLink } from "@/components/tracked-link"
 import { buttonVariants } from "@/components/ui/button"
-
-const REVIEW_LINK =
-  "https://www.google.com/maps/search/?api=1&query=Kamil%20Agency%202201%20Wisconsin%20Avenue%20NW%20Washington%20DC%2020007"
+import {
+  googleBusinessProfileUrl,
+  googleReviewUrl,
+} from "@/config/google-business"
+import { reviews } from "@/config/reviews"
 
 export default function ReviewsSection() {
-  const featuredReviewCount = reviews.length
   const featuredAverage = (
-    reviews.reduce((total, review) => total + review.stars, 0) /
-    featuredReviewCount
+    reviews.reduce((total, review) => total + review.stars, 0) / reviews.length
   ).toFixed(1)
 
   return (
@@ -35,7 +35,7 @@ export default function ReviewsSection() {
               {featuredAverage} average across featured testimonials
             </span>
             <span className="rounded-full bg-background/10 px-4 py-2 text-sm font-semibold">
-              {featuredReviewCount} client reviews featured
+              {reviews.length} client reviews featured
             </span>
           </div>
         </div>
@@ -47,7 +47,7 @@ export default function ReviewsSection() {
               className="flex h-full flex-col rounded-2xl bg-background p-6 text-foreground shadow-lg"
             >
               <div
-                aria-label={`${review.stars} out of 5 stars`}
+                aria-label={review.stars + " out of 5 stars"}
                 className="text-lg tracking-widest text-amber-500"
               >
                 {"★".repeat(review.stars)}
@@ -72,14 +72,26 @@ export default function ReviewsSection() {
           >
             Read All Featured Reviews
           </Link>
-          <Link
-            href={REVIEW_LINK}
+          <TrackedLink
+            href={googleReviewUrl}
             target="_blank"
             rel="noopener noreferrer nofollow"
+            eventName="google_review_start"
+            eventParams={{ language: "en", link_location: "homepage_reviews" }}
             className={buttonVariants({ variant: "secondary", size: "lg" })}
           >
-            See Current Google Rating & Reviews
-          </Link>
+            Leave a Google Review
+          </TrackedLink>
+          <TrackedLink
+            href={googleBusinessProfileUrl}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            eventName="review_profile_click"
+            eventParams={{ language: "en", link_location: "homepage_reviews" }}
+            className={buttonVariants({ variant: "secondary", size: "lg" })}
+          >
+            View Current Google Profile
+          </TrackedLink>
         </div>
       </div>
     </section>

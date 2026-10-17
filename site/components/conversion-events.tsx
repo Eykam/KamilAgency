@@ -10,6 +10,9 @@ function classifyLink(anchor: HTMLAnchorElement) {
   if (href.startsWith("tel:")) return "click_to_call"
   if (href.toLowerCase().startsWith("mailto:")) return "email_click"
   if (href === "/quote" || href.startsWith("/quote/")) return "quote_start"
+  if (href.includes("google.com/search") && href.includes("lrd=")) {
+    return "google_review_start"
+  }
   if (
     (href.includes("google.com/maps") || href.includes("maps.app.goo.gl")) &&
     (href.toLowerCase().includes("kamil") ||
@@ -21,7 +24,10 @@ function classifyLink(anchor: HTMLAnchorElement) {
   if (href.includes("google.com/maps") || href.includes("maps.app.goo.gl")) {
     return "map_click"
   }
-  if (href.includes("google.com/search") && href.includes("review")) {
+  if (
+    href.includes("google.com/search") &&
+    (href.includes("review") || href.includes("ludocid"))
+  ) {
     return "review_profile_click"
   }
   return null

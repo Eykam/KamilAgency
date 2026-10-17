@@ -8,7 +8,7 @@ export const reviews: Review[] = [
     avatar:
       "https://lh3.googleusercontent.com/a/ACg8ocINreCwAVyVhpBLw_cDxIiVOtqHyhf6hJJrNM0yf0CxzcyAUYM=w60-h60-p-rp-mo-br100",
     timestamp: "February 12, 2024",
-    url: "https://g.co/kgs/uUNH2zc",
+    url: "",
   },
   {
     stars: 5,
@@ -17,7 +17,7 @@ export const reviews: Review[] = [
     avatar:
       "https://lh3.googleusercontent.com/a-/ALV-UjW15hGikE0t_WMARvrPCnQVw_P3QUgHAu7xNpGuJgjh-fyTr2KBjg=w60-h60-p-rp-mo-br100",
     timestamp: "February 20, 2024",
-    url: "https://g.co/kgs/HpmgKxw",
+    url: "",
   },
   {
     stars: 5,
@@ -26,7 +26,7 @@ export const reviews: Review[] = [
     avatar:
       "https://lh3.googleusercontent.com/a/ACg8ocIdpD_t9yfXjsGKEGn9GJvd6sCssvBaLQ07gxLZW-GdLEUpAA=w60-h60-p-rp-mo-br100",
     timestamp: "December 03, 2023",
-    url: "https://g.co/kgs/CHBfx9f",
+    url: "",
   },
   {
     stars: 5,
@@ -62,6 +62,6 @@ export const reviews: Review[] = [
     avatar:
       "https://lh3.googleusercontent.com/a/ACg8ocLYF2gcmDcA5_ryahaUgUB53jaC1bbqRnumhGw3DgURR0DWUA=w60-h60-p-rp-mo-br100",
     timestamp: "March 12, 2020",
-    url: "https://g.co/kgs/6PniQMT",
+    url: "",
   },
 ]
