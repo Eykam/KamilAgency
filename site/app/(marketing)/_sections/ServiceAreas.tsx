@@ -3,7 +3,10 @@ import Link from "next/link"
 const neighborhoods = [
   { name: "Georgetown", href: "/services/home-insurance-georgetown" },
   { name: "Glover Park", href: "/services/home-insurance-glover-park" },
-  { name: "Cathedral Heights", href: "/services/home-insurance-cathedral-heights" },
+  {
+    name: "Cathedral Heights",
+    href: "/services/home-insurance-cathedral-heights",
+  },
   { name: "Cleveland Park" },
   { name: "Tenleytown" },
   { name: "Chevy Chase" },
@@ -39,8 +42,26 @@ export default function ServiceAreasSection() {
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link
-              href="/services"
+              href="/services/homeowners-insurance"
               className="rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground"
+            >
+              Homeowners Insurance in Washington, DC
+            </Link>
+            <Link
+              href="/services/commercial-insurance"
+              className="rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground"
+            >
+              Business Insurance in Washington, DC
+            </Link>
+            <Link
+              href="/services/auto-insurance"
+              className="rounded-md border bg-background px-5 py-3 text-sm font-semibold"
+            >
+              Car Insurance in Washington, DC
+            </Link>
+            <Link
+              href="/services"
+              className="rounded-md border bg-background px-5 py-3 text-sm font-semibold"
             >
               Explore Insurance Services
             </Link>
