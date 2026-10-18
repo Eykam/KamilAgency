@@ -193,6 +193,36 @@ export default function ServicePage({
               />
             </div>
 
+            {seoContent.sections?.length ? (
+              <div className="mt-12 grid gap-8">
+                {seoContent.sections.map((section) => (
+                  <article
+                    key={section.heading}
+                    className="rounded-2xl border bg-secondary/20 p-6 md:p-8"
+                  >
+                    <h3 className="text-2xl font-bold tracking-tight">
+                      {section.heading}
+                    </h3>
+                    <div className="mt-4 space-y-4 text-base font-normal leading-7 text-muted-foreground">
+                      {section.paragraphs.map((paragraph) => (
+                        <p key={paragraph}>{paragraph}</p>
+                      ))}
+                    </div>
+                    {section.bullets?.length ? (
+                      <ul className="mt-5 space-y-3 text-sm font-normal leading-6 text-muted-foreground">
+                        {section.bullets.map((item) => (
+                          <li key={item} className="flex gap-3">
+                            <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </article>
+                ))}
+              </div>
+            ) : null}
+
             <div className="mt-12 rounded-2xl border bg-secondary/40 p-6 md:p-8">
               <h3 className="text-2xl font-bold">
                 Related insurance resources

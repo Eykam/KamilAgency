@@ -12,6 +12,11 @@ export type ServiceSeoContent = {
   bestFor: string[]
   examples: string[]
   localNotes: string[]
+  sections?: {
+    heading: string
+    paragraphs: string[]
+    bullets?: string[]
+  }[]
   relatedLinks: RelatedLink[]
 }
 
@@ -233,6 +238,42 @@ export const serviceSeoContent: Record<string, ServiceSeoContent> = {
       "Roommates usually need separate policies unless the insurer has agreed to list them.",
       "High-value jewelry, electronics, art, bicycles, or business equipment may need separate limits or scheduling.",
     ],
+    sections: [
+      {
+        heading: "What Renters Insurance Covers in Washington, DC",
+        paragraphs: [
+          "A renters insurance policy can combine personal property, personal liability, medical payments, and additional living expense coverage. Personal property coverage may help repair or replace belongings after an eligible covered event. Liability coverage may respond when a renter is legally responsible for another person's injury or property damage, subject to the policy's terms and limits.",
+          "Additional living expense coverage may help with eligible extra costs when a covered loss makes the rental temporarily uninhabitable. Every policy has exclusions, deductibles, and limits, so the useful comparison is not just the premium—it is what the policy covers, how losses are valued, and how much the renter would pay out of pocket.",
+        ],
+      },
+      {
+        heading: "How to Compare Renters Insurance in DC",
+        paragraphs: [
+          "Start with an inventory of furniture, clothing, electronics, kitchenware, bicycles, and other belongings. Estimate what it would cost to replace those items today, then compare that amount with the personal property limit and deductible offered by each policy.",
+        ],
+        bullets: [
+          "Ask whether covered belongings are settled at replacement cost or actual cash value.",
+          "Choose a personal liability limit that reflects your household and lease requirements.",
+          "Review special limits for jewelry, art, musical instruments, bicycles, and electronics.",
+          "Discuss pets, roommates, home-based work, and property stored away from the apartment.",
+          "Confirm whether the landlord or property manager needs proof of coverage or a specific interested-party listing.",
+        ],
+      },
+      {
+        heading: "DC Apartments, Rowhouses, Condos, and Group Homes",
+        paragraphs: [
+          "Washington, DC renters live in many types of housing, from high-rise apartments and condominium units to basement apartments, rowhouses, and shared group homes. The building type does not replace the need to insure the tenant's own property and liability exposure. Tell the agent how the residence is occupied so the policy can be reviewed accurately.",
+          "Roommates are not automatically insured under every policy. Unrelated roommates commonly need separate policies unless the carrier agrees to include them. A condo association or landlord may insure parts of the building, but that coverage generally does not replace a tenant's renters policy.",
+        ],
+      },
+      {
+        heading: "What a Landlord's Policy Usually Does Not Cover",
+        paragraphs: [
+          "A landlord's policy generally protects the building and the landlord's financial interest. It normally does not insure a tenant's furniture, clothing, electronics, or personal liability. If a covered loss forces the tenant to leave temporarily, the landlord's policy also may not pay the tenant's hotel, meals, or other additional living costs.",
+          "Renters insurance is not a maintenance plan and does not cover every cause of loss. Flood, earthquake, pests, wear and tear, and some water-related damage may be excluded or handled separately. The issued policy and endorsements determine coverage.",
+        ],
+      },
+    ],
     relatedLinks: [
       {
         href: "/blog/renters-insurance-washington-dc-guide",
@@ -251,6 +292,12 @@ export const serviceSeoContent: Record<string, ServiceSeoContent> = {
         label: "Umbrella insurance",
         description:
           "Review additional liability options for eligible households.",
+      },
+      {
+        href: "/contact-us#info",
+        label: "Compare renters insurance",
+        description:
+          "Ask our Washington, DC team to review your address, belongings, liability limit, and lease requirements.",
       },
     ],
   },
