@@ -1,5 +1,5 @@
-import { FAQ, PolicyDetails } from "@/types"
 import { Metadata } from "next"
+import { FAQ, PolicyDetails } from "@/types"
 
 export const autoMetaData: Metadata = {
   title: "",
@@ -54,7 +54,7 @@ export const homeownersFAQ: FAQ[] = [
   {
     question: "What is covered under a standard homeowners insurance policy?",
     answer:
-      "A standard homeowners insurance policy covers your home, personal belongings, and additional living expenses in the event of a covered peril such as fire, theft, or certain natural disasters. It also includes liability protection for injuries to others on your property.",
+      "A homeowners policy may include coverage for the dwelling, other structures, personal property, additional living expenses, personal liability, and medical payments. Coverage applies only to eligible losses under the issued policy, subject to its exclusions, conditions, limits, and deductible.",
   },
   {
     question: "How is the cost of homeowners insurance determined?",
@@ -62,9 +62,10 @@ export const homeownersFAQ: FAQ[] = [
       "The cost of homeowners insurance is determined by factors such as the value of your home, location, coverage limits, deductible, age and condition of your home, claims history, and sometimes your credit score.",
   },
   {
-    question: "Is flood damage covered by homeowners insurance?",
+    question:
+      "Is flood damage covered by homeowners insurance in Washington, DC?",
     answer:
-      "No, standard homeowners insurance policies do not cover flood damage. You will need to purchase a separate flood insurance policy if you live in a flood-prone area.",
+      "Standard homeowners policies generally exclude flooding caused by rising surface water. Separate flood coverage may be available. Sewer or drain backup and sudden plumbing damage are different exposures and are evaluated according to the policy and any applicable endorsements.",
   },
   {
     question: "What is liability coverage in homeowners insurance?",
@@ -80,6 +81,26 @@ export const homeownersFAQ: FAQ[] = [
     question:
       "Can I bundle homeowners insurance with other types of insurance?",
     answer:
-      "Yes, many insurance providers offer discounts for bundling homeowners insurance with other policies such as auto or life insurance. Bundling can lead to significant savings on your premiums.",
+      "Some insurers offer an account discount when eligible home and auto policies are placed together. Eligibility and pricing vary, so compare the combined coverage and total cost rather than assuming a bundle will always be less expensive.",
+  },
+  {
+    question: "How much does homeowners insurance cost in Washington, DC?",
+    answer:
+      "There is no single price for every Washington, DC home. Premiums can vary based on the home's location, rebuilding estimate, age and updates, roof and building systems, coverage limits, deductible, prior losses, discounts, and carrier underwriting. A quote using accurate property details is more useful than a citywide average.",
+  },
+  {
+    question: "What information is needed for a homeowners insurance quote?",
+    answer:
+      "Be ready to provide the property address, occupancy and closing date, year built, square footage, construction details, roof age, heating system, major electrical or plumbing updates, prior insurance and loss history, and information about renovations, pets, pools, fireplaces, rental activity, or home-based work.",
+  },
+  {
+    question: "Is rebuilding cost the same as the home's market value?",
+    answer:
+      "No. Market value can include the land and local real-estate demand, while an insurance rebuilding estimate focuses on the expected cost to reconstruct covered portions of the home using current materials and labor. The two amounts can be different.",
+  },
+  {
+    question: "When should a homebuyer request insurance before closing?",
+    answer:
+      "Start as soon as the property and expected closing date are known. Beginning early gives the agent time to review property details, inspections, lender requirements, and any underwriting questions before proof of coverage is due.",
   },
 ]
