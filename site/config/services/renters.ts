@@ -81,4 +81,24 @@ export const rentersFAQ: FAQ[] = [
     answer:
       "Many policies provide some personal-property coverage away from the residence, subject to policy limits, deductibles, and exclusions. Ask about special limits for jewelry, bicycles, electronics, and business property.",
   },
+  {
+    question: "Is renters insurance required in Washington, DC?",
+    answer:
+      "Washington, DC law does not generally require every tenant to buy renters insurance, but a landlord may require coverage as a condition of the lease. Review your lease for any required liability limit, proof of insurance, or interested-party instructions.",
+  },
+  {
+    question: "How do I show proof of renters insurance to my landlord?",
+    answer:
+      "After an eligible policy is issued, the insurer or agent can usually provide a declarations page or other proof of coverage. If the lease requires the landlord or property manager to be listed as an interested party, provide the exact name and address shown in the lease.",
+  },
+  {
+    question: "Does renters insurance cover flooding in Washington, DC?",
+    answer:
+      "Standard renters policies generally do not cover flood damage caused by rising surface water. Separate flood coverage may be available. Water damage from other causes is handled according to the policy wording, exclusions, deductible, and endorsements.",
+  },
+  {
+    question: "What information is needed for a renters insurance quote?",
+    answer:
+      "Be ready to provide the rental address, move-in date, estimated value of your belongings, desired liability limit and deductible, prior claims, household members, pets, and details about any jewelry, bicycles, electronics, or home-based business property that may need special review.",
+  },
 ]
