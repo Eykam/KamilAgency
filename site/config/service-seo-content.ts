@@ -44,6 +44,49 @@ export const serviceSeoContent: Record<string, ServiceSeoContent> = {
       "Flood, sewer or drain backup, service-line damage, and water seepage are different exposures and may require separate policies or endorsements.",
       "Condominiums, rental properties, vacant homes, and homes under major renovation generally need different policy forms or underwriting.",
     ],
+    sections: [
+      {
+        heading: "How to Compare Homeowners Insurance in Washington, DC",
+        paragraphs: [
+          "A useful home insurance comparison looks beyond the premium. Compare the dwelling limit, how the policy values covered property, the deductible, personal liability limits, additional living expense coverage, and the exclusions or endorsements that apply to the home.",
+          "The dwelling limit is intended to reflect an estimated rebuilding cost, not the home's sale price or land value. Construction features, square footage, attached structures, interior finishes, and local labor and material costs can all affect that estimate.",
+        ],
+        bullets: [
+          "Compare the same coverage limits and deductibles across quotes.",
+          "Ask whether roof or personal-property losses are settled at replacement cost or actual cash value.",
+          "Review special limits for jewelry, art, collectibles, electronics, and business property.",
+          "Discuss available water-backup, service-line, equipment-breakdown, and ordinance-or-law options.",
+          "Confirm which discounts or account credits were included and what is required to keep them.",
+        ],
+      },
+      {
+        heading: "Information to Gather for a DC Home Insurance Quote",
+        paragraphs: [
+          "Accurate property details help an agent compare available home insurance quotes without relying on assumptions. For a purchase, start before the lender's deadline so there is time to review the inspection, requested coverage, and any underwriting questions.",
+        ],
+        bullets: [
+          "Property address, occupancy, closing date, and mortgagee information",
+          "Year built, square footage, construction type, roof age, and heating system",
+          "Approximate dates of electrical, plumbing, HVAC, roof, and major renovation updates",
+          "Prior insurance and loss history requested by the carrier",
+          "Details about pets, pools, fireplaces, home-based work, rental activity, or planned renovations",
+        ],
+      },
+      {
+        heading: "Rowhouses, Older Homes, and Rebuilding Costs",
+        paragraphs: [
+          "Washington, DC includes attached rowhouses, historic properties, detached homes, and residences with older building systems. Shared walls, narrow access, custom finishes, code requirements, and the age of the roof, wiring, plumbing, or heating system may affect eligibility and the estimated cost to rebuild after a covered loss.",
+          "Tell the agent about finished basements, additions, accessory structures, solar panels, recent renovations, and any planned construction. A home under major renovation or one that is vacant may need a different policy form than an occupied primary residence.",
+        ],
+      },
+      {
+        heading: "Flood, Water Backup, and Other Water Damage",
+        paragraphs: [
+          "Homeowners insurance does not treat every type of water damage the same way. Flooding from rising surface water is generally handled through separate flood coverage. Sewer or drain backup may require an endorsement, while sudden plumbing damage is evaluated under the policy's terms, exclusions, and deductible.",
+          "Ask what water-related protection is included, what can be added, and which maintenance or seepage conditions are excluded. Coverage is determined by the issued policy and endorsements, not by a general description on a website.",
+        ],
+      },
+    ],
     relatedLinks: [
       {
         href: "/services/home-insurance-georgetown",
