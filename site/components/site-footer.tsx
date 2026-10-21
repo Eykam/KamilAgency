@@ -183,6 +183,12 @@ export function SiteFooter({
               Home Insurance
             </Link>
             <Link
+              href="/services/renters-insurance"
+              className="hover:text-primary"
+            >
+              DC Renters Insurance
+            </Link>
+            <Link
               href="/services/commercial-insurance"
               className="hover:text-primary"
             >

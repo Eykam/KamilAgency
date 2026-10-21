@@ -48,6 +48,12 @@ export default function ServiceAreasSection() {
               Homeowners Insurance in Washington, DC
             </Link>
             <Link
+              href="/services/renters-insurance"
+              className="rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground"
+            >
+              Renters Insurance in Washington, DC
+            </Link>
+            <Link
               href="/services/commercial-insurance"
               className="rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground"
             >
