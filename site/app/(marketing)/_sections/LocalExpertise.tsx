@@ -5,6 +5,10 @@ import { TrackedLink } from "@/components/tracked-link"
 
 const featuredServices = [
   { name: "Homeowners insurance", href: "/services/homeowners-insurance" },
+  {
+    name: "DC renters insurance",
+    href: "/services/renters-insurance",
+  },
   { name: "Auto insurance", href: "/services/auto-insurance" },
   {
     name: "Vacant-home insurance",
