@@ -320,9 +320,9 @@ export const serviceSeoContent: Record<string, ServiceSeoContent> = {
     relatedLinks: [
       {
         href: "/blog/renters-insurance-washington-dc-guide",
-        label: "Washington, DC renters guide",
+        label: "Is renters insurance required in Washington, DC?",
         description:
-          "Learn what renters insurance may cover and what to review before choosing a policy.",
+          "Review DC lease requirements, proof of insurance, coverage limits, and move-in preparation.",
       },
       {
         href: "/services/auto-insurance",
