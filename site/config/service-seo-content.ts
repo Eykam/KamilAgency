@@ -17,6 +17,14 @@ export type ServiceSeoContent = {
     paragraphs: string[]
     bullets?: string[]
   }[]
+  cta?: {
+    heading: string
+    description: string
+    primaryLabel: string
+    primaryHref: string
+    secondaryLabel: string
+    secondaryHref: string
+  }
   relatedLinks: RelatedLink[]
 }
 
@@ -87,6 +95,15 @@ export const serviceSeoContent: Record<string, ServiceSeoContent> = {
         ],
       },
     ],
+    cta: {
+      heading: "Ready to compare home insurance in Washington, DC?",
+      description:
+        "Tell Kamil Agency about your home, rebuilding details, deductible preferences, and current coverage. We can help you compare available homeowners insurance options and understand the differences before you choose.",
+      primaryLabel: "Request a Home Insurance Quote",
+      primaryHref: "/quote/personal",
+      secondaryLabel: "Call (240) 400-7393",
+      secondaryHref: "tel:+12404007393",
+    },
     relatedLinks: [
       {
         href: "/services/home-insurance-georgetown",
@@ -99,6 +116,12 @@ export const serviceSeoContent: Record<string, ServiceSeoContent> = {
         label: "Glover Park home insurance",
         description:
           "Explore coverage questions for homes in Glover Park and nearby communities.",
+      },
+      {
+        href: "/services/home-insurance-cathedral-heights",
+        label: "Cathedral Heights home insurance",
+        description:
+          "Review coverage considerations for Cathedral Heights homes and condominiums.",
       },
       {
         href: "/services/umbrella-insurance",

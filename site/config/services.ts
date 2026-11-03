@@ -61,7 +61,7 @@ export const services: Service[] = [
     details: HomeownersPolicyDetails,
     descriptionShort: "Comprehensive coverage for your home and belongings.",
     icon: Icons.home({}),
-    quoteURL: "/contact-us#info",
+    quoteURL: "/quote/personal",
     docsURL: "/docs",
     pageURL: "/services/homeowners-insurance",
     imageURL: "/images/services/home.webp",

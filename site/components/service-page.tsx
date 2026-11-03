@@ -11,6 +11,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import DetailCard from "@/components/detail-card"
+import { HomeownersQuickLeadForm } from "@/components/homeowners-quick-lead-form"
 import { JsonLd } from "@/components/json-ld"
 import RecommendedServiceCard from "@/components/recommended-service-card"
 import { TrackedLink } from "@/components/tracked-link"
@@ -137,6 +138,32 @@ export default function ServicePage({
         </section>
       </BackgroundGradientAnimation>
 
+      {name === "Homeowners" ? (
+        <section className="border-y bg-secondary/30 py-10 md:py-14">
+          <div className="container grid max-w-6xl items-center gap-8 lg:grid-cols-[1fr_1.1fr]">
+            <div className="text-left">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+                Washington, DC homeowners
+              </p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+                Get Local Help Without Filling Out a Long Form
+              </h2>
+              <p className="mt-5 text-base font-normal leading-7 text-muted-foreground">
+                Start with a quick callback request. We can discuss the
+                property, closing date, current coverage, and the details needed
+                for an accurate comparison when we speak.
+              </p>
+              <ul className="mt-6 space-y-3 text-sm font-normal text-muted-foreground">
+                <li>• Independent guidance from a Washington, DC office</li>
+                <li>• Help comparing coverage, limits, and deductibles</li>
+                <li>• Service available in English, Spanish, and Arabic</li>
+              </ul>
+            </div>
+            <HomeownersQuickLeadForm />
+          </div>
+        </section>
+      ) : null}
+
       <section className="flex min-h-screen w-full items-center justify-center bg-secondary py-12 md:py-24">
         <div className="container max-w-6xl px-10 2xl:max-w-[1400px]">
           <div className="flex-col text-start md:text-center lg:text-start">
@@ -244,6 +271,41 @@ export default function ServicePage({
                 ))}
               </div>
             </div>
+
+            {seoContent.cta ? (
+              <div className="mt-12 rounded-2xl bg-primary px-6 py-10 text-center text-primary-foreground shadow-lg md:px-10">
+                <h3 className="text-2xl font-bold tracking-tight sm:text-3xl">
+                  {seoContent.cta.heading}
+                </h3>
+                <p className="mx-auto mt-4 max-w-3xl text-base font-normal leading-7 text-primary-foreground/85">
+                  {seoContent.cta.description}
+                </p>
+                <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
+                  <TrackedLink
+                    href={seoContent.cta.primaryHref}
+                    eventName="quote_start"
+                    eventParams={{
+                      link_location: "service_seo_cta",
+                      service_name: name,
+                    }}
+                    className="inline-flex h-11 items-center justify-center rounded-md bg-background px-6 text-sm font-semibold text-foreground shadow-sm transition hover:bg-background/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-background"
+                  >
+                    {seoContent.cta.primaryLabel}
+                  </TrackedLink>
+                  <TrackedLink
+                    href={seoContent.cta.secondaryHref}
+                    eventName="phone_click"
+                    eventParams={{
+                      link_location: "service_seo_cta",
+                      service_name: name,
+                    }}
+                    className="inline-flex h-11 items-center justify-center rounded-md border border-primary-foreground/50 px-6 text-sm font-semibold text-primary-foreground transition hover:bg-primary-foreground/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground"
+                  >
+                    {seoContent.cta.secondaryLabel}
+                  </TrackedLink>
+                </div>
+              </div>
+            ) : null}
           </div>
         </section>
       ) : null}

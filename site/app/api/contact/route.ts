@@ -5,20 +5,28 @@ import { z } from "zod"
 
 import { siteConfig } from "@/config/site"
 
-const contactSchema = z.object({
-  name: z.string().trim().min(2).max(100),
-  email: z.string().trim().email().max(254),
-  phone: z.string().trim().max(40).optional().default(""),
-  insuranceType: z
-    .string()
-    .trim()
-    .min(2)
-    .max(80)
-    .optional()
-    .default("General Inquiry"),
-  message: z.string().trim().min(10).max(2000),
-  website: z.string().max(0).optional().default(""),
-})
+const contactSchema = z
+  .object({
+    name: z.string().trim().min(2).max(100),
+    email: z
+      .union([z.string().trim().email().max(254), z.literal("")])
+      .optional()
+      .default(""),
+    phone: z.string().trim().max(40).optional().default(""),
+    insuranceType: z
+      .string()
+      .trim()
+      .min(2)
+      .max(80)
+      .optional()
+      .default("General Inquiry"),
+    message: z.string().trim().min(10).max(2000),
+    website: z.string().max(0).optional().default(""),
+  })
+  .refine(({ email, phone }) => Boolean(email || phone), {
+    message: "An email address or phone number is required.",
+    path: ["phone"],
+  })
 
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000
 const RATE_LIMIT_MAX_REQUESTS = 5
@@ -101,7 +109,7 @@ export async function POST(request: Request) {
     await client.sendEmail({
       From: from,
       To: siteConfig.contactEmail,
-      ReplyTo: email,
+      ...(email ? { ReplyTo: email } : {}),
       Subject: `${safeInsuranceType} website inquiry from ${safeName}`,
       TextBody: [
         `Name: ${name}`,
