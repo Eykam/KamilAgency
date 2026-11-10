@@ -1,21 +1,21 @@
-import { createElement } from "react";
-import { Metadata } from "next";
-import { Service } from "@/types";
+import { createElement } from "react"
+import { Metadata } from "next"
+import { Service } from "@/types"
 
-import { Icons } from "@/components/icons";
+import { Icons } from "@/components/icons"
 
-import { AutoPolicyDetails, autoFAQ } from "./services/auto";
-import { CommercialPolicyDetails, commercialFAQ } from "./services/commercial";
-import { CondoPolicyDetails, condoFAQ } from "./services/condo";
-import { HomeownersPolicyDetails, homeownersFAQ } from "./services/homeowners";
-import { LandlordPolicyDetails, landlordFAQ } from "./services/landlord";
-import { LifePolicyDetails, lifeFAQ } from "./services/life";
-import { MedicarePolicyDetails, medicareFAQ } from "./services/medicare";
-import { RentersPolicyDetails, rentersFAQ } from "./services/renters";
-import { TravelPolicyDetails, travelFAQ } from "./services/travel";
-import { UmbrellaPolicyDetails, umbrellaFAQ } from "./services/umbrella";
-import { VacantHomePolicyDetails, vacantHomeFAQ } from "./services/vacant-home";
-import { siteConfig } from "./site";
+import { AutoPolicyDetails, autoFAQ } from "./services/auto"
+import { CommercialPolicyDetails, commercialFAQ } from "./services/commercial"
+import { CondoPolicyDetails, condoFAQ } from "./services/condo"
+import { HomeownersPolicyDetails, homeownersFAQ } from "./services/homeowners"
+import { LandlordPolicyDetails, landlordFAQ } from "./services/landlord"
+import { LifePolicyDetails, lifeFAQ } from "./services/life"
+import { MedicarePolicyDetails, medicareFAQ } from "./services/medicare"
+import { RentersPolicyDetails, rentersFAQ } from "./services/renters"
+import { TravelPolicyDetails, travelFAQ } from "./services/travel"
+import { UmbrellaPolicyDetails, umbrellaFAQ } from "./services/umbrella"
+import { VacantHomePolicyDetails, vacantHomeFAQ } from "./services/vacant-home"
+import { siteConfig } from "./site"
 
 // import { homeownersFAQ, HomeownersPolicyDetails } from "./services/health"
 
@@ -50,7 +50,7 @@ export const servicesMetaData: Metadata = {
     "Mohamed",
     "Mohamed Kamil",
   ],
-};
+}
 export const services: Service[] = [
   {
     name: "Homeowners",
@@ -224,4 +224,4 @@ export const services: Service[] = [
     details: LifePolicyDetails,
     faq: lifeFAQ,
   },
-];
+]
