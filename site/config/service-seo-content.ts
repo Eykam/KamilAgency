@@ -139,8 +139,8 @@ export const serviceSeoContent: Record<string, ServiceSeoContent> = {
   },
   Auto: {
     eyebrow: "Local auto insurance guidance",
-    heroHeading: "Car Insurance in Washington, DC",
-    heading: "Compare Car Insurance Options in Washington, DC",
+    heroHeading: "Auto Insurance in Washington, DC",
+    heading: "Compare Auto Insurance Options in Washington, DC",
     introduction:
       "Kamil Agency helps Washington, DC drivers compare auto insurance based on their vehicles, driving history, household, coverage limits, and deductibles. We explain liability, collision, comprehensive, medical payments, and uninsured motorist options in plain language. Eligible drivers can also ask about markets that may consider foreign or alternative identification, international licenses, or suspended, expired, or unverified license situations.",
     bestFor: [
@@ -156,11 +156,63 @@ export const serviceSeoContent: Record<string, ServiceSeoContent> = {
       "Asking whether a registered or titled vehicle owner can be excluded as a driver when permitted",
     ],
     localNotes: [
-      "Required coverage and insurance rules depend on where the vehicle is registered and principally garaged.",
+      "Vehicles registered in Washington, DC must maintain continuous insurance while the registration is active.",
       "Rates vary by driver, vehicle, location, coverage, deductible, discounts, and carrier underwriting; no agency can promise one price for every driver.",
       "Accepted documents and license requirements vary by state and carrier, and submitting identification does not guarantee policy issuance.",
       "An excluded person generally has no coverage while driving the vehicle; any exclusion must be permitted and documented by the carrier.",
     ],
+    sections: [
+      {
+        heading: "How to Compare Auto Insurance in Washington, DC",
+        paragraphs: [
+          "Price matters, but the lowest premium is not always the most useful policy. Compare equivalent liability limits, deductibles, vehicle coverage, optional benefits, and exclusions so you understand what each quote would provide after a covered loss.",
+          "Kamil Agency helps drivers review available options from multiple insurance markets. The goal is to find an appropriate balance of price, protection, and deductible rather than assume that one policy fits every household.",
+        ],
+        bullets: [
+          "Compare the same liability limits and deductibles across quotes.",
+          "Review collision and comprehensive coverage for each vehicle.",
+          "Ask about uninsured motorist, rental reimbursement, and roadside options.",
+          "Confirm which discounts were included and what is required to keep them.",
+          "Consider whether coordinating auto with homeowners or renters insurance makes sense.",
+        ],
+      },
+      {
+        heading: "Washington, DC Auto Insurance Requirements",
+        paragraphs: [
+          "As of November 2026, DC DMV lists minimum third-party bodily injury liability limits of $25,000 per person and $50,000 per accident, plus $10,000 in property damage liability. DC also requires uninsured motorist bodily injury coverage of $25,000 per person and $50,000 per accident, along with $5,000 in uninsured motorist property damage coverage subject to a $200 deductible.",
+          "Insurance must remain active while the vehicle is registered. Minimum limits can change and may not provide enough protection for every driver, so confirm current requirements and consider whether higher limits fit your needs before purchasing coverage.",
+        ],
+      },
+      {
+        heading: "What Affects Car Insurance Rates in DC?",
+        paragraphs: [
+          "Insurance companies evaluate risk differently. Driving and claims history, vehicle type, garaging location, annual mileage, household drivers, selected limits, deductibles, prior insurance, and available discounts can all affect the price.",
+          "A personalized quote is more useful than a citywide average because it reflects the drivers, vehicles, and coverage choices that will appear on the policy.",
+        ],
+      },
+      {
+        heading: "Information to Gather for an Auto Insurance Quote",
+        paragraphs: [
+          "Accurate information helps the agency compare available options without relying on assumptions. Do not send sensitive identification documents through ordinary email unless the agency has directed you to an approved secure method.",
+        ],
+        bullets: [
+          "Driver names, dates of birth, and license or approved identification details",
+          "Vehicle identification numbers, current mileage, and garaging address",
+          "Current policy information and desired effective date, when available",
+          "Driving and claims information requested by the insurance company",
+          "How each vehicle is used and the approximate annual mileage",
+        ],
+      },
+    ],
+    cta: {
+      heading: "Ready to compare auto insurance in Washington, DC?",
+      description:
+        "Tell Kamil Agency about your drivers, vehicles, current coverage, and deductible preferences. Our local team can help you review available options in English, Spanish, or Arabic.",
+      primaryLabel: "Request an Auto Insurance Quote",
+      primaryHref: "/quote/personal",
+      secondaryLabel: "Call (240) 400-7393",
+      secondaryHref: "tel:+12404007393",
+    },
     relatedLinks: [
       {
         href: "/blog/car-insurance-washington-dc-guide",
@@ -169,10 +221,10 @@ export const serviceSeoContent: Record<string, ServiceSeoContent> = {
           "Learn how to compare coverage, deductibles, driver details, and quotes before choosing a policy.",
       },
       {
-        href: "/contact-us#info",
-        label: "Discuss your documents",
+        href: "https://dmv.dc.gov/service/vehicle-insurance",
+        label: "Current DC insurance requirements",
         description:
-          "Contact our team to review your driver, vehicle, and identification situation.",
+          "Review the District's official vehicle insurance requirements and continuous-coverage rules.",
       },
       {
         href: "/quote/personal",

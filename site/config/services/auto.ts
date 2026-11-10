@@ -1,5 +1,5 @@
-import { FAQ, PolicyDetails } from "@/types"
 import { Metadata } from "next"
+import { FAQ, PolicyDetails } from "@/types"
 
 export const autoMetaData: Metadata = {
   title: "",
@@ -55,6 +55,11 @@ export const autoFAQ: FAQ[] = [
     question: "How much does car insurance cost in Washington, DC?",
     answer:
       "The price varies by driver, vehicle, garaging address, driving history, coverage limits, deductibles, discounts, and insurance company. A complete quote is the reliable way to compare your available prices; published averages cannot predict an individual premium.",
+  },
+  {
+    question: "What auto insurance is required in Washington, DC?",
+    answer:
+      "As of November 2026, DC DMV lists minimum third-party bodily injury liability limits of $25,000 per person and $50,000 per accident, $10,000 in property damage liability, uninsured motorist bodily injury limits of $25,000 per person and $50,000 per accident, and $5,000 in uninsured motorist property damage coverage subject to a $200 deductible. Requirements can change, and coverage must remain continuous while the vehicle is registered.",
   },
   {
     question: "How can I compare affordable car insurance in Washington, DC?",
