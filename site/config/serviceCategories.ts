@@ -1,3 +1,4 @@
+import { createElement } from "react"
 import { ServiceCategory } from "@/types"
 
 import { Icons } from "@/components/icons"
@@ -26,12 +27,11 @@ export const ServiceCategories: ServiceCategory[] = [
     url: siteConfig.medicareQuoteURL,
     logo: Icons.heart({ className: "size-12 fill-primary" }),
   },
-  // Travel quotes hand off to Kamil Agency's configured partner.
   {
     name: "Travel Insurance",
     descriptionShort:
       "Compare travel protection options for trip costs, medical emergencies, evacuation needs, delays, and interruptions.",
     url: siteConfig.travelInsuranceURL,
-    logo: Icons.map({ className: "size-12" }),
+    logo: createElement(Icons.map, { className: "size-12" }),
   },
 ]
