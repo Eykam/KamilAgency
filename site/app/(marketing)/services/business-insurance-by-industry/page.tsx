@@ -38,6 +38,19 @@ export default function BusinessInsuranceByIndustryPage() {
       </section>
 
       <section className="container max-w-6xl py-16 md:py-24">
+        <div className="mx-auto mb-12 max-w-3xl text-center">
+          <h2 className="font-heading text-3xl font-bold">
+            Coverage built around how your business operates
+          </h2>
+          <p className="mt-5 text-lg leading-8 text-muted-foreground">
+            Two businesses with the same number of employees can face very
+            different risks. A contractor works at customer locations, a
+            restaurant serves the public every day, and a consultant may be more
+            exposed to professional mistakes than physical damage. Kamil Agency
+            starts with your operations, contracts, property, vehicles, and team
+            before comparing options from available carriers.
+          </p>
+        </div>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {businessIndustries.map((industry) => (
             <Link
@@ -54,6 +67,64 @@ export default function BusinessInsuranceByIndustryPage() {
               </span>
             </Link>
           ))}
+        </div>
+      </section>
+
+      <section className="bg-secondary/50 py-16 md:py-20">
+        <div className="container grid max-w-6xl gap-8 md:grid-cols-2">
+          <div className="rounded-2xl border bg-background p-7">
+            <h2 className="font-heading text-2xl font-bold">
+              Common building blocks
+            </h2>
+            <p className="mt-4 leading-7 text-muted-foreground">
+              Depending on the industry, a business insurance plan may combine
+              general liability, commercial property, business income,
+              workers&apos; compensation, commercial auto, cyber liability, or
+              professional liability. Some companies also need bonds, umbrella
+              limits, or special endorsements required by a lease or contract.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link
+                href="/services/general-liability-insurance"
+                className="font-semibold text-primary hover:underline"
+              >
+                General liability
+              </Link>
+              <Link
+                href="/services/commercial-auto-insurance"
+                className="font-semibold text-primary hover:underline"
+              >
+                Commercial auto
+              </Link>
+              <Link
+                href="/services/commercial-insurance"
+                className="font-semibold text-primary hover:underline"
+              >
+                Commercial insurance
+              </Link>
+            </div>
+          </div>
+
+          <div className="rounded-2xl border bg-background p-7">
+            <h2 className="font-heading text-2xl font-bold">
+              What to have ready
+            </h2>
+            <p className="mt-4 leading-7 text-muted-foreground">
+              A useful quote begins with accurate information. Be ready to
+              describe your services, annual sales, payroll, locations,
+              vehicles, subcontractor costs, and prior claims. If a landlord,
+              client, or government contract requires specific coverage, share
+              that document too. Our Washington, DC team can help organize the
+              details and identify questions before applications go to a
+              carrier.
+            </p>
+            <Link
+              href="/quote/commercial"
+              className={cn(buttonVariants({ size: "lg" }), "mt-6")}
+            >
+              Request a Business Insurance Quote
+            </Link>
+          </div>
         </div>
       </section>
     </main>
