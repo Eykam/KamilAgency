@@ -52,9 +52,39 @@ export default function GeneralLiabilityInsurancePage() {
         "Retail, food, and hospitality businesses",
         "Property owners and businesses that need certificates of insurance",
       ]}
+      localConsiderations="DC leases, vendor agreements, and government or construction contracts often specify liability limits, additional insured wording, or certificate requirements. The policy still needs to match the work your business actually performs. We review both the contract request and your operations so important exposures are not hidden behind a certificate."
+      whatToPrepare={[
+        "A clear description of services, products, and typical job sites",
+        "Estimated annual revenue, payroll, and subcontractor costs",
+        "Copies of leases or contracts that specify insurance requirements",
+        "Current coverage, loss history, and certificate requests",
+      ]}
+      commonQuestions={[
+        {
+          question: "What does general liability insurance usually cover?",
+          answer:
+            "It commonly addresses eligible third-party bodily injury, property damage, and personal or advertising injury claims. The policy's limits, exclusions, endorsements, and deductible determine the actual protection.",
+        },
+        {
+          question: "Is general liability required in Washington, DC?",
+          answer:
+            "It is not universally required for every business, but landlords, clients, licensing authorities, and contracts may require it. The amount and wording should be checked against the agreement and the business's exposure.",
+        },
+        {
+          question: "Can Kamil Agency provide a certificate of insurance?",
+          answer:
+            "For active clients, our service team can help with eligible certificate requests and additional insured needs after reviewing the contract and policy. A certificate confirms coverage; it does not add protection that the policy does not provide.",
+        },
+      ]}
       relatedLinks={[
-        { label: "Commercial insurance", href: "/services/commercial-insurance" },
-        { label: "Commercial auto", href: "/services/commercial-auto-insurance" },
+        {
+          label: "Commercial insurance",
+          href: "/services/commercial-insurance",
+        },
+        {
+          label: "Commercial auto",
+          href: "/services/commercial-auto-insurance",
+        },
         { label: "Surety bonds", href: "/services/surety-bonds" },
       ]}
       quoteUrl={siteConfig.commercialQuoteURL}
