@@ -18,12 +18,12 @@ export default async function ServicesPage() {
     >
       <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
         <h1 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
-          Services
+          Insurance Services in Washington, DC
         </h1>
         <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-          Explore our comprehensive insurance solutions. From Home and Auto, to
-          commercial and renters, We&apos;ve got you covered. Discover tailored
-          coverage and exceptional service.
+          Compare personal and business insurance options with a local agency
+          serving Washington, DC, Maryland, and Virginia. Our team provides
+          guidance in English, Spanish, and Arabic.
         </p>
       </div>
 
@@ -31,6 +31,101 @@ export default async function ServicesPage() {
         {services.map((service) => (
           <ServiceCard key={service.name} service={service} pageLink />
         ))}
+      </div>
+
+      <div className="mx-auto max-w-[64rem] py-6 md:py-10">
+        <div className="text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+            Local guidance for the DMV area
+          </p>
+          <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight">
+            Choose coverage around your actual needs
+          </h2>
+          <p className="mx-auto mt-4 max-w-3xl font-normal leading-7 text-muted-foreground">
+            Insurance works best when the policy reflects the people, property,
+            vehicles, or business operations being protected. Kamil Agency helps
+            clients organize those details, compare available carrier options,
+            and understand limits, deductibles, and exclusions before choosing
+            coverage.
+          </p>
+        </div>
+
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
+          <article className="rounded-2xl border bg-background p-6 shadow-sm">
+            <h3 className="text-xl font-semibold">Personal insurance</h3>
+            <p className="mt-3 font-normal leading-7 text-muted-foreground">
+              Protect your home, vehicle, belongings, and personal liability.
+              Start with our guidance for homeowners, renters, condo owners,
+              landlords, and Washington, DC drivers.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-3 text-sm font-medium">
+              <Link
+                className="text-primary hover:underline"
+                href="/services/homeowners-insurance"
+              >
+                Home insurance
+              </Link>
+              <Link
+                className="text-primary hover:underline"
+                href="/services/auto-insurance"
+              >
+                Auto insurance
+              </Link>
+              <Link
+                className="text-primary hover:underline"
+                href="/services/renters-insurance"
+              >
+                Renters insurance
+              </Link>
+            </div>
+          </article>
+
+          <article className="rounded-2xl border bg-background p-6 shadow-sm">
+            <h3 className="text-xl font-semibold">Business insurance</h3>
+            <p className="mt-3 font-normal leading-7 text-muted-foreground">
+              Review liability, property, workers&apos; compensation, commercial
+              auto, cyber, and other coverage based on your operation,
+              contracts, payroll, locations, and vehicles.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-3 text-sm font-medium">
+              <Link
+                className="text-primary hover:underline"
+                href="/services/commercial-insurance"
+              >
+                Commercial insurance
+              </Link>
+              <Link
+                className="text-primary hover:underline"
+                href="/services/general-liability-insurance"
+              >
+                General liability
+              </Link>
+              <Link
+                className="text-primary hover:underline"
+                href="/services/commercial-auto-insurance"
+              >
+                Commercial auto
+              </Link>
+            </div>
+          </article>
+
+          <article className="rounded-2xl border bg-background p-6 shadow-sm">
+            <h3 className="text-xl font-semibold">Help from a local team</h3>
+            <p className="mt-3 font-normal leading-7 text-muted-foreground">
+              Tell us what you need, whether you are arranging a first policy,
+              reviewing a renewal, meeting a lease or contract requirement, or
+              comparing coverage after a life or business change.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-3 text-sm font-medium">
+              <Link className="text-primary hover:underline" href="/quote">
+                Request a quote
+              </Link>
+              <Link className="text-primary hover:underline" href="/contact-us">
+                Contact the agency
+              </Link>
+            </div>
+          </article>
+        </div>
       </div>
 
       <div
