@@ -26,4 +26,11 @@ export const ServiceCategories: ServiceCategory[] = [
     url: siteConfig.medicareQuoteURL,
     logo: Icons.heart({ className: "size-12 fill-primary" }),
   },
+  {
+    name: "Travel Insurance",
+    descriptionShort:
+      "Compare travel protection options for trip costs, medical emergencies, evacuation needs, delays, and interruptions.",
+    url: siteConfig.travelInsuranceURL,
+    logo: Icons.map({ className: "size-12" }),
+  },
 ]
