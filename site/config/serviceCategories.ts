@@ -1,3 +1,4 @@
+import { createElement } from "react"
 import { ServiceCategory } from "@/types"
 
 import { Icons } from "@/components/icons"
@@ -25,5 +26,12 @@ export const ServiceCategories: ServiceCategory[] = [
       "Get a quote for Medicare insurance to ensure you have the right health coverage. Select the plan that meets your healthcare needs.",
     url: siteConfig.medicareQuoteURL,
     logo: Icons.heart({ className: "size-12 fill-primary" }),
+  },
+  {
+    name: "Travel Insurance",
+    descriptionShort:
+      "Compare travel protection options for trip costs, medical emergencies, evacuation needs, delays, and interruptions.",
+    url: siteConfig.travelInsuranceURL,
+    logo: createElement(Icons.map, { className: "size-12" }),
   },
 ]
