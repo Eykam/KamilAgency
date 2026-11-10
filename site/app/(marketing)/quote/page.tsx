@@ -9,7 +9,7 @@ export function generateMetadata(): Metadata {
   return {
     title: "Get an Insurance Quote",
     description:
-      "Choose personal, commercial, or Medicare coverage and start a secure insurance quote with Kamil Agency.",
+      "Choose personal, commercial, Medicare, or travel coverage and start a secure insurance quote with Kamil Agency.",
     alternates: {
       canonical: "/quote",
       languages: { "en-US": "/quote", "ar-US": "/ar/quote" },
@@ -21,6 +21,7 @@ export function generateMetadata(): Metadata {
       "Personal Lines Insurance",
       "Commercial Insurance",
       "Medicare Insurance",
+      "Travel Insurance",
       "Comparative Rater",
       "Best Insurance Policy",
       "Home Insurance",
@@ -91,7 +92,7 @@ export default function QuotePage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 py-12 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-4">
           {ServiceCategories.map((category) => (
             <QuoteCard key={category.name} {...category} />
           ))}
