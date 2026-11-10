@@ -52,9 +52,40 @@ export default function CommercialAutoInsurancePage() {
         "Delivery, sales, and field-service operations",
         "Businesses reviewing hired or non-owned auto exposure",
       ]}
+      localConsiderations="Washington, DC businesses may operate across the District, Maryland, and Virginia, so the quote should reflect where each vehicle is garaged, the territory it travels, and how it is used. Contractors, delivery operations, and firms that cross state lines may need different limits or filings. We help organize those details before approaching carriers."
+      whatToPrepare={[
+        "Vehicle identification numbers, ownership, and garaging addresses",
+        "Driver names, license details, and driving histories",
+        "How each vehicle is used, including radius and annual mileage",
+        "Current policy information and any contract-required limits",
+      ]}
+      commonQuestions={[
+        {
+          question: "When does a business need commercial auto insurance?",
+          answer:
+            "A commercial policy is commonly considered when a business owns a vehicle, employees regularly drive for work, or a vehicle's primary use goes beyond ordinary commuting. The correct policy depends on ownership, usage, drivers, and carrier rules.",
+        },
+        {
+          question:
+            "Can employees' personal vehicles be covered for business use?",
+          answer:
+            "Hired and non-owned auto coverage may address certain liability exposures when employees use personal or rented vehicles for business. It does not replace the vehicle owner's personal policy, and coverage terms vary.",
+        },
+        {
+          question: "Can one policy cover several business vehicles?",
+          answer:
+            "Often, yes. Eligible cars, vans, trucks, and trailers can usually be scheduled on one commercial auto policy, subject to the carrier's underwriting rules and the business's operations.",
+        },
+      ]}
       relatedLinks={[
-        { label: "Commercial insurance", href: "/services/commercial-insurance" },
-        { label: "General liability", href: "/services/general-liability-insurance" },
+        {
+          label: "Commercial insurance",
+          href: "/services/commercial-insurance",
+        },
+        {
+          label: "General liability",
+          href: "/services/general-liability-insurance",
+        },
         { label: "Personal auto insurance", href: "/services/auto-insurance" },
       ]}
       quoteUrl={siteConfig.commercialQuoteURL}
