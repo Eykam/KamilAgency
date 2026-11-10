@@ -26,6 +26,7 @@ export const ServiceCategories: ServiceCategory[] = [
     url: siteConfig.medicareQuoteURL,
     logo: Icons.heart({ className: "size-12 fill-primary" }),
   },
+  // Travel quotes hand off to Kamil Agency's configured partner.
   {
     name: "Travel Insurance",
     descriptionShort:
