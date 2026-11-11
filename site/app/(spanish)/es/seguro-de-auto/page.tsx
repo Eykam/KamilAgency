@@ -4,7 +4,7 @@ import Link from "next/link"
 import { SpanishServicePage } from "@/components/spanish-service-page"
 
 export const metadata: Metadata = {
-  title: "Seguro de auto en Washington, DC | Kamil Agency",
+  title: "Seguro de auto en Washington, DC",
   description:
     "Compare opciones de seguro de auto en Washington, DC, Maryland y Virginia con atención local en español de Kamil Agency.",
   alternates: {
