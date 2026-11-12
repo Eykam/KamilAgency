@@ -98,6 +98,34 @@ export default function QuotePage() {
           ))}
         </div>
 
+        <section className="mx-auto mb-12 max-w-3xl rounded-2xl border border-primary/15 bg-muted/30 p-6 text-left md:p-8">
+          <h2 className="text-2xl font-bold tracking-tight">
+            What to Expect When You Request a Quote
+          </h2>
+          <div className="mt-4 space-y-4 leading-7 text-muted-foreground">
+            <p>
+              Start by choosing personal, commercial, Medicare, or travel
+              coverage above. Depending on the type of insurance, you can begin
+              with a secure online quote or tell our team what you need so we
+              can help you take the next step.
+            </p>
+            <p>
+              Having the right information ready can make the process faster.
+              For personal insurance, gather your current policy, driver and
+              vehicle details, or basic property information. Business owners
+              may also need payroll, revenue, vehicle, location, and prior
+              coverage details. We will let you know if anything else is
+              required for the coverage you select.
+            </p>
+            <p>
+              Insurance options and eligibility vary by carrier and state.
+              Requesting a quote does not bind coverage. If you are unsure
+              which category to choose, use the form below or contact Kamil
+              Agency for personal assistance in English, Spanish, or Arabic.
+            </p>
+          </div>
+        </section>
+
         <div
           id="tell-us-what-you-need"
           className="mx-auto max-w-3xl scroll-mt-24"
