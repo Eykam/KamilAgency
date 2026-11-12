@@ -29,6 +29,36 @@ export default function PersonalQuotePage() {
           Spanish, and Arabic.
         </p>
         <QuoteLeadForm />
+        <section className="rounded-xl bg-muted/40 p-5 text-left md:p-6">
+          <h2 className="text-xl font-semibold tracking-tight">
+            What to Have Ready
+          </h2>
+          <p className="mt-3 leading-7 text-muted-foreground">
+            A few basic details help make your personal insurance quote more
+            accurate. You do not need every document before getting started,
+            but the following information is useful:
+          </p>
+          <ul className="mt-3 list-disc space-y-2 pl-5 leading-7 text-muted-foreground">
+            <li>
+              For auto insurance: driver names, dates of birth, license
+              information, vehicle identification numbers, and current limits.
+            </li>
+            <li>
+              For home insurance: the property address, occupancy, basic home
+              details, and a copy of your current policy when available.
+            </li>
+            <li>
+              For other personal coverage: select the closest option and tell
+              us briefly what you want to protect.
+            </li>
+          </ul>
+          <p className="mt-3 leading-7 text-muted-foreground">
+            Coverage and pricing depend on the information provided, carrier
+            eligibility, and the state where coverage is needed. Submitting a
+            request does not bind insurance; our team will confirm the final
+            options and next steps with you.
+          </p>
+        </section>
         <div className="flex justify-center">
           <Link
             href="/contact-us"
